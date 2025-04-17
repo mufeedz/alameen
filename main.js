@@ -13,3 +13,25 @@ navLinks.querySelectorAll('a').forEach(link => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Hero slider functionality
+    const slides = document.querySelectorAll('#hero-slider .slide');
+    let currentSlide = 0;
+
+    function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[n].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Initial slide display
+    showSlide(currentSlide);
+
+    // Set interval for automatic slide transitions (adjust interval as needed)
+    setInterval(nextSlide, 5000);
+});

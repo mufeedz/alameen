@@ -112,9 +112,8 @@ header {
 }
 
 /* Hero Section */
+/* Remove background from #hero */
 #hero {
-    /* *** REPLACE THIS IMAGE *** */
-    background: linear-gradient(rgba(44, 62, 80, 0.65), rgba(44, 62, 80, 0.65)), url('images/placeholder-hero-students.jpg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
     padding: 120px 20px;
