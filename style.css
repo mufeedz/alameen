@@ -42,7 +42,7 @@ img {
 h1, h2, h3, h4 {
     margin-bottom: 1rem;
     font-weight: 600;
-    color: #2c3e50; /* Dark blue/slate */
+    color: #2c3e50; /* Dark blue/slate - Default heading color */
     line-height: 1.3;
 }
 h2 { font-size: 2.4em; }
@@ -111,60 +111,208 @@ header {
     cursor: pointer;
 }
 
-/* Hero Section */
-/* Hero Slider - Slide Styling */
+/* =========================== */
+/* Hero Slider Section Styles */
+/* =========================== */
+
+#hero-slider {
+    position: relative; /* Needed for absolute positioning of children */
+    width: 100%;
+    height: 55vh; /* Adjust height as needed */
+    overflow: hidden; /* Important: clips content outside slider bounds */
+    background-color: #555; /* Fallback background if images fail */
+}
+
+/* Individual Slide Container */
 #hero-slider .slide {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out; /* Adjusted transition slightly */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.8s ease-in-out;
+    overflow: hidden; /* Contain pseudo-elements and background */
+    z-index: 1; /* Base z-index for inactive slides */
+    pointer-events: none; /* Prevent interactions when inactive */
+}
+
+/* Active Slide Styling */
+#hero-slider .slide.active {
+    opacity: 1; /* Make visible */
+    z-index: 2; /* Bring active slide above inactive ones */
+    pointer-events: auto; /* Allow interactions */
+}
+
+/* Slide Background Image Container */
+.slide-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    /* --- Ensure inactive slides are below and non-interactive --- */
-    z-index: 1; /* Lower z-index for inactive slides */
-    pointer-events: none; /* Prevent clicks/hovers on inactive slides */
+    z-index: 0; /* Lowest layer */
+    /* Ken Burns zoom effect */
+    animation: kenburnsZoom 15s infinite alternate ease-in-out;
+    will-change: transform; /* Performance hint */
 }
 
-#hero-slider .slide.active {
-    opacity: 1;
-    /* --- Ensure active slide is on top and interactive --- */
-    z-index: 2; /* Higher z-index for the active slide */
-    pointer-events: auto; /* Allow clicks/hovers ONLY on the active slide */
+/* Slide Dark Overlay (using pseudo-element) */
+#hero-slider .slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45); /* Adjust opacity as needed */
+    z-index: 1; /* Above background (0), below content (3) */
 }
 
-/* Keep existing styles for .slide-background and .slide-content */
-.slide-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-}
-
+/* Slide Text Content Block */
 .slide-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff;
-  padding: 20px;
-  max-width: 800px;
-  /* Ensure slide content doesn't capture events meant for the slide itself */
-  z-index: 3; /* Higher than the slide div */
+    position: absolute;
+    top: 50%;
+    left: auto; /* Remove default centering */
+    right: 5%;  /* Position from the right */
+    transform: translateY(-50%); /* Center vertically */
+    width: 45%; /* Adjust width */
+    max-width: 550px; /* Max width */
+    color: #fff; /* Default text color for content block */
+    padding: 25px 35px;
+    z-index: 3; /* Above overlay (1) */
+    /* Removed background-color here - overlay is handled by slide::before */
+    border-radius: 8px; /* Optional rounded corners for content block */
+    text-align: right; /* Right-align text */
+    opacity: 0; /* Start hidden for animation */
 }
-/* CTA Buttons */
+
+/* Text Content Animation on Active Slide */
+#hero-slider .slide.active .slide-content {
+    animation: fadeInText 0.9s ease-out 0.3s forwards;
+    /* duration | timing-function | delay | fill-mode */
+}
+
+/* Text Styles within Slide Content */
+.slide-content h1 {
+    font-size: 2.2em; /* Reduced size */
+    margin-bottom: 0.6em;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Shadow for readability */
+    color: #fff; /* *** Explicitly set color to white *** */
+}
+
+.slide-content p {
+    font-size: 1.1em; /* Reduced size */
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Shadow for readability */
+    color: #fff; /* *** Explicitly set color to white *** */
+}
+
+/* Button within Slide Content */
+.slide-content .cta-button {
+    position: relative; /* Needed if applying z-index */
+    z-index: 1; /* Ensure button is clickable within content block */
+    /* Inherits text-align: right from parent */
+    /* Button text color is set by general .cta-button rule */
+}
+
+/* Navigation Arrows */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Above slide content */
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.8em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.slider-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.slider-arrow.prev {
+    left: 15px;
+}
+
+.slider-arrow.next {
+    right: 15px;
+}
+
+/* Navigation Dots */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* Above slide content */
+    display: flex;
+    gap: 10px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.slider-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.slider-dot.active {
+    background-color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Keyframes for Animations */
+@keyframes kenburnsZoom {
+    0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        /* Start slightly to the right for right-aligned text */
+        transform: translate(30px, -50%);
+    }
+    to {
+        opacity: 1;
+        /* End in final vertical position */
+        transform: translateY(-50%);
+    }
+}
+
+/* =========================== */
+/* End Hero Slider Styles      */
+/* =========================== */
+
+
+/* CTA Buttons (General - Keep these as they might be used elsewhere) */
 .cta-button {
-    display: inline-block; /* Allow margin/padding */
+    display: inline-block;
     background-color: #e6b800; /* Gold/Yellow accent */
-    color: #2c3e50;
-    padding: 14px 35px; /* Slightly larger */
-    border-radius: 30px; /* More rounded */
+    color: #2c3e50; /* Default button text color */
+    padding: 14px 35px;
+    border-radius: 30px;
     font-size: 1.1em;
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
@@ -172,16 +320,16 @@ header {
     cursor: pointer;
     text-align: center;
     margin-top: 10px;
-    margin-right: 10px; /* Add some space between buttons */
+    margin-right: 10px; /* Only applied if multiple buttons are inline */
 }
 
 .cta-button:last-of-type {
-    margin-right: 0;
+    margin-right: 0; /* Remove margin from last button in a sequence */
 }
 
 .cta-button:hover {
     background-color: #cca300; /* Darker gold */
-    color: #ffffff;
+    color: #ffffff; /* White text on hover */
     text-decoration: none;
     transform: translateY(-2px); /* Slight lift effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -209,12 +357,12 @@ header {
 
 /* Content Sections */
 .content-section {
-    padding: 70px 0; /* Standardized padding */
+    padding: 70px 0;
 }
 
 .content-section h2 {
     text-align: center;
-    margin-bottom: 50px; /* Increased spacing */
+    margin-bottom: 50px;
     font-size: 2.4em;
     position: relative;
     padding-bottom: 15px;
@@ -233,85 +381,78 @@ header {
 }
 
 .bg-light {
-    /* background-color: #f8f9fa; Slightly lighter gray */
-    background-color: #ffffff; /* Keeping white for now */
+    background-color: #ffffff;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
 
 /* News & Events Section */
-/* --- Updated News & Events Section Styles --- */
-/* --- Adjusted News & Events Section Styles (Smaller) --- */
-
 #news-events {
-    padding: 50px 0; /* Original padding */ /* */
-    background-color: #eaf6f4; /* Original light teal background */ /* */
-    border-bottom: 1px solid #d1e7e4; /* Original border */ /* */
-    border-top: 1px solid #eee; /* Keep consistent with other sections */ /* */
+    padding: 50px 0;
+    background-color: #eaf6f4;
+    border-bottom: 1px solid #d1e7e4;
+    border-top: 1px solid #eee;
 }
 
-#news-events .container > h2 { /* Target h2 directly inside container */
+#news-events .container > h2 {
     text-align: center;
-    margin-bottom: 30px; /* Original margin */ /* */
-    font-size: 1.8em; /* Original smaller heading size */ /* */
+    margin-bottom: 30px;
+    font-size: 1.8em;
     position: relative;
-    padding-bottom: 10px; /* Reduced padding */
+    padding-bottom: 10px;
     color: #2c3e50;
 }
 
-#news-events .container > h2::after { /* Target H2's after element */
+#news-events .container > h2::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px; /* Original smaller width */ /* */
-    height: 3px; /* Original smaller height */ /* */
-    background-color: #e6b800; /* Gold accent */ /* */
+    width: 60px;
+    height: 3px;
+    background-color: #e6b800;
     border-radius: 2px;
 }
 
-/* Remove old news-ticker list styling if present */
-.news-ticker ul {
+.news-ticker ul { /* Hide old list if still present */
     display: none;
 }
 
-/* New Event Item Styling (Adjusted for smaller size) */
 .event-list {
-    max-width: 750px; /* Slightly reduced max-width */
+    max-width: 750px;
     margin: 0 auto;
 }
 
 .event-item {
     display: flex;
     align-items: flex-start;
-    background-color: #ffffff; /* Keep white background for contrast */
-    border: 1px solid #d1e7e4; /* Match border color to section border */
-    border-radius: 6px; /* Slightly smaller radius */
-    margin-bottom: 18px; /* Reduced space between items */
-    padding: 15px; /* Reduced padding */
-    /* Removed box-shadow for a flatter look */
-    transition: background-color 0.3s ease; /* Simple transition */
+    background-color: #ffffff;
+    border: 1px solid #d1e7e4;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    padding: 15px;
+    transition: background-color 0.3s ease;
 }
 
 .event-item:hover {
-    background-color: #f8f8f8; /* Subtle hover effect */
+    background-color: #f8f8f8;
 }
 
 .event-date {
-    flex: 0 0 65px; /* Reduced fixed width */
+    flex: 0 0 65px;
     text-align: center;
-    background-color: #16a085; /* Teal background */ /* */
+    background-color: #16a085;
     color: #ffffff;
-    border-radius: 4px; /* Smaller radius */
-    padding: 8px 5px; /* Reduced padding */
-    margin-right: 15px; /* Reduced space */
+    border-radius: 4px;
+    padding: 8px 5px;
+    margin-right: 15px;
     line-height: 1.1;
 }
 
 .event-date .month {
     display: block;
-    font-size: 0.7em; /* Smaller font */
+    font-size: 0.7em;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 3px;
@@ -320,27 +461,27 @@ header {
 
 .event-date .day {
     display: block;
-    font-size: 1.6em; /* Smaller day */
+    font-size: 1.6em;
     font-weight: 700;
     line-height: 1;
 }
 
 .event-date .year {
     display: block;
-    font-size: 0.7em; /* Smaller font */
+    font-size: 0.7em;
     opacity: 0.8;
     margin-top: 3px;
 }
 
 .event-details {
     flex: 1;
-    padding-top: 2px; /* Align text slightly better */
+    padding-top: 2px;
 }
 
 .event-details h4 {
     margin-bottom: 5px;
-    font-size: 1.1em; /* Smaller headline, close to original li size */ /* */
-    color: #2c3e50; /* */
+    font-size: 1.1em;
+    color: #2c3e50;
     line-height: 1.3;
 }
 
@@ -350,60 +491,31 @@ header {
 }
 
 .event-details h4 a:hover {
-    color: #16a085; /* */
-    text-decoration: underline; /* Add underline on hover */
+    color: #16a085;
+    text-decoration: underline;
 }
 
 .event-details p {
-    font-size: 0.9em; /* Smaller description text */
+    font-size: 0.9em;
     color: #555;
-    line-height: 1.5; /* Adjust line height */
+    line-height: 1.5;
     margin: 0;
-}
-
-/* Responsive Adjustments for Events (Adjusted) */
-@media (max-width: 576px) {
-    .event-item {
-        /* Keep stacked layout */
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 12px; /* Adjust padding */
-    }
-
-    .event-date {
-        margin-right: 0;
-        margin-bottom: 10px; /* Adjust margin */
-        flex-basis: auto;
-        min-width: 80px; /* Adjust min width */
-    }
-
-    .event-details {
-        width: 100%;
-    }
-
-     .event-details h4 {
-        font-size: 1.05em; /* Slightly adjust responsive heading size */
-    }
-     .event-details p {
-        font-size: 0.85em; /* Slightly adjust responsive text size */
-    }
 }
 
 /* About Us Section */
 .about-content {
     display: flex;
-    align-items: flex-start; /* Align items top */
+    align-items: flex-start;
     gap: 40px;
 }
 .about-text {
-    flex: 1.2; /* Slightly more space for text */
+    flex: 1.2;
 }
 .about-text strong {
     color: #2c3e50;
 }
 .about-text ul {
-    list-style: none; /* Keep custom bullets if added */
+    list-style: none;
     padding-left: 0;
     margin-top: 15px;
 }
@@ -413,7 +525,7 @@ header {
     padding-left: 20px;
 }
 .about-text ul li::before {
-    content: '•'; /* Simple bullet */
+    content: '•';
     color: #16a085;
     position: absolute;
     left: 0;
@@ -423,8 +535,8 @@ header {
 }
 .about-image {
     flex: 0.8;
-    max-width: 400px; /* Adjust size */
-    margin-top: 10px; /* Align better with text */
+    max-width: 400px;
+    margin-top: 10px;
 }
 .about-image img {
     border-radius: 8px;
@@ -443,8 +555,7 @@ header {
     background-color: #ffffff;
     padding: 25px;
     border-radius: 8px;
-    border: 1px solid #eee; /* Subtle border */
-    /* box-shadow: 0 3px 10px rgba(0,0,0,0.07); */ /* Using border instead */
+    border: 1px solid #eee;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .feature-item:hover {
@@ -454,11 +565,16 @@ header {
 .feature-item h4 {
     margin-bottom: 10px;
 }
-.feature-item a {
-    display: block;
+.feature-item a { /* Style for potential download links */
+    display: inline-block; /* Change from block if needed */
     margin-top: 15px;
     font-weight: 500;
     font-size: 0.95em;
+    color: #16a085;
+}
+.feature-item a:hover {
+    color: #1abc9c;
+    text-decoration: underline;
 }
 
 /* Admissions Section */
@@ -469,7 +585,7 @@ header {
 #admissions ul ul { /* Nested list for criteria */
     padding-left: 20px;
     margin-top: 5px;
-    list-style: disc;
+    list-style: disc; /* Use standard bullets for sub-list */
 }
 
 #admissions li {
@@ -490,7 +606,7 @@ header {
     margin-bottom: 15px;
     padding-bottom: 8px;
     border-bottom: 2px solid #e6b800;
-    display: inline-block; /* Fit border to text */
+    display: inline-block;
 }
 .admission-details p {
     margin-bottom: 15px;
@@ -507,26 +623,23 @@ header {
     border-radius: 8px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     width: 100%;
-    height: 200px; /* Fixed height for uniformity */
-    object-fit: cover; /* Crop images nicely */
-    cursor: pointer; /* Indicate clickability (for lightbox later) */
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
     border: 1px solid #eee;
 }
 .gallery-item img:hover {
-    transform: scale(1.03); /* Slightly reduced scale */
+    transform: scale(1.03);
     opacity: 0.9;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* Contact Section */
 .contact-container {
-    display: grid; /* Changed to grid */
-    grid-template-columns: 1fr 1.2fr; /* Adjust column ratio */
-    gap: 50px; /* Increased gap */
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
     margin-top: 30px;
-}
-.contact-details {
-    /* flex: 1; */ /* Removed flex */
 }
 .contact-details address {
     font-style: normal;
@@ -541,7 +654,7 @@ header {
 .contact-details h3 {
     margin-bottom: 15px;
 }
-.map-placeholder {
+.map-placeholder { /* Style for the map placeholder div */
     height: 250px;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
@@ -554,21 +667,19 @@ header {
     border-radius: 5px;
     font-style: italic;
 }
+/* Remember to replace .map-placeholder with actual map embed */
 
-.contact-form {
-    /* flex: 1.5; */ /* Removed flex */
-}
-.form-group {
+.contact-form .form-group {
     margin-bottom: 20px;
 }
-.form-group label {
+.contact-form label {
     display: block;
     margin-bottom: 5px;
     font-weight: 500;
     color: #2c3e50;
 }
-.form-group input,
-.form-group textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -577,14 +688,14 @@ header {
     font-family: inherit;
     transition: border-color 0.3s ease;
 }
-.form-group input:focus,
-.form-group textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     outline: none;
-    border-color: #16a085; /* Teal focus */
+    border-color: #16a085;
     box-shadow: 0 0 5px rgba(22, 160, 133, 0.2);
 }
-.form-group textarea {
-    resize: vertical; /* Allow vertical resize */
+.contact-form textarea {
+    resize: vertical;
 }
 
 /* Footer */
@@ -593,7 +704,7 @@ footer {
     color: #ecf0f1;
     text-align: center;
     padding: 30px 0;
-    margin-top: 60px; /* Increased margin */
+    margin-top: 60px;
 }
 
 footer p {
@@ -602,29 +713,34 @@ footer p {
     font-size: 0.9em;
 }
 
-/* Responsive Design */
+/* =========================== */
+/* Responsive Design           */
+/* =========================== */
+
+/* Larger Tablets / Small Laptops */
 @media (max-width: 992px) {
     .about-content {
         flex-direction: column;
         text-align: center;
     }
     .about-text ul {
-        display: inline-block; /* Center list items */
+        display: inline-block;
         text-align: left;
     }
     .about-image {
         margin: 30px auto 0 auto;
-        max-width: 400px; /* Adjust size */
-        flex: 1; /* Reset flex */
+        max-width: 400px;
+        flex: 1;
     }
      .contact-container {
-        grid-template-columns: 1fr; /* Stack columns */
+        grid-template-columns: 1fr;
     }
     .admission-details {
-        grid-template-columns: 1fr; /* Stack columns */
+        grid-template-columns: 1fr;
     }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
     h2 { font-size: 2em; }
     h3 { font-size: 1.4em; }
@@ -634,9 +750,9 @@ footer p {
     }
 
     .nav-links {
-        display: none;
+        display: none; /* Start hidden */
         position: absolute;
-        top: 65px;
+        top: 65px; /* Position below header */
         left: 0;
         background-color: #ffffff;
         width: 100%;
@@ -646,7 +762,7 @@ footer p {
         padding-bottom: 10px;
     }
 
-    .nav-links.active {
+    .nav-links.active { /* Style for when mobile menu is open */
         display: flex;
     }
 
@@ -655,24 +771,11 @@ footer p {
     }
      .nav-links a:hover,
      .nav-links a.active-link {
-        border-bottom-color: transparent;
+        border-bottom-color: transparent; /* Remove bottom border on mobile */
     }
 
-    .menu-toggle {
+    .menu-toggle { /* Show hamburger menu */
         display: block;
-    }
-
-    #hero {
-        padding: 80px 20px;
-        min-height: 50vh;
-    }
-
-    #hero h1 {
-        font-size: 2.4em;
-    }
-
-    #hero p {
-        font-size: 1.1em;
     }
 
     .content-section {
@@ -690,8 +793,7 @@ footer p {
     #news-events {
         padding: 40px 0;
     }
-    #news-events h2 { font-size: 1.6em; }
-    .news-ticker li { font-size: 1em; }
+    #news-events .container > h2 { font-size: 1.6em; } /* Target specific h2 */
 
     .gallery-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -699,24 +801,58 @@ footer p {
      .gallery-item img {
         height: 150px;
     }
+
+    /* Responsive Slider Adjustments (768px) */
+    .slide-content {
+        width: 70%;
+        /* Center the block itself */
+         left: 50%;
+         right: auto;
+         transform: translate(-50%, -50%);
+         /* Center align text block content */
+         text-align: center;
+         padding: 20px;
+    }
+
+    /* Adjust fade-in animation for centered text */
+     /* Redefine keyframes inside media query if needed, */
+     /* or ensure the global one works for centered alignment */
+     /* Let's adjust the global one slightly to work for both */
+     /* (See global @keyframes fadeInText adjustments below) */
+
+
+    .slide-content h1 { font-size: 1.8em; }
+    .slide-content p { font-size: 1em; }
+    .slider-arrow { font-size: 1.5em; padding: 8px 12px; }
+    .slider-dots { bottom: 15px; }
+    .slider-dot { width: 10px; height: 10px; }
+
+    /* Responsive Event Item Adjustments (768px) */
+     .event-item {
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+         padding: 12px;
+     }
+     .event-date { margin-right: 0; margin-bottom: 10px; flex-basis: auto; min-width: 80px; }
+     .event-details { width: 100%; }
+     .event-details h4 { font-size: 1.05em; }
+     .event-details p { font-size: 0.85em; }
 }
 
+/* Mobile Phones */
 @media (max-width: 480px) {
     body { font-size: 15px; }
-    .logo {
-        font-size: 1.6em;
-    }
-    #hero h1 {
-        font-size: 2em;
-    }
-     .cta-button {
+    .logo { font-size: 1.6em; }
+
+    .cta-button { /* Make general CTA buttons stack */
         padding: 12px 25px;
         font-size: 1em;
-        display: block; /* Stack buttons on small screens */
+        display: block;
         margin: 10px auto 0 auto;
         max-width: 250px;
     }
-     .academic-features {
+    .academic-features {
         grid-template-columns: 1fr; /* Stack features */
     }
     .gallery-grid {
@@ -726,7 +862,7 @@ footer p {
      .gallery-item img {
         height: 120px;
     }
-    .form-group input, .form-group textarea {
+    .contact-form input, .contact-form textarea {
         padding: 10px;
     }
     .admission-details {
@@ -735,64 +871,63 @@ footer p {
      .contact-container {
         gap: 30px;
     }
-}
-/* Hero Section */
-#hero-slider {
-  position: relative;
-  width: 100%;
-  height: 55vh; /* Match previous hero height */
-  overflow: hidden; /* Hide content outside the slider */
+
+    /* Responsive Slider Adjustments (480px) */
+    .slide-content {
+        width: 85%;
+        /* Ensure it's centered */
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .slide-content h1 { font-size: 1.6em; }
+    .slide-content p { font-size: 0.95em; margin-bottom: 1.2em; }
+    .slider-arrow {
+        top: auto; /* Move arrows below content */
+        bottom: 10px;
+        transform: translateY(0);
+        padding: 5px 10px;
+    }
+    .slider-dots {
+        bottom: 55px; /* Move dots above arrows */
+    }
 }
 
-#hero-slider .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out; /* Fade transition */
-  background-size: cover;
-  background-position: center;
+/* Adjusted Keyframes to work better with centering */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        /* Start slightly up, works okay for centered too */
+        transform: translate(var(--translateX, -50%), -45%);
+    }
+    to {
+        opacity: 1;
+        /* End centered */
+        transform: translate(var(--translateX, -50%), -50%);
+    }
+}
+/* Apply specific translateX for right-aligned */
+@media (min-width: 769px) { /* Apply only when not centered */
+    .slide-content {
+         --translateX: 0; /* Override for right-aligned */
+         /* Re-apply right alignment styles if needed */
+         left: auto;
+         right: 5%;
+         transform: translateY(-50%);
+         text-align: right;
+    }
+     @keyframes fadeInText { /* Redefine for right align if needed */
+        from {
+            opacity: 0;
+            transform: translate(30px, -50%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(-50%);
+        }
+    }
 }
 
-#hero-slider .slide.active {
-  opacity: 1;
-}
 
-.slide-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-}
-
-.slide-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff;
-  padding: 20px;
-  max-width: 800px;
-}
-
-.slide-content h1 {
-  font-size: 3em;
-  margin-bottom: 0.5em;
-  font-weight: 700;
-}
-
-.slide-content p {
-  font-size: 1.3em;
-  margin-bottom: 1.8em;
-}
-
-/* Ensure CTA button styles are still applied */
-.cta-button {
-  /* ... (keep existing button styles) ... */
-}
