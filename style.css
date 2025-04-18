@@ -112,32 +112,52 @@ header {
 }
 
 /* Hero Section */
-/* Remove background from #hero */
-#hero {
-    color: #fff;
-    text-align: center;
-    padding: 120px 20px;
-    min-height: 60vh; /* Adjusted height */
-    /* display: flex;  REMOVED */
-    /* flex-direction: column; REMOVED */
-    /* justify-content: center; REMOVED */
-    /* align-items: center; REMOVED */
+/* Hero Slider - Slide Styling */
+#hero-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out; /* Adjusted transition slightly */
+    background-size: cover;
+    background-position: center;
+    /* --- Ensure inactive slides are below and non-interactive --- */
+    z-index: 1; /* Lower z-index for inactive slides */
+    pointer-events: none; /* Prevent clicks/hovers on inactive slides */
 }
 
-#hero h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
-    font-weight: 700;
-    color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Subtle text shadow */
+#hero-slider .slide.active {
+    opacity: 1;
+    /* --- Ensure active slide is on top and interactive --- */
+    z-index: 2; /* Higher z-index for the active slide */
+    pointer-events: auto; /* Allow clicks/hovers ONLY on the active slide */
 }
 
-#hero p {
-    font-size: 1.3em;
-    margin-bottom: 1.8em;
-    max-width: 650px;
+/* Keep existing styles for .slide-background and .slide-content */
+.slide-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  max-width: 800px;
+  /* Ensure slide content doesn't capture events meant for the slide itself */
+  z-index: 3; /* Higher than the slide div */
+}
 /* CTA Buttons */
 .cta-button {
     display: inline-block; /* Allow margin/padding */
@@ -220,42 +240,155 @@ header {
 }
 
 /* News & Events Section */
+/* --- Updated News & Events Section Styles --- */
+/* --- Adjusted News & Events Section Styles (Smaller) --- */
+
 #news-events {
-    padding: 50px 0; /* Reduced padding for this section */
-    background-color: #eaf6f4; /* Light teal background */
-    border-bottom: 1px solid #d1e7e4;
-}
-#news-events h2 {
-    font-size: 1.8em; /* Smaller heading */
-    margin-bottom: 30px;
-}
-#news-events h2::after { /* Smaller underline */
-    width: 60px;
-    height: 3px;
-}
-.news-ticker ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 800px;
-    text-align: center;
-}
-.news-ticker li {
-    margin-bottom: 12px;
-    font-size: 1.1em;
-}
-.news-ticker li span {
-    font-weight: 600;
-    color: #2c3e50;
-    margin-right: 8px;
-}
-.news-ticker li a {
-    color: #16a085;
-}
-.news-ticker li a:hover {
-    text-decoration: underline;
+    padding: 50px 0; /* Original padding */ /* */
+    background-color: #eaf6f4; /* Original light teal background */ /* */
+    border-bottom: 1px solid #d1e7e4; /* Original border */ /* */
+    border-top: 1px solid #eee; /* Keep consistent with other sections */ /* */
 }
 
+#news-events .container > h2 { /* Target h2 directly inside container */
+    text-align: center;
+    margin-bottom: 30px; /* Original margin */ /* */
+    font-size: 1.8em; /* Original smaller heading size */ /* */
+    position: relative;
+    padding-bottom: 10px; /* Reduced padding */
+    color: #2c3e50;
+}
+
+#news-events .container > h2::after { /* Target H2's after element */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; /* Original smaller width */ /* */
+    height: 3px; /* Original smaller height */ /* */
+    background-color: #e6b800; /* Gold accent */ /* */
+    border-radius: 2px;
+}
+
+/* Remove old news-ticker list styling if present */
+.news-ticker ul {
+    display: none;
+}
+
+/* New Event Item Styling (Adjusted for smaller size) */
+.event-list {
+    max-width: 750px; /* Slightly reduced max-width */
+    margin: 0 auto;
+}
+
+.event-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: #ffffff; /* Keep white background for contrast */
+    border: 1px solid #d1e7e4; /* Match border color to section border */
+    border-radius: 6px; /* Slightly smaller radius */
+    margin-bottom: 18px; /* Reduced space between items */
+    padding: 15px; /* Reduced padding */
+    /* Removed box-shadow for a flatter look */
+    transition: background-color 0.3s ease; /* Simple transition */
+}
+
+.event-item:hover {
+    background-color: #f8f8f8; /* Subtle hover effect */
+}
+
+.event-date {
+    flex: 0 0 65px; /* Reduced fixed width */
+    text-align: center;
+    background-color: #16a085; /* Teal background */ /* */
+    color: #ffffff;
+    border-radius: 4px; /* Smaller radius */
+    padding: 8px 5px; /* Reduced padding */
+    margin-right: 15px; /* Reduced space */
+    line-height: 1.1;
+}
+
+.event-date .month {
+    display: block;
+    font-size: 0.7em; /* Smaller font */
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    opacity: 0.9;
+}
+
+.event-date .day {
+    display: block;
+    font-size: 1.6em; /* Smaller day */
+    font-weight: 700;
+    line-height: 1;
+}
+
+.event-date .year {
+    display: block;
+    font-size: 0.7em; /* Smaller font */
+    opacity: 0.8;
+    margin-top: 3px;
+}
+
+.event-details {
+    flex: 1;
+    padding-top: 2px; /* Align text slightly better */
+}
+
+.event-details h4 {
+    margin-bottom: 5px;
+    font-size: 1.1em; /* Smaller headline, close to original li size */ /* */
+    color: #2c3e50; /* */
+    line-height: 1.3;
+}
+
+.event-details h4 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.event-details h4 a:hover {
+    color: #16a085; /* */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.event-details p {
+    font-size: 0.9em; /* Smaller description text */
+    color: #555;
+    line-height: 1.5; /* Adjust line height */
+    margin: 0;
+}
+
+/* Responsive Adjustments for Events (Adjusted) */
+@media (max-width: 576px) {
+    .event-item {
+        /* Keep stacked layout */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 12px; /* Adjust padding */
+    }
+
+    .event-date {
+        margin-right: 0;
+        margin-bottom: 10px; /* Adjust margin */
+        flex-basis: auto;
+        min-width: 80px; /* Adjust min width */
+    }
+
+    .event-details {
+        width: 100%;
+    }
+
+     .event-details h4 {
+        font-size: 1.05em; /* Slightly adjust responsive heading size */
+    }
+     .event-details p {
+        font-size: 0.85em; /* Slightly adjust responsive text size */
+    }
+}
 
 /* About Us Section */
 .about-content {
