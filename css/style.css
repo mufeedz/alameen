@@ -264,6 +264,7 @@ ul {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px; margin-top: 30px;
 }
+/*
 .feature-item {
     background-color: #ffffff; padding: 25px; border-radius: 8px;
     border: 1px solid #eee; transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -272,7 +273,66 @@ ul {
 .feature-item h4 { margin-bottom: 10px; }
 .feature-item a { display: inline-block; margin-top: 15px; font-weight: 500; font-size: 0.95em; color: #16a085; }
 .feature-item a:hover { color: #1abc9c; text-decoration: underline; }
+*/
+/* --- Find this existing rule block --- */
+.feature-item {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    /* --- MODIFY/ADD these properties --- */
+    position: relative; /* Ensure positioning context for pseudo-element */
+    overflow: hidden; /* Hide any part of the accent spilling out */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Ensure border-color is in transition */
+     /* --- End Modifications --- */
+}
 
+/* --- Keep or adjust existing hover rule --- */
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    border-color: #16a085; /* Optional: Change border color on hover */
+}
+
+/* --- ADD this NEW rule block below the .feature-item rules --- */
+.feature-item::after {
+    content: '';
+    position: absolute;
+    top: -10px; /* Position partially off-canvas */
+    right: -10px; /* Position partially off-canvas */
+    width: 30px;  /* Size of the square */
+    height: 30px; /* Size of the square */
+    background-color: #e6b800; /* Gold accent color */
+    opacity: 0.8; /* Slightly transparent */
+    transform: rotate(45deg); /* Rotate to make it a diamond/corner shape */
+    transition: opacity 0.3s ease, background-color 0.3s ease; /* Smooth transition on hover */
+    z-index: 1; /* Ensure it's above background but below text if needed */
+}
+
+/* Optional: Enhance the accent slightly on hover */
+.feature-item:hover::after {
+    opacity: 1;
+    background-color: #cca300; /* Darker gold on hover */
+}
+/* --- End of new rules --- */
+
+/* --- Keep existing rules for .feature-item a --- */
+.feature-item a {
+     /* ... existing styles ... */
+     position: relative; /* Ensure link text is above pseudo-element */
+     z-index: 2;
+}
+/* --- Keep existing rules for .feature-item h4 and p --- */
+.feature-item h4 {
+    /* ... existing styles ... */
+     position: relative; /* Ensure heading text is above pseudo-element */
+     z-index: 2;
+}
+.feature-item p {
+    /* ... existing styles ... */
+     position: relative; /* Ensure paragraph text is above pseudo-element */
+     z-index: 2;
+}
 /* --- Admissions Section (Keep Existing) --- */
 #admissions ul { list-style: none; padding-left: 0; }
 #admissions ul ul { /* Nested list */

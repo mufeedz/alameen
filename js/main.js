@@ -13,9 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const element = document.getElementById(elementId);
                 if (element) {
                     element.innerHTML = data;
-                    // --- Re-initialize mobile menu AFTER header is loaded ---
+                    // --- Re-initialize JS AFTER HTML is loaded ---
                     if (elementId === 'header-placeholder') {
-                        setupMobileMenu(); // *** UNCOMMENTED THIS LINE ***
+                        setupMobileMenu();
+                        setActiveNavLink(); // *** ADDED CALL TO SET ACTIVE LINK ***
                     }
                 } else {
                     console.error(`Element with ID '${elementId}' not found.`);
@@ -37,14 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Mobile Menu Setup Function ---
     function setupMobileMenu() {
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navLinks = document.querySelector('.main-navbar .nav-links');
+        const navLinksContainer = document.querySelector('.main-navbar .nav-links'); // Renamed for clarity
 
-        if (mobileMenuToggle && navLinks) {
+        if (mobileMenuToggle && navLinksContainer) {
             // Mobile Menu Toggle Click Listener
             mobileMenuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+                navLinksContainer.classList.toggle('active'); // Use the container
                 const icon = mobileMenuToggle.querySelector('i');
-                if (navLinks.classList.contains('active')) {
+                if (navLinksContainer.classList.contains('active')) { // Check container
                     icon.classList.remove('fa-bars');
                     icon.classList.add('fa-times');
                     mobileMenuToggle.setAttribute('aria-expanded', 'true');
@@ -61,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
              menuItemsWithChildren.forEach(item => {
                 const indicator = item.querySelector('.dropdown-indicator');
                 if (indicator) {
-                     // Prevent adding listener multiple times if setup runs again somehow
                      if (!indicator.hasAttribute('data-listener-added')) {
                          indicator.addEventListener('click', (e) => {
                             e.preventDefault(); e.stopPropagation();
@@ -71,16 +71,81 @@ document.addEventListener('DOMContentLoaded', function() {
                                 parentLi.classList.toggle('open');
                             }
                         });
-                        indicator.setAttribute('data-listener-added', 'true'); // Mark as added
+                        indicator.setAttribute('data-listener-added', 'true');
                      }
                 }
              });
         } else {
-             // Optional: Retry mechanism if elements aren't found immediately
              console.error("Mobile menu elements not found, retrying setup...");
-             setTimeout(setupMobileMenu, 150); // Slightly increased delay
+             setTimeout(setupMobileMenu, 150);
         }
     }
+
+    // --- Function to set the active navigation link ---
+	function setActiveNavLink() {
+	    const currentPagePath = window.location.pathname; // e.g., "/about.html" or "/alameen/about.html" or "/index.html" or "/"
+	    const navLinks = document.querySelectorAll('.main-navbar .nav-links > li > a'); // Select only top-level links
+	
+	    // --- More robust normalization: Get the filename or handle root ---
+	    let normalizedCurrentPage;
+	    // Check if it's the root path or index.html
+	    if (currentPagePath === '/' || currentPagePath.endsWith('/') || currentPagePath.endsWith('/index.html')) {
+	        normalizedCurrentPage = 'index.html'; // Consistently use 'index.html' for the root/home page
+	    } else {
+	        // Get the last part of the path (likely the filename)
+	        normalizedCurrentPage = currentPagePath.substring(currentPagePath.lastIndexOf('/') + 1);
+	    }
+	
+	    // Handle query strings or hash fragments if present (remove them)
+	    normalizedCurrentPage = normalizedCurrentPage.split('?')[0].split('#')[0];
+	
+	    // Ensure it's not empty after processing (e.g., if path was just '/')
+	    if (normalizedCurrentPage === '') {
+	        normalizedCurrentPage = 'index.html';
+	    }
+	
+	    // Optional: Add console log for debugging in the browser's developer tools
+	    console.log("Normalized Current Page:", normalizedCurrentPage);
+	
+	    navLinks.forEach(link => {
+	        link.classList.remove('active-link'); // Remove active class from all links first
+	        const linkHref = link.getAttribute('href');
+	
+	        // --- Normalize the link href similarly ---
+	        let normalizedLinkHref;
+	         if (linkHref === '/' || linkHref.endsWith('/') || linkHref === 'index.html') {
+	             normalizedLinkHref = 'index.html';
+	         } else {
+	             normalizedLinkHref = linkHref.substring(linkHref.lastIndexOf('/') + 1);
+	         }
+	
+	        // Remove query strings or hash fragments from link href as well
+	         normalizedLinkHref = normalizedLinkHref.split('?')[0].split('#')[0];
+	
+	         // Ensure it's not empty
+	         if (normalizedLinkHref === '') {
+	             normalizedLinkHref = 'index.html';
+	         }
+	
+	        // Optional: Add console log for debugging
+	         console.log("Comparing with Link Href:", normalizedLinkHref);
+	
+	        // --- Compare the normalized names ---
+	        if (normalizedLinkHref === normalizedCurrentPage) {
+	            link.classList.add('active-link');
+	             console.log("Match found for:", linkHref); // Optional debug log
+	        }
+	    });
+	
+	    // Safety check: If we are on the effective 'index.html' page and no link is active yet, activate the 'index.html' link.
+	     if (normalizedCurrentPage === 'index.html' && !document.querySelector('.main-navbar .nav-links > li > a.active-link')) {
+	          const homeLink = document.querySelector('.main-navbar .nav-links > li > a[href="index.html"]');
+	          if (homeLink) {
+	             homeLink.classList.add('active-link');
+	              console.log("Fallback activation for Home link."); // Optional debug log
+	         }
+	     }
+	}
 
     // Function to close all open submenus
     function closeAllSubmenus() {
@@ -92,16 +157,14 @@ document.addEventListener('DOMContentLoaded', function() {
      // Close mobile menu if clicking outside page header
      document.addEventListener('click', function(event) {
          const siteHeader = document.querySelector('.site-header');
-         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle'); // Check element exists
-         const navLinks = document.querySelector('.main-navbar .nav-links'); // Check element exists
+         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+         const navLinksContainer = document.querySelector('.main-navbar .nav-links');
 
-         // Ensure elements exist before accessing properties/methods
-         if (siteHeader && mobileMenuToggle && navLinks) {
+         if (siteHeader && mobileMenuToggle && navLinksContainer) {
             const isClickInsideHeader = siteHeader.contains(event.target);
-            if (navLinks.classList.contains('active') && !isClickInsideHeader) {
-                navLinks.classList.remove('active');
+            if (navLinksContainer.classList.contains('active') && !isClickInsideHeader) {
+                navLinksContainer.classList.remove('active');
                 const icon = mobileMenuToggle.querySelector('i');
-                // Check if icon exists before changing classes
                 if (icon) {
                    icon.classList.remove('fa-times');
                    icon.classList.add('fa-bars');
@@ -121,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
     let slideInterval;
 
-    if (slides.length > 0) { // Check if slider elements exist
+    if (slides.length > 0) {
         function createDots() {
              if (!dotsContainer) return;
              dotsContainer.innerHTML = '';
@@ -186,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
            startInterval();
         }
 
-    } // End of slider code block
+    }
     // --- End of Slider Code ---
 
 }); // End of DOMContentLoaded

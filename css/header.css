@@ -197,10 +197,16 @@
     font-size: 1em;
 }
 
-.nav-links > li > a:hover,
-.nav-links > li > a.active-link {
+/* Original hover style remains */
+.nav-links > li > a:hover {
     background-color: #16a085;
     color: #ffffff;
+}
+
+/* Modified active link style */
+.nav-links > li > a.active-link {
+    background-color: #16a085; /* Keep the background */
+    color: #ffffff;          /* Keep the text color */
 }
 
 .dropdown-indicator {
