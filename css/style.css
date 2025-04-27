@@ -398,6 +398,48 @@ footer p {
     font-size: 0.9em;
 }
 
+/* --- Scroll To Top Button --- */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Keep it in view */
+    bottom: 25px;
+    right: 25px;
+    z-index: 999; /* Ensure it's above most other content */
+    border: none;
+    outline: none;
+    background-color: #16a085; /* Teal color from theme */
+    color: white;
+    cursor: pointer;
+    padding: 12px 15px; /* Slightly adjust padding */
+    border-radius: 50%; /* Make it circular */
+    font-size: 1.1em; /* Adjust icon size */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; /* Smooth transitions */
+    opacity: 0; /* Start transparent for transition */
+    visibility: hidden; /* Start hidden */
+}
+
+#scrollToTopBtn.show {
+    display: block; /* Make it visible */
+    opacity: 1;
+    visibility: visible;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #e6b800; /* Gold color on hover */
+    color: #2c3e50; /* Dark text on hover */
+}
+
+/* Optional: Slightly smaller button on smaller screens */
+@media (max-width: 768px) {
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 13px;
+        font-size: 1em;
+    }
+}
+
 
 /* =========================== */
 /* General Responsive Design   */

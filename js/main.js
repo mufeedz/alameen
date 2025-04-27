@@ -12,12 +12,42 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 const element = document.getElementById(elementId);
                 if (element) {
-                    element.innerHTML = data;
-                    // --- Re-initialize JS AFTER HTML is loaded ---
+                    element.innerHTML = data; // <<< HTML is inserted here
+
+                    // --- Initialize JS AFTER specific HTML is loaded ---
                     if (elementId === 'header-placeholder') {
                         setupMobileMenu();
-                        setActiveNavLink(); // *** ADDED CALL TO SET ACTIVE LINK ***
+                        setActiveNavLink(); // Header-related JS
                     }
+                    // --- ADD THIS ELSE IF block for the footer ---
+                    else if (elementId === 'footer-placeholder') {
+                        // --- PASTE THE SCROLL-TO-TOP LOGIC HERE ---
+                        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+                        const scrollThreshold = 300; // Pixels scrolled before button appears
+
+                        if (scrollToTopBtn) {
+                            // Show/Hide button based on scroll position
+                            window.addEventListener('scroll', () => {
+                                // Use only window.scrollY for simplicity and standard behavior
+                                if (window.scrollY > scrollThreshold) {
+                                    scrollToTopBtn.classList.add('show');
+                                } else {
+                                    scrollToTopBtn.classList.remove('show');
+                                }
+                            });
+
+                            // Scroll to top on click
+                            scrollToTopBtn.addEventListener('click', () => {
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: 'smooth' // Smooth scrolling animation
+                                });
+                            });
+                        }
+                        // --- END OF PASTED SCROLL-TO-TOP LOGIC ---
+                    }
+                    // --- END OF ADDED ELSE IF block ---
+
                 } else {
                     console.error(`Element with ID '${elementId}' not found.`);
                 }
@@ -29,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                      element.innerHTML = `<p style="color: red; text-align: center;">Error loading content from ${url}.</p>`;
                  }
             });
-    };
+    }; // <<< End of loadHTML function
 
     // --- Load Header and Footer ---
     loadHTML('_header.html', 'header-placeholder');
@@ -251,5 +281,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
     // --- End of Slider Code ---
+
+    // --- Scroll To Top Button Logic ---
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+	console.log("Scroll button element:", scrollToTopBtn);
+    const scrollThreshold = 300; // Pixels scrolled before button appears
+
+    if (scrollToTopBtn) {
+        // Show/Hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            // Use only window.scrollY for simplicity and standard behavior
+            if (window.scrollY > scrollThreshold) { // <-- Simplified condition
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Scroll to top on click
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Smooth scrolling animation
+            });
+        });
+    }
+    // --- End of Scroll To Top Button Logic ---
 
 }); // End of DOMContentLoaded
