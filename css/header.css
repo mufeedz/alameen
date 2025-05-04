@@ -61,239 +61,98 @@
     font-size: 1.1em;
 }
 
+/* Header Styles */
+.site-logo .logo-text-link {
+    color: var(--bs-dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-logo .logo-text-link:hover {
+    color: var(--bs-primary);
+}
+
+.site-logo .tagline {
+    color: var(--bs-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* Top Bar Social Icons */
+.social-icons .list-inline-item a {
+    color: var(--bs-dark);
+    transition: color 0.3s ease;
+    padding: 0.25rem;
+}
+
+.social-icons .list-inline-item a:hover {
+    color: var(--bs-primary);
+}
+
+/* Search Toggle */
 .header-search .search-toggle {
     background: none;
     border: none;
-    color: #ffffff;
-    font-size: 1.1em;
-    cursor: pointer;
-    padding: 0 5px;
-    margin-left: 15px;
+    color: var(--bs-dark);
+    transition: color 0.3s ease;
+    padding: 0.25rem;
 }
+
 .header-search .search-toggle:hover {
-     opacity: 0.8;
+    color: var(--bs-primary);
 }
 
-/* --- Main Header Area Styles --- */
-.main-header-area {
-    background-color: #ffffff;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
+/* Contact Info */
+.contact-item .contact-icon {
+    color: var(--bs-primary);
+    margin-right: 0.75rem;
 }
 
-.main-header-area .container {
-    /* Inherit container width/padding from style.css */
+.contact-item .contact-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--bs-secondary);
 }
 
-.main-header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.site-logo .logo-link img {
-    max-height: 60px;
-    width: auto;
-    display: block; /* Ensure img is block */
-}
-.site-logo .logo-text-link {
-    font-size: 2.2em;
-    font-weight: bold;
-    color: #2c3e50;
-    text-decoration: none;
-    line-height: 1;
-}
-.site-logo .tagline {
-    font-size: 0.8em;
-    color: #555;
-    margin: 2px 0 0 0;
-    padding: 0;
-}
-
-.header-contact-info {
-    display: flex;
-    align-items: center;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin-left: 30px;
-}
-
-.contact-icon {
-    font-size: 1.8em;
-    color: #16a085;
-    margin-right: 10px;
-    flex-shrink: 0;
-}
-
-.contact-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.3;
-}
-
-.contact-label {
-    font-size: 0.8em;
-    color: #555;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.contact-detail {
-    font-size: 1.1em;
+.contact-item .contact-detail {
+    display: block;
     font-weight: 600;
-    color: #2c3e50;
-}
-.contact-detail a {
-    color: inherit;
-    text-decoration: none;
+    color: var(--bs-dark);
 }
 
-/* --- Main Navigation Bar Styles --- */
-.main-navbar {
-    background-color: #2c3e50; /* Dark Slate/Blue */
-    color: #ffffff;
-}
-
-.main-navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    /* Inherit container width/padding from style.css */
-}
-
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1.8em;
-    cursor: pointer;
-    padding: 10px 15px 10px 0;
-}
-
-.nav-links {
-    list-style: none;
+/* Navigation Styles */
+.navbar {
     padding: 0;
-    margin: 0;
-    display: flex;
-    flex-grow: 1;
 }
 
-.nav-links li {
-    position: relative;
-}
-
-.nav-links a {
-    display: block;
-    padding: 18px 20px;
-    color: #ffffff;
-    text-decoration: none;
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-size: 1em;
 }
 
-/* Original hover style remains */
-.nav-links > li > a:hover {
-    background-color: #16a085;
-    color: #ffffff;
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-/* Modified active link style */
-.nav-links > li > a.active-link {
-    background-color: #16a085; /* Keep the background */
-    color: #ffffff;          /* Keep the text color */
+.dropdown-item {
+    padding: 0.5rem 1.25rem;
+    transition: all 0.3s ease;
 }
 
-.dropdown-indicator {
-    font-size: 0.7em;
-    margin-left: 5px;
-    vertical-align: middle;
-    display: inline-block;
-    transition: transform 0.3s ease;
+.dropdown-item:hover {
+    background-color: var(--bs-light);
+    color: var(--bs-primary);
+    padding-left: 1.5rem;
 }
 
-/* Dropdown Menu Styles */
-.menu-item-has-children:hover > a .dropdown-indicator {
-     transform: rotate(180deg);
-}
-
-.sub-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #ffffff;
-    border: 1px solid #eee;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 220px;
-    list-style: none;
-    padding: 5px 0;
-    margin: 0;
-    z-index: 1010;
-}
-
-.menu-item-has-children:hover > .sub-menu {
-    display: block;
-}
-
-.sub-menu li {
-    width: 100%;
-}
-
-.sub-menu a {
-    padding: 10px 20px;
-    color: #34495e;
-    font-size: 0.95em;
-    font-weight: 400;
-    white-space: nowrap;
-}
-
-.sub-menu a:hover {
-    background-color: #f8f8f8;
-    color: #16a085;
-}
-
-/* Menu Badge Style */
-.menu-badge {
-    background-color: #e6b800;
-    color: #2c3e50;
-    font-size: 0.65em;
-    padding: 2px 6px;
-    border-radius: 3px;
-    margin-left: 6px;
-    font-weight: bold;
-    vertical-align: middle;
-    display: inline-block;
-}
-
-/* Nav CTA Button Style */
+/* Navigation CTA Button */
 .nav-cta {
-    background-color: #e6b800;
-    color: #2c3e50;
-    padding: 10px 30px;
-    margin: 8px 0 8px 20px;
-    font-size: 1em;
-    text-align: center;
-    border-radius: 5px;
-    flex-shrink: 0;
-    text-transform: uppercase;
-    font-weight: bold; /* Added */
-    text-decoration: none; /* Added */
-    display: inline-block; /* Added */
-     transition: background-color 0.3s ease, color 0.3s ease; /* Added */
+    padding: 0.5rem 1.5rem;
+    margin-left: 1rem;
 }
-.nav-cta:hover {
-     background-color: #cca300;
-     color: #ffffff;
-     transform: none;
-     box-shadow: none;
-}
-
 
 /* =========================== */
 /* Header Responsive Design    */
@@ -358,4 +217,42 @@
     .nav-links li.mobile-cta { background-color: #e6b800; }
     .nav-links li.mobile-cta a { color: #2c3e50; text-align: center; font-weight: bold; border-bottom: none; }
     .nav-links li.mobile-cta a:hover { background-color: #cca300; color: #ffffff; }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--bs-primary);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .nav-cta {
+        margin: 1rem 0 0 0;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .site-logo .logo-text-link {
+        font-size: 1.5rem;
+    }
+
+    .contact-item {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .top-bar {
+        text-align: center;
+    }
+
+    .top-bar-right {
+        margin-top: 0.5rem;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
 }

@@ -5,47 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Admission details for the 2025-2026 academic year at Al-Ameen Matriculation Higher Secondary School, Erode.">
     <title>Admissions - Al-Ameen Matriculation Higher Secondary School, Erode</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div id="header-placeholder"></div>
     <main>
-        <section id="admissions" class="content-section">
+        <section id="admissions" class="py-5">
             <div class="container">
-                <h2>Admissions 2025-2026</h2>
-                <p>Join the Al-Ameen family! We welcome applications from students seeking value-based, high-quality education. Admissions are now open for the academic year 2025-2026.</p>
+                <h2 class="section-title text-center">Admissions 2025-2026</h2>
+                <p class="text-center mb-5">Join the Al-Ameen family! We welcome applications from students seeking value-based, high-quality education. Admissions are now open for the academic year 2025-2026.</p>
 
-                <div class="admission-details">
-                    <div>
-                        <h3>Key Information</h3>
-                        <ul>
-                            <li><strong>Academic Year:</strong> 2025-2026</li>
-                            <li><strong>Classes Open:</strong> LKG to Std IX & Std XI</li>
-                            <li><strong>Application Period:</strong> Starts [Start Date, e.g., December 1st, 2024]</li>
-                            <li><strong>Eligibility Criteria:</strong>
-                                <ul>
-                                    <li>LKG: Child must be [Age, e.g., 3 years old] by [Date, e.g., June 1st, 2025].</li>
-                                    <li>Other Classes: Based on previous academic records and Transfer Certificate.</li>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">Key Information</h3>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <i class="fas fa-calendar-alt text-primary me-2"></i>
+                                        <strong>Academic Year:</strong> 2025-2026
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="fas fa-school text-primary me-2"></i>
+                                        <strong>Classes Open:</strong> LKG to Std IX & Std XI
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="fas fa-clock text-primary me-2"></i>
+                                        <strong>Application Period:</strong> Starts [Start Date, e.g., December 1st, 2024]
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="fas fa-check-circle text-primary me-2"></i>
+                                        <strong>Eligibility Criteria:</strong>
+                                        <ul class="list-unstyled mt-2 ms-4">
+                                            <li class="mb-2">• LKG: Child must be [Age, e.g., 3 years old] by [Date, e.g., June 1st, 2025].</li>
+                                            <li>• Other Classes: Based on previous academic records and Transfer Certificate.</li>
+                                        </ul>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="fas fa-tasks text-primary me-2"></i>
+                                        <strong>Admission Process:</strong> Submit completed application form → Interaction/Assessment (if applicable) → Confirmation
+                                    </li>
                                 </ul>
-                            </li>
-                             <li><strong>Admission Process:</strong> Submit completed application form -> Interaction/Assessment (if applicable) -> Confirmation.</li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h3>How to Apply</h3>
-                         <p>Application forms can be obtained from the school office during working hours ( [Timing, e.g., 9:00 AM - 4:00 PM] ).</p>
-                         <p><strong>Documents Required (at the time of admission):</strong> Birth Certificate (copy), Transfer Certificate (Original, if applicable), Previous Mark Sheets (copy), Passport Size Photographs (Student & Parents), Community Certificate (copy), Aadhaar Card (copy).</p>
-                         <p><strong>Fees Structure:</strong> Please contact the school office for detailed fee information.</p>
-                         <p><strong>Contact Admissions:</strong> For queries, call <a href="tel:[Admissions Phone Number]">[Admissions Phone Number]</a> or email <a href="mailto:[Admissions Email Address]">[Admissions Email Address]</a>.</p>
-                         <a href="#" class="cta-button secondary">Download Admission Form (Link TBD)</a>
+
+                    <div class="col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">How to Apply</h3>
+                                <p>Application forms can be obtained from the school office during working hours ([Timing, e.g., 9:00 AM - 4:00 PM]).</p>
+                                
+                                <div class="alert alert-info">
+                                    <h4 class="h5"><i class="fas fa-file-alt me-2"></i>Documents Required</h4>
+                                    <ul class="list-unstyled mb-0">
+                                        <li><i class="fas fa-check me-2"></i>Birth Certificate (copy)</li>
+                                        <li><i class="fas fa-check me-2"></i>Transfer Certificate (Original, if applicable)</li>
+                                        <li><i class="fas fa-check me-2"></i>Previous Mark Sheets (copy)</li>
+                                        <li><i class="fas fa-check me-2"></i>Passport Size Photographs (Student & Parents)</li>
+                                        <li><i class="fas fa-check me-2"></i>Community Certificate (copy)</li>
+                                        <li><i class="fas fa-check me-2"></i>Aadhaar Card (copy)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h4 class="h5"><i class="fas fa-rupee-sign me-2"></i>Fees Structure</h4>
+                                    <p>Please contact the school office for detailed fee information.</p>
+                                </div>
+
+                                <div class="mt-4">
+                                    <h4 class="h5"><i class="fas fa-phone me-2"></i>Contact Admissions</h4>
+                                    <p class="mb-1">For queries, call <a href="tel:[Admissions Phone Number]" class="text-decoration-none">[Admissions Phone Number]</a></p>
+                                    <p>or email <a href="mailto:[Admissions Email Address]" class="text-decoration-none">[Admissions Email Address]</a></p>
+                                </div>
+
+                                <div class="text-center mt-4">
+                                    <a href="#" class="btn btn-primary">
+                                        <i class="fas fa-download me-2"></i>Download Admission Form
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
     <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>
 </html>

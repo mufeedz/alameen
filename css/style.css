@@ -1,189 +1,104 @@
-/* Basic Reset & Defaults */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Custom Variables */
+:root {
+    --bs-primary: #16a085;
+    --bs-secondary: #e6b800;
+    --bs-dark: #2c3e50;
+    --bs-light: #f8f9fa;
+    --bs-body-color: #34495e;
 }
 
+/* Custom Base Styles */
 html {
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    scroll-behavior: smooth;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.7; /* Increased line-height for readability */
-    color: #34495e; /* Dark grayish blue */
-    background-color: #fdfdfd; /* Slightly off-white */
-    font-size: 16px; /* Base font size */
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-a {
-    text-decoration: none;
-    color: #16a085; /* Teal for links */
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #1abc9c; /* Lighter teal on hover */
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Prevent extra space below images */
-}
-
-h1, h2, h3, h4 {
-    margin-bottom: 1rem;
-    font-weight: 600;
-    color: #2c3e50; /* Dark blue/slate - Default heading color */
-    line-height: 1.3;
-}
-/* Keep existing heading sizes or adjust as needed */
-h1 { font-size: 2.5em; } /* Example */
-h2 { font-size: 2.4em; }
-h3 { font-size: 1.6em; }
-h4 { font-size: 1.2em; color: #16a085; } /* Teal for subheadings */
-
-ul {
-    list-style: none; /* Remove default bullets */
-    padding-left: 0;
-}
-
-/* =========================== */
-/* Hero Slider Section Styles (Keep Existing) */
-/* =========================== */
+/* Hero Slider Customization */
 #hero-slider {
     position: relative;
+    height: 55vh;
+    background-color: var(--bs-dark);
+}
+
+.carousel-item .slide-background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 55vh; /* Adjust height as needed */
-    overflow: hidden;
-    background-color: #555; /* Fallback background */
-}
-#hero-slider .slide {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    opacity: 0; transition: opacity 0.8s ease-in-out;
-    overflow: hidden; z-index: 1; pointer-events: none;
-}
-#hero-slider .slide.active {
-    opacity: 1; z-index: 2; pointer-events: auto;
-}
-.slide-background {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-size: cover; background-position: center; z-index: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
     animation: kenburnsZoom 15s infinite alternate ease-in-out;
-    will-change: transform;
-}
-#hero-slider .slide::before { /* Overlay */
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.45); z-index: 1;
-}
-.slide-content {
-    position: absolute; top: 50%; left: auto; right: 5%;
-    transform: translateY(-50%); width: 45%; max-width: 550px;
-    color: #fff; padding: 25px 35px; z-index: 3;
-    border-radius: 8px; text-align: right; opacity: 0;
-}
-#hero-slider .slide.active .slide-content {
-    animation: fadeInText 0.9s ease-out 0.3s forwards;
-}
-.slide-content h1 {
-    font-size: 2.2em; margin-bottom: 0.6em; font-weight: 600;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); color: #fff;
-}
-.slide-content p {
-    font-size: 1.1em; margin-bottom: 1.5em; line-height: 1.6;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); color: #fff;
-}
-.slide-content .cta-button {
-    /* Uses general .cta-button styles */
-    position: relative; z-index: 1; /* Ensure clickable */
-}
-.slider-arrow {
-    position: absolute; top: 50%; transform: translateY(-50%); z-index: 10;
-    background-color: rgba(0, 0, 0, 0.4); color: #fff; border: none;
-    padding: 10px 15px; font-size: 1.8em; cursor: pointer; border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-.slider-arrow:hover { background-color: rgba(0, 0, 0, 0.7); }
-.slider-arrow.prev { left: 15px; }
-.slider-arrow.next { right: 15px; }
-.slider-dots {
-    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-    z-index: 10; display: flex; gap: 10px;
-}
-.slider-dot {
-    width: 12px; height: 12px; background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-}
-.slider-dot:hover { background-color: rgba(255, 255, 255, 0.8); }
-.slider-dot.active { background-color: #ffffff; transform: scale(1.1); }
-@keyframes kenburnsZoom {
-    0% { transform: scale(1.0); }
-    100% { transform: scale(1.1); }
-}
-/* Note: fadeInText keyframes are now defined in responsive section below */
-/* --- End Hero Slider Styles --- */
-
-
-/* --- General CTA Button Styles (Keep Existing) --- */
-.cta-button {
-    display: inline-block;
-    background-color: #e6b800; /* Gold/Yellow accent */
-    color: #2c3e50; /* Default button text color */
-    padding: 14px 35px;
-    border-radius: 30px;
-    font-size: 1.1em;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    margin-top: 10px;
-    margin-right: 10px; /* Applied if multiple buttons are inline */
-    text-decoration: none; /* Ensure text deco is none */
-}
-.cta-button:last-of-type { margin-right: 0; }
-.cta-button:hover {
-    background-color: #cca300; /* Darker gold */
-    color: #ffffff; /* White text on hover */
-    text-decoration: none;
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-.cta-button.secondary {
-    background-color: transparent; color: #16a085; border: 2px solid #16a085;
-}
-.cta-button.secondary:hover {
-     background-color: #16a085; color: #ffffff; border-color: #16a085;
-}
-.cta-button.tertiary { /* For forms */
-     background-color: #16a085; color: #ffffff;
-}
-.cta-button.tertiary:hover {
-     background-color: #1abc9c; color: #ffffff;
 }
 
-
-/* --- Content Sections (Keep Existing) --- */
-.content-section {
-    padding: 70px 0;
+.carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
 }
-.content-section h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 2.4em;
+
+.carousel-caption {
+    right: 5%;
+    left: auto;
+    width: 45%;
+    max-width: 550px;
+    text-align: right;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+    padding: 25px 35px;
+    z-index: 3;
+}
+
+/* Header Customization */
+.site-header .top-bar {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.site-header .main-header-area {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar-dark {
+    --bs-navbar-hover-color: #fff;
+}
+
+.navbar-dark .nav-link {
+    position: relative;
+    padding: 0.5rem 1rem !important;
+}
+
+.navbar-dark .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--bs-secondary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-dark .nav-link:hover::after,
+.navbar-dark .nav-link.active::after {
+    width: 80%;
+}
+
+/* Section Styling */
+.section-title {
     position: relative;
     padding-bottom: 15px;
+    margin-bottom: 2rem;
+    color: var(--bs-dark);
 }
-.content-section h2::after { /* Underline effect */
+
+.section-title::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -191,345 +106,157 @@ ul {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: #e6b800; /* Gold accent */
+    background-color: var(--bs-secondary);
     border-radius: 2px;
 }
-.bg-light {
-    background-color: #f8f9fa; /* Slightly different light background? Or keep white/eee border */
-    /* Example using white with border */
-     background-color: #ffffff;
-     border-top: 1px solid #eee;
-     border-bottom: 1px solid #eee;
+
+/* Card & Feature Customization */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1);
 }
 
-/* --- News & Events Section (Keep Existing) --- */
-#news-events {
-    padding: 50px 0;
-    background-color: #eaf6f4; /* Light teal background */
-    border-bottom: 1px solid #d1e7e4;
-    border-top: 1px solid #eee; /* Or d1e7e4 if above is not white */
-}
-#news-events .container > h2 { /* Target specific H2 if needed */
-    text-align: center; margin-bottom: 30px; font-size: 1.8em;
-    position: relative; padding-bottom: 10px; color: #2c3e50;
-}
-#news-events .container > h2::after {
-    content: ''; position: absolute; bottom: 0; left: 50%;
-    transform: translateX(-50%); width: 60px; height: 3px;
-    background-color: #e6b800; border-radius: 2px;
-}
-.event-list {
-    max-width: 750px;
-    margin: 0 auto;
-}
-.event-item {
-    display: flex; align-items: flex-start; background-color: #ffffff;
-    border: 1px solid #d1e7e4; border-radius: 6px; margin-bottom: 18px;
-    padding: 15px; transition: background-color 0.3s ease;
-}
-.event-item:hover { background-color: #f8f8f8; }
-.event-date {
-    flex: 0 0 65px; text-align: center; background-color: #16a085;
-    color: #ffffff; border-radius: 4px; padding: 8px 5px;
-    margin-right: 15px; line-height: 1.1;
-}
-.event-date .month { display: block; font-size: 0.7em; font-weight: 600; text-transform: uppercase; margin-bottom: 3px; opacity: 0.9; }
-.event-date .day { display: block; font-size: 1.6em; font-weight: 700; line-height: 1; }
-.event-date .year { display: block; font-size: 0.7em; opacity: 0.8; margin-top: 3px; }
-.event-details { flex: 1; padding-top: 2px; }
-.event-details h4 { margin-bottom: 5px; font-size: 1.1em; color: #2c3e50; line-height: 1.3; }
-.event-details h4 a { color: inherit; text-decoration: none; }
-.event-details h4 a:hover { color: #16a085; text-decoration: underline; }
-.event-details p { font-size: 0.9em; color: #555; line-height: 1.5; margin: 0; }
-
-/* --- About Us Section (Keep Existing) --- */
-.about-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-}
-.about-text { flex: 1.2; }
-.about-text strong { color: #2c3e50; }
-.about-text ul { list-style: none; padding-left: 0; margin-top: 15px; }
-.about-text ul li { margin-bottom: 8px; position: relative; padding-left: 20px; }
-.about-text ul li::before {
-    content: '•'; color: #16a085; position: absolute; left: 0;
-    font-weight: bold; font-size: 1.2em; line-height: 1;
-}
-.about-image { flex: 0.8; max-width: 400px; margin-top: 10px; }
-.about-image img { border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-/* --- Academics Section (Keep Existing) --- */
-.academic-features {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px; margin-top: 30px;
-}
-/*
-.feature-item {
-    background-color: #ffffff; padding: 25px; border-radius: 8px;
-    border: 1px solid #eee; transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.feature-item:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
-.feature-item h4 { margin-bottom: 10px; }
-.feature-item a { display: inline-block; margin-top: 15px; font-weight: 500; font-size: 0.95em; color: #16a085; }
-.feature-item a:hover { color: #1abc9c; text-decoration: underline; }
-*/
-/* --- Find this existing rule block --- */
-.feature-item {
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #eee;
-    /* --- MODIFY/ADD these properties --- */
-    position: relative; /* Ensure positioning context for pseudo-element */
-    overflow: hidden; /* Hide any part of the accent spilling out */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Ensure border-color is in transition */
-     /* --- End Modifications --- */
-}
-
-/* --- Keep or adjust existing hover rule --- */
-.feature-item:hover {
+.card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    border-color: #16a085; /* Optional: Change border color on hover */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* --- ADD this NEW rule block below the .feature-item rules --- */
+/* Feature Items */
+.feature-item {
+    position: relative;
+    overflow: hidden;
+}
+
 .feature-item::after {
     content: '';
     position: absolute;
-    top: -10px; /* Position partially off-canvas */
-    right: -10px; /* Position partially off-canvas */
-    width: 30px;  /* Size of the square */
-    height: 30px; /* Size of the square */
-    background-color: #e6b800; /* Gold accent color */
-    opacity: 0.8; /* Slightly transparent */
-    transform: rotate(45deg); /* Rotate to make it a diamond/corner shape */
-    transition: opacity 0.3s ease, background-color 0.3s ease; /* Smooth transition on hover */
-    z-index: 1; /* Ensure it's above background but below text if needed */
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--bs-secondary);
+    opacity: 0.8;
+    transform: rotate(45deg);
+    transition: opacity 0.3s ease;
+    z-index: 1;
 }
 
-/* Optional: Enhance the accent slightly on hover */
 .feature-item:hover::after {
     opacity: 1;
-    background-color: #cca300; /* Darker gold on hover */
 }
-/* --- End of new rules --- */
 
-/* --- Keep existing rules for .feature-item a --- */
-.feature-item a {
-     /* ... existing styles ... */
-     position: relative; /* Ensure link text is above pseudo-element */
-     z-index: 2;
-}
-/* --- Keep existing rules for .feature-item h4 and p --- */
-.feature-item h4 {
-    /* ... existing styles ... */
-     position: relative; /* Ensure heading text is above pseudo-element */
-     z-index: 2;
-}
-.feature-item p {
-    /* ... existing styles ... */
-     position: relative; /* Ensure paragraph text is above pseudo-element */
-     z-index: 2;
-}
-/* --- Admissions Section (Keep Existing) --- */
-#admissions ul { list-style: none; padding-left: 0; }
-#admissions ul ul { /* Nested list */
-    padding-left: 20px; margin-top: 5px; list-style: disc;
-}
-#admissions li { margin-bottom: 10px; }
-#admissions strong { color: #2c3e50; }
-.admission-details {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
-    max-width: 950px; margin: 30px auto 0 auto;
-}
-.admission-details h3 {
-    margin-bottom: 15px; padding-bottom: 8px;
-    border-bottom: 2px solid #e6b800; display: inline-block;
-}
-.admission-details p { margin-bottom: 15px; }
-
-/* --- Gallery Section (Keep Existing) --- */
-.gallery-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;
-}
-.gallery-item img {
-    border-radius: 8px; transition: transform 0.3s ease, opacity 0.3s ease;
-    width: 100%; height: 200px; object-fit: cover; cursor: pointer; border: 1px solid #eee;
-}
-.gallery-item img:hover { transform: scale(1.03); opacity: 0.9; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-
-/* --- Contact Section (Keep Existing) --- */
-.contact-container {
-    display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; margin-top: 30px;
-}
-.contact-details address { font-style: normal; line-height: 1.8; }
-.contact-details a { color: #16a085; }
-.contact-details a:hover { text-decoration: underline; }
-.contact-details h3 { margin-bottom: 15px; }
-.map-placeholder { /* Style for the map placeholder div */
-    height: 250px; background-color: #f0f0f0; border: 1px solid #ddd;
-    display: flex; align-items: center; justify-content: center; text-align: center;
-    color: #666; margin-top: 20px; border-radius: 5px; font-style: italic;
-}
-.contact-form .form-group { margin-bottom: 20px; }
-.contact-form label { display: block; margin-bottom: 5px; font-weight: 500; color: #2c3e50; }
-.contact-form input, .contact-form textarea {
-    width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px;
-    font-size: 1em; font-family: inherit; transition: border-color 0.3s ease;
-}
-.contact-form input:focus, .contact-form textarea:focus {
-    outline: none; border-color: #16a085; box-shadow: 0 0 5px rgba(22, 160, 133, 0.2);
-}
-.contact-form textarea { resize: vertical; }
-
-/* --- Footer (Keep Existing) --- */
-footer {
-    background-color: #2c3e50;
-    color: #ecf0f1;
+/* Event Styling */
+.event-date {
+    background-color: var(--bs-primary);
+    border-radius: 4px;
+    padding: 8px 5px;
     text-align: center;
-    padding: 30px 0;
-    margin-top: 60px;
-}
-footer p {
-    margin: 5px 0;
-    color: #bdc3c7;
-    font-size: 0.9em;
+    line-height: 1.1;
 }
 
-/* --- Scroll To Top Button --- */
+.event-date .month {
+    font-size: 0.7em;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.event-date .day {
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.event-date .year {
+    font-size: 0.7em;
+    opacity: 0.8;
+}
+
+/* Gallery Customization */
+.gallery-grid img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+/* Scroll To Top Button */
 #scrollToTopBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Keep it in view */
+    display: none;
+    position: fixed;
     bottom: 25px;
     right: 25px;
-    z-index: 999; /* Ensure it's above most other content */
-    border: none;
-    outline: none;
-    background-color: #16a085; /* Teal color from theme */
-    color: white;
-    cursor: pointer;
-    padding: 12px 15px; /* Slightly adjust padding */
-    border-radius: 50%; /* Make it circular */
-    font-size: 1.1em; /* Adjust icon size */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow */
-    transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; /* Smooth transitions */
-    opacity: 0; /* Start transparent for transition */
-    visibility: hidden; /* Start hidden */
+    z-index: 1030;
+    opacity: 0;
+    visibility: hidden;
+    transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 
 #scrollToTopBtn.show {
-    display: block; /* Make it visible */
+    display: block;
     opacity: 1;
     visibility: visible;
 }
 
-#scrollToTopBtn:hover {
-    background-color: #e6b800; /* Gold color on hover */
-    color: #2c3e50; /* Dark text on hover */
+/* Animations */
+@keyframes kenburnsZoom {
+    0% { transform: scale(1.0); }
+    100% { transform: scale(1.1); }
 }
 
-/* Optional: Slightly smaller button on smaller screens */
-@media (max-width: 768px) {
-    #scrollToTopBtn {
-        bottom: 20px;
-        right: 20px;
-        padding: 10px 13px;
-        font-size: 1em;
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translate(var(--translateX, 30px), -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(var(--translateX, 0px), -50%);
     }
 }
 
-
-/* =========================== */
-/* General Responsive Design   */
-/* (Excluding Header Styles) */
-/* =========================== */
-
-@media (max-width: 992px) {
-    /* Tablet Adjustments */
-    .about-content { flex-direction: column; text-align: center; }
-    .about-text ul { display: inline-block; text-align: left; }
-    .about-image { margin: 30px auto 0 auto; max-width: 400px; flex: 1; }
-     .contact-container { grid-template-columns: 1fr; }
-    .admission-details { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 768px) {
-    /* General Mobile Adjustments */
-    h2 { font-size: 2em; }
-    h3 { font-size: 1.4em; }
-    .content-section { padding: 60px 0; }
-    .content-section h2 { font-size: 1.9em; margin-bottom: 40px; }
-    .content-section h2::after { width: 60px; height: 3px; }
-    #news-events { padding: 40px 0; }
-    #news-events .container > h2 { font-size: 1.6em; } /* Target specific h2 */
-    .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-    .gallery-item img { height: 150px; }
-
-    /* Responsive Slider Adjustments (768px) */
-    .slide-content {
+/* Media Queries */
+@media (max-width: 991.98px) {
+    .carousel-caption {
         width: 70%;
         left: 50%;
         right: auto;
         transform: translate(-50%, -50%);
         text-align: center;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #hero-slider {
+        height: 50vh;
+    }
+
+    .carousel-caption {
+        width: 85%;
         padding: 20px;
-        /* Set variable for animation centering */
-        --translateX: -50%;
     }
-    .slide-content h1 { font-size: 1.8em; }
-    .slide-content p { font-size: 1em; }
-    .slider-arrow { font-size: 1.5em; padding: 8px 12px; }
-    .slider-dots { bottom: 15px; }
-    .slider-dot { width: 10px; height: 10px; }
 
-    /* Responsive Event Item Adjustments (768px) */
-     .event-item { flex-direction: column; align-items: center; text-align: center; padding: 12px; }
-     .event-date { margin-right: 0; margin-bottom: 10px; flex-basis: auto; min-width: 80px; }
-     .event-details { width: 100%; }
-     .event-details h4 { font-size: 1.05em; }
-     .event-details p { font-size: 0.85em; }
+    .carousel-caption h1 {
+        font-size: 1.8rem;
+    }
 }
 
-@media (max-width: 480px) {
-    /* Small Mobile Adjustments */
-    body { font-size: 15px; }
-    /* General CTA button stacking */
-    .cta-button:not(.nav-cta) { /* Exclude nav cta from this rule */
-        padding: 12px 25px;
-        font-size: 1em;
-        display: block;
-        margin: 10px auto 0 auto;
-        max-width: 250px;
+@media (max-width: 575.98px) {
+    .carousel-caption {
+        width: 90%;
+        padding: 15px;
     }
-    .academic-features { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
-    .gallery-item img { height: 120px; }
-    .contact-form input, .contact-form textarea { padding: 10px; }
-    .admission-details { gap: 25px; }
-     .contact-container { gap: 30px; }
 
-    /* Responsive Slider Adjustments (480px) */
-    .slide-content { width: 85%; --translateX: -50%; }
-    .slide-content h1 { font-size: 1.6em; }
-    .slide-content p { font-size: 0.95em; margin-bottom: 1.2em; }
-    .slider-arrow { top: auto; bottom: 10px; transform: translateY(0); padding: 5px 10px; }
-    .slider-dots { bottom: 55px; }
-}
-
-/* Adjusted Keyframes for slider text fade-in */
-/* Applies translateX based on CSS variable set in media queries */
-@keyframes fadeInText {
-    from {
-        opacity: 0;
-        /* Use variable for horizontal positioning, default to right-aligned value if variable not set */
-        transform: translate(var(--translateX, 30px), -50%);
+    .carousel-caption h1 {
+        font-size: 1.5rem;
     }
-    to {
-        opacity: 1;
-         /* End in final vertical position, maintaining horizontal alignment */
-         /* Default to 0px for right-aligned if variable not set */
-        transform: translate(var(--translateX, 0px), -50%);
+
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
     }
 }

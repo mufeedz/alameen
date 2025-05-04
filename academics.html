@@ -5,60 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore the academic programs, curriculum, and affiliation of Al-Ameen Matriculation Higher Secondary School, Erode.">
     <title>Academics - Al-Ameen Matriculation Higher Secondary School, Erode</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div id="header-placeholder"></div>
     <main>
-        <section id="academics-main" class="content-section">
+        <section id="academics-main" class="py-5">
             <div class="container">
-                <h2>Academics at Al-Ameen</h2>
-                <p style="text-align: center; max-width: 800px; margin: -30px auto 40px auto;">
+                <h2 class="section-title text-center">Academics at Al-Ameen</h2>
+                <p class="text-center mb-5 mx-auto" style="max-width: 800px;">
                     We provide a comprehensive and balanced education affiliated to the Tamil Nadu Matriculation Board, focusing on academic rigor alongside strong moral and ethical values.
                 </p>
 
-                <div id="curriculum" style="margin-bottom: 40px;">
-                    <h3>Curriculum & Affiliation</h3>
-                    <p>Al-Ameen is affiliated to the Tamil Nadu Matriculation Board and provides co-educational instruction in English from Grade I through Grade XII. Emphasizing a balance of strong academics and values-based learning, the school’s curriculum integrates modern pedagogies to develop critical thinking, creativity, and collaboration skills.</p>
-                     <p>We offer a comprehensive curriculum from Lower Kindergarten (LKG) to Standard XII.</p>
+                <div class="row mb-5">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 id="curriculum" class="card-title">Curriculum & Affiliation</h3>
+                                <p>Al-Ameen is affiliated to the Tamil Nadu Matriculation Board and provides co-educational instruction in English from Grade I through Grade XII. Emphasizing a balance of strong academics and values-based learning, the school's curriculum integrates modern pedagogies to develop critical thinking, creativity, and collaboration skills.</p>
+                                <p class="mb-0">We offer a comprehensive curriculum from Lower Kindergarten (LKG) to Standard XII.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
+                <div id="programs" class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="text-primary mb-3">
+                                    <i class="fas fa-child fa-2x"></i>
+                                </div>
+                                <h4 class="card-title">Kindergarten (LKG/UKG)</h4>
+                                <p class="card-text">Focus on play-based learning, foundational literacy & numeracy, and introduction to Islamic values.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="text-primary mb-3">
+                                    <i class="fas fa-book-reader fa-2x"></i>
+                                </div>
+                                <h4 class="card-title">Primary & Middle School (I-VIII)</h4>
+                                <p class="card-text">Strong emphasis on core subjects, language development, science, social studies, and moral education.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="text-primary mb-3">
+                                    <i class="fas fa-graduation-cap fa-2x"></i>
+                                </div>
+                                <h4 class="card-title">High School (IX-X)</h4>
+                                <p class="card-text">Matriculation syllabus focus, rigorous preparation for board exams, and foundational career guidance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="text-primary mb-3">
+                                    <i class="fas fa-microscope fa-2x"></i>
+                                </div>
+                                <h4 class="card-title">Higher Secondary (XI-XII)</h4>
+                                <p class="card-text">State Board syllabus with streams: Science (Maths/Bio, Computer Science) & Commerce. Intensive coaching for public exams. Offered at our Ellapalayam Campus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                 <div id="programs" class="academic-features">
-                     <div class="feature-item">
-                        <h4>Kindergarten (LKG/UKG)</h4>
-                        <p>Focus on play-based learning, foundational literacy & numeracy, and introduction to Islamic values.</p>
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 id="islamic-studies" class="card-title">Islamic Studies & Arabic</h3>
+                                <p class="card-text mb-0">An integrated curriculum covering Quran recitation & understanding, Hadith, Seerah, basic Fiqh, and Arabic language is a core part of our educational approach, nurturing faith alongside knowledge.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <h4>Primary & Middle School (I-VIII)</h4>
-                        <p>Strong emphasis on core subjects, language development, science, social studies, and moral education.</p>
+                    
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 id="extracurricular" class="card-title">Extracurricular Activities</h3>
+                                <p class="card-text mb-0">We believe in holistic development. Our extracurricular offerings include sports, arts, literary clubs, competitions, and field trips which complement the academic curriculum. (See <a href="campuses.html">Campuses & Facilities</a> for more details on available resources).</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <h4>High School (IX-X)</h4>
-                        <p>Matriculation syllabus focus, rigorous preparation for board exams, and foundational career guidance.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Higher Secondary (XI-XII)</h4>
-                        <p>State Board syllabus with streams: Science (Maths/Bio, Computer Science) & Commerce. Intensive coaching for public exams. Offered at our Ellapalayam Campus.</p>
-                    </div>
-                 </div>
-
-                  <div id="islamic-studies" style="margin-top: 40px;">
-                     <h3>Islamic Studies & Arabic</h3>
-                     <p>An integrated curriculum covering Quran recitation & understanding, Hadith, Seerah, basic Fiqh, and Arabic language is a core part of our educational approach, nurturing faith alongside knowledge.</p>
-                 </div>
-
-                 <div id="extracurricular" style="margin-top: 30px;">
-                     <h3>Extracurricular Activities</h3>
-                     <p>We believe in holistic development. Our extracurricular offerings include sports, arts, literary clubs, competitions, and field trips which complement the academic curriculum. (See <a href="campuses.html">Campuses & Facilities</a> for more details on available resources).</p>
-                 </div>
+                </div>
 
             </div>
         </section>
     </main>
     <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>
 </html>

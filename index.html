@@ -6,102 +6,129 @@
     <meta name="description" content="Al-Ameen Matriculation Higher Secondary School, Erode - Quality education from LKG to 12th Standard with strong moral and Islamic values.">
     <meta name="keywords" content="Al-Ameen School, Matriculation School Erode, Higher Secondary School Erode, Islamic School Tamil Nadu, Best School Erode, School Admissions Erode, State Board Erode, Quality Education Erode">
     <title>Al-Ameen Matriculation Higher Secondary School, Erode - Home</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
+</head>
 <body>
     <div id="header-placeholder"></div>
-   <main>
-       <section id="hero-slider">
-            <div class="slide active">
-               <div class="slide-background" style="background-image: url('images/slider-1.png');"></div>
-               <div class="slide-content">
-                   <h1>Al-Ameen School</h1>
-                   <p>Nurturing young minds for a bright future since 1983.</p>
-                   <a href="about.html" class="cta-button">Learn More About Us</a>
-               </div>
-           </div>
-           <div class="slide">
-               <div class="slide-background" style="background-image: url('images/slider-2.png');"></div>
-               <div class="slide-content">
-                   <h1>Academic Excellence</h1>
-                   <p>Providing quality education rooted in strong values.</p>
-                   <a href="academics.html" class="cta-button">Explore Our Programs</a>
-               </div>
-           </div>
-           <div class="slide">
-               <div class="slide-background" style="background-image: url('images/slider-3.png');"></div>
-               <div class="slide-content">
-                   <h1>Admissions Open</h1>
-                   <p>Enroll your child today for a promising tomorrow.</p>
-                   <a href="admissions.html" class="cta-button">Apply Now</a>
-               </div>
-           </div>
-           <button class="slider-arrow prev" aria-label="Previous slide">&#10094;</button>
-           <button class="slider-arrow next" aria-label="Next slide">&#10095;</button>
-           <div class="slider-dots"></div>
+    <main>
+        <section id="hero-slider" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#hero-slider" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#hero-slider" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#hero-slider" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="slide-background" style="background-image: url('images/slider-1.png');"></div>
+                    <div class="carousel-caption">
+                        <h1>Al-Ameen School</h1>
+                        <p>Nurturing young minds for a bright future since 1983.</p>
+                        <a href="about.html" class="btn btn-primary btn-lg">Learn More About Us</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="slide-background" style="background-image: url('images/slider-2.png');"></div>
+                    <div class="carousel-caption">
+                        <h1>Academic Excellence</h1>
+                        <p>Providing quality education rooted in strong values.</p>
+                        <a href="academics.html" class="btn btn-primary btn-lg">Explore Our Programs</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="slide-background" style="background-image: url('images/slider-3.png');"></div>
+                    <div class="carousel-caption">
+                        <h1>Admissions Open</h1>
+                        <p>Enroll your child today for a promising tomorrow.</p>
+                        <a href="admissions.html" class="btn btn-primary btn-lg">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#hero-slider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#hero-slider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </section>
 
-       <section id="welcome" class="content-section">
+        <section id="welcome" class="py-5">
             <div class="container">
-                <h2>Welcome to Al-Ameen School</h2>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px auto;">
+                <h2 class="text-center mb-4">Welcome to Al-Ameen School</h2>
+                <p class="text-center mb-4 mx-auto" style="max-width: 800px;">
                     Established in 1983, Al-Ameen Matriculation Higher Secondary School in Erode is dedicated to providing a nurturing environment that fosters academic success and strong moral character rooted in Islamic principles. Explore our website to learn more about our history, academic programs, and vibrant community.
                 </p>
-                 <div style="text-align: center;">
-                     <a href="about.html" class="cta-button secondary">Discover Our Story</a>
-                     <a href="campuses.html" class="cta-button">Explore Our Campuses</a>
-                 </div>
+                <div class="text-center">
+                    <a href="about.html" class="btn btn-outline-primary btn-lg me-2">Discover Our Story</a>
+                    <a href="campuses.html" class="btn btn-primary btn-lg">Explore Our Campuses</a>
+                </div>
             </div>
         </section>
 
-
-        <section id="news-events" class="content-section bg-light">
+        <section id="news-events" class="py-5 bg-light">
             <div class="container">
-                <h2>Latest News & Upcoming Events</h2>
-                <div class="event-list">
-                    <div class="event-item">
-                        <div class="event-date">
-                            <span class="month">MAY</span><span class="day">15</span><span class="year">2025</span>
-                        </div>
-                        <div class="event-details">
-                            <h4><a href="#">Annual Sports Meet 2025</a></h4>
-                            <p>Get ready for a day of exciting athletic events and friendly competition!</p>
-                        </div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-date">
-                            <span class="month">APR</span><span class="day">28</span><span class="year">2025</span>
-                       </div>
-                        <div class="event-details">
-                            <h4><a href="#">Admissions Deadline Extended for Std XI</a></h4>
-                            <p>The application deadline for Standard XI (2025-26) has been extended. Apply soon!</p>
+                <h2 class="text-center mb-4">Latest News & Upcoming Events</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="event-date mb-3">
+                                    <span class="badge bg-primary">MAY 15, 2025</span>
+                                </div>
+                                <h4 class="card-title"><a href="#" class="text-decoration-none">Annual Sports Meet 2025</a></h4>
+                                <p class="card-text">Get ready for a day of exciting athletic events and friendly competition!</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="event-item">
-                         <div class="event-date">
-                             <span class="month">APR</span><span class="day">10</span><span class="year">2025</span>
-                         </div>
-                         <div class="event-details">
-                             <h4><a href="#">Successful Science Exhibition Held</a></h4>
-                             <p>Our students showcased innovative projects at the recent Science Exhibition.</p>
-                         </div>
-                     </div>
-                     <div class="event-item">
-                         <div class="event-date">
-                             <span class="month">APR</span><span class="day">21</span><span class="year">2025</span>
-                         </div>
-                         <div class="event-details">
-                             <h4><a href="#">Holiday Notice: Ramzan</a></h4>
-                             <p>The school will remain closed on account of Ramzan.</p>
-                         </div>
-                     </div>
-                 </div>
-                 </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="event-date mb-3">
+                                    <span class="badge bg-primary">APR 28, 2025</span>
+                                </div>
+                                <h4 class="card-title"><a href="#" class="text-decoration-none">Admissions Deadline Extended for Std XI</a></h4>
+                                <p class="card-text">The application deadline for Standard XI (2025-26) has been extended. Apply soon!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="event-date mb-3">
+                                    <span class="badge bg-primary">APR 10, 2025</span>
+                                </div>
+                                <h4 class="card-title"><a href="#" class="text-decoration-none">Successful Science Exhibition Held</a></h4>
+                                <p class="card-text">Our students showcased innovative projects at the recent Science Exhibition.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="event-date mb-3">
+                                    <span class="badge bg-primary">APR 21, 2025</span>
+                                </div>
+                                <h4 class="card-title"><a href="#" class="text-decoration-none">Holiday Notice: Ramzan</a></h4>
+                                <p class="card-text">The school will remain closed on account of Ramzan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>
 </html>
