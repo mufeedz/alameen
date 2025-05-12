@@ -1,0 +1,95 @@
+// Admissions page specific styles
+@use "../variables" as v;
+@use "../mixins" as m;
+
+// Admission process section
+.admission-process {
+  &__steps {
+    counter-reset: step;
+    position: relative;
+    padding: v.$spacing-lg 0;
+  }
+
+  .process-step {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: v.$spacing-lg;
+
+    &::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      background-color: v.$color-teal;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: v.$font-weight-bold;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 40px;
+      width: 2px;
+      height: calc(100% + #{v.$spacing-lg});
+      background-color: v.$color-slate;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+}
+
+// Fee structure section
+.fee-structure {
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: v.$spacing-md 0;
+
+    th,
+    td {
+      padding: v.$spacing-sm;
+      border: 1px solid v.$color-slate;
+    }
+
+    th {
+      background-color: rgba(v.$color-royal-blue, 0.05);
+      font-weight: v.$font-weight-semibold;
+      text-align: left;
+    }
+
+    tr:nth-child(even) td {
+      background-color: rgba(v.$color-ivory, 0.5);
+    }
+  }
+}
+
+// Required documents section
+.required-documents {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: v.$spacing-md;
+  }
+
+  .document-item {
+    display: flex;
+    align-items: flex-start;
+    padding: v.$spacing-sm;
+
+    i {
+      color: v.$color-teal;
+      font-size: 1.5rem;
+      margin-right: v.$spacing-sm;
+    }
+  }
+}

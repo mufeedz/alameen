@@ -1,0 +1,33 @@
+// Academics page specific styles
+@use "../variables" as v;
+@use "../mixins" as m;
+
+// Programs section
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: v.$spacing-lg;
+}
+
+// Curriculum section
+.curriculum-content {
+  position: relative;
+  padding: v.$spacing-xl 0;
+  @include m.geometric-pattern-bg(0.05);
+}
+
+// Islamic studies section
+.islamic-studies {
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: v.$spacing-md;
+  }
+
+  .feature-box {
+    background-color: rgba(v.$color-royal-blue, 0.05);
+    padding: v.$spacing-md;
+    border-radius: v.$border-radius-md;
+    @include m.islamic-card;
+  }
+}

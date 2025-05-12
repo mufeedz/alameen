@@ -1,0 +1,273 @@
+// Button components - Islamic-inspired design
+// Based on Al-Ameen Matriculation School website redesign specifications
+
+@import '../variables';
+@import '../mixins';
+
+.btn {
+  display: inline-block;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $border-radius-sm;
+  font-family: $font-heading;
+  font-weight: $font-weight-semibold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all $transition-normal;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  
+  // Primary button style
+  &-primary {
+    background-color: $color-teal;
+    color: white;
+    
+    &:hover {
+      background-color: darken($color-teal, 7%);
+      transform: translateY(-3px);
+      box-shadow: $shadow-sm;
+    }
+    
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+  
+  // Secondary button style
+  &-secondary {
+    background-color: $color-sand;
+    color: $color-charcoal;
+    
+    &:hover {
+      background-color: darken($color-sand, 7%);
+      transform: translateY(-3px);
+      box-shadow: $shadow-sm;
+    }
+    
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+  
+  // Tertiary button style
+  &-tertiary {
+    background-color: $color-emerald;
+    color: white;
+    
+    &:hover {
+      background-color: darken($color-emerald, 7%);
+      transform: translateY(-3px);
+      box-shadow: $shadow-sm;
+    }
+    
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+  
+  // Outline buttons
+  &-outline-primary {
+    background-color: transparent;
+    color: $color-teal;
+    border: 2px solid $color-teal;
+    
+    &:hover {
+      background-color: rgba($color-teal, 0.1);
+      transform: translateY(-3px);
+      box-shadow: $shadow-sm;
+    }
+    
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+  
+  &-outline-secondary {
+    background-color: transparent;
+    color: $color-sand;
+    border: 2px solid $color-sand;
+    
+    &:hover {
+      background-color: rgba($color-sand, 0.1);
+      transform: translateY(-3px);
+      box-shadow: $shadow-sm;
+    }
+    
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+  
+  // Light text dark background
+  &-light {
+    background-color: $color-ivory;
+    color: $color-charcoal;
+    
+    &:hover {
+      background-color: darken($color-ivory, 5%);
+      transform: translateY(-3px);
+      box-shadow: $shadow-sm;
+    }
+    
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+  
+  // Islamic-inspired button styles with geometric pattern
+  &-islamic {
+    position: relative;
+    overflow: hidden;
+    
+    // Geometric pattern overlay (very subtle)
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../images/patterns/button-pattern.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+      z-index: -1;
+      transition: opacity $transition-normal;
+    }
+    
+    // Animated pattern on hover
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: skewX(-15deg);
+      transition: transform $transition-normal;
+      z-index: 0;
+    }
+    
+    &:hover {
+      &::before {
+        opacity: 0.15;
+      }
+      
+      &::after {
+        transform: skewX(-15deg) translateX(200%);
+      }
+    }
+    
+    // Button text sits above the effects
+    span {
+      position: relative;
+      z-index: 2;
+    }
+    
+    // Islamic primary variant
+    &-primary {
+      @extend .btn-primary;
+      @extend .btn-islamic;
+    }
+    
+    // Islamic secondary variant
+    &-secondary {
+      @extend .btn-secondary;
+      @extend .btn-islamic;
+    }
+    
+    // Islamic tertiary variant
+    &-tertiary {
+      @extend .btn-tertiary;
+      @extend .btn-islamic;
+    }
+  }
+  
+  // Button sizes
+  &-sm {
+    padding: calc($spacing-xs / 2) $spacing-sm;
+    font-size: 0.875rem;
+  }
+  
+  &-lg {
+    padding: $spacing-sm $spacing-lg;
+    font-size: 1.125rem;
+  }
+  
+  // Full width button
+  &-block {
+    display: block;
+    width: 100%;
+  }
+  
+  // Button with arch decoration on top
+  &-arch {
+    padding-top: calc($spacing-xs + 15px);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 15px;
+      background-image: url('../images/patterns/button-arch.png');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+      z-index: 2;
+    }
+  }
+  
+  // Button with icon
+  &-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    .icon {
+      margin-right: $spacing-xs;
+    }
+    
+    &-right {
+      .icon {
+        margin-right: 0;
+        margin-left: $spacing-xs;
+      }
+    }
+  }
+  
+  // Disabled state
+  &:disabled,
+  &.disabled {
+    opacity: 0.65;
+    pointer-events: none;
+  }
+}
+
+// Button group
+.btn-group {
+  display: inline-flex;
+  
+  .btn {
+    border-radius: 0;
+    
+    &:first-child {
+      border-top-left-radius: $border-radius-sm;
+      border-bottom-left-radius: $border-radius-sm;
+    }
+    
+    &:last-child {
+      border-top-right-radius: $border-radius-sm;
+      border-bottom-right-radius: $border-radius-sm;
+    }
+    
+    &:not(:last-child) {
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}

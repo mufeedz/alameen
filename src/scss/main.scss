@@ -1,0 +1,42 @@
+/*
+ * Al-Ameen Matriculation Higher Secondary School
+ * Main SCSS File
+ * Based on redesign specifications - May 2025
+ */
+
+// Base imports
+@use "sass:color";
+@use "variables" as v;
+@use "mixins" as m;
+@use "utilities" as u;
+
+// Component imports
+@use "components/header" as header;
+@use "components/footer" as footer;
+@use "components/hero" as hero;
+@use "components/forms" as forms;
+@use "components/buttons" as buttons;
+@use "components/cards" as cards;
+@use "components/dividers" as dividers;
+@use "components/error" as error;
+
+// Page imports
+@use "pages/home" as home;
+@use "pages/about" as about;
+@use "pages/academics" as academics;
+@use "pages/admissions" as admissions;
+@use "pages/contact" as contact;
+@use "pages/gallery" as gallery;
+
+// Google Fonts import
+@import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;600;700&display=swap");
+
+// Base styles
+body {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base;
+  font-weight: v.$font-weight-normal;
+  line-height: v.$line-height-base;
+  color: v.$color-charcoal;
+  background-color: v.$color-ivory;
+}

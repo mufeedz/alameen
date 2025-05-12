@@ -1,0 +1,78 @@
+// Variables - Islamic-inspired design system
+// Based on Al-Ameen Matriculation School website redesign specifications
+
+// Colors
+// Primary Colors
+$color-teal: #006D77;
+$color-royal-blue: #1D3557;
+$color-emerald: #2A9D8F;
+
+// Secondary Colors
+$color-sand: #E9C46A;
+$color-terracotta: #E76F51;
+
+// Neutral Tones
+$color-ivory: #F8F9FA;
+$color-slate: #E0E0E0;
+$color-charcoal: #333333;
+
+// Typography
+$font-primary: 'Open Sans', sans-serif;
+$font-heading: 'Raleway', sans-serif;
+$font-arabic: 'Amiri', serif;
+
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-xxl: 2rem;
+$font-size-xxxl: 2.5rem;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-base: 1.5;
+$line-height-heading: 1.2;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Border Radius
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 1rem;
+
+// Shadows
+$shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Breakpoints
+$breakpoint-xs: 575.98px;
+$breakpoint-sm: 767.98px;
+$breakpoint-md: 991.98px;
+$breakpoint-lg: 1199.98px;
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// Component specific
+$header-height: 80px;
+$topbar-height: 40px;

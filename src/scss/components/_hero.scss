@@ -1,0 +1,246 @@
+// Hero component - Islamic-inspired design
+// Based on Al-Ameen Matriculation School website redesign specifications
+
+@import '../variables';
+@import '../mixins';
+
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  background-color: $color-royal-blue;
+  overflow: hidden;
+  
+  // Hero Slider
+  &__slider {
+    height: 100%;
+  }
+  
+  &__slide {
+    position: relative;
+    height: 100%;
+    
+    // Background image with ken burns effect
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      animation: kenburnsZoom 15s infinite alternate ease-in-out;
+    }
+    
+    // Overlay
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    
+    // Islamic pattern overlay
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../images/patterns/geometric-overlay.png');
+      background-size: 300px;
+      background-repeat: repeat;
+      opacity: 0.1;
+      z-index: 2;
+    }
+  }
+  
+  // Caption styles with Islamic-inspired border
+  &__caption {
+    position: absolute;
+    right: 5%;
+    width: 45%;
+    max-width: 550px;
+    text-align: right;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: $spacing-md $spacing-lg;
+    z-index: 3;
+    border-right: 4px solid $color-sand;
+    animation: fadeInText 1s forwards;
+    --translateX: 30px;
+    
+    @include respond-md {
+      width: 70%;
+      left: 50%;
+      right: auto;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      border-right: none;
+      border-bottom: 4px solid $color-sand;
+    }
+    
+    @include respond-sm {
+      width: 85%;
+      padding: $spacing-md;
+    }
+    
+    @include respond-xs {
+      width: 90%;
+      padding: $spacing-sm;
+    }
+  }
+  
+  &__title {
+    color: white;
+    margin-bottom: $spacing-sm;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    
+    @include respond-md {
+      font-size: 1.8rem;
+    }
+    
+    @include respond-xs {
+      font-size: 1.5rem;
+    }
+  }
+  
+  &__subtitle {
+    color: $color-slate;
+    margin-bottom: $spacing-md;
+    
+    @include respond-sm {
+      font-size: 0.9rem;
+    }
+  }
+  
+  // Islamic-styled CTA button
+  &__cta {
+    @include islamic-button($color-sand, $color-charcoal);
+    font-size: $font-size-base;
+    padding: $spacing-xs $spacing-lg;
+    border-radius: $border-radius-sm;
+    font-weight: $font-weight-semibold;
+    
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+  
+  // Hero with arch pattern at bottom
+  &--with-arch {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background-image: url('../images/patterns/arch-pattern.png');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      z-index: 4;
+    }
+  }
+  
+  // Hero navigation arrows - Islamic styled
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all $transition-normal;
+    opacity: 0.7;
+    
+    &:hover {
+      background-color: rgba($color-sand, 0.8);
+      opacity: 1;
+    }
+    
+    &--prev {
+      left: 20px;
+    }
+    
+    &--next {
+      right: 20px;
+    }
+    
+    // Arrow icon
+    i {
+      color: white;
+      font-size: 1.2rem;
+    }
+    
+    @include respond-sm {
+      width: 40px;
+      height: 40px;
+      
+      &--prev {
+        left: 10px;
+      }
+      
+      &--next {
+        right: 10px;
+      }
+    }
+  }
+  
+  // Small hero for inner pages
+  &--small {
+    height: 40vh;
+    min-height: 300px;
+    
+    .hero__title {
+      position: relative;
+      padding-bottom: $spacing-sm;
+      margin-bottom: $spacing-md;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        height: 3px;
+        background-color: $color-sand;
+        
+        @include respond-md {
+          right: 50%;
+          transform: translateX(50%);
+        }
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes kenburnsZoom {
+  0% { transform: scale(1.0); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translate(var(--translateX, 30px), -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(var(--translateX, 0px), -50%);
+  }
+}

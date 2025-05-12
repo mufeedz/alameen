@@ -1,0 +1,404 @@
+// Mixins - Islamic-inspired design system
+// Based on Al-Ameen Matriculation School website redesign specifications
+
+@use "sass:color";
+@use "variables" as v;
+
+// Responsive breakpoints
+@mixin respond-xs {
+  @media (max-width: v.$breakpoint-xs) {
+    @content;
+  }
+}
+
+@mixin respond-sm {
+  @media (max-width: v.$breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin respond-md {
+  @media (max-width: v.$breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin respond-lg {
+  @media (max-width: v.$breakpoint-lg) {
+    @content;
+  }
+}
+
+// Typography mixins
+@mixin heading-1 {
+  font-size: v.$font-size-xxxl;
+  font-weight: v.$font-weight-bold;
+  line-height: v.$line-height-heading;
+
+  @include respond-md {
+    font-size: v.$font-size-xxl;
+  }
+
+  @include respond-xs {
+    font-size: v.$font-size-xl;
+  }
+}
+
+@mixin heading-2 {
+  font-size: v.$font-size-xxl;
+  font-weight: v.$font-weight-semibold;
+  line-height: v.$line-height-heading;
+
+  @include respond-md {
+    font-size: v.$font-size-xl;
+  }
+
+  @include respond-xs {
+    font-size: v.$font-size-lg;
+  }
+}
+
+@mixin heading-3 {
+  font-size: v.$font-size-xl;
+  font-weight: v.$font-weight-semibold;
+  line-height: v.$line-height-heading;
+
+  @include respond-md {
+    font-size: v.$font-size-lg;
+  }
+}
+
+@mixin heading-4 {
+  font-size: v.$font-size-lg;
+  font-weight: v.$font-weight-semibold;
+  line-height: v.$line-height-heading;
+}
+
+@mixin arabic-text {
+  font-family: v.$font-arabic;
+  line-height: 1.6;
+}
+
+// Layout mixins
+@mixin container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+// Islamic design element mixins
+@mixin islamic-divider {
+  position: relative;
+  height: 30px;
+  background-image: url("../images/patterns/islamic-divider.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.8;
+  margin: v.$spacing-md 0;
+}
+
+@mixin arch-container {
+  position: relative;
+  padding-top: 40px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-image: url("../images/patterns/arch-pattern.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin islamic-button($bg-color: v.$color-teal, $text-color: white) {
+  display: inline-block;
+  background-color: $bg-color;
+  color: $text-color;
+  padding: v.$spacing-xs v.$spacing-md;
+  border-radius: v.$border-radius-sm;
+  font-family: v.$font-heading;
+  font-weight: v.$font-weight-semibold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all v.$transition-normal;
+  position: relative;
+  overflow: hidden;
+  border: none;
+
+  // Subtle geometric pattern overlay (very light)
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/patterns/button-pattern.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 1;
+    transition: opacity v.$transition-normal;
+  }
+
+  // Light effect on hover
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-15deg);
+    transition: transform v.$transition-normal;
+    z-index: 2;
+  }
+
+  &:hover {
+    background-color: color.adjust($bg-color, $lightness: -7%);
+    transform: translateY(-3px);
+    box-shadow: v.$shadow-sm;
+
+    &::before {
+      opacity: 0.15;
+    }
+
+    &::after {
+      transform: skewX(-15deg) translateX(200%);
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+
+  // Button text sits above the effects
+  span {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+@mixin geometric-pattern-bg($opacity: 0.1) {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/patterns/geometric-overlay.png");
+    background-size: 300px;
+    background-repeat: repeat;
+    opacity: $opacity;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@mixin muqarnas-bg {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-image: url("../images/patterns/muqarnas-border.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  > * {
+    margin-top: 15px;
+  }
+}
+
+@mixin card-hover-effect {
+  transition: transform v.$transition-normal, box-shadow v.$transition-normal;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: v.$shadow-md;
+  }
+}
+
+// Animation mixins
+@mixin fade-in {
+  animation: fadeIn 1s forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin slide-up {
+  animation: slideUp 0.8s forwards;
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin slide-in-right {
+  animation: slideInRight 0.8s forwards;
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin slide-in-left {
+  animation: slideInLeft 0.8s forwards;
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+// Element-specific mixins
+@mixin section-title {
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: v.$spacing-lg;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-royal-blue;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, v.$color-teal, v.$color-emerald);
+    border-radius: 2px;
+  }
+
+  &--centered {
+    text-align: center;
+
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@mixin border-bottom-gradient {
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(
+    to right,
+    v.$color-teal,
+    v.$color-emerald,
+    v.$color-sand
+  );
+  border-image-slice: 1;
+}
+
+@mixin islamic-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: v.$border-radius-md;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/patterns/geometric-border.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 0;
+    transition: opacity v.$transition-normal;
+  }
+
+  &:hover::before {
+    opacity: 0.3;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@mixin islamic-input-focus {
+  &:focus {
+    outline: none;
+    border-color: v.$color-teal;
+    box-shadow: 0 0 0 3px rgba(v.$color-teal, 0.2);
+  }
+}

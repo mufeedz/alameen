@@ -1,0 +1,422 @@
+// Header component styles
+// Al-Ameen Matriculation School website
+
+// Access variables and mixins through the module system
+@use "../variables" as v;
+@use "../mixins" as m;
+
+/* --- Site Header Styles --- */
+.site-header {
+  position: relative;
+  width: 100%;
+  z-index: v.$z-index-fixed;
+  box-shadow: v.$shadow-sm;
+
+  /* --- Top Bar Styles --- */
+  .top-bar {
+    background-color: v.$color-royal-blue;
+    color: v.$color-ivory;
+    height: v.$topbar-height;
+    font-size: v.$font-size-sm;
+    padding: 8px 0;
+    line-height: 1.4;
+
+    a {
+      color: v.$color-ivory;
+      transition: color v.$transition-normal;
+
+      &:hover {
+        color: v.$color-sand;
+      }
+    }
+
+    .contact-info {
+      @include m.flex-between;
+
+      &__item {
+        margin-right: v.$spacing-md;
+        display: flex;
+        align-items: center;
+
+        i {
+          margin-right: v.$spacing-xs;
+          color: v.$color-sand;
+        }
+      }
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        margin-left: v.$spacing-xs;
+        transition: background-color v.$transition-normal;
+
+        &:hover {
+          background-color: v.$color-teal;
+        }
+      }
+    }
+  }
+
+  /* --- Main Header Area --- */
+  .main-header {
+    background-color: #fff;
+    box-shadow: v.$shadow-sm;
+    position: relative;
+    height: v.$header-height;
+
+    // Islamic-inspired gradient border at bottom
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(
+        to right,
+        v.$color-teal,
+        v.$color-emerald,
+        v.$color-sand
+      );
+    }
+
+    // Logo Container
+    .school-logo {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      img {
+        height: 60px;
+        margin-right: v.$spacing-sm;
+        transition: height v.$transition-normal;
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__name {
+        font-family: v.$font-heading;
+        font-weight: v.$font-weight-bold;
+        font-size: 1.4rem;
+        color: v.$color-royal-blue;
+        line-height: 1.2;
+      }
+
+      &__tagline {
+        font-family: v.$font-arabic;
+        font-size: 0.9rem;
+        color: v.$color-teal;
+      }
+    }
+  }
+
+  /* --- Main Navigation --- */
+  .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+
+    &__list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    &__item {
+      height: 100%;
+      position: relative;
+
+      &--has-dropdown {
+        position: relative;
+      }
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 v.$spacing-md;
+      color: v.$color-charcoal;
+      font-family: v.$font-heading;
+      font-weight: v.$font-weight-semibold;
+      font-size: v.$font-size-base;
+      position: relative;
+      transition: color v.$transition-normal;
+
+      &:hover,
+      &--active {
+        color: v.$color-teal;
+      }
+
+      // Underline effect on hover
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        background-color: v.$color-sand;
+        transition: all v.$transition-normal;
+        transform: translateX(-50%);
+      }
+
+      &:hover::after,
+      &--active::after {
+        width: 80%;
+      }
+    }
+
+    /* --- Dropdown Menu - Muqarnas-inspired --- */
+    &__dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 220px;
+      background-color: #fff;
+      box-shadow: v.$shadow-md;
+      border-radius: v.$border-radius-sm;
+      padding: 0.5rem 0;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all v.$transition-normal;
+      z-index: v.$z-index-dropdown;
+      overflow: hidden;
+
+      // Decorative top border
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(to right, v.$color-teal, v.$color-emerald);
+      }
+
+      // Muqarnas-inspired decorative element
+      &::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background-image: url("../images/patterns/muqarnas-border.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      // Show dropdown on hover
+      .main-nav__item--has-dropdown:hover & {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    &__dropdown-link {
+      display: block;
+      padding: v.$spacing-xs v.$spacing-md;
+      color: v.$color-charcoal;
+      font-weight: v.$font-weight-normal;
+      transition: all v.$transition-normal;
+      position: relative;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: v.$color-teal;
+        padding-left: v.$spacing-md + 0.3rem;
+
+        // Arrow indicator on hover
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      // Dropdown item arrow
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 4px 0 4px 4px;
+        border-color: transparent transparent transparent v.$color-teal;
+        opacity: 0;
+        transition: opacity v.$transition-normal;
+      }
+    }
+  }
+
+  /* --- Mobile Menu Toggle --- */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    &__line {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: v.$color-charcoal;
+      border-radius: 2px;
+      transition: v.$transition-normal;
+    }
+
+    &--active {
+      .menu-toggle__line {
+        &:nth-child(1) {
+          transform: translateY(9px) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-9px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  /* --- Sticky Header --- */
+  &.sticky {
+    .main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: v.$z-index-fixed;
+      animation: slideDown 0.5s forwards;
+      height: 70px;
+
+      .school-logo {
+        img {
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+// Animation for sticky header
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+// Responsive Styles
+@include m.respond-lg {
+  .site-header {
+    .main-nav__link {
+      padding: 0 v.$spacing-sm;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+@include m.respond-md {
+  .site-header {
+    .menu-toggle {
+      display: flex;
+    }
+
+    .main-nav {
+      position: fixed;
+      top: v.$header-height;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - v.$header-height);
+      background-color: #fff;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 2rem;
+      transform: translateX(-100%);
+      transition: transform v.$transition-normal;
+      z-index: 999;
+      overflow-y: auto;
+    }
+
+    &.sticky .main-header {
+      height: 60px;
+    }
+
+    .top-bar .contact-info__item {
+      margin-right: v.$spacing-sm;
+    }
+  }
+}
+
+@include m.respond-sm {
+  .site-header {
+    .top-bar {
+      display: none;
+    }
+
+    .main-header {
+      height: 70px;
+    }
+
+    .school-logo {
+      img {
+        height: 50px;
+      }
+
+      &__name {
+        font-size: 1.2rem;
+      }
+
+      &__tagline {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@include m.respond-xs {
+  .site-header {
+    .school-logo {
+      &__text {
+        display: none;
+      }
+
+      img {
+        height: 45px;
+      }
+    }
+  }
+}

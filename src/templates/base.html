@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Al-Ameen Matriculation Higher Secondary School - Excellence in Education">
+    <title>{% block title %}Al-Ameen School{% endblock %}</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/icons/favicon-16x16.png">
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#006D77">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/dist/css/main.min.css" as="style">
+    <link rel="preload" href="/dist/js/main.min.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;600;700&display=swap" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/dist/css/main.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;600;700&display=swap">
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="{% block og_title %}Al-Ameen School{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Al-Ameen Matriculation Higher Secondary School - Excellence in Education{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}/public/images/og-image.jpg{% endblock %}">
+    <meta property="og:url" content="https://alameen.edu.in{% block og_url %}{% endblock %}">
+</head>
+<body>
+    <!-- Skip links for accessibility -->
+    <div class="skip-links">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <a href="#footer" class="skip-link">Skip to footer</a>
+    </div>
+    
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Main content -->
+    <main id="main-content" role="main">
+        {% block content %}{% endblock %}
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Scripts -->
+    <script src="/dist/js/main.min.js" defer></script>
+    
+    <!-- Initialize custom elements after DOM load -->
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialization code here
+        });
+    </script>
+    
+    <!-- Block for additional page-specific scripts -->
+    {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,50 @@
+@use '../variables' as v;
+@use '../mixins' as m;
+
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: v.$spacing-xl 0;
+    
+    .error-content {
+        max-width: 600px;
+        margin: 0 auto;
+        
+        h1 {
+            font-size: 8rem;
+            color: v.$color-teal;
+            font-weight: v.$font-weight-bold;
+            margin-bottom: v.$spacing-md;
+            font-family: v.$font-heading;
+        }
+        
+        h2 {
+            color: v.$color-royal-blue;
+            margin-bottom: v.$spacing-md;
+        }
+        
+        p {
+            color: v.$color-charcoal;
+            margin-bottom: v.$spacing-lg;
+            font-size: v.$font-size-lg;
+        }
+        
+        .islamic-divider {
+            margin: v.$spacing-lg auto;
+        }
+    }
+    
+    @include m.respond-sm {
+        .error-content {
+            h1 {
+                font-size: 6rem;
+            }
+            
+            p {
+                font-size: v.$font-size-base;
+            }
+        }
+    }
+}

@@ -1,0 +1,343 @@
+// Forms component - Islamic-inspired design
+// Based on Al-Ameen Matriculation School website redesign specifications
+
+@import '../variables';
+@import '../mixins';
+
+.form {
+  &__group {
+    margin-bottom: $spacing-md;
+    position: relative;
+  }
+  
+  &__label {
+    display: block;
+    margin-bottom: $spacing-xs;
+    font-weight: $font-weight-semibold;
+    color: $color-royal-blue;
+  }
+  
+  &__control {
+    width: 100%;
+    padding: $spacing-xs $spacing-sm;
+    border: 1px solid $color-slate;
+    border-radius: $border-radius-sm;
+    background-color: white;
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    transition: all $transition-normal;
+    
+    &:focus {
+      outline: none;
+      border-color: $color-teal;
+      box-shadow: 0 0 0 3px rgba($color-teal, 0.2);
+    }
+    
+    &::placeholder {
+      color: rgba($color-charcoal, 0.5);
+    }
+    
+    &--error {
+      border-color: $color-terracotta;
+      
+      &:focus {
+        box-shadow: 0 0 0 3px rgba($color-terracotta, 0.2);
+      }
+    }
+    
+    &--with-icon {
+      padding-left: 40px;
+    }
+  }
+  
+  &__icon {
+    position: absolute;
+    left: 12px;
+    top: 35px;
+    color: $color-teal;
+  }
+  
+  // Islamic-inspired select
+  &__select {
+    position: relative;
+    
+    select {
+      appearance: none;
+      padding-right: 40px;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 8px solid $color-teal;
+      pointer-events: none;
+    }
+  }
+  
+  // Custom checkbox with Islamic geometric design
+  &__checkbox,
+  &__radio {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: $spacing-xs;
+    cursor: pointer;
+    
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      
+      &:checked ~ .form__checkbox-mark {
+        background-color: $color-teal;
+        border-color: $color-teal;
+        
+        &::after {
+          opacity: 1;
+        }
+      }
+      
+      &:checked ~ .form__radio-mark {
+        border-color: $color-teal;
+        
+        &::after {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+      
+      &:focus ~ .form__checkbox-mark,
+      &:focus ~ .form__radio-mark {
+        box-shadow: 0 0 0 3px rgba($color-teal, 0.2);
+      }
+    }
+  }
+  
+  &__checkbox-mark {
+    position: relative;
+    min-width: 20px;
+    height: 20px;
+    border: 2px solid $color-slate;
+    border-radius: 4px;
+    margin-right: $spacing-xs;
+    margin-top: 2px;
+    transition: all $transition-normal;
+    background-image: url('../images/patterns/checkbox-pattern.png');
+    background-size: cover;
+    background-position: center;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: opacity $transition-normal;
+    }
+  }
+  
+  &__radio-mark {
+    position: relative;
+    min-width: 20px;
+    height: 20px;
+    border: 2px solid $color-slate;
+    border-radius: 50%;
+    margin-right: $spacing-xs;
+    margin-top: 2px;
+    transition: all $transition-normal;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $color-teal;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform $transition-normal;
+    }
+  }
+  
+  &__checkbox-label,
+  &__radio-label {
+    font-size: $font-size-base;
+    line-height: 1.4;
+  }
+  
+  // Error message
+  &__error {
+    color: $color-terracotta;
+    font-size: $font-size-sm;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    
+    i {
+      margin-right: 5px;
+    }
+  }
+  
+  // Help text
+  &__help {
+    color: rgba($color-charcoal, 0.7);
+    font-size: $font-size-sm;
+    margin-top: 5px;
+  }
+  
+  // Form with decorative border
+  &--decorated {
+    position: relative;
+    padding: $spacing-lg;
+    border-radius: $border-radius-md;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../images/patterns/form-border.png');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      opacity: 0.15;
+      z-index: -1;
+    }
+  }
+  
+  // Contact form with Islamic arch design
+  &--contact {
+    position: relative;
+    padding-top: 40px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30px;
+      background-image: url('../images/patterns/arch-pattern.png');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+  }
+  
+  // Islamic-styled submit button
+  &__submit {
+    @include islamic-button;
+    display: inline-block;
+    padding: $spacing-xs $spacing-xl;
+    font-size: $font-size-base;
+    margin-top: $spacing-sm;
+    width: auto;
+    
+    &--block {
+      display: block;
+      width: 100%;
+    }
+  }
+  
+  // Form divider with Islamic pattern
+  &__divider {
+    display: flex;
+    align-items: center;
+    margin: $spacing-md 0;
+    
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: $color-slate;
+    }
+    
+    .divider-text {
+      padding: 0 $spacing-sm;
+      color: $color-royal-blue;
+      font-weight: $font-weight-semibold;
+    }
+    
+    &--ornament {
+      &::before,
+      &::after {
+        background-image: linear-gradient(to right, rgba($color-slate, 0), $color-slate, rgba($color-slate, 0));
+      }
+      
+      .divider-ornament {
+        margin: 0 $spacing-sm;
+        width: 30px;
+        height: 20px;
+        background-image: url('../images/patterns/divider-ornament.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+  
+  // Input group
+  &__input-group {
+    display: flex;
+    
+    .form__control {
+      border-radius: 0;
+      
+      &:first-child {
+        border-top-left-radius: $border-radius-sm;
+        border-bottom-left-radius: $border-radius-sm;
+      }
+      
+      &:last-child {
+        border-top-right-radius: $border-radius-sm;
+        border-bottom-right-radius: $border-radius-sm;
+      }
+    }
+    
+    &-addon {
+      display: flex;
+      align-items: center;
+      padding: 0 $spacing-sm;
+      background-color: $color-ivory;
+      border: 1px solid $color-slate;
+      color: $color-royal-blue;
+      font-weight: $font-weight-semibold;
+      
+      &:first-child {
+        border-right: none;
+        border-top-left-radius: $border-radius-sm;
+        border-bottom-left-radius: $border-radius-sm;
+      }
+      
+      &:last-child {
+        border-left: none;
+        border-top-right-radius: $border-radius-sm;
+        border-bottom-right-radius: $border-radius-sm;
+      }
+    }
+  }
+}
+
+// Responsive styles
+@include respond-sm {
+  .form {
+    &--decorated {
+      padding: $spacing-md;
+    }
+  }
+}

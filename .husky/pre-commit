@@ -1,0 +1,36 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔍 Running pre-commit checks..."
+
+# Run linting
+npm run lint || {
+    echo "❌ ESLint check failed. Please fix the issues and try again."
+    exit 1
+}
+
+# Run formatting check
+npm run format || {
+    echo "❌ Prettier check failed. Please fix the formatting and try again."
+    exit 1
+}
+
+# Run tests
+npm test || {
+    echo "❌ Tests failed. Please fix the failing tests and try again."
+    exit 1
+}
+
+# Run accessibility audit
+npm run audit:a11y || {
+    echo "⚠️ Accessibility issues found. Please review the report."
+    # Don't exit with error, just warn
+}
+
+# Run performance check
+npm run monitor:perf || {
+    echo "⚠️ Performance issues detected. Please review the report."
+    # Don't exit with error, just warn
+}
+
+echo "✅ All checks passed!"

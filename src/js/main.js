@@ -1,4 +1,4 @@
-import { initAccessibility } from './accessibility.js';
+import { initAccessibility } from './accessibility';
 
 document.addEventListener('DOMContentLoaded', function() {
 
