@@ -3,4 +3,12 @@
 All entries follow: **YYYY-MM-DD** – _Change description (source file)_
 
 - **2025-05-18** – Initial extraction of design tokens from `website_redesign_specifications.md`  
-- **[next date]** – [what was updated] (e.g. “Added Student Life page spec to home.md”)
+- **2025-05-18** – Created basic project structure with folder setup and stub HTML files
+- **2025-05-18** – Implemented main.css with color variables and typography from style guide
+- **2025-05-18** – Added Islamic pattern SVG for design elements (assets/images/islamic-pattern.svg)
+- **2025-05-18** – Created admission form PDF sample (assets/forms/admission-form.pdf)
+- **2025-05-18** – Built header with dropdown menu and back-to-top functionality (partials/header.html)
+- **2025-05-18** – Built footer with address, social icons, and quick links (partials/footer.html)
+- **2025-05-18** – Implemented home page with all required sections (index.html)
+- **2025-05-18** – Added JavaScript for dynamic content loading and interactivity (assets/js/main.js)
+- **[next date]** – [what was updated] (e.g. "Added Student Life page spec to home.md")

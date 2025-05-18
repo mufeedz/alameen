@@ -6,42 +6,52 @@
   <title>Al-Ameen School</title>
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <!-- Swiper.js CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
+  <meta name="description" content="Al-Ameen Matriculation Higher Secondary School - Empowering Knowledge, Inspiring Faith">
 </head>
 <body>
   <!-- Header Include -->
   <div id="header-include"></div>
+  
   <main id="main-content">
     <!-- Hero Slider -->
-    <section class="hero position-relative section bg-motif">
+    <section class="hero position-relative">
       <div class="swiper hero-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="assets/images/slider-1.png" class="w-100" alt="School campus view 1" loading="lazy">
+            <img src="assets/images/slider-1.png" class="w-100" alt="School campus view with students">
             <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+            <div class="hero-overlay islamic-motif position-absolute top-0 start-0 w-100 h-100"></div>
             <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
               <img src="assets/images/logo-placeholder.png" alt="Al-Ameen School Logo" width="80" class="mb-3">
-              <h1 class="display-4 fw-bold section__title">Welcome to Al-Ameen School</h1>
+              <h1 class="display-4 fw-bold">Welcome to Al-Ameen School</h1>
               <p class="lead mb-4">Empowering Knowledge, Inspiring Faith</p>
               <a href="admissions.html" class="btn btn-lg btn--primary">Admissions</a>
             </div>
           </div>
           <div class="swiper-slide">
-            <img src="assets/images/slider-2.png" class="w-100" alt="School campus view 2" loading="lazy">
+            <img src="assets/images/slider-2.png" class="w-100" alt="Students engaged in classroom activities">
             <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+            <div class="hero-overlay islamic-motif position-absolute top-0 start-0 w-100 h-100"></div>
             <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
-              <h2 class="fw-bold section__title">A Tradition of Excellence</h2>
-              <p>Discover our vibrant learning community</p>
+              <h2 class="fw-bold display-4">A Tradition of Excellence</h2>
+              <p class="lead">Discover our vibrant learning community</p>
+              <a href="academics.html" class="btn btn-lg btn--primary mt-3">Our Programs</a>
             </div>
           </div>
           <div class="swiper-slide">
-            <img src="assets/images/slider-3.png" class="w-100" alt="School campus view 3" loading="lazy">
+            <img src="assets/images/slider-3.png" class="w-100" alt="School facilities and campus view">
             <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+            <div class="hero-overlay islamic-motif position-absolute top-0 start-0 w-100 h-100"></div>
             <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
-              <h2 class="fw-bold section__title">Rooted in Values</h2>
-              <p>Academic achievement with strong character</p>
+              <h2 class="fw-bold display-4">Rooted in Values</h2>
+              <p class="lead">Academic achievement with strong character</p>
+              <a href="about.html" class="btn btn-lg btn--primary mt-3">About Us</a>
             </div>
           </div>
         </div>
@@ -51,40 +61,45 @@
         <div class="swiper-button-next"></div>
       </div>
     </section>
+
     <div class="section-divider"></div>
+
     <!-- About Preview -->
-    <section class="about-preview section container-xl py-5 d-flex flex-column flex-md-row align-items-center gap-4">
-      <div class="about-text col-md-6">
-        <h2 class="section__title mb-3">About Al-Ameen</h2>
-        <p>Al-Ameen Matriculation Higher Secondary School is dedicated to nurturing young minds with a blend of academic excellence, Islamic values, and holistic development. Our vibrant campus, experienced faculty, and inclusive environment empower every student to thrive.</p>
-        <a href="about.html" class="btn btn--primary mt-3">Learn More</a>
-      </div>
-      <div class="about-img col-md-6 text-center">
-        <div class="arabesque-border d-inline-block">
-          <img src="assets/images/slider-1.png" alt="School campus" class="img-fluid rounded shadow" loading="lazy">
+    <section class="about-preview section container-xl py-5" id="about-section">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 class="section__title">About Al-Ameen</h2>
+          <p>Al-Ameen Matriculation Higher Secondary School is dedicated to nurturing young minds with a blend of academic excellence, Islamic values, and holistic development. Our vibrant campus, experienced faculty, and inclusive environment empower every student to thrive.</p>
+          <p>Founded on principles of educational excellence and character development, we provide a supportive environment where students can grow intellectually, spiritually, and socially.</p>
+          <a href="about.html" class="btn btn--primary mt-3">Learn More</a>
+        </div>
+        <div class="col-lg-6">
+          <div class="arabesque-border">
+            <img src="assets/images/slider-1.png" alt="School campus" class="img-fluid rounded">
+          </div>
         </div>
       </div>
     </section>
-    <div class="section-divider"></div>
+
     <!-- Campus Highlights -->
-    <section class="campus-highlights section container-xl py-5">
+    <section class="campus-highlights section container-xl py-5 bg-neutral">
       <h2 class="section__title text-center mb-5">Our Campuses</h2>
       <div class="row g-4 justify-content-center">
-        <div class="col-md-5">
+        <div class="col-md-6 col-lg-5">
           <div class="card h-100 pointed-arch">
-            <img src="assets/images/slider-2.png" class="card__image" alt="Main Campus" loading="lazy">
+            <img src="assets/images/slider-2.png" class="card__image" alt="Main Campus">
             <div class="card-body">
-              <h3 class="card-title">Main Campus</h3>
+              <h3 class="card-title text-primary-theme">Main Campus</h3>
               <p class="card-text">State-of-the-art facilities, modern classrooms, and a vibrant student community in the heart of the city.</p>
               <a href="campuses.html" class="btn btn-sm btn--primary">Explore</a>
             </div>
           </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6 col-lg-5">
           <div class="card h-100 pointed-arch">
-            <img src="assets/images/slider-3.png" class="card__image" alt="Annex Campus" loading="lazy">
+            <img src="assets/images/slider-3.png" class="card__image" alt="Annex Campus">
             <div class="card-body">
-              <h3 class="card-title">Annex Campus</h3>
+              <h3 class="card-title text-primary-theme">Annex Campus</h3>
               <p class="card-text">A nurturing environment for foundational years, with dedicated play areas and creative learning spaces.</p>
               <a href="campuses.html" class="btn btn-sm btn--primary">Explore</a>
             </div>
@@ -92,7 +107,7 @@
         </div>
       </div>
     </section>
-    <div class="section-divider"></div>
+
     <!-- Mission Icon Grid -->
     <section class="mission-grid section container-xl py-5">
       <h2 class="section__title text-center mb-4">Our Mission</h2>
@@ -101,63 +116,52 @@
           <div class="icon-box p-3">
             <i class="bi bi-book-half display-5 text-primary-theme"></i>
             <h4 class="mt-3">Academic Excellence</h4>
+            <p class="small">Rigorous curriculum and personalized learning</p>
           </div>
         </div>
         <div class="col-6 col-md-3">
           <div class="icon-box p-3">
             <i class="bi bi-moon-stars display-5 text-primary-theme"></i>
             <h4 class="mt-3">Islamic Values</h4>
+            <p class="small">Moral education and character development</p>
           </div>
         </div>
         <div class="col-6 col-md-3">
           <div class="icon-box p-3">
             <i class="bi bi-people-fill display-5 text-primary-theme"></i>
             <h4 class="mt-3">Community</h4>
+            <p class="small">Strong parent-school partnerships</p>
           </div>
         </div>
         <div class="col-6 col-md-3">
           <div class="icon-box p-3">
             <i class="bi bi-globe2 display-5 text-primary-theme"></i>
             <h4 class="mt-3">Global Citizenship</h4>
+            <p class="small">Preparing students for a global future</p>
           </div>
         </div>
       </div>
     </section>
-    <div class="section-divider"></div>
+
     <!-- CTA Banner -->
     <section class="cta-banner section py-5 bg-primary-theme text-white text-center">
       <div class="container-xl">
-        <h2 class="mb-3 section__title">Ready to Join Al-Ameen?</h2>
+        <h2 class="mb-3">Ready to Join Al-Ameen?</h2>
         <p class="lead mb-4">Download our admission form and start your journey today.</p>
-        <a href="assets/forms/admission-form.pdf" class="btn btn-lg btn-light fw-bold" download>Download Admission Form</a>
+        <a href="assets/forms/admission-form.pdf" class="btn btn-lg bg-accent text-dark fw-bold" download>
+          <i class="bi bi-file-earmark-arrow-down me-2"></i> Download Admission Form
+        </a>
       </div>
     </section>
   </main>
+  
   <!-- Footer Include -->
   <div id="footer-include"></div>
+  
   <!-- Bootstrap 5 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Swiper.js -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
-  <script>
-    // Swiper initialization
-    const heroSwiper = new Swiper('.hero-swiper', {
-      loop: true,
-      autoplay: { delay: 4000 },
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      effect: 'fade',
-    });
-
-    // Simple JS to load header and footer partials
-    function loadPartial(id, url) {
-      fetch(url)
-        .then(res => res.text())
-        .then(html => { document.getElementById(id).innerHTML = html; });
-    }
-    loadPartial('header-include', 'partials/header.html');
-    loadPartial('footer-include', 'partials/footer.html');
-  </script>
 </body>
 </html>
