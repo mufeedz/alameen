@@ -78,11 +78,73 @@ small {
   font-size: var(--font-size-small);
 }
 
-/* BEM Base Classes */
+/* === THEME & DESIGN ELEMENTS === */
+
+/* Gold Accent Border for Section Titles */
 .section__title {
-  /* Already styled above for h1 */
+  border-bottom: 4px solid var(--color-accent);
+  display: inline-block;
+  padding-bottom: 0.25em;
+  margin-bottom: var(--space-md);
+  background: none;
 }
 
+/* Geometric Pattern Section Divider (SVG background) */
+.section-divider {
+  width: 100%;
+  height: 32px;
+  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="32" viewBox="0 0 1200 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 32 Q600 0 1200 32 V0 H0 V32Z" fill="%23E9C46A"/></svg>') repeat-x;
+  background-size: cover;
+  margin: 0 0 var(--space-lg) 0;
+}
+
+/* Pointed-Arch Card Frame */
+.pointed-arch {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 2.5rem 2.5rem/0 0 2rem 2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  border: 2px solid var(--color-primary);
+  background: #fff;
+}
+.pointed-arch::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="60" viewBox="0 0 400 60" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 60 Q200 0 400 60 V0 H0 V60Z" fill="%23006D77"/></svg>') no-repeat center top/cover;
+  z-index: 1;
+}
+
+/* Arabesque Border Utility */
+.arabesque-border {
+  border: 3px double var(--color-accent);
+  border-radius: 1.5rem;
+  padding: var(--space-md);
+  background: #fff;
+  position: relative;
+}
+
+/* Motif Backgrounds */
+.bg-motif {
+  background-image: url('../images/islamic-pattern.svg');
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.12;
+}
+
+/* Utility Classes for Theme Colors */
+.bg-primary-theme { background: var(--color-primary) !important; color: #fff !important; }
+.bg-accent { background: var(--color-accent) !important; color: var(--color-text) !important; }
+.bg-neutral { background: var(--color-bg) !important; color: var(--color-text) !important; }
+.text-primary-theme { color: var(--color-primary) !important; }
+.text-accent { color: var(--color-accent) !important; }
+.text-emerald { color: #2A9D8F !important; }
+
+/* Improved Button Styles */
 .btn--primary {
   display: inline-block;
   background: var(--color-primary);
@@ -94,32 +156,62 @@ small {
   border-radius: 0.25rem;
   text-decoration: none;
   transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,109,119,0.08);
+  letter-spacing: 0.02em;
 }
 .btn--primary:hover,
 .btn--primary:focus {
   background: var(--color-primary-alt);
   color: #fff;
 }
-
-.card__image {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem 0.5rem 0 0;
-  display: block;
-  background: var(--color-separator);
+.btn--primary:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
-/* Utility Spacing */
-.section {
-  padding: var(--space-xl) 0;
-}
-
+/* Card Styles */
 .card {
   background: #fff;
-  border: 1px solid var(--color-separator);
+  border: 1.5px solid var(--color-separator);
   border-radius: 0.5rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
   margin-bottom: var(--space-lg);
+  transition: box-shadow 0.2s;
+}
+.card:hover {
+  box-shadow: 0 4px 24px rgba(0,109,119,0.10);
+  border-color: var(--color-primary);
+}
+
+/* Icon Box for Mission Grid */
+.icon-box {
+  background: var(--color-bg);
+  border-radius: 1rem;
+  border: 2px solid var(--color-separator);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  transition: border-color 0.2s;
+}
+.icon-box:hover {
+  border-color: var(--color-accent);
+}
+
+/* Section Spacing Utility */
+.section {
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+/* Decorative Calligraphic Accent (for future use) */
+.bismillah-watermark {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  opacity: 0.08;
+  font-family: 'Amiri', serif;
+  font-size: 3rem;
+  color: var(--color-accent);
+  pointer-events: none;
+  user-select: none;
 }
 
 /* Example for Islamic motif backgrounds (to be customized with SVG or patterns) */
