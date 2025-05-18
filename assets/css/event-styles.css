@@ -1,11 +1,21 @@
 /**
  * Enhanced styling for the events page
+ * Consolidated from event-styles.css and event-card-fixes.css
  */
 
-/* Improved button styling for event cards */
+/* Ensure proper alignment for "More Details" button */
+.event-card .d-flex.justify-content-end {
+  display: flex !important;
+  justify-content: flex-end !important;
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+/* Fix button layout and hover effects */
 .event-card .btn {
-  transition: all 0.2s ease;
   min-width: 120px;
+  font-weight: 500;
+  transition: all 0.2s ease;
   text-align: center;
 }
 
@@ -14,17 +24,11 @@
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
 }
 
-/* Ensure the button container properly aligns to the right */
-.event-card .d-flex.justify-content-end {
-  margin-top: 1rem;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-/* Enhance the event card layout */
+/* Enhancing event card style to replace campus badges */
 .event-card {
-  border-left: 4px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left-width: 4px;
+  border-left-style: solid;
 }
 
 .event-card[data-campus="main"] {
@@ -33,4 +37,46 @@
 
 .event-card[data-campus="annex"] {
   border-left-color: var(--color-emerald);
+}
+
+/* Ensure date text is visible for all event types */
+.event-date {
+  color: white !important;
+}
+
+.event-date span {
+  color: white !important;
+  display: block;
+}
+
+/* Fix specifically for Annex Campus date display */
+.bg-emerald {
+  background-color: var(--color-emerald) !important;
+}
+
+.bg-emerald span {
+  color: white !important;
+}
+
+/* Fix spacing between description and button */
+.event-card p.small.mb-0 {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Add space between title and time */
+.event-card h4.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+/* Ensure event date display works consistently */
+.event-card .event-date {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.event-card .event-date span.d-block {
+  font-size: 1.5rem !important;
+  line-height: 1.2;
 }
