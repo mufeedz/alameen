@@ -1,6 +1,9 @@
 <!-- Skip to content link for accessibility -->
 <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
+<!-- Screen Reader Announcements -->
+<div id="screen-reader-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
 <!-- Sticky Bootstrap 5 Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm" aria-label="Main navigation">
   <div class="container-xl">
@@ -34,6 +37,6 @@
 </nav>
 
 <!-- Back to top button -->
-<a href="#" class="back-to-top bg-primary-theme text-white" aria-label="Back to top">
-  <i class="bi bi-arrow-up"></i>
+<a href="#" class="back-to-top bg-primary-theme text-white" role="button" aria-label="Back to top" tabindex="0">
+  <i class="bi bi-arrow-up" aria-hidden="true"></i>
 </a>

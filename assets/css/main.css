@@ -412,6 +412,40 @@ section + .section-divider {
   border: 2px solid var(--color-primary);
   border-radius: 0.25rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Accessibility helpers */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Focus styling for all interactive elements */
+a:focus,
+button:focus,
+[tabindex="0"]:focus {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Screen reader announcements */
+#screen-reader-announcer {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Dropdown styling with Islamic motifs */

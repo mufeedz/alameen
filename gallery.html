@@ -4,19 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery | Al-Ameen School</title>
+  
+  <!-- Performance optimizations: Preload critical assets -->
+  <link rel="preload" href="assets/images/logo-placeholder.png" as="image">
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="preload" href="assets/images/gallery/academics-1.jpg" as="image" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Lightbox CSS -->
   <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
   <meta name="description" content="Explore Al-Ameen School's photo gallery featuring academic achievements, school events, campus facilities, and student activities.">
+  
+  <!-- For WCAG compliance -->
+  <meta name="theme-color" content="#1c4c4c">
 </head>
 <body>
   <!-- Header Include -->
@@ -56,21 +67,17 @@
         <div class="section-header text-center mb-5">
           <h2 class="mb-3">Our School in Pictures</h2>
           <p class="lead">Browse through moments captured from various aspects of our school life</p>
-        </div>
-
-        <!-- Filter Buttons -->
+        </div>        <!-- Filter Buttons with ARIA attributes for accessibility -->
         <div class="filter-buttons text-center mb-4">
-          <div class="btn-group filter-button-group">
-            <button type="button" class="btn btn-outline-primary active" data-filter="*">All</button>
-            <button type="button" class="btn btn-outline-primary" data-filter=".academics">Academics</button>
-            <button type="button" class="btn btn-outline-primary" data-filter=".sports">Sports</button>
-            <button type="button" class="btn btn-outline-primary" data-filter=".events">Cultural Events</button>
-            <button type="button" class="btn btn-outline-primary" data-filter=".infrastructure">Infrastructure</button>
+          <div class="btn-group filter-button-group" role="tablist" aria-label="Gallery category filters">
+            <button type="button" class="btn btn-outline-primary active" data-filter="*" role="tab" aria-selected="true" tabindex="0" id="filter-all">All</button>
+            <button type="button" class="btn btn-outline-primary" data-filter=".academics" role="tab" aria-selected="false" tabindex="-1" id="filter-academics">Academics</button>
+            <button type="button" class="btn btn-outline-primary" data-filter=".sports" role="tab" aria-selected="false" tabindex="-1" id="filter-sports">Sports</button>
+            <button type="button" class="btn btn-outline-primary" data-filter=".events" role="tab" aria-selected="false" tabindex="-1" id="filter-events">Cultural Events</button>
+            <button type="button" class="btn btn-outline-primary" data-filter=".infrastructure" role="tab" aria-selected="false" tabindex="-1" id="filter-infrastructure">Infrastructure</button>
           </div>
-        </div>
-
-        <!-- Gallery Grid -->
-        <div class="row gallery-grid g-4" id="gallery-container">
+        </div>        <!-- Gallery Grid with accessibility attributes -->
+        <div class="row gallery-grid g-4" id="gallery-container" role="region" aria-label="Gallery images" aria-live="polite">
           <!-- Academic Images -->
           <div class="col-6 col-md-4 col-lg-3 gallery-item academics">
             <a href="assets/images/gallery/academics-1.jpg" data-lightbox="school-gallery" data-title="Science lab session with students engaged in experiments">
@@ -86,7 +93,7 @@
           <div class="col-6 col-md-4 col-lg-3 gallery-item academics">
             <a href="assets/images/gallery/academics-2.jpg" data-lightbox="school-gallery" data-title="Library session with students reading and researching">
               <div class="gallery-image-container">
-                <img src="assets/images/gallery/academics-2.jpg" alt="Library session with students reading and researching" class="img-fluid rounded">
+                <img src="assets/images/gallery/academics-2.jpg" alt="Library session with students reading and researching" class="img-fluid rounded" loading="lazy">
                 <div class="gallery-overlay">
                   <span class="gallery-caption">Library Resources</span>
                 </div>
@@ -98,18 +105,17 @@
           <div class="col-6 col-md-4 col-lg-3 gallery-item sports">
             <a href="assets/images/gallery/sports-1.jpg" data-lightbox="school-gallery" data-title="Annual sports day cricket match">
               <div class="gallery-image-container">
-                <img src="assets/images/gallery/sports-1.jpg" alt="Annual sports day cricket match" class="img-fluid rounded">
+                <img src="assets/images/gallery/sports-1.jpg" alt="Annual sports day cricket match" class="img-fluid rounded" loading="lazy">
                 <div class="gallery-overlay">
                   <span class="gallery-caption">Cricket Tournament</span>
                 </div>
               </div>
             </a>
           </div>
-          
-          <div class="col-6 col-md-4 col-lg-3 gallery-item sports">
+            <div class="col-6 col-md-4 col-lg-3 gallery-item sports">
             <a href="assets/images/gallery/sports-2.jpg" data-lightbox="school-gallery" data-title="Basketball court during inter-school competition">
               <div class="gallery-image-container">
-                <img src="assets/images/gallery/sports-2.jpg" alt="Basketball court during inter-school competition" class="img-fluid rounded">
+                <img src="assets/images/gallery/sports-2.jpg" alt="Basketball court during inter-school competition" class="img-fluid rounded" loading="lazy">
                 <div class="gallery-overlay">
                   <span class="gallery-caption">Basketball Match</span>
                 </div>
@@ -119,9 +125,8 @@
           
           <!-- Cultural Events Images -->
           <div class="col-6 col-md-4 col-lg-3 gallery-item events">
-            <a href="assets/images/gallery/events-1.jpg" data-lightbox="school-gallery" data-title="Annual Day celebrations with cultural performances">
-              <div class="gallery-image-container">
-                <img src="assets/images/gallery/events-1.jpg" alt="Annual Day celebrations with cultural performances" class="img-fluid rounded">
+            <a href="assets/images/gallery/events-1.jpg" data-lightbox="school-gallery" data-title="Annual Day celebrations with cultural performances">              <div class="gallery-image-container">
+                <img src="assets/images/gallery/events-1.jpg" alt="Annual Day celebrations with cultural performances" class="img-fluid rounded" loading="lazy">
                 <div class="gallery-overlay">
                   <span class="gallery-caption">Annual Day</span>
                 </div>
@@ -132,7 +137,7 @@
           <div class="col-6 col-md-4 col-lg-3 gallery-item events">
             <a href="assets/images/gallery/events-2.jpg" data-lightbox="school-gallery" data-title="Eid celebrations at school with special assembly">
               <div class="gallery-image-container">
-                <img src="assets/images/gallery/events-2.jpg" alt="Eid celebrations at school with special assembly" class="img-fluid rounded">
+                <img src="assets/images/gallery/events-2.jpg" alt="Eid celebrations at school with special assembly" class="img-fluid rounded" loading="lazy">
                 <div class="gallery-overlay">
                   <span class="gallery-caption">Eid Celebrations</span>
                 </div>
@@ -142,9 +147,8 @@
           
           <!-- Infrastructure Images -->
           <div class="col-6 col-md-4 col-lg-3 gallery-item infrastructure">
-            <a href="assets/images/gallery/infrastructure-1.jpg" data-lightbox="school-gallery" data-title="Main school building showcasing architecture">
-              <div class="gallery-image-container">
-                <img src="assets/images/gallery/infrastructure-1.jpg" alt="Main school building showcasing architecture" class="img-fluid rounded">
+            <a href="assets/images/gallery/infrastructure-1.jpg" data-lightbox="school-gallery" data-title="Main school building showcasing architecture">              <div class="gallery-image-container">
+                <img src="assets/images/gallery/infrastructure-1.jpg" alt="Main school building showcasing architecture" class="img-fluid rounded" loading="lazy">
                 <div class="gallery-overlay">
                   <span class="gallery-caption">Main Building</span>
                 </div>
@@ -155,7 +159,7 @@
           <div class="col-6 col-md-4 col-lg-3 gallery-item infrastructure">
             <a href="assets/images/gallery/infrastructure-2.jpg" data-lightbox="school-gallery" data-title="Modern computer lab with latest equipment">
               <div class="gallery-image-container">
-                <img src="assets/images/gallery/infrastructure-2.jpg" alt="Modern computer lab with latest equipment" class="img-fluid rounded">
+                <img src="assets/images/gallery/infrastructure-2.jpg" alt="Modern computer lab with latest equipment" class="img-fluid rounded" loading="lazy">
                 <div class="gallery-overlay">
                   <span class="gallery-caption">Computer Lab</span>
                 </div>
@@ -194,13 +198,15 @@
   <!-- Isotope for filtering -->
   <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
   <script src="assets/js/main.js"></script>
-  
-  <script>
-    // Initialize Lightbox
+    <script>
+    // Initialize Lightbox with accessibility improvements
     lightbox.option({
       'resizeDuration': 200,
       'wrapAround': true,
-      'albumLabel': "Image %1 of %2"
+      'albumLabel': "Image %1 of %2",
+      'fadeDuration': 300,
+      'alwaysShowNavOnTouchDevices': true,
+      'disableScrolling': false    // Allow scrolling for better accessibility
     });
     
     // Initialize Isotope for filtering after images are loaded
@@ -209,22 +215,65 @@
       const grid = document.querySelector('.gallery-grid');
       const iso = new Isotope(grid, {
         itemSelector: '.gallery-item',
-        layoutMode: 'fitRows'
+        layoutMode: 'fitRows',
+        percentPosition: true
       });
       
-      // Filter items on button click
+      // Filter items on button click with accessibility improvements
       document.querySelector('.filter-button-group').addEventListener('click', function(event) {
         if (!event.target.matches('button')) return;
         
         const filterValue = event.target.getAttribute('data-filter');
         iso.arrange({ filter: filterValue === '*' ? '' : filterValue });
         
-        // Update active button state
+        // Update active button state and ARIA attributes
         document.querySelectorAll('.filter-button-group .btn').forEach(btn => {
           btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+          btn.setAttribute('tabindex', '-1');
         });
+        
         event.target.classList.add('active');
+        event.target.setAttribute('aria-selected', 'true');
+        event.target.setAttribute('tabindex', '0');
+        
+        // Announce filter change to screen readers
+        const filterName = event.target.textContent.trim();
+        const announcer = document.getElementById('screen-reader-announcer');
+        if (announcer) {
+          announcer.textContent = `Showing ${filterName} images`;
+        }
       });
+      
+      // Add keyboard navigation to filter buttons
+      const filterButtons = document.querySelectorAll('.filter-button-group button');
+      filterButtons.forEach((btn, index) => {
+        btn.addEventListener('keydown', function(e) {
+          // Left/right keys to navigate, Enter/Space to activate
+          if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            e.preventDefault();
+            
+            const direction = e.key === 'ArrowLeft' ? -1 : 1;
+            const nextIndex = (index + direction + filterButtons.length) % filterButtons.length;
+            
+            filterButtons[nextIndex].focus();
+          }
+        });
+      });
+      
+      // Make gallery items keyboard navigable
+      document.querySelectorAll('.gallery-item a').forEach((link) => {
+        link.setAttribute('role', 'link');
+        link.setAttribute('aria-label', link.getAttribute('data-title') || 'Gallery image');
+      });
+    });
+    
+    // Add keyboard event listener for Lightbox
+    document.addEventListener('keydown', function(e) {
+      // Escape key handler for lightbox
+      if (e.key === 'Escape' && document.querySelector('.lb-container')) {
+        lightbox.end();
+      }
     });
   </script>
 </body>
