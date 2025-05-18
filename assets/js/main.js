@@ -66,6 +66,48 @@ function initializeBackToTop() {
   }
 }
 
+// Initialize gallery features if on gallery page
+function initializeGallery() {
+  // Check if we're on the gallery page
+  if (document.querySelector('.gallery-grid')) {
+    // Wait for images to load for better layout
+    window.addEventListener('load', function() {
+      // Initialize Isotope if it exists
+      if (typeof Isotope !== 'undefined') {
+        const grid = document.querySelector('.gallery-grid');
+        const iso = new Isotope(grid, {
+          itemSelector: '.gallery-item',
+          layoutMode: 'fitRows',
+          percentPosition: true
+        });
+        
+        // Filter items on button click
+        document.querySelector('.filter-button-group').addEventListener('click', function(event) {
+          if (!event.target.matches('button')) return;
+          
+          const filterValue = event.target.getAttribute('data-filter');
+          iso.arrange({ filter: filterValue === '*' ? '' : filterValue });
+          
+          // Update active button state
+          document.querySelectorAll('.filter-button-group .btn').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          event.target.classList.add('active');
+        });
+      }
+      
+      // Initialize Lightbox if it exists
+      if (typeof lightbox !== 'undefined') {
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true,
+          'albumLabel': "Image %1 of %2"
+        });
+      }
+    });
+  }
+}
+
 // Swiper initialization for pages with hero sliders
 function initializeHeroSwiper() {
   const heroSwiper = document.querySelector('.hero-swiper');
@@ -97,6 +139,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize Islamic pattern backgrounds
   initializePatternBackgrounds();
+  
+  // Initialize Gallery features if on gallery page
+  initializeGallery();
   
   // Additional initialization for back-to-top when using Live Server
   window.addEventListener('load', function() {

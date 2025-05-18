@@ -4,9 +4,433 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campuses | Al-Ameen School</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
+  <meta name="description" content="Explore Al-Ameen School's campuses, facilities, and locations in the city.">
 </head>
 <body>
-  <h1>Our Campuses</h1>
+  <!-- Header Include -->
+  <div id="header-include"></div>
+  
+  <main id="main-content">
+    <!-- Page Banner -->
+    <section class="page-banner position-relative">
+      <div class="islamic-motif banner-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+      <div class="container-xl py-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb mb-2">
+                <li class="breadcrumb-item"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item active text-white" aria-current="page">Campuses</li>
+              </ol>
+            </nav>
+            <h1 class="page-title text-white mb-3">Our Campuses</h1>
+            <p class="lead text-white">Discover our state-of-the-art facilities across two convenient locations.</p>
+          </div>
+          <div class="col-lg-6 text-center text-lg-end">
+            <div class="islamic-banner-decoration">
+              <img src="assets/images/islamic-pattern.svg" alt="" class="banner-accent" aria-hidden="true">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="arch-section-divider"></div>
+    </section>
+
+    <div class="section-divider"></div>
+    
+    <!-- Campus Navigation -->
+    <section class="campus-nav section position-relative py-5">
+      <div class="container-xl">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <div class="campus-navigation bg-white rounded shadow-sm p-4">
+              <div class="row g-4 text-center">
+                <div class="col-md-6">
+                  <a href="#main-campus" class="campus-nav-item d-block text-decoration-none p-3 rounded transition">
+                    <i class="bi bi-building display-3 d-block mb-3 text-primary-theme"></i>
+                    <h3 class="h4 text-primary-theme">Main Campus</h3>
+                    <p class="text-muted small mb-0">City Center | Grades 6-12</p>
+                  </a>
+                </div>
+                <div class="col-md-6">
+                  <a href="#annex-campus" class="campus-nav-item d-block text-decoration-none p-3 rounded transition">
+                    <i class="bi bi-houses display-3 d-block mb-3 text-primary-theme"></i>
+                    <h3 class="h4 text-primary-theme">Annex Campus</h3>
+                    <p class="text-muted small mb-0">North District | Grades 1-5</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <div class="section-divider"></div>
+    
+    <!-- Main Campus -->
+    <section id="main-campus" class="main-campus section position-relative py-5 bg-neutral">
+      <div class="pattern-star-bg"></div>
+      <div class="container-xl">
+        <h2 class="section__title">Main Campus</h2>
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="arabesque-border">
+              <div class="campus-gallery">
+                <!-- Main Campus Image Slider -->
+                <div class="swiper campus-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="assets/images/slider-1.png" class="img-fluid" alt="Main Campus Building">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/images/slider-2.png" class="img-fluid" alt="Main Campus Library">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/images/slider-3.png" class="img-fluid" alt="Main Campus Sports Facilities">
+                    </div>
+                  </div>
+                  <!-- Pagination and Navigation -->
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="campus-details">
+              <h3>Our Flagship Location</h3>
+              <p>The Main Campus, established in 1985, serves as the heart of Al-Ameen School's educational mission. Located in the vibrant city center, this campus houses our middle and high school programs (Grades 6-12) in a spacious modern facility spanning 5 acres.</p>
+              <p>The campus combines traditional Islamic architectural elements with contemporary educational design to create an inspiring environment for learning and growth.</p>
+              <div class="campus-features mt-4">
+                <h4 class="h5 text-primary-theme mb-3">Key Features</h4>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="feature d-flex align-items-center mb-2">
+                      <i class="bi bi-book text-accent me-2"></i>
+                      <span>Modern Library (10,000+ volumes)</span>
+                    </div>
+                    <div class="feature d-flex align-items-center mb-2">
+                      <i class="bi bi-pc-display text-accent me-2"></i>
+                      <span>Computer Labs (3)</span>
+                    </div>
+                    <div class="feature d-flex align-items-center mb-2">
+                      <i class="bi bi-flask text-accent me-2"></i>
+                      <span>Science Laboratories (4)</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature d-flex align-items-center mb-2">
+                      <i class="bi bi-dribbble text-accent me-2"></i>
+                      <span>Sports Complex & Playground</span>
+                    </div>
+                    <div class="feature d-flex align-items-center mb-2">
+                      <i class="bi bi-music-note-beamed text-accent me-2"></i>
+                      <span>Performing Arts Center</span>
+                    </div>
+                    <div class="feature d-flex align-items-center mb-2">
+                      <i class="bi bi-building text-accent me-2"></i>
+                      <span>Prayer Hall & Auditorium</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="campus-contact bg-white p-4 rounded shadow-sm">
+              <h3 class="h5 mb-3">Contact Information</h3>
+              <ul class="list-unstyled">
+                <li class="mb-2"><i class="bi bi-geo-alt-fill text-primary-theme me-2"></i> 123 Main Road, City Center, State 600001</li>
+                <li class="mb-2"><i class="bi bi-telephone-fill text-primary-theme me-2"></i> Phone: +91 12345 67890</li>
+                <li class="mb-2"><i class="bi bi-envelope-fill text-primary-theme me-2"></i> Email: main@alameen.edu</li>
+                <li><i class="bi bi-clock-fill text-primary-theme me-2"></i> Office Hours: 8:00 AM - 4:00 PM (Mon-Fri)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="campus-leadership bg-white p-4 rounded shadow-sm">
+              <h3 class="h5 mb-3">Campus Leadership</h3>
+              <div class="d-flex align-items-center">
+                <div class="leadership-info">
+                  <p class="mb-1"><strong>Principal:</strong> Dr. Ahmed Khan</p>
+                  <p class="mb-1"><strong>Vice Principal:</strong> Mrs. Fatima Rahman</p>
+                  <p class="mb-0"><strong>Administrative Officer:</strong> Mr. Joseph Thomas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Google Maps Embed -->
+        <div class="campus-map mt-5">
+          <h3 class="h5 mb-3">Location & Directions</h3>
+          <div class="ratio ratio-21x9">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8567428449223!2d80.2677324!3d13.0410506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266ea218fc7c3%3A0x82c9b6b61c96b8!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716653889349!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <p class="small mt-2"><i class="bi bi-info-circle-fill me-1"></i> Located 2 km from Central Railway Station. Bus routes 23, 45, and 67 stop directly in front of the campus.</p>
+        </div>
+      </div>
+    </section>
+    
+    <div class="section-divider"></div>
+    
+    <!-- Annex Campus -->
+    <section id="annex-campus" class="annex-campus section position-relative py-5">
+      <div class="pattern-rosette-bg"></div>
+      <div class="container-xl">
+        <h2 class="section__title">Annex Campus</h2>
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+            <div class="arabesque-border">
+              <div class="campus-gallery">
+                <!-- Annex Campus Image Slider -->
+                <div class="swiper annex-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="assets/images/slider-3.png" class="img-fluid" alt="Annex Campus Building">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/images/slider-1.png" class="img-fluid" alt="Annex Campus Playground">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/images/slider-2.png" class="img-fluid" alt="Annex Campus Classrooms">
+                    </div>
+                  </div>
+                  <!-- Pagination and Navigation -->
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="campus-details">
+              <h3>Our Primary School Campus</h3>
+              <p>The Annex Campus, established in 2005, is dedicated to our younger students (Grades 1-5). Located in the peaceful North District, this 3-acre campus was designed specifically for primary education with child-friendly spaces and secure environments.</p>
+              <p>The campus features colorful and engaging learning spaces, with special attention to creating an environment where young minds can flourish in both academics and character development.</p>
+              <div class="campus-features mt-4">
+                <h4 class="h5 text-primary-theme mb-3">Key Features</h4>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="feature d-flex align-items-center mb-2">
+                      <i class="bi bi-easel text-accent me-2"></i>
+                      <span>Interactive Classrooms</span>
+                    </div>
+                    <div class="feature d-flex align-items-center mb-2">
+                      <i class="bi bi-tree text-accent me-2"></i>
+                      <span>Spacious Play Areas</span>
+                    </div>
+                    <div class="feature d-flex align-items-center mb-2">
+                      <i class="bi bi-book text-accent me-2"></i>
+                      <span>Children's Library</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature d-flex align-items-center mb-2">
+                      <i class="bi bi-palette text-accent me-2"></i>
+                      <span>Art & Craft Studio</span>
+                    </div>
+                    <div class="feature d-flex align-items-center mb-2">
+                      <i class="bi bi-music-note text-accent me-2"></i>
+                      <span>Music Room</span>
+                    </div>
+                    <div class="feature d-flex align-items-center mb-2">
+                      <i class="bi bi-shield-check text-accent me-2"></i>
+                      <span>Secure Environment</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="campus-contact bg-white p-4 rounded shadow-sm">
+              <h3 class="h5 mb-3">Contact Information</h3>
+              <ul class="list-unstyled">
+                <li class="mb-2"><i class="bi bi-geo-alt-fill text-primary-theme me-2"></i> 45 Garden Street, North District, State 600042</li>
+                <li class="mb-2"><i class="bi bi-telephone-fill text-primary-theme me-2"></i> Phone: +91 12345 67891</li>
+                <li class="mb-2"><i class="bi bi-envelope-fill text-primary-theme me-2"></i> Email: annex@alameen.edu</li>
+                <li><i class="bi bi-clock-fill text-primary-theme me-2"></i> Office Hours: 8:00 AM - 3:30 PM (Mon-Fri)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="campus-leadership bg-white p-4 rounded shadow-sm">
+              <h3 class="h5 mb-3">Campus Leadership</h3>
+              <div class="d-flex align-items-center">
+                <div class="leadership-info">
+                  <p class="mb-1"><strong>Head of Primary:</strong> Mrs. Aisha Mohammed</p>
+                  <p class="mb-1"><strong>Coordinator:</strong> Ms. Priya Sharma</p>
+                  <p class="mb-0"><strong>Administrative Officer:</strong> Mr. Rahul Mehta</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Google Maps Embed -->
+        <div class="campus-map mt-5">
+          <h3 class="h5 mb-3">Location & Directions</h3>
+          <div class="ratio ratio-21x9">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0639462547805!2d80.2432475!3d13.0827548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266ea218fc7c3%3A0x82c9b6b61c96b8!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716653889349!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <p class="small mt-2"><i class="bi bi-info-circle-fill me-1"></i> Located in a quiet residential area. Bus routes 32 and 56 stop within 200 meters. School shuttle service available from Main Campus.</p>
+        </div>
+      </div>
+    </section>
+    
+    <div class="section-divider"></div>
+    
+    <!-- Campus Comparison -->
+    <section class="campus-comparison section position-relative py-5 bg-neutral">
+      <div class="pattern-girih-bg"></div>
+      <div class="container-xl">
+        <h2 class="section__title">Campus Comparison</h2>
+        <p class="mb-5">Both our campuses offer excellence in education while catering to different age groups and educational needs.</p>
+        
+        <div class="table-responsive">
+          <table class="table table-bordered bg-white">
+            <thead class="table-light">
+              <tr>
+                <th>Feature</th>
+                <th>Main Campus</th>
+                <th>Annex Campus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Grade Levels</strong></td>
+                <td>6-12 (Middle & High School)</td>
+                <td>1-5 (Primary School)</td>
+              </tr>
+              <tr>
+                <td><strong>Location</strong></td>
+                <td>City Center</td>
+                <td>North District</td>
+              </tr>
+              <tr>
+                <td><strong>Campus Size</strong></td>
+                <td>5 acres</td>
+                <td>3 acres</td>
+              </tr>
+              <tr>
+                <td><strong>Facilities</strong></td>
+                <td>Advanced labs, library, sports complex</td>
+                <td>Play areas, art studio, children's library</td>
+              </tr>
+              <tr>
+                <td><strong>Class Size</strong></td>
+                <td>25-30 students</td>
+                <td>20-25 students</td>
+              </tr>
+              <tr>
+                <td><strong>School Hours</strong></td>
+                <td>8:30 AM - 3:30 PM</td>
+                <td>8:30 AM - 2:30 PM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Virtual Tour CTA -->
+    <section class="virtual-tour-cta section position-relative py-5 mt-0 mb-0 bg-primary-theme text-white text-center">
+      <div class="islamic-motif" style="opacity: 0.2; mix-blend-mode: soft-light;"></div>
+      <div class="container-xl">
+        <h2 class="mb-3">Experience Our Campuses</h2>
+        <p class="lead mb-4">Would you like to see our facilities in person? Schedule a campus tour today!</p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <a href="contact.html" class="btn btn-lg bg-accent text-dark fw-bold">
+            <i class="bi bi-calendar-check me-2"></i> Schedule a Tour
+          </a>
+          <a href="#" class="btn btn-lg btn-outline-light">
+            <i class="bi bi-camera-video me-2"></i> Virtual Tour
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer Include -->
+  <div id="footer-include" class="mt-0"></div>
+  
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Initialize campus swiper galleries
+    document.addEventListener('DOMContentLoaded', function() {
+      // Main Campus Swiper
+      const mainCampusSwiper = new Swiper('.campus-swiper', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 5000,
+        },
+      });
+      
+      // Annex Campus Swiper
+      const annexCampusSwiper = new Swiper('.annex-swiper', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 5000,
+        },
+      });
+      
+      // Smooth scroll for navigation
+      document.querySelectorAll('.campus-nav-item').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            window.scrollTo({
+              top: targetSection.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -8,6 +8,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
   <meta name="description" content="Learn about Al-Ameen School's history, mission, and values.">
@@ -17,38 +21,47 @@
   <div id="header-include"></div>
   
   <main id="main-content">
-    <div class="container-xl mt-4">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">About</li>
-        </ol>
-      </nav>
-      
-      <h1>About Al-Ameen School</h1>
-      <p class="lead">Our history, mission, and commitment to excellence.</p>
-    </div>    <!-- History section with Islamic pattern background -->
+    <!-- Page Banner -->
+    <section class="page-banner position-relative">
+      <div class="islamic-motif banner-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+      <div class="container-xl py-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb mb-2">
+                <li class="breadcrumb-item"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item active text-white" aria-current="page">About</li>
+              </ol>
+            </nav>
+            <h1 class="page-title text-white mb-3">About Al-Ameen School</h1>
+            <p class="lead text-white">Our history, mission, and commitment to excellence.</p>
+          </div>
+          <div class="col-lg-6 text-center text-lg-end">
+            <div class="islamic-banner-decoration">
+              <img src="assets/images/rosette-pattern.svg" alt="" class="banner-accent" aria-hidden="true">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="arch-section-divider"></div>
+    </section>
+
+    <!-- History section with Islamic pattern background -->
     <section class="section position-relative py-5">
       <div class="pattern-star-bg"></div>
       <div class="container-xl">
         <div class="row g-4">
           <div class="col-lg-8">
-            <div class="bg-white p-4 rounded shadow-sm">
+            <div class="bg-white p-4 rounded shadow-sm featured-card">
               <h2 id="history" class="section__title">Our History</h2>
-              <p>Content will be added based on the specific requirements.</p>
+              <div class="islamic-accent-line mb-3"></div>
+              <p>Al-Ameen School was founded in 1980 with a mission to provide quality education that balances academic excellence with Islamic values. What began as a small institution with just 50 students has grown into a renowned educational establishment serving over 2,000 students across multiple campuses.</p>
+              <p>Our journey is a testament to our commitment to nurturing young minds in an environment that promotes both intellectual growth and spiritual development.</p>
             </div>
 
-            <div class="bg-white p-4 rounded shadow-sm mt-4">
+            <div class="bg-white p-4 rounded shadow-sm mt-4 featured-card">
               <h2 id="mission" class="section__title">Mission & Vision</h2>
-              <p>Content will be added based on the specific requirements.</p>
-            </div>
-            
-            <div class="position-relative my-4">
-              <div class="pattern-arabesque-border"></div>
-            </div>
-            
-            <div class="bg-white p-4 rounded shadow-sm mt-4">
-              <h2 id="trust" class="section__title">Our Trust</h2>
+              <div class="islamic-accent-line mb-3"></div>
               <p>Content will be added based on the specific requirements.</p>
             </div>
           </div>
