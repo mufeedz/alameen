@@ -1,0 +1,130 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Open+Sans:wght@400;600&family=Raleway:wght@400;600;700&display=swap');
+
+:root {
+  /* Color Palette */
+  --color-primary: #006D77;
+  --color-primary-alt: #1D3557;
+  --color-accent: #E9C46A;
+  --color-highlight: #E76F51;
+  --color-bg: #F8F9FA;
+  --color-separator: #E0E0E0;
+  --color-text: #333333;
+
+  /* Typography */
+  --font-body: 'Open Sans', Arial, sans-serif;
+  --font-heading: 'Amiri', 'Raleway', serif;
+  --font-alt: 'Raleway', Arial, sans-serif;
+
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-h4: 1.25rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+
+  --font-weight-bold: 700;
+  --font-weight-semi: 600;
+  --font-weight-normal: 400;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+  margin: 0;
+}
+
+h1, .section__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+h2 {
+  font-family: var(--font-alt);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semi);
+  color: var(--color-primary-alt);
+  margin-bottom: var(--space-sm);
+}
+
+h3 {
+  font-family: var(--font-alt);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semi);
+  color: var(--color-primary-alt);
+}
+
+h4 {
+  font-family: var(--font-alt);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semi);
+}
+
+small {
+  font-size: var(--font-size-small);
+}
+
+/* BEM Base Classes */
+.section__title {
+  /* Already styled above for h1 */
+}
+
+.btn--primary {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-alt);
+  font-weight: var(--font-weight-bold);
+  padding: var(--space-xs) var(--space-md);
+  border: none;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn--primary:hover,
+.btn--primary:focus {
+  background: var(--color-primary-alt);
+  color: #fff;
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem 0.5rem 0 0;
+  display: block;
+  background: var(--color-separator);
+}
+
+/* Utility Spacing */
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-separator);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  margin-bottom: var(--space-lg);
+}
+
+/* Example for Islamic motif backgrounds (to be customized with SVG or patterns) */
+.islamic-motif {
+  background-image: url('../images/islamic-pattern.svg');
+  background-repeat: repeat;
+  opacity: 0.08;
+}
