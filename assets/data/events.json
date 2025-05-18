@@ -1,0 +1,229 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Annual Science Exhibition",
+      "date": "2025-05-25",
+      "time": "9:00 AM - 4:00 PM",
+      "location": "Main Campus Auditorium",
+      "campus": "main",
+      "description": "Student projects showcasing scientific innovation and research.",
+      "details": "The Annual Science Exhibition showcases innovative projects from students across all grades. Parents and community members are invited to view and appreciate the scientific achievements of our students.",
+      "activities": [
+        "Interactive science demonstrations",
+        "Research project presentations",
+        "Special guest lectures from leading scientists",
+        "Awards ceremony for outstanding projects"
+      ],
+      "organizer": "Science Department"
+    },
+    {
+      "id": "2",
+      "title": "Parent-Teacher Conference",
+      "date": "2025-06-02",
+      "time": "10:00 AM - 3:00 PM",
+      "location": "Main Campus Classrooms",
+      "campus": "main",
+      "description": "End of term progress reports and consultation with teachers.",
+      "details": "The end-of-term Parent-Teacher Conference provides an opportunity for parents to meet with teachers to discuss their child's academic progress, behavior, and development.",
+      "activities": [
+        "Individual sessions with subject teachers",
+        "Distribution of progress reports",
+        "Educational resource recommendations",
+        "Discussion of summer learning goals"
+      ],
+      "organizer": "Academic Department"
+    },
+    {
+      "id": "3",
+      "title": "Cultural Arts Festival",
+      "date": "2025-05-28",
+      "time": "1:00 PM - 5:00 PM",
+      "location": "Annex Campus Multi-Purpose Hall",
+      "campus": "annex",
+      "description": "Celebrating diverse cultures through music, dance, and art.",
+      "details": "Join us for a celebration of diversity through cultural performances, art displays, and interactive activities that showcase traditions from around the world.",
+      "activities": [
+        "Traditional dance and music performances",
+        "Student art exhibition",
+        "International food sampling",
+        "Cultural workshops and demonstrations"
+      ],
+      "organizer": "Arts & Cultural Department"
+    },
+    {
+      "id": "4",
+      "title": "Sports Day Preparation",
+      "date": "2025-06-08",
+      "time": "9:00 AM - 12:00 PM",
+      "location": "Annex Campus Sports Field",
+      "campus": "annex",
+      "description": "Practice session for annual sports day competitions.",
+      "details": "This is a practice session for all students participating in the upcoming annual Sports Day event. Students will rehearse various track and field events, team sports, and march-past formations.",
+      "activities": [
+        "Track and field practice",
+        "Team sports rehearsals",
+        "March-past formations",
+        "Equipment setup training"
+      ],
+      "organizer": "Physical Education Department"
+    },
+    {
+      "id": "5",
+      "title": "Mathematics Olympiad",
+      "date": "2025-06-15",
+      "time": "9:00 AM - 12:00 PM",
+      "location": "Main Campus Hall",
+      "campus": "main",
+      "description": "Annual mathematics competition for students in grades 6-12.",
+      "details": "The Mathematics Olympiad challenges students to solve complex mathematical problems, promoting analytical thinking and mathematical creativity among our students.",
+      "activities": [
+        "Individual problem-solving competition",
+        "Team mathematics challenge",
+        "Mathematical puzzles exhibition",
+        "Awards ceremony for top performers"
+      ],
+      "organizer": "Mathematics Department"
+    },
+    {
+      "id": "6",
+      "title": "Early Years Art Exhibition",
+      "date": "2025-06-20",
+      "time": "1:00 PM - 4:00 PM",
+      "location": "Annex Campus Art Room",
+      "campus": "annex",
+      "description": "Showcasing artwork created by students in kindergarten through grade 2.",
+      "details": "This exhibition highlights the creativity and artistic development of our youngest students, showcasing their paintings, crafts, and sculptures created throughout the academic year.",
+      "activities": [
+        "Art display from kindergarten through grade 2",
+        "Interactive art activities for visitors",
+        "Mini-workshops on children's art techniques",
+        "Refreshments and celebration"
+      ],
+      "organizer": "Early Years Faculty"
+    },
+    {
+      "id": "7",
+      "title": "Annual Charity Fundraiser",
+      "date": "2025-04-15",
+      "time": "10:00 AM - 6:00 PM",
+      "location": "Main Campus Grounds",
+      "campus": "main",
+      "description": "Our annual charity fundraiser was a tremendous success, raising over ₹3 lakh for local orphanages.",
+      "details": "The Annual Charity Fundraiser brought our school community together to support local orphanages through various activities and donation drives.",
+      "activities": [
+        "Charity bazaar with student-made crafts",
+        "Bake sale with homemade treats",
+        "Cultural performances",
+        "Donation collection stations"
+      ],
+      "organizer": "Community Outreach Committee"
+    },
+    {
+      "id": "8",
+      "title": "Literary Festival",
+      "date": "2025-03-22",
+      "time": "9:30 AM - 3:30 PM",
+      "location": "Main Campus Library",
+      "campus": "main",
+      "description": "Students participated enthusiastically in poetry recitals, debates and creative writing competitions.",
+      "details": "The Literary Festival celebrated the power of language through various competitions and activities, showcasing our students' verbal and written communication skills.",
+      "activities": [
+        "Poetry recitation contest",
+        "Debate competition on current topics",
+        "Creative writing workshop",
+        "Storytelling sessions"
+      ],
+      "organizer": "Language Arts Department"
+    },
+    {
+      "id": "9",
+      "title": "Science Symposium",
+      "date": "2025-02-10",
+      "time": "10:00 AM - 2:00 PM",
+      "location": "Main Campus Science Block",
+      "campus": "main",
+      "description": "Renowned scientist Dr. Ramesh Kumar attended our Science Symposium and inspired our future scientists.",
+      "details": "The Science Symposium provided a platform for science enthusiasts to interact with expert scientists and learn about recent developments in various scientific fields.",
+      "activities": [
+        "Guest lectures by renowned scientists",
+        "Interactive Q&A sessions",
+        "Scientific research poster presentations",
+        "Hands-on demonstrations"
+      ],
+      "organizer": "Science Department"
+    },
+    {
+      "id": "10",
+      "title": "School Founder's Day",
+      "date": "2025-07-05",
+      "time": "8:00 AM - 1:00 PM",
+      "location": "Main Campus Auditorium",
+      "campus": "main",
+      "description": "Celebration of our school's founding anniversary with special programs and alumni gathering.",
+      "details": "Founder's Day honors the establishment of Al-Ameen School with commemorative events, alumni reunions, and special recognition of the school's heritage and achievements.",
+      "activities": [
+        "Tribute to school founders",
+        "Alumni speeches and memories sharing",
+        "Historical exhibition of school development",
+        "Cultural program by current students"
+      ],
+      "organizer": "School Administration"
+    },
+    {
+      "id": "11",
+      "title": "Career Guidance Workshop",
+      "date": "2025-06-25",
+      "time": "9:00 AM - 3:00 PM",
+      "location": "Main Campus Conference Hall",
+      "campus": "main",
+      "description": "Guidance session for high school students on career options and university admissions.",
+      "details": "The Career Guidance Workshop provides valuable information to high school students about various career paths, university admission processes, and scholarship opportunities.",
+      "activities": [
+        "Career counseling sessions",
+        "University representatives presentations",
+        "Alumni career path sharing",
+        "One-on-one consultation with experts"
+      ],
+      "organizer": "Career Counseling Cell"
+    },
+    {
+      "id": "12",
+      "title": "Annual Field Trip",
+      "date": "2025-07-10",
+      "time": "7:00 AM - 6:00 PM",
+      "location": "Science Museum & Planetarium",
+      "campus": "annex",
+      "description": "Educational excursion for junior classes to the Science Museum and Planetarium.",
+      "details": "The Annual Field Trip offers students an opportunity to learn outside the classroom environment, exploring scientific concepts through interactive exhibits and planetarium shows.",
+      "activities": [
+        "Guided tour of science museum",
+        "Interactive scientific exhibits",
+        "Planetarium show experience",
+        "Hands-on learning activities"
+      ],
+      "organizer": "Junior School Faculty"
+    }
+  ],
+  "holidays": [
+    {
+      "id": "h1",
+      "title": "Eid al-Fitr",
+      "date": "2025-06-10",
+      "description": "School closed in observance of Eid al-Fitr."
+    },
+    {
+      "id": "h2",
+      "title": "Independence Day",
+      "date": "2025-08-15",
+      "description": "School closed for Independence Day. Flag hoisting ceremony at 8:00 AM."
+    },
+    {
+      "id": "h3",
+      "title": "Summer Break",
+      "startDate": "2025-05-15",
+      "endDate": "2025-06-15",
+      "description": "School closed for Summer Break."
+    }
+  ]
+}

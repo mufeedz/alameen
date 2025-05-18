@@ -239,6 +239,31 @@ section + .section-divider {
   outline-offset: 2px;
 }
 
+/* Accent Button Style */
+.btn--accent {
+  display: inline-block;
+  background: var(--color-emerald);
+  color: #fff;
+  font-family: var(--font-alt);
+  font-weight: var(--font-weight-bold);
+  padding: var(--space-xs) var(--space-md);
+  border: none;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  letter-spacing: 0.02em;
+}
+.btn--accent:hover,
+.btn--accent:focus {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+.btn--accent:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 /* Card Styles */
 .card {
   background: #fff;
