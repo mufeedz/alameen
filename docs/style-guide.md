@@ -1,56 +1,104 @@
-# Design Tokens
+# Al-Ameen School Design System
 
 ## Color Palette
-**Primary**  
-- Deep Teal: `#006D77` – classic tilework tone  
-- Royal Blue: `#1D3557` – knowledge & wisdom  
-- Emerald Green: `#2A9D8F` – growth & prosperity  
 
-**Secondary**  
-- Warm Sand: `#E9C46A` – warm accent  
-- Terracotta: `#E76F51` – highlight and call-out  
+### Primary Colors
+- **Deep Teal Green**: `#1c4c4c` - Primary brand color, inspired by traditional Islamic tilework
+- **Royal Blue**: `#1D3557` - Secondary brand color representing knowledge and wisdom 
+- **Emerald Green**: `#2A9D8F` - Accent color symbolizing growth and prosperity
 
-**Neutrals**  
-- Soft Ivory: `#F8F9FA` – main backgrounds  
-- Light Slate: `#E0E0E0` – subtle separators  
-- Charcoal: `#333333` – primary text  
+### Secondary Colors
+- **Gold**: `#e0b144` - Main accent color for highlights and call-to-action elements
+- **Terracotta**: `#E76F51` - Accent for important highlights and notifications
 
-**Usage Guidelines**  
-- 60% neutrals, 30% primaries, 10% accents  
-- All combinations must meet WCAG 2.1 AA (≥ 4.5:1 contrast) :contentReference[oaicite:0]{index=0}:contentReference[oaicite:1]{index=1}  
+### Neutral Tones
+- **Light Gray**: `#f9f9f9` - Background color for content areas
+- **White**: `#ffffff` - Primary background color
+- **Dark Gray**: `#343a40` - Primary text color
+- **Light Slate**: `#E0E0E0` - For subtle separations and borders
 
----
+### Usage Guidelines
+- **60-30-10 Rule**: 60% neutral backgrounds, 30% primary colors, 10% accent colors
+- **Accessibility**: All color combinations meet WCAG 2.1 AA contrast requirements (≥4.5:1 for normal text)
+- **Semantic Usage**: Primary colors for headers and navigation, gold for calls-to-action and highlights
 
-## Typography Scale
-| Element            | Font     | Size      | Weight |
-| ------------------ | -------- | --------- | ------ |
-| H1 (Primary Hero)  | Amiri    | 2.5 rem   | 700    |
-| H2 (Sections)      | Raleway  | 2 rem     | 600    |
-| H3                 | Raleway  | 1.5 rem   | 600    |
-| H4                 | Raleway  | 1.25 rem  | 600    |
-| Body Text          | Open Sans| 1 rem     | 400    |
-| Small / Caption    | Open Sans| 0.875 rem | 400    |
+## Typography
 
-**Line-height & spacing**  
-- Body: 1.5, Headings: 1.2  
-- ≥ 1.5 rem vertical rhythm between blocks :contentReference[oaicite:2]{index=2}:contentReference[oaicite:3]{index=3}  
+### Font Selection
+- **Primary Heading Font**: `'Amiri'`, serif - A modern Arabic-inspired serif typeface
+- **Secondary/Body Font**: `'Poppins'`, sans-serif - Clean, modern sans-serif for excellent readability
+- **Alternative Heading Font**: `'Noto Naskh Arabic'` (fallback for Arabic-style elements)
 
----
+### Typography Scale
+| Element            | Font      | Size     | Weight | Line-height |
+|------------------- |---------- |--------- |------- |------------ |
+| H1 (Primary Hero)  | Amiri     | 2.5rem   | 700    | 1.2         |
+| H2 (Sections)      | Poppins   | 2rem     | 600    | 1.2         |
+| H3                 | Poppins   | 1.5rem   | 600    | 1.3         |
+| H4                 | Poppins   | 1.25rem  | 600    | 1.3         |
+| Body Text          | Poppins   | 1rem     | 400    | 1.5         |
+| Small/Caption      | Poppins   | 0.875rem | 400    | 1.4         |
+
+### Spacing & Rhythm
+- **Base Unit**: 1rem (16px)
+- **Vertical Rhythm**: Minimum 1.5rem between content blocks
+- **Letter Spacing**: Normal for body text, +0.02em for headings
 
 ## Islamic Design Elements
 
-### Geometric Patterns  
-- 8-fold rosette for section dividers  
-- Star polygons in backgrounds  
-- Girih-tile footer motifs  
+### Geometric Patterns
+- 8-fold rosette patterns for decorative elements and section dividers
+- Star polygons for accent backgrounds and cards
+- Girih-tile motifs in footer designs and subtle background elements
 
-### Architectural Motifs  
-- Pointed-arch framing for cards  
-- Muqarnas-style dropdowns  
-- Arabesque border frames  
-- Mashrabiya overlays on images :contentReference[oaicite:4]{index=4}:contentReference[oaicite:5]{index=5}  
+### Architectural Motifs
+- Pointed-arch framing for cards and important sections
+- Muqarnas-inspired dropdown menus and layered elements
+- Arabesque border patterns for frames and decorative elements
+- Mashrabiya-inspired overlay patterns for image containers and backgrounds
 
-### Calligraphic Accents  
-- Stylized “bismillah” watermark  
-- Calligraphic icons in nav  
-- Decorative Arabic-inspired flourishes  
+### Calligraphic Elements
+- Stylized "bismillah" watermarks for important sections
+- Modern interpretations of Arabic calligraphy for decorative accents
+- Calligraphic-inspired iconography for navigation and UI elements
+
+## Component Examples
+
+### Button Styles
+```css
+.btn--primary {
+  background-color: #1c4c4c;
+  color: white;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn--accent {
+  background-color: #e0b144;
+  color: #343a40;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1.5rem;
+}
+```
+
+### Card Styles
+```css
+.card {
+  border-radius: 0.5rem;
+  border: 1px solid #E0E0E0;
+  overflow: hidden;
+}
+
+.card--pointed-arch {
+  border-radius: 0 0 2.5rem 2.5rem/0 0 2rem 2rem;
+}
+```
+
+### Section Divider
+```css
+.section-divider {
+  height: 32px;
+  background: url('path/to/pattern.svg') repeat-x;
+  margin: 2rem 0;
+}
+```

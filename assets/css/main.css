@@ -2,20 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Color Palette (Updated to match specs) */
-  --color-primary: #1c4c4c; /* Deep teal green as specified */
-  --color-primary-alt: #1D3557; /* Royal Blue from specs */
-  --color-accent: #e0b144; /* Gold as specified */
-  --color-highlight: #E76F51; /* Terracotta from specs */
-  --color-bg: #f9f9f9; /* Light gray */
-  --color-separator: #E0E0E0; /* Light Slate from specs */
-  --color-text: #343a40; /* Dark gray */
+  /* Color Palette (Reconciled) */
+  --color-primary: #1c4c4c; /* Deep Teal Green - primary brand color */
+  --color-primary-alt: #1D3557; /* Royal Blue - secondary brand color */
+  --color-emerald: #2A9D8F; /* Emerald Green - accent color */
+  --color-accent: #e0b144; /* Gold - main accent color */
+  --color-highlight: #E76F51; /* Terracotta - secondary accent */
+  --color-bg: #f9f9f9; /* Light Gray - background color */
+  --color-white: #ffffff; /* White - primary background */
+  --color-separator: #E0E0E0; /* Light Slate - for separations */
+  --color-text: #343a40; /* Dark Gray - primary text color */
 
-  /* Typography (Updated to use Poppins as specified) */
-  --font-body: 'Poppins', Arial, sans-serif; /* Changed from Open Sans to Poppins */
-  --font-heading: 'Amiri', 'Noto Naskh Arabic', serif;
-  --font-alt: 'Poppins', Arial, sans-serif; /* Changed from Raleway to Poppins */
-
+  /* Typography (Reconciled) */
+  --font-body: 'Poppins', Arial, sans-serif; /* Base font */
+  --font-heading: 'Amiri', 'Noto Naskh Arabic', serif; /* Heading font */
+  
   --font-size-h1: 2.5rem;
   --font-size-h2: 2rem;
   --font-size-h3: 1.5rem;

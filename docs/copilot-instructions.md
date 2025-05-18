@@ -13,14 +13,17 @@
 - Use `/docs/changelog.md` for date-stamped update entries.
 
 ## 🎨 Theme & Design System
-- **Primary Color**: `#1c4c4c` (deep teal green) [cite: 8]
-- **Accent Color**: `#e0b144` (gold) [cite: 8]
-- **Secondary Neutrals**: `#f9f9f9` (light gray), `#ffffff` (white), `#343a40` (dark gray) [cite: 8]
-- **Font Family**: `'Poppins', sans-serif` for body text. [cite: 14]
-- **Heading Font**: Consider a classic serif or Naskh-style heading font to complement Poppins (e.g., Amiri, Noto Naskh Arabic). [cite: 14]
-- **Font Sizes**: `1rem` base, responsive scaling.
-- **Islamic Motif**: Integrate subtle geometric background patterns, ornamental borders. [cite: 6, 13] Visual elements like arches or minaret-like shapes should be used sparingly as accents (e.g., in hero images, section dividers, iconography). [cite: 10, 11]
-- **Textures**: Textures and patterns (e.g., stone screens or tile motifs) may appear as subtle backgrounds or borders to add cultural depth. [cite: 13]
+- **Primary Color**: `#1c4c4c` (deep teal green) - Inspired by traditional Islamic tilework
+- **Secondary Colors**: `#1D3557` (royal blue), `#2A9D8F` (emerald green) 
+- **Accent Colors**: `#e0b144` (gold), `#E76F51` (terracotta)
+- **Neutral Tones**: `#f9f9f9` (light gray), `#ffffff` (white), `#343a40` (dark gray), `#E0E0E0` (light slate)
+- **Font Family**: `'Poppins', sans-serif` for body and secondary headings
+- **Heading Font**: `'Amiri', 'Noto Naskh Arabic', serif` for primary headings
+- **Font Sizes**: `1rem` base (16px), responsive scaling
+- **Islamic Motifs**: 
+  - Geometric patterns (8-fold rosettes, star polygons)
+  - Architectural elements (pointed arches, arabesque borders)
+  - Calligraphic accents (bismillah watermarks, decorative flourishes)
 
 ## ✨ Layout Guidelines
 - Use a max-width container with `container-xl`.

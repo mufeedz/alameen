@@ -18,18 +18,19 @@ Transform the current Al-Ameen Matriculation Higher Secondary School website int
 Create a sophisticated color scheme inspired by Islamic art and architecture:
 
 **Primary Colors:**
-- Deep Teal (`#006D77`) - Reminiscent of classic Islamic tilework
-- Royal Blue (`#1D3557`) - Represents knowledge and wisdom
-- Emerald Green (`#2A9D8F`) - Symbolizes growth and prosperity
+- Deep Teal Green (`#1c4c4c`) - Primary brand color, inspired by traditional Islamic tilework
+- Royal Blue (`#1D3557`) - Secondary brand color representing knowledge and wisdom
+- Emerald Green (`#2A9D8F`) - Accent color symbolizing growth and prosperity
 
 **Secondary Colors:**
-- Warm Sand (`#E9C46A`) - Complementary accent for warmth
-- Terracotta (`#E76F51`) - For highlighting important elements
+- Gold (`#e0b144`) - Main accent color for highlights and call-to-action elements
+- Terracotta (`#E76F51`) - Accent for important highlights and notifications
 
 **Neutral Tones:**
-- Soft Ivory (`#F8F9FA`) - Background color for content areas
-- Light Slate (`#E0E0E0`) - For subtle separations
-- Charcoal (`#333333`) - For primary text
+- Light Gray (`#f9f9f9`) - Background color for content areas
+- White (`#ffffff`) - Primary background color
+- Dark Gray (`#343a40`) - Primary text color
+- Light Slate (`#E0E0E0`) - For subtle separations and borders
 
 **Guidelines:**
 - Use the 60-30-10 rule: 60% neutral backgrounds, 30% primary colors, 10% accent colors
@@ -39,41 +40,43 @@ Create a sophisticated color scheme inspired by Islamic art and architecture:
 ### Typography
 
 **Font Selection:**
-- Primary Heading Font: Amiri (or similar Google Font) - A modern Arabic-inspired serif typeface
-- Secondary Heading Font: Raleway - Clean, geometric sans-serif
-- Body Text: Open Sans - Excellent readability at all sizes
+- Primary Heading Font: Amiri - A modern Arabic-inspired serif typeface
+- Secondary/Body Font: Poppins - Clean, modern sans-serif for excellent readability
+- Alternative Heading Font: Noto Naskh Arabic (fallback for Arabic-style elements)
 
 **Typography Scale:**
-- H1: 2.5rem (40px), weight 700
-- H2: 2rem (32px), weight 600
-- H3: 1.5rem (24px), weight 600
-- H4: 1.25rem (20px), weight 600
-- Body: 1rem (16px), weight 400
-- Small/Caption: 0.875rem (14px), weight 400
+- H1: 2.5rem (40px), weight 700, line-height 1.2
+- H2: 2rem (32px), weight 600, line-height 1.2
+- H3: 1.5rem (24px), weight 600, line-height 1.3
+- H4: 1.25rem (20px), weight 600, line-height 1.3
+- Body: 1rem (16px), weight 400, line-height 1.5
+- Small/Caption: 0.875rem (14px), weight 400, line-height 1.4
 
 **Spacing:**
+- Base unit: 1rem (16px)
 - Implement consistent line-height (1.5 for body text, 1.2 for headings)
 - Maintain proper white space between text blocks (minimum 1.5rem between sections)
-- Use appropriate letter-spacing (tracking) for headings
+- Use appropriate letter-spacing (normal for body, +0.02em for headings)
 
 ### Islamic Design Elements
 
 **Geometric Patterns:**
 - Subtle Islamic geometric patterns as background elements and section dividers
-- Use the 8-fold rosette pattern for decorative elements
-- Apply star polygon patterns for accent backgrounds
-- Incorporate girih tiles in footer designs
+- 8-fold rosette patterns for decorative elements and section dividers
+- Star polygons for accent backgrounds and cards
+- Girih-tile motifs in footer designs and subtle background elements
 
 **Architectural Inspiration:**
-- Pointed arch elements for content cards and important sections
-- Muqarnas-inspired dropdown menus
-- Arabesque patterns for borders and decorative frames
-- Subtle mashrabiya-inspired overlay patterns for image containers
+- Pointed-arch elements for content cards and important sections
+- Muqarnas-inspired dropdown menus and layered elements
+- Arabesque border patterns for frames and decorative elements
+- Mashrabiya-inspired overlay patterns for image containers and backgrounds
 
-**Calligraphy:**
-- Incorporate modern interpretations of Arabic calligraphy for decorative elements
-- Use calligraphic-inspired icons for navigation
-- Apply stylized bismillah as a subtle watermark for important sections
+**Calligraphic Elements:**
+- Stylized "bismillah" watermarks for important sections
+- Modern interpretations of Arabic calligraphy for decorative accents
+- Calligraphic-inspired iconography for navigation and UI elements
+- Decorative Arabic-inspired flourishes used sparingly as visual accents
 
 ## Layout Structure
 

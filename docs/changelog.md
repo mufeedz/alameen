@@ -11,4 +11,7 @@ All entries follow: **YYYY-MM-DD** – _Change description (source file)_
 - **2025-05-18** – Built footer with address, social icons, and quick links (partials/footer.html)
 - **2025-05-18** – Implemented home page with all required sections (index.html)
 - **2025-05-18** – Added JavaScript for dynamic content loading and interactivity (assets/js/main.js)
+- **2025-05-18** – Reconciled design systems between `style-guide.md` and `website_redesign_specifications.md`
+- **2025-05-18** – Updated color palette and typography to ensure consistency across documentation
+- **2025-05-18** – Refined Islamic design elements specifications for clarity and implementation
 - **[next date]** – [what was updated] (e.g. "Added Student Life page spec to home.md")
