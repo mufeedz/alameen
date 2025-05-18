@@ -24,4 +24,5 @@ All entries follow: **YYYY-MM-DD** – _Change description (source file)_
 - **2025-05-18** – Optimized image loading with lazy loading for improved performance
 - **2025-05-18** – Enhanced focus visibility for accessibility compliance
 - **2025-05-18** – Added resource hints for performance optimization
+- **2025-05-18** – Simplified navigation by removing dropdown menus completely (header.html, main.js, main.css)
 - **2025-05-18** – Improved screen reader announcements for interactive components

@@ -7,101 +7,11 @@ function loadPartial(id, url) {
     .then(html => { 
       document.getElementById(id).innerHTML = html; 
       
-      // Initialize dropdown menus after header is loaded
+      // Initialize components after header is loaded
       if (id === 'header-include') {
-        initializeDropdowns();
         initializeBackToTop();
       }
     });
-}
-
-// Initialize dropdown menus with keyboard accessibility support
-function initializeDropdowns() {
-  document.querySelectorAll('.dropdown-toggle').forEach(item => {
-    // Click event handler
-    item.addEventListener('click', function(e) {
-      if (window.innerWidth > 991) {
-        e.preventDefault();
-        toggleDropdown(this);
-      }
-    });
-    
-    // Keyboard event handler
-    item.addEventListener('keydown', function(e) {
-      // Enter or Space key
-      if (e.key === 'Enter' || e.key === ' ') {
-        if (window.innerWidth > 991) {
-          e.preventDefault();
-          toggleDropdown(this);
-        }
-      }
-      // Down arrow key
-      else if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        if (window.innerWidth > 991) {
-          // Open dropdown if closed
-          if (this.getAttribute('aria-expanded') === 'false') {
-            toggleDropdown(this);
-          }
-          // Focus on first item in dropdown
-          const firstDropdownItem = this.nextElementSibling.querySelector('a');
-          if (firstDropdownItem) {
-            firstDropdownItem.focus();
-          }
-        }
-      }
-      // Escape key closes dropdown
-      else if (e.key === 'Escape') {
-        if (window.innerWidth > 991 && this.getAttribute('aria-expanded') === 'true') {
-          toggleDropdown(this);
-          this.focus(); // Return focus to the dropdown toggle
-        }
-      }
-    });
-  });
-  
-  // Add keyboard navigation within dropdown menus
-  document.querySelectorAll('.dropdown-menu a').forEach(item => {
-    item.addEventListener('keydown', function(e) {
-      if (window.innerWidth > 991) {
-        const parent = this.closest('.dropdown-menu');
-        const items = Array.from(parent.querySelectorAll('a'));
-        const currentIndex = items.indexOf(this);
-        const lastIndex = items.length - 1;
-        
-        // Down arrow - move to next item or loop to first
-        if (e.key === 'ArrowDown') {
-          e.preventDefault();
-          const nextIndex = currentIndex < lastIndex ? currentIndex + 1 : 0;
-          items[nextIndex].focus();
-        }
-        // Up arrow - move to previous item or loop to last
-        else if (e.key === 'ArrowUp') {
-          e.preventDefault();
-          const prevIndex = currentIndex > 0 ? currentIndex - 1 : lastIndex;
-          items[prevIndex].focus();
-        }
-        // Escape key - close dropdown and return focus to toggle
-        else if (e.key === 'Escape') {
-          e.preventDefault();
-          const toggle = parent.previousElementSibling;
-          toggleDropdown(toggle);
-          toggle.focus();
-        }
-      }
-    });
-  });
-}
-
-// Helper function to toggle dropdown state
-function toggleDropdown(toggleElement) {
-  if (toggleElement.getAttribute('aria-expanded') === 'false') {
-    toggleElement.setAttribute('aria-expanded', 'true');
-    toggleElement.nextElementSibling.classList.add('show');
-  } else {
-    toggleElement.setAttribute('aria-expanded', 'false');
-    toggleElement.nextElementSibling.classList.remove('show');
-  }
 }
 
 // Initialize back-to-top button with accessibility improvements
@@ -371,14 +281,8 @@ function optimizePagePerformance() {
       img.removeAttribute('data-src');
     });
   }
-  
-  // Optimize event handlers by using event delegation where possible
+    // Optimize event handlers by using event delegation where possible
   document.addEventListener('click', function(e) {
-    // Handle dropdown clicks
-    if (e.target.closest('.dropdown-toggle')) {
-      // Dropdown handling is already done separately
-    }
-    
     // Handle back-to-top button
     if (e.target.closest('.back-to-top')) {
       e.preventDefault();
