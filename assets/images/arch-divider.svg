@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="20" viewBox="0 0 400 20">
+  <defs>
+    <pattern id="section-divider" x="0" y="0" width="400" height="20" patternUnits="userSpaceOnUse">
+      <!-- Arch shapes -->
+      <path d="M0,20 Q25,0 50,20 Q75,0 100,20 Q125,0 150,20 Q175,0 200,20 Q225,0 250,20 Q275,0 300,20 Q325,0 350,20 Q375,0 400,20" fill="none" stroke="#1c4c4c" stroke-width="2" />
+      
+      <!-- Gold dots -->
+      <circle cx="0" cy="20" r="3" fill="#e0b144"/>
+      <circle cx="50" cy="20" r="3" fill="#e0b144"/>
+      <circle cx="100" cy="20" r="3" fill="#e0b144"/>
+      <circle cx="150" cy="20" r="3" fill="#e0b144"/>
+      <circle cx="200" cy="20" r="3" fill="#e0b144"/>
+      <circle cx="250" cy="20" r="3" fill="#e0b144"/>
+      <circle cx="300" cy="20" r="3" fill="#e0b144"/>
+      <circle cx="350" cy="20" r="3" fill="#e0b144"/>
+      <circle cx="400" cy="20" r="3" fill="#e0b144"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="20" fill="url(#section-divider)" />
+</svg>

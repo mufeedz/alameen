@@ -15,7 +15,10 @@ This project is a complete redesign of the Al-Ameen Matriculation Higher Seconda
 - SEO and performance optimized
 - Downloadable admissions forms (PDF/Word)
 - Embedded maps (no contact forms)
-- Subtle Islamic motifs and cultural design accents
+- Islamic design elements including:
+  - SVG patterns (star, rosette, girih tile, arabesque border)
+  - Pointed arch UI components
+  - Subtle background motifs respecting accessibility
 - All content in English
 
 ## Deployment

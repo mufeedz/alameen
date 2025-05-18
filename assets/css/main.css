@@ -96,7 +96,22 @@ small {
   height: 32px;
   background: url('data:image/svg+xml;utf8,<svg width="100%25" height="32" viewBox="0 0 1200 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 32 Q600 0 1200 32 V0 H0 V32Z" fill="%23e0b144"/></svg>') repeat-x;
   background-size: cover;
-  margin: 0 0 var(--space-lg) 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: relative;
+  z-index: 5; /* Ensure divider appears above section backgrounds */
+}
+
+/* Section divider adjustments */
+.section-divider + section {
+  margin-top: 0;
+  padding-top: var(--space-xl); /* Maintain consistent top padding */
+}
+
+/* Section connections */
+section + .section-divider {
+  margin-top: 0;
 }
 
 /* Pointed-Arch Card Frame */
@@ -135,6 +150,60 @@ small {
   background-repeat: repeat;
   background-size: 300px 300px;
   opacity: 0.12;
+}
+
+/* Islamic Pattern Variations */
+.pattern-star-bg {
+  background-image: url('../images/star-pattern.svg');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.18;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pattern-rosette-bg {
+  background-image: url('../images/rosette-pattern.svg');
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.18;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pattern-girih-bg {
+  background-image: url('../images/girih-tile.svg');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.18;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pattern-arabesque-border {
+  background: url('../images/arabesque-border.svg') repeat-x center/contain;
+  height: 30px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  display: block;
+  position: relative;
+  opacity: 0.8;
 }
 
 /* Utility Classes for Theme Colors */
@@ -200,6 +269,15 @@ small {
 .section {
   padding: var(--space-xl) 0;
   position: relative;
+  overflow: hidden;
+  margin: 0; /* Ensure no default margins */
+}
+.section > .container-xl,
+.section > .container-fluid,
+.section > .container,
+.section > .row {
+  position: relative;
+  z-index: 1;
 }
 
 /* Decorative Calligraphic Accent (for future use) */
@@ -215,11 +293,19 @@ small {
   user-select: none;
 }
 
-/* Example for Islamic motif backgrounds (to be customized with SVG or patterns) */
+/* Islamic motif backgrounds */
 .islamic-motif {
   background-image: url('../images/islamic-pattern.svg');
   background-repeat: repeat;
-  opacity: 0.08;
+  background-size: 300px 300px;
+  opacity: 0.18;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* Fix hero overlay and Swiper navigation */
@@ -280,14 +366,24 @@ small {
   bottom: 20px;
   right: 20px;
   z-index: 99;
-  display: none;
+  display: none !important; /* Force hidden by default */
   width: 40px;
   height: 40px;
   border-radius: 50%;
   text-align: center;
-  line-height: 1;
+  line-height: 40px; /* Center icon vertically */
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.back-to-top.show {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
 }
 
 .back-to-top:hover {
@@ -349,6 +445,43 @@ small {
 .dropdown-item:focus {
   background-color: var(--color-primary);
   color: white;
+}
+
+/* Footer divider */
+.footer-divider {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: url('../images/curved-footer-divider.svg') no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+/* Remove margin from last section before footer */
+main > section:last-child {
+  margin-bottom: 0;
+  padding-bottom: var(--space-xl);
+}
+
+/* Connect footer to last section */
+footer {
+  margin-top: 0;
+  border-top: none;
+}
+
+/* CTA Banner to Footer connection */
+.cta-banner {
+  margin-bottom: 50px !important; /* Exact height of the footer divider */
+  padding-bottom: var(--space-lg) !important;
+}
+
+/* Footer adjustments */
+#footer-include {
+  margin-top: 0 !important;
 }
 
 @media (max-width: 768px) {
