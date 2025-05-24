@@ -134,7 +134,7 @@ p {
 
 /* Refined Section Spacing */
 section {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-lg) 0 var(--space-xl);  /* Further reduced spacing */
   position: relative;
 }
 
@@ -159,11 +159,91 @@ section {
 
 /* Section divider connections */
 .section-divider + section {
-  padding-top: var(--space-xl);
+  padding-top: var(--space-md); /* Further reduced top padding after divider */
 }
 
 section + .section-divider {
   margin-top: 0;
+}
+
+/* Alternative Section Divider - Arch Pattern */
+.section-divider-alt {
+  height: 40px;
+  position: relative;
+  margin: 0;
+  background-image: url('../images/arch-divider.svg');
+  background-repeat: repeat-x;
+  background-size: 60px 40px;
+  opacity: 0.8;
+}
+
+/* Wave Pattern Divider */
+.section-divider-wave {
+  height: 30px;
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+}
+
+.section-divider-wave::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/wave-divider.svg') no-repeat;
+  background-size: 100% 30px;
+}
+
+/* Section Connector Elements */
+.section-connector {
+  height: 20px;
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.connector-dots {
+  height: 15px;
+  position: relative;
+  margin: var(--space-xs) 0;
+  text-align: center;
+}
+
+.connector-dots::before {
+  content: "•••";
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  letter-spacing: 10px;
+  opacity: 0.5;
+}
+
+/* Blend zone between sections */
+.blend-zone {
+  height: 40px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  position: relative;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(to bottom, var(--color-bg) 0%, transparent 100%);
+}
+
+/* Islamic ornament divider */
+.ornament-divider {
+  height: 30px;
+  position: relative;
+  margin: var(--space-xs) 0;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.ornament-divider::before {
+  content: "۞";  /* Islamic ornament symbol */
+  font-size: 1.5rem;
+  color: var(--color-accent);
 }
 
 /* Modern Card Design */
@@ -481,6 +561,131 @@ section + .section-divider {
   opacity: 1;
 }
 
+/* Compact CTA Section */
+.cta-compact {
+  padding: var(--space-md) 0;
+  background: linear-gradient(45deg, var(--color-primary) 0%, var(--color-primary-alt) 100%);
+  color: var(--color-white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin: 0;
+}
+
+.cta-compact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/islamic-pattern.svg');
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.cta-compact .content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-compact h3 {
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+
+.cta-compact p {
+  margin-bottom: var(--space-md);
+}
+
+/* Stats Counter Section */
+.stats-section {
+  padding: var(--space-md) 0;
+  background-color: var(--color-neutral);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+  margin: 0;
+}
+
+.stats-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/star-pattern.svg');
+  background-repeat: repeat;
+  background-size: 150px 150px;
+  opacity: 0.03;
+  z-index: 1;
+}
+
+.stats-section .container-xl {
+  position: relative;
+  z-index: 2;
+}
+
+.stat-item {
+  margin-bottom: var(--space-xs);
+  transition: transform 0.3s ease;
+  padding: var(--space-xs);
+  border-radius: var(--radius-md);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-heading);
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Testimonial Section - Compact */
+.testimonial-compact {
+  padding: var(--space-lg) 0;
+  background: var(--color-neutral);
+  position: relative;
+}
+
+.testimonial-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-size: 4rem;
+  font-family: serif;
+  color: var(--color-accent);
+  opacity: 0.2;
+  line-height: 1;
+}
+
 /* Accessibility & UX Improvements */
 .skip-to-content {
   position: absolute;
@@ -568,12 +773,30 @@ footer::before {
 /* Media Queries */
 @media (max-width: 768px) {
   :root {
-    --space-lg: 2rem;
-    --space-xl: 3rem;
-    --space-2xl: 4rem;
+    --space-md: 1rem; /* Adjusted for proportional scaling */
+    --space-lg: 1.5rem; /* Reduced for better responsiveness */
+    --space-xl: 2rem; /* Maintains consistency with smaller screens */
+    --space-2xl: 3rem; /* Slightly reduced for visual balance */
+  }
+  
+  section {
+    padding: var(--space-md) 0 var(--space-lg);
   }
   
   .hero {
     min-height: 60vh;
+  }
+  
+  .section-divider {
+    height: 24px;
+  }
+  
+  .section-divider-alt {
+    height: 30px;
+    background-size: 45px 30px;
+  }
+  
+  .stats-section, .cta-compact {
+    padding: var(--space-sm) 0;
   }
 }
