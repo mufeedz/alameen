@@ -160,7 +160,7 @@ section {
   height: 100%;
   background: url('../images/geometric-divider.svg') no-repeat;
   background-size: 100% 60px;
-  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
+  filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.15));
 }
 
 /* Section divider connections */
@@ -202,20 +202,16 @@ section + .section-divider {
 }
 
 .connector-dots {
-  height: 15px;
+  height: 5px;
   position: relative;
   margin: 0;
   text-align: center;
   background: linear-gradient(to right, var(--color-emerald) 0%, var(--color-primary-alt) 100%);
+  overflow: hidden;
 }
 
 .connector-dots::before {
-  content: "• • •";
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.8);
-  letter-spacing: 10px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  line-height: 0.75;
+  display: none; /* Hide the dots */
 }
 
 /* Blend zone between sections */
