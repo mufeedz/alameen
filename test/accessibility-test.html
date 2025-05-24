@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template 4 Accessibility Testing - Al-Ameen School</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+    .control-panel {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+      margin-bottom: 20px;
+    }
+    .test-frame {
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+      width: 100%;
+      height: 600px;
+    }
+    .checklist-item {
+      padding: 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      border-radius: 4px;
+    }
+    .checklist-item.pass {
+      border-left: 5px solid #28a745;
+    }
+    .checklist-item.fail {
+      border-left: 5px solid #dc3545;
+    }
+    .checklist-item.warning {
+      border-left: 5px solid #ffc107;
+    }
+    .checklist-item.not-tested {
+      border-left: 5px solid #6c757d;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 3px 6px;
+      border-radius: 4px;
+      color: white;
+      margin-right: 10px;
+    }
+    .status-badge.pass {
+      background-color: #28a745;
+    }
+    .status-badge.fail {
+      background-color: #dc3545;
+    }
+    .status-badge.warning {
+      background-color: #ffc107;
+      color: #000;
+    }
+    .status-badge.not-tested {
+      background-color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+  <div class="control-panel">
+    <h1>Accessibility Testing Tool</h1>
+    <p>Use this tool to evaluate WCAG compliance and accessibility features across the Al-Ameen website.</p>
+    
+    <div class="row mb-3">
+      <div class="col-md-8">
+        <div class="form-group">
+          <label for="page-select">Select Page to Test:</label>
+          <select class="form-control" id="page-select">
+            <option value="../index.html">Home</option>
+            <option value="../about.html">About</option>
+            <option value="../academics.html">Academics</option>
+            <option value="../admissions.html">Admissions</option>
+            <option value="../campuses.html">Campuses</option>
+            <option value="../community.html">Community</option>
+            <option value="../gallery.html">Gallery</option>
+            <option value="../events.html">Events</option>
+            <option value="../contact.html">Contact</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <button id="load-page" class="btn btn-primary mt-4">Load Page</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <iframe id="test-frame" class="test-frame" src="../index.html"></iframe>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            Testing Controls
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <h5>Test Categories</h5>
+              <div class="form-check">
+                <input class="form-check-input category-filter" type="checkbox" value="perceivable" id="perceivable-filter" checked>
+                <label class="form-check-label" for="perceivable-filter">
+                  Perceivable
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input category-filter" type="checkbox" value="operable" id="operable-filter" checked>
+                <label class="form-check-label" for="operable-filter">
+                  Operable
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input category-filter" type="checkbox" value="understandable" id="understandable-filter" checked>
+                <label class="form-check-label" for="understandable-filter">
+                  Understandable
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input category-filter" type="checkbox" value="robust" id="robust-filter" checked>
+                <label class="form-check-label" for="robust-filter">
+                  Robust
+                </label>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <h5>Status Filter</h5>
+              <div class="form-check">
+                <input class="form-check-input status-filter" type="checkbox" value="pass" id="pass-filter" checked>
+                <label class="form-check-label" for="pass-filter">
+                  Pass
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input status-filter" type="checkbox" value="fail" id="fail-filter" checked>
+                <label class="form-check-label" for="fail-filter">
+                  Fail
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input status-filter" type="checkbox" value="warning" id="warning-filter" checked>
+                <label class="form-check-label" for="warning-filter">
+                  Warning
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input status-filter" type="checkbox" value="not-tested" id="not-tested-filter" checked>
+                <label class="form-check-label" for="not-tested-filter">
+                  Not Tested
+                </label>
+              </div>
+            </div>
+            
+            <button id="save-results" class="btn btn-success w-100 mb-2">Save Results</button>
+            <button id="export-results" class="btn btn-secondary w-100">Export Report</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <h2>WCAG 2.1 Checklist</h2>
+        <div id="accessibility-checklist">
+          <!-- Perceivable -->
+          <h3>Perceivable</h3>
+          <div class="checklist-item not-tested" data-category="perceivable" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>1.1.1 Non-text Content (A)</strong>
+                <p>All non-text content has a text alternative that serves the equivalent purpose.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+          
+          <div class="checklist-item not-tested" data-category="perceivable" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>1.2.1 Audio-only and Video-only (A)</strong>
+                <p>Alternatives for time-based media are provided.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+          
+          <div class="checklist-item not-tested" data-category="perceivable" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>1.3.1 Info and Relationships (A)</strong>
+                <p>Information, structure, and relationships can be programmatically determined.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+          
+          <div class="checklist-item not-tested" data-category="perceivable" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>1.4.1 Use of Color (A)</strong>
+                <p>Color is not used as the only visual means of conveying information.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+          
+          <div class="checklist-item not-tested" data-category="perceivable" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>1.4.3 Contrast (AA)</strong>
+                <p>Text has a contrast ratio of at least 4.5:1.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+          
+          <!-- Operable -->
+          <h3>Operable</h3>
+          <div class="checklist-item not-tested" data-category="operable" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>2.1.1 Keyboard (A)</strong>
+                <p>All functionality is available from a keyboard.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+          
+          <div class="checklist-item not-tested" data-category="operable" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>2.4.1 Bypass Blocks (A)</strong>
+                <p>A mechanism is available to bypass blocks of content that are repeated on multiple pages.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+          
+          <div class="checklist-item not-tested" data-category="operable" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>2.4.3 Focus Order (A)</strong>
+                <p>Focusable components receive focus in an order that preserves meaning and operability.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+          
+          <!-- Understandable -->
+          <h3>Understandable</h3>
+          <div class="checklist-item not-tested" data-category="understandable" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>3.1.1 Language of Page (A)</strong>
+                <p>The default human language of the page can be programmatically determined.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+          
+          <div class="checklist-item not-tested" data-category="understandable" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>3.2.1 On Focus (A)</strong>
+                <p>When a component receives focus, it does not initiate a change of context.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+          
+          <div class="checklist-item not-tested" data-category="understandable" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>3.3.1 Error Identification (A)</strong>
+                <p>If an input error is detected, the item is identified and the error is described to the user in text.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+          
+          <!-- Robust -->
+          <h3>Robust</h3>
+          <div class="checklist-item not-tested" data-category="robust" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>4.1.1 Parsing (A)</strong>
+                <p>HTML markup is well-formed with no duplicate attributes or missing required attributes.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+          
+          <div class="checklist-item not-tested" data-category="robust" data-status="not-tested">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <span class="status-badge not-tested">Not Tested</span>
+                <strong>4.1.2 Name, Role, Value (A)</strong>
+                <p>For all UI components, the name and role can be programmatically determined.</p>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Set Status
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item set-status" data-status="pass" href="#">Pass</a></li>
+                  <li><a class="dropdown-item set-status" data-status="fail" href="#">Fail</a></li>
+                  <li><a class="dropdown-item set-status" data-status="warning" href="#">Warning</a></li>
+                  <li><a class="dropdown-item set-status" data-status="not-tested" href="#">Not Tested</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-2 collapse">
+              <textarea class="form-control notes-field" placeholder="Add notes here..."></textarea>
+            </div>
+            <button class="btn btn-sm btn-link toggle-notes mt-1">Add Notes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <h2>Saved Test Results</h2>
+        <div id="results-container">
+          <p>No test results saved yet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const testFrame = document.getElementById('test-frame');
+      const pageSelect = document.getElementById('page-select');
+      const loadPageBtn = document.getElementById('load-page');
+      const saveResultsBtn = document.getElementById('save-results');
+      const exportResultsBtn = document.getElementById('export-results');
+      const resultsContainer = document.getElementById('results-container');
+      let testResults = [];
+      
+      // Load page button
+      loadPageBtn.addEventListener('click', function() {
+        testFrame.src = pageSelect.value;
+      });
+      
+      // Set status for checklist items
+      document.querySelectorAll('.set-status').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const status = this.dataset.status;
+          const item = this.closest('.checklist-item');
+          
+          // Remove all status classes
+          item.classList.remove('pass', 'fail', 'warning', 'not-tested');
+          // Add new status class
+          item.classList.add(status);
+          // Set data attribute
+          item.dataset.status = status;
+          
+          // Update badge
+          const badge = item.querySelector('.status-badge');
+          badge.classList.remove('pass', 'fail', 'warning', 'not-tested');
+          badge.classList.add(status);
+          
+          // Update badge text
+          badge.textContent = status.charAt(0).toUpperCase() + status.slice(1);
+        });
+      });
+      
+      // Toggle notes
+      document.querySelectorAll('.toggle-notes').forEach(button => {
+        button.addEventListener('click', function() {
+          const notesField = this.previousElementSibling;
+          
+          if (notesField.classList.contains('show')) {
+            notesField.classList.remove('show');
+            this.textContent = 'Add Notes';
+          } else {
+            notesField.classList.add('show');
+            this.textContent = 'Hide Notes';
+          }
+        });
+      });
+      
+      // Category and status filters
+      document.querySelectorAll('.category-filter, .status-filter').forEach(checkbox => {
+        checkbox.addEventListener('change', filterItems);
+      });
+      
+      function filterItems() {
+        const selectedCategories = Array.from(document.querySelectorAll('.category-filter:checked')).map(cb => cb.value);
+        const selectedStatuses = Array.from(document.querySelectorAll('.status-filter:checked')).map(cb => cb.value);
+        
+        document.querySelectorAll('.checklist-item').forEach(item => {
+          const category = item.dataset.category;
+          const status = item.dataset.status;
+          
+          if (selectedCategories.includes(category) && selectedStatuses.includes(status)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
+      
+      // Save results
+      saveResultsBtn.addEventListener('click', function() {
+        const currentPage = pageSelect.options[pageSelect.selectedIndex].text;
+        
+        // Collect results from all checklist items
+        const checklistResults = [];
+        document.querySelectorAll('.checklist-item').forEach(item => {
+          const category = item.dataset.category;
+          const status = item.dataset.status;
+          const criterionText = item.querySelector('strong').textContent;
+          const description = item.querySelector('p').textContent;
+          const notesField = item.querySelector('.notes-field');
+          const notes = notesField ? notesField.value : '';
+          
+          checklistResults.push({
+            criterion: criterionText,
+            category: category,
+            status: status,
+            description: description,
+            notes: notes
+          });
+        });
+        
+        // Collect summary statistics
+        const total = checklistResults.length;
+        const passed = checklistResults.filter(r => r.status === 'pass').length;
+        const failed = checklistResults.filter(r => r.status === 'fail').length;
+        const warnings = checklistResults.filter(r => r.status === 'warning').length;
+        const notTested = checklistResults.filter(r => r.status === 'not-tested').length;
+        
+        const result = {
+          page: currentPage,
+          url: pageSelect.value,
+          timestamp: new Date().toLocaleString(),
+          summary: {
+            total: total,
+            passed: passed,
+            failed: failed,
+            warnings: warnings,
+            notTested: notTested
+          },
+          checklistResults: checklistResults
+        };
+        
+        testResults.push(result);
+        updateResults();
+      });
+      
+      // Export results
+      exportResultsBtn.addEventListener('click', function() {
+        if (testResults.length === 0) {
+          alert('No test results to export. Save test results first.');
+          return;
+        }
+        
+        const dataStr = JSON.stringify(testResults, null, 2);
+        const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+        
+        const exportFileDefaultName = 'accessibility-test-results.json';
+        
+        const linkElement = document.createElement('a');
+        linkElement.setAttribute('href', dataUri);
+        linkElement.setAttribute('download', exportFileDefaultName);
+        linkElement.click();
+      });
+      
+      function updateResults() {
+        if (testResults.length === 0) {
+          resultsContainer.innerHTML = '<p>No test results saved yet.</p>';
+          return;
+        }
+        
+        let html = '';
+        testResults.forEach((result, index) => {
+          const percentPassed = Math.round((result.summary.passed / result.summary.total) * 100);
+          
+          html += `
+            <div class="card mb-3">
+              <div class="card-header d-flex justify-content-between">
+                <div>${result.page} (${result.timestamp})</div>
+                <div>
+                  <div class="progress" style="width: 150px; height: 20px;">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: ${percentPassed}%">
+                      ${percentPassed}% Pass
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5>Summary</h5>
+                    <ul>
+                      <li><span class="status-badge pass">Pass</span> ${result.summary.passed} criteria</li>
+                      <li><span class="status-badge fail">Fail</span> ${result.summary.failed} criteria</li>
+                      <li><span class="status-badge warning">Warning</span> ${result.summary.warnings} criteria</li>
+                      <li><span class="status-badge not-tested">Not Tested</span> ${result.summary.notTested} criteria</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h5>Issues</h5>
+                    <ul>
+                      ${result.checklistResults.filter(cr => cr.status === 'fail').map(cr => 
+                        `<li>${cr.criterion} - ${cr.notes || 'No notes'}</li>`
+                      ).join('')}
+                    </ul>
+                  </div>
+                </div>
+                <button class="btn btn-sm btn-info view-details" data-index="${index}">View Full Report</button>
+                <button class="btn btn-sm btn-danger delete-result ms-2" data-index="${index}">Delete</button>
+              </div>
+            </div>
+          `;
+        });
+        
+        resultsContainer.innerHTML = html;
+        
+        // Add delete functionality
+        document.querySelectorAll('.delete-result').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const index = parseInt(this.dataset.index);
+            testResults.splice(index, 1);
+            updateResults();
+          });
+        });
+        
+        // Add view details functionality
+        document.querySelectorAll('.view-details').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const index = parseInt(this.dataset.index);
+            alert('Detailed report view not yet implemented. Export the results to see the full data.');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

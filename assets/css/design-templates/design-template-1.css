@@ -1,0 +1,685 @@
+/* DESIGN TEMPLATE 1: ELEGANT GEOMETRICS
+ * A modern Islamic design with sophisticated geometric patterns,
+ * elegant typography, and a refined color palette.
+ */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Enhanced Color Palette */
+  --color-primary: #0c3f3c; /* Deeper teal for stronger brand presence */
+  --color-primary-light: #1c5c59; /* Lighter teal for hover states */
+  --color-secondary: #16395b; /* Rich royal blue */
+  --color-accent: #d4a63a; /* Refined gold tone */
+  --color-accent-light: #e4c674; /* Lighter gold for hover states */
+  --color-highlight: #cb5a3c; /* Refined terracotta */
+  --color-bg: #f8f9fa; /* Subtle off-white for better readability */
+  --color-white: #ffffff;
+  --color-separator: #e9ecef; /* Lighter separator for modern feel */
+  --color-text: #2b2b2b; /* Slightly softer than black for better reading */
+  --color-text-light: #495057; /* For secondary text */
+  
+  /* Gradient Combinations */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+  
+  /* Shadow Effects */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  
+  /* Enhanced Typography */
+  --font-body: 'Poppins', Arial, sans-serif;
+  --font-heading: 'Amiri', 'Noto Naskh Arabic', serif;
+  
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-md: 1.125rem;  /* 18px */
+  --font-size-lg: 1.25rem;   /* 20px */
+  --font-size-xl: 1.5rem;    /* 24px */
+  --font-size-2xl: 2rem;     /* 32px */
+  --font-size-3xl: 2.5rem;   /* 40px */
+  --font-size-4xl: 3rem;     /* 48px */
+  
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Spacing */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 1.5rem;   /* 24px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 3rem;     /* 48px */
+  --space-2xl: 4rem;    /* 64px */
+  --space-3xl: 6rem;    /* 96px */
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-light);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  margin-bottom: var(--space-sm);
+  line-height: 1.3;
+  color: var(--color-primary);
+}
+
+h1, .h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.02em;
+}
+
+h2, .h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+h3, .h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+h4, .h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-highlight {
+  color: var(--color-highlight);
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section--lg {
+  padding: var(--space-2xl) 0;
+}
+
+/* Islamic Design Elements */
+
+/* Geometric Section Titles */
+.section__title {
+  position: relative;
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.section__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: var(--gradient-accent);
+  border-radius: var(--radius-full);
+}
+
+.section__title--centered {
+  text-align: center;
+}
+
+.section__title--centered::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Islamic Pattern Background */
+.bg-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/islamic-pattern.svg');
+  background-size: 300px;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+/* Arch Elements */
+.arch-card {
+  position: relative;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.arch-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.arch-top {
+  position: relative;
+  padding-top: var(--space-xl);
+  margin-top: calc(-1 * var(--space-lg));
+}
+
+.arch-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 40px;
+  background-color: var(--color-white);
+  border-radius: 40px 40px 0 0;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Arabesque Dividers */
+.divider {
+  position: relative;
+  height: 60px;
+  margin: var(--space-xl) 0;
+  background-image: url('../images/arch-divider.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.8;
+}
+
+/* Modern Cards with Islamic Elements */
+.feature-card {
+  position: relative;
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url('../images/star-pattern.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Enhanced Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.btn--primary {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  box-shadow: 0 4px 10px rgba(12, 63, 60, 0.3);
+}
+
+.btn--primary:hover {
+  box-shadow: 0 6px 15px rgba(12, 63, 60, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn--accent {
+  background: var(--gradient-accent);
+  color: var(--color-primary);
+  box-shadow: 0 4px 10px rgba(212, 166, 58, 0.3);
+}
+
+.btn--accent:hover {
+  box-shadow: 0 6px 15px rgba(212, 166, 58, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn--outline:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.header--scrolled {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo img {
+  height: 50px;
+  width: auto;
+}
+
+.header__logo-text {
+  margin-left: var(--space-sm);
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  margin-left: var(--space-md);
+}
+
+.nav__link {
+  position: relative;
+  padding: var(--space-xs) 0;
+  font-weight: var(--font-weight-medium);
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width var(--transition-normal);
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary);
+  overflow: hidden;
+}
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 63, 60, 0.7);
+  z-index: 1;
+}
+
+.hero__pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/islamic-pattern.svg');
+  background-size: 400px;
+  opacity: 0.1;
+  z-index: 2;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.hero__title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-md);
+  color: var(--color-white);
+}
+
+.hero__subtitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-light);
+  margin-bottom: var(--space-lg);
+  color: var(--color-white);
+}
+
+.hero__logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: var(--space-md);
+}
+
+/* Features Section */
+.features {
+  position: relative;
+  padding: var(--space-2xl) 0;
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.feature__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius-full);
+  background: var(--gradient-accent);
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
+}
+
+.feature__title {
+  margin-bottom: var(--space-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.feature__text {
+  color: var(--color-text-light);
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  padding: var(--space-2xl) 0 var(--space-lg);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-image: url('../images/curved-footer-divider.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.footer__pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/girih-tile.svg');
+  background-size: 300px;
+  opacity: 0.05;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.footer__title {
+  position: relative;
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  color: var(--color-white);
+}
+
+.footer__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+.footer__link {
+  display: block;
+  margin-bottom: var(--space-xs);
+  color: rgba(255, 255, 255, 0.8);
+  transition: color var(--transition-fast);
+}
+
+.footer__link:hover {
+  color: var(--color-accent);
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.footer__contact-icon {
+  margin-right: var(--space-sm);
+  color: var(--color-accent);
+}
+
+.footer__bottom {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__copyright {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer__social {
+  display: flex;
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: var(--space-xs);
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  transition: all var(--transition-normal);
+}
+
+.footer__social-link:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  :root {
+    --font-size-4xl: 2.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-2xl: 1.75rem;
+    --space-3xl: 4rem;
+    --space-2xl: 3rem;
+  }
+  
+  .header__container {
+    height: 70px;
+  }
+  
+  .hero {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --font-size-4xl: 2.25rem;
+    --font-size-3xl: 1.75rem;
+    --font-size-2xl: 1.5rem;
+    --space-xl: 2.5rem;
+    --space-lg: 1.5rem;
+  }
+  
+  .header__logo img {
+    height: 40px;
+  }
+  
+  .header__logo-text {
+    font-size: var(--font-size-lg);
+  }
+  
+  .section {
+    padding: var(--space-lg) 0;
+  }
+  
+  .section--lg {
+    padding: var(--space-xl) 0;
+  }
+  
+  .hero__title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero__subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer__copyright {
+    margin-bottom: var(--space-sm);
+    text-align: center;
+  }
+}

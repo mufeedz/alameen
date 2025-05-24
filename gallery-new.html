@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Al-Ameen School</title>
+  
+  <!-- Performance optimizations: Preload critical assets -->
+  <link rel="preload" href="assets/images/logo-placeholder.png" as="image">
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="preload" href="assets/images/gallery/academics-1.jpg" as="image" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Lightbox CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <meta name="description" content="Explore Al-Ameen School's photo gallery featuring academic achievements, school events, campus facilities, and student activities.">
+  
+  <!-- For WCAG compliance -->
+  <meta name="theme-color" content="#0d4f4a">
+</head>
+<body>
+  <!-- Header Include -->
+  <div id="header-include"></div>
+  
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="page-hero__image-container">
+        <img src="assets/images/gallery/events-1.jpg" alt="Al-Ameen School Events" class="page-hero__image">
+        <div class="page-hero__overlay"></div>
+      </div>
+      <div class="container">
+        <div class="page-hero__content">
+          <h1 class="page-hero__title">School Gallery</h1>
+          <nav aria-label="breadcrumb" class="breadcrumb">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="index.html" class="breadcrumb__link">Home</a></li>
+              <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Gallery</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gallery Introduction -->
+    <section class="section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2 class="section__title">Our School in Pictures</h2>
+            <p>Explore the visual story of Al-Ameen School through our carefully curated gallery. These images capture the essence of our academic excellence, vibrant events, state-of-the-art facilities, and the spirit of our student community.</p>
+            <p>Each photograph represents a moment of learning, growth, achievement, or celebration within our school family.</p>
+          </div>
+          <div class="col-md-6">
+            <img src="assets/images/gallery/academics-1.jpg" alt="Students in laboratory" class="img-fluid" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="section section-bg-gray">
+      <div class="container">
+        <h2 class="section__title section-title--center">Photo Gallery</h2>
+        <p class="text-center mb-5">Browse through moments captured from various aspects of our school life</p>
+        
+        <!-- Filter Buttons with ARIA attributes for accessibility -->
+        <div class="filter-buttons text-center mb-4">
+          <div class="btn-group filter-button-group" role="tablist" aria-label="Gallery category filters">
+            <button type="button" class="btn btn--outline active" data-filter="*" role="tab" aria-selected="true" tabindex="0" id="filter-all">All</button>
+            <button type="button" class="btn btn--outline" data-filter=".academics" role="tab" aria-selected="false" tabindex="-1" id="filter-academics">Academics</button>
+            <button type="button" class="btn btn--outline" data-filter=".sports" role="tab" aria-selected="false" tabindex="-1" id="filter-sports">Sports</button>
+            <button type="button" class="btn btn--outline" data-filter=".events" role="tab" aria-selected="false" tabindex="-1" id="filter-events">Cultural Events</button>
+            <button type="button" class="btn btn--outline" data-filter=".infrastructure" role="tab" aria-selected="false" tabindex="-1" id="filter-infrastructure">Infrastructure</button>
+          </div>
+        </div>
+        
+        <!-- Gallery Grid with accessibility attributes -->
+        <div class="gallery-grid" id="gallery-container" role="region" aria-label="Gallery images" aria-live="polite">
+          <!-- Academic Images -->
+          <div class="gallery-item academics">
+            <a href="assets/images/gallery/academics-1.jpg" data-lightbox="school-gallery" data-title="Science lab session with students engaged in experiments">
+              <img src="assets/images/gallery/academics-1.jpg" alt="Science lab session with students engaged in experiments" class="gallery-item__image" loading="lazy">
+              <div class="gallery-item__overlay">
+                <div class="gallery-item__content">
+                  <h3 class="gallery-item__title">Science Experiments</h3>
+                  <p class="gallery-item__text">Students working in our advanced laboratory</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="gallery-item academics">
+            <a href="assets/images/gallery/academics-2.jpg" data-lightbox="school-gallery" data-title="Library session with students reading and researching">
+              <img src="assets/images/gallery/academics-2.jpg" alt="Library session with students reading and researching" class="gallery-item__image" loading="lazy">
+              <div class="gallery-item__overlay">
+                <div class="gallery-item__content">
+                  <h3 class="gallery-item__title">Library Resources</h3>
+                  <p class="gallery-item__text">Our well-stocked library with digital resources</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Sports Images -->
+          <div class="gallery-item sports">
+            <a href="assets/images/gallery/sports-1.jpg" data-lightbox="school-gallery" data-title="Annual sports day cricket match">
+              <img src="assets/images/gallery/sports-1.jpg" alt="Annual sports day cricket match" class="gallery-item__image" loading="lazy">
+              <div class="gallery-item__overlay">
+                <div class="gallery-item__content">
+                  <h3 class="gallery-item__title">Cricket Tournament</h3>
+                  <p class="gallery-item__text">Annual inter-house cricket championship</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="gallery-item sports">
+            <a href="assets/images/gallery/sports-2.jpg" data-lightbox="school-gallery" data-title="Basketball court during inter-school competition">
+              <img src="assets/images/gallery/sports-2.jpg" alt="Basketball court during inter-school competition" class="gallery-item__image" loading="lazy">
+              <div class="gallery-item__overlay">
+                <div class="gallery-item__content">
+                  <h3 class="gallery-item__title">Basketball Match</h3>
+                  <p class="gallery-item__text">Regional inter-school tournament</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Cultural Events Images -->
+          <div class="gallery-item events">
+            <a href="assets/images/gallery/events-1.jpg" data-lightbox="school-gallery" data-title="Annual Day celebrations with cultural performances">
+              <img src="assets/images/gallery/events-1.jpg" alt="Annual Day celebrations with cultural performances" class="gallery-item__image" loading="lazy">
+              <div class="gallery-item__overlay">
+                <div class="gallery-item__content">
+                  <h3 class="gallery-item__title">Annual Day</h3>
+                  <p class="gallery-item__text">Spectacular cultural performances</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="gallery-item events">
+            <a href="assets/images/gallery/events-2.jpg" data-lightbox="school-gallery" data-title="Eid celebrations at school with special assembly">
+              <img src="assets/images/gallery/events-2.jpg" alt="Eid celebrations at school with special assembly" class="gallery-item__image" loading="lazy">
+              <div class="gallery-item__overlay">
+                <div class="gallery-item__content">
+                  <h3 class="gallery-item__title">Eid Celebrations</h3>
+                  <p class="gallery-item__text">Special assembly and festivities</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Infrastructure Images -->
+          <div class="gallery-item infrastructure">
+            <a href="assets/images/gallery/infrastructure-1.jpg" data-lightbox="school-gallery" data-title="Main school building showcasing architecture">
+              <img src="assets/images/gallery/infrastructure-1.jpg" alt="Main school building showcasing architecture" class="gallery-item__image" loading="lazy">
+              <div class="gallery-item__overlay">
+                <div class="gallery-item__content">
+                  <h3 class="gallery-item__title">Main Building</h3>
+                  <p class="gallery-item__text">Our flagship campus in Adyar</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="gallery-item infrastructure">
+            <a href="assets/images/gallery/infrastructure-2.jpg" data-lightbox="school-gallery" data-title="Modern computer lab with latest equipment">
+              <img src="assets/images/gallery/infrastructure-2.jpg" alt="Modern computer lab with latest equipment" class="gallery-item__image" loading="lazy">
+              <div class="gallery-item__overlay">
+                <div class="gallery-item__content">
+                  <h3 class="gallery-item__title">Computer Lab</h3>
+                  <p class="gallery-item__text">State-of-the-art technology center</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Additional gallery items can be added here -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Video Gallery Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title section-title--center">Video Highlights</h2>
+        <p class="text-center mb-5">Experience Al-Ameen School's special moments through our video collection</p>
+        
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="School Annual Day Highlights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h3 class="h4 mt-3">Annual Day Celebrations</h3>
+            <p>Highlights from our grand Annual Day event showcasing student performances.</p>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Campus Tour Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h3 class="h4 mt-3">Virtual Campus Tour</h3>
+            <p>Take a virtual tour of our state-of-the-art facilities and beautiful campus.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="section section-bg-primary">
+      <div class="container">
+        <h2 class="section__title section-title--center text-white">Gallery Statistics</h2>
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-item__number">500+</div>
+            <div class="stat-item__label">Photos</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-item__number">20+</div>
+            <div class="stat-item__label">Videos</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-item__number">50+</div>
+            <div class="stat-item__label">Events</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-item__number">15</div>
+            <div class="stat-item__label">Years Archived</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta__title">Want to See More?</h2>
+        <p class="cta__text">Visit our school to experience our environment and facilities firsthand. We'd be delighted to show you around.</p>
+        <div class="cta__btns">
+          <a href="contact.html" class="btn btn--accent btn--lg">Schedule a Visit</a>
+          <a href="events.html" class="btn btn--outline btn--lg">Upcoming Events</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer Include -->
+  <div id="footer-include"></div>
+  
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Lightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+  <!-- Isotope for filtering -->
+  <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- Gallery-specific JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Lightbox with accessibility improvements
+      lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'albumLabel': "Image %1 of %2",
+        'fadeDuration': 300,
+        'alwaysShowNavOnTouchDevices': true,
+        'disableScrolling': false    // Allow scrolling for better accessibility
+      });
+      
+      // Initialize Isotope for filtering after images are loaded
+      window.addEventListener('load', function() {
+        // Initialize filtering
+        const grid = document.querySelector('.gallery-grid');
+        const iso = new Isotope(grid, {
+          itemSelector: '.gallery-item',
+          layoutMode: 'masonry',
+          percentPosition: true,
+          masonry: {
+            columnWidth: '.gallery-item'
+          }
+        });
+        
+        // Filter items on button click with accessibility improvements
+        document.querySelector('.filter-button-group').addEventListener('click', function(event) {
+          if (!event.target.matches('button')) return;
+          
+          const filterValue = event.target.getAttribute('data-filter');
+          iso.arrange({ filter: filterValue === '*' ? '' : filterValue });
+          
+          // Update active button state and ARIA attributes
+          document.querySelectorAll('.filter-button-group .btn').forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-selected', 'false');
+            btn.setAttribute('tabindex', '-1');
+          });
+          
+          event.target.classList.add('active');
+          event.target.setAttribute('aria-selected', 'true');
+          event.target.setAttribute('tabindex', '0');
+          
+          // Announce filter change to screen readers
+          const filterName = event.target.textContent.trim();
+          const announcer = document.getElementById('screen-reader-announcer');
+          if (announcer) {
+            announcer.textContent = `Showing ${filterName} images`;
+          }
+        });
+        
+        // Add keyboard navigation to filter buttons
+        const filterButtons = document.querySelectorAll('.filter-button-group button');
+        filterButtons.forEach((btn, index) => {
+          btn.addEventListener('keydown', function(e) {
+            // Left/right keys to navigate, Enter/Space to activate
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+              e.preventDefault();
+              
+              const direction = e.key === 'ArrowLeft' ? -1 : 1;
+              const nextIndex = (index + direction + filterButtons.length) % filterButtons.length;
+              
+              filterButtons[nextIndex].focus();
+            }
+          });
+        });
+        
+        // Make gallery items keyboard navigable
+        document.querySelectorAll('.gallery-item a').forEach((link) => {
+          link.setAttribute('role', 'link');
+          link.setAttribute('aria-label', link.getAttribute('data-title') || 'Gallery image');
+        });
+      });
+      
+      // Add keyboard event listener for Lightbox
+      document.addEventListener('keydown', function(e) {
+        // Escape key handler for lightbox
+        if (e.key === 'Escape' && document.querySelector('.lb-container')) {
+          lightbox.end();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

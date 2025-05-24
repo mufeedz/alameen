@@ -1,0 +1,855 @@
+/* DESIGN TEMPLATE 2: MINIMALIST ARABESQUE
+ * A clean, modern approach with subtle Islamic influences
+ * using a light color scheme and minimalist design elements
+ */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lateef:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Refined Color Palette */
+  --color-primary: #0a4a4a; /* Deep teal */
+  --color-secondary: #023e8a; /* Deep blue */
+  --color-accent: #ffd166; /* Vibrant gold */
+  --color-highlight: #ef476f; /* Vibrant rose */
+  --color-success: #06d6a0; /* Bright emerald */
+  --color-bg: #ffffff; /* Pure white background */
+  --color-bg-alt: #f8f9fa; /* Light gray background */
+  --color-text: #1d3557; /* Deep navy for text */
+  --color-text-light: #6c757d; /* Medium gray for secondary text */
+  --color-border: #e9ecef; /* Light gray for borders */
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  
+  /* Fonts */
+  --font-primary: 'Poppins', sans-serif;
+  --font-heading: 'Amiri', serif;
+  --font-accent: 'Lateef', serif;
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;   /* 12px */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-base: 1rem;    /* 16px */
+  --text-lg: 1.125rem;  /* 18px */
+  --text-xl: 1.25rem;   /* 20px */
+  --text-2xl: 1.5rem;   /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem;  /* 36px */
+  --text-5xl: 3rem;     /* 48px */
+  --text-6xl: 3.75rem;  /* 60px */
+  
+  /* Font Weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  
+  /* Spacing */
+  --spacing-0: 0rem;
+  --spacing-1: 0.25rem;  /* 4px */
+  --spacing-2: 0.5rem;   /* 8px */
+  --spacing-3: 0.75rem;  /* 12px */
+  --spacing-4: 1rem;     /* 16px */
+  --spacing-5: 1.25rem;  /* 20px */
+  --spacing-6: 1.5rem;   /* 24px */
+  --spacing-8: 2rem;     /* 32px */
+  --spacing-10: 2.5rem;  /* 40px */
+  --spacing-12: 3rem;    /* 48px */
+  --spacing-16: 4rem;    /* 64px */
+  --spacing-20: 5rem;    /* 80px */
+  --spacing-24: 6rem;    /* 96px */
+  
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-sm: 0.125rem; /* 2px */
+  --radius-default: 0.25rem; /* 4px */
+  --radius-md: 0.375rem; /* 6px */
+  --radius-lg: 0.5rem;   /* 8px */
+  --radius-xl: 0.75rem;  /* 12px */
+  --radius-2xl: 1rem;    /* 16px */
+  --radius-3xl: 1.5rem;  /* 24px */
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-default: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  margin-top: 0;
+  margin-bottom: var(--spacing-4);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+}
+
+h1, .h1 {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-bold);
+}
+
+h2, .h2 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+}
+
+h3, .h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+}
+
+h4, .h4 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--spacing-4);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+}
+
+/* Islamic-Inspired Design Elements */
+
+/* Minimalist Section Title with Accent */
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--spacing-12);
+  padding-bottom: var(--spacing-3);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent);
+}
+
+.section-title--center {
+  display: block;
+  text-align: center;
+}
+
+.section-title--center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Islamic Geometric Pattern Card */
+.card {
+  position: relative;
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-default), box-shadow var(--transition-default);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-accent);
+}
+
+.card--pattern::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background-image: url('../images/star-pattern.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+/* Header / Navigation */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition-default), box-shadow var(--transition-default);
+}
+
+.header--scrolled {
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-md);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.header__logo-text {
+  margin-left: var(--spacing-3);
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  margin-left: var(--spacing-6);
+}
+
+.nav__link {
+  position: relative;
+  padding: var(--spacing-2) 0;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width var(--transition-default);
+}
+
+.nav__link:hover, 
+.nav__link.active {
+  color: var(--color-primary);
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg-alt);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/islamic-pattern.svg');
+  background-size: 300px;
+  opacity: 0.02;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.hero__title {
+  margin-bottom: var(--spacing-4);
+  font-size: var(--text-6xl);
+  font-weight: var(--font-bold);
+  line-height: 1.1;
+}
+
+.hero__title span {
+  color: var(--color-accent);
+}
+
+.hero__subtitle {
+  margin-bottom: var(--spacing-8);
+  font-family: var(--font-accent);
+  font-size: var(--text-2xl);
+  color: var(--color-text-light);
+}
+
+.hero__btn-group {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.hero__image {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 80%;
+  z-index: 1;
+}
+
+.hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-2xl) 0 0 var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-default);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn--accent {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--accent:hover {
+  background-color: #ffda85;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn--outline {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn--icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn--icon i, 
+.btn--icon svg {
+  margin-left: var(--spacing-2);
+}
+
+/* Features Section */
+.features {
+  padding: var(--spacing-20) 0;
+  background-color: var(--color-bg);
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-12);
+}
+
+.feature {
+  position: relative;
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-default), box-shadow var(--transition-default);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 40px;
+  background-color: var(--color-accent);
+  border-radius: 0 0 var(--radius-md) 0;
+  transition: height var(--transition-default);
+}
+
+.feature:hover::before {
+  height: 60px;
+}
+
+.feature__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: var(--spacing-4);
+  border-radius: var(--radius-lg);
+  background-color: rgba(10, 74, 74, 0.05);
+  color: var(--color-primary);
+  font-size: var(--text-2xl);
+}
+
+.feature__title {
+  margin-bottom: var(--spacing-2);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+}
+
+.feature__text {
+  margin-bottom: 0;
+  color: var(--color-text-light);
+}
+
+/* About Section with Islamic Design Elements */
+.about {
+  padding: var(--spacing-20) 0;
+  background-color: var(--color-bg-alt);
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background-image: url('../images/rosette-pattern.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.03;
+}
+
+.about__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-12);
+  align-items: center;
+}
+
+.about__image {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.about__image::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  background-image: url('../images/star-pattern.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.about__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about__content {
+  padding-left: var(--spacing-8);
+}
+
+.about__title {
+  margin-bottom: var(--spacing-6);
+}
+
+.about__text {
+  margin-bottom: var(--spacing-6);
+  font-size: var(--text-lg);
+  color: var(--color-text-light);
+}
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-8);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat__number {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: var(--spacing-2);
+}
+
+.stat__label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-light);
+}
+
+/* Arabic Calligraphy Section */
+.calligraphy {
+  padding: var(--spacing-16) 0;
+  text-align: center;
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.calligraphy__text {
+  font-family: var(--font-accent);
+  font-size: var(--text-4xl);
+  line-height: 1.4;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Footer */
+.footer {
+  padding: var(--spacing-16) 0 var(--spacing-8);
+  background-color: var(--color-bg-alt);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-primary);
+  opacity: 0.1;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-8);
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.footer__logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.footer__logo-text {
+  margin-left: var(--spacing-3);
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+}
+
+.footer__address {
+  margin-bottom: var(--spacing-4);
+  color: var(--color-text-light);
+}
+
+.footer__heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-primary);
+}
+
+.footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__link-item {
+  margin-bottom: var(--spacing-2);
+}
+
+.footer__link {
+  color: var(--color-text-light);
+  transition: color var(--transition-fast);
+}
+
+.footer__link:hover {
+  color: var(--color-accent);
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-3);
+  color: var(--color-text-light);
+}
+
+.footer__contact-icon {
+  margin-right: var(--spacing-3);
+  color: var(--color-primary);
+}
+
+.footer__social {
+  display: flex;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-4);
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  transition: all var(--transition-default);
+}
+
+.footer__social-link:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer__bottom {
+  margin-top: var(--spacing-12);
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__copyright {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+}
+
+.footer__bottom-links {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.footer__bottom-link {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  :root {
+    --text-6xl: 3.25rem;
+    --text-5xl: 2.75rem;
+    --text-4xl: 2rem;
+  }
+  
+  .container {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+  }
+  
+  .hero__image {
+    width: 45%;
+  }
+  
+  .about__container {
+    gap: var(--spacing-8);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --text-6xl: 2.75rem;
+    --text-5xl: 2.25rem;
+    --text-4xl: 1.75rem;
+    --text-3xl: 1.5rem;
+  }
+  
+  .hero {
+    padding: var(--spacing-20) 0 var(--spacing-16);
+    height: auto;
+    min-height: auto;
+  }
+  
+  .hero__content {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .hero__btn-group {
+    justify-content: center;
+  }
+  
+  .hero__image {
+    display: none;
+  }
+  
+  .about__container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+  
+  .about__image {
+    order: -1;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .about__content {
+    padding-left: 0;
+    text-align: center;
+  }
+  
+  .features__grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-4);
+  }
+}

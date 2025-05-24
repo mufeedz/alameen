@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campuses | Al-Ameen School</title>
+  
+  <!-- Performance optimizations: Preload critical assets -->
+  <link rel="preload" href="assets/images/logo-placeholder.png" as="image">
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <meta name="description" content="Explore Al-Ameen School's campuses, facilities, and locations in the city.">
+  
+  <!-- For WCAG compliance -->
+  <meta name="theme-color" content="#0d4f4a">
+</head>
+<body>
+  <!-- Header Include -->
+  <div id="header-include"></div>
+  
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="page-hero__image-container">
+        <img src="assets/images/slider-2.png" alt="Al-Ameen School Campus" class="page-hero__image">
+        <div class="page-hero__overlay"></div>
+      </div>
+      <div class="container">
+        <div class="page-hero__content">
+          <h1 class="page-hero__title">Our Campuses</h1>
+          <nav aria-label="breadcrumb" class="breadcrumb">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="index.html" class="breadcrumb__link">Home</a></li>
+              <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Campuses</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Campus Overview -->
+    <section class="section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2 class="section__title">World-Class Facilities</h2>
+            <p>Al-Ameen School operates two modern campuses strategically located to serve different parts of the city. Each campus is designed to provide an optimal learning environment with spacious classrooms, modern laboratories, and recreational facilities.</p>
+            <p>Our campuses reflect our commitment to providing a holistic education, with facilities that support academic excellence, physical development, and creative expression.</p>
+          </div>
+          <div class="col-md-6">
+            <img src="assets/images/slider-3.png" alt="Campus building" class="img-fluid" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Main Campus -->
+    <section class="section section-bg-gray">
+      <div class="container">
+        <h2 class="section__title section-title--center">Main Campus</h2>
+        <div class="row g-4 align-items-center mb-5">
+          <div class="col-lg-6">
+            <div class="swiper campus-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="assets/images/slider-1.png" alt="Main Campus - Academic Block" class="img-fluid rounded shadow">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/images/slider-2.png" alt="Main Campus - Library" class="img-fluid rounded shadow">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/images/slider-3.png" alt="Main Campus - Sports Field" class="img-fluid rounded shadow">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="campus-info">
+              <h3>Established in 1982</h3>
+              <p>Our main campus serves students from Kindergarten through Grade 12, offering comprehensive facilities on a sprawling 5-acre property.</p>
+              
+              <div class="campus-address mt-4">
+                <i class="bi bi-geo-alt-fill me-2 text-accent"></i>
+                <span>123 Main Road, Adyar, Chennai - 600020</span>
+              </div>
+              <div class="campus-contact mb-4">
+                <i class="bi bi-telephone-fill me-2 text-accent"></i>
+                <span>+91 44 2445 6789</span>
+              </div>
+              
+              <h4 class="mt-4 mb-3">Facilities Include:</h4>
+              <div class="features__grid">
+                <div class="feature-card feature-card--compact">
+                  <div class="feature__icon">
+                    <i class="bi bi-book"></i>
+                  </div>
+                  <h5 class="feature__title">Modern Library</h5>
+                  <p class="feature__text">Over 15,000 books and digital resources</p>
+                </div>
+                
+                <div class="feature-card feature-card--compact">
+                  <div class="feature__icon">
+                    <i class="bi bi-laptop"></i>
+                  </div>
+                  <h5 class="feature__title">Computer Labs</h5>
+                  <p class="feature__text">Three fully-equipped computer laboratories</p>
+                </div>
+                
+                <div class="feature-card feature-card--compact">
+                  <div class="feature__icon">
+                    <i class="bi bi-flask"></i>
+                  </div>
+                  <h5 class="feature__title">Science Labs</h5>
+                  <p class="feature__text">Separate labs for Physics, Chemistry, and Biology</p>
+                </div>
+                
+                <div class="feature-card feature-card--compact">
+                  <div class="feature__icon">
+                    <i class="bi bi-trophy"></i>
+                  </div>
+                  <h5 class="feature__title">Sports Complex</h5>
+                  <p class="feature__text">Indoor and outdoor sporting facilities</p>
+                </div>
+              </div>
+              
+              <a href="#" class="btn btn--accent mt-4">Schedule a Visit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Branch Campus -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title section-title--center">Branch Campus</h2>
+        <div class="row g-4 align-items-center mb-5">
+          <div class="col-lg-6 order-lg-2">
+            <div class="swiper campus-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="assets/images/slider-3.png" alt="Branch Campus - Building" class="img-fluid rounded shadow">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/images/slider-1.png" alt="Branch Campus - Playground" class="img-fluid rounded shadow">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/images/slider-2.png" alt="Branch Campus - Classroom" class="img-fluid rounded shadow">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="campus-info">
+              <h3>Established in 2005</h3>
+              <p>Our branch campus serves students from Kindergarten through Grade 8, with a focus on providing the same quality education in a more intimate setting.</p>
+              
+              <div class="campus-address mt-4">
+                <i class="bi bi-geo-alt-fill me-2 text-accent"></i>
+                <span>45 East Avenue, Tambaram, Chennai - 600045</span>
+              </div>
+              <div class="campus-contact mb-4">
+                <i class="bi bi-telephone-fill me-2 text-accent"></i>
+                <span>+91 44 2223 4567</span>
+              </div>
+              
+              <h4 class="mt-4 mb-3">Facilities Include:</h4>
+              <div class="features__grid">
+                <div class="feature-card feature-card--compact">
+                  <div class="feature__icon">
+                    <i class="bi bi-book"></i>
+                  </div>
+                  <h5 class="feature__title">Library</h5>
+                  <p class="feature__text">Well-stocked library with reading areas</p>
+                </div>
+                
+                <div class="feature-card feature-card--compact">
+                  <div class="feature__icon">
+                    <i class="bi bi-laptop"></i>
+                  </div>
+                  <h5 class="feature__title">Computer Lab</h5>
+                  <p class="feature__text">Modern lab with 30 workstations</p>
+                </div>
+                
+                <div class="feature-card feature-card--compact">
+                  <div class="feature__icon">
+                    <i class="bi bi-palette"></i>
+                  </div>
+                  <h5 class="feature__title">Art Studio</h5>
+                  <p class="feature__text">Dedicated space for creative arts</p>
+                </div>
+                
+                <div class="feature-card feature-card--compact">
+                  <div class="feature__icon">
+                    <i class="bi bi-dribbble"></i>
+                  </div>
+                  <h5 class="feature__title">Playground</h5>
+                  <p class="feature__text">Large outdoor play area</p>
+                </div>
+              </div>
+              
+              <a href="#" class="btn btn--accent mt-4">Schedule a Visit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Campus Facilities -->
+    <section class="section section-bg-gray">
+      <div class="container">
+        <h2 class="section__title section-title--center">Campus Facilities</h2>
+        <p class="text-center mb-5">Both our campuses are equipped with modern facilities to support a comprehensive educational experience.</p>
+        
+        <div class="programs-grid">
+          <div class="program-card">
+            <div class="program-card__inner">
+              <div class="program-card__icon">
+                <i class="bi bi-book"></i>
+              </div>
+              <h3 class="program-card__title">Academic Facilities</h3>
+              <ul class="program-card__list">
+                <li>Smart classrooms with interactive whiteboards</li>
+                <li>Well-stocked libraries with online catalog</li>
+                <li>Computer labs with high-speed internet</li>
+                <li>Science laboratories with modern equipment</li>
+                <li>Language labs for enhanced learning</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="program-card">
+            <div class="program-card__inner">
+              <div class="program-card__icon">
+                <i class="bi bi-trophy"></i>
+              </div>
+              <h3 class="program-card__title">Sports Facilities</h3>
+              <ul class="program-card__list">
+                <li>Indoor sports complex</li>
+                <li>Basketball and volleyball courts</li>
+                <li>Cricket and football fields</li>
+                <li>Table tennis and badminton</li>
+                <li>Swimming pool (Main Campus only)</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="program-card">
+            <div class="program-card__inner">
+              <div class="program-card__icon">
+                <i class="bi bi-music-note-beamed"></i>
+              </div>
+              <h3 class="program-card__title">Arts & Culture</h3>
+              <ul class="program-card__list">
+                <li>Music rooms with instruments</li>
+                <li>Dance studio with mirrors</li>
+                <li>Art rooms with materials and equipment</li>
+                <li>Auditorium for performances</li>
+                <li>Exhibition spaces for student work</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="program-card">
+            <div class="program-card__inner">
+              <div class="program-card__icon">
+                <i class="bi bi-heart-pulse"></i>
+              </div>
+              <h3 class="program-card__title">Student Welfare</h3>
+              <ul class="program-card__list">
+                <li>Modern cafeteria with nutritious meals</li>
+                <li>Medical room with qualified nurse</li>
+                <li>Prayer halls for spiritual development</li>
+                <li>Counseling centers for student support</li>
+                <li>Transport fleet for safe commuting</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Campus Map -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title section-title--center">Campus Locations</h2>
+        <p class="text-center mb-5">Our campuses are strategically located for easy access from different parts of the city.</p>
+        
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-0">
+                <div class="ratio ratio-16x9">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.3821125125297!2d80.24891531482242!3d13.011089790825083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267a9bec25b3b%3A0x9f2023575303cdd!2sAdyar%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1631234567890!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="p-4">
+                  <h3 class="h4 mb-3">Main Campus</h3>
+                  <p class="mb-0">123 Main Road, Adyar, Chennai - 600020</p>
+                  <p class="mb-0">Phone: +91 44 2445 6789</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-0">
+                <div class="ratio ratio-16x9">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6689039053423!2d80.10940161482158!3d12.930261790879635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70bae0695c3%3A0xd2b7cc4cd1ac0a9e!2sTambaram%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1631234567890!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="p-4">
+                  <h3 class="h4 mb-3">Branch Campus</h3>
+                  <p class="mb-0">45 East Avenue, Tambaram, Chennai - 600045</p>
+                  <p class="mb-0">Phone: +91 44 2223 4567</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="section section-bg-primary">
+      <div class="container">
+        <h2 class="section__title section-title--center text-white">Campus Statistics</h2>
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-item__number">2</div>
+            <div class="stat-item__label">Campuses</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-item__number">75+</div>
+            <div class="stat-item__label">Classrooms</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-item__number">15+</div>
+            <div class="stat-item__label">Labs & Studios</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-item__number">12</div>
+            <div class="stat-item__label">Sports Facilities</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta__title">Visit Our Campuses</h2>
+        <p class="cta__text">Experience our world-class facilities and vibrant learning environments firsthand. Schedule a campus tour today!</p>
+        <div class="cta__btns">
+          <a href="contact.html" class="btn btn--accent btn--lg">Schedule a Tour</a>
+          <a href="gallery.html" class="btn btn--outline btn--lg">View Gallery</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer Include -->
+  <div id="footer-include"></div>
+  
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+  <!-- Campus-specific JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize campus sliders
+      const campusSwiper = new Swiper('.campus-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 5000,
+        },
+      });
+    });
+  </script>
+</body>
+</html>

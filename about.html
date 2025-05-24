@@ -4,75 +4,202 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Al-Ameen School</title>
+  
+  <!-- Performance optimizations: Preload critical assets -->
+  <link rel="preload" href="assets/images/logo-placeholder.png" as="image">
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
   <meta name="description" content="Learn about Al-Ameen School's history, mission, and values.">
+  
+  <!-- For WCAG compliance -->
+  <meta name="theme-color" content="#0d4f4a">
 </head>
 <body>
   <!-- Header Include -->
   <div id="header-include"></div>
-  
-  <main id="main-content">
-    <!-- Page Banner -->
-    <section class="page-banner position-relative">
-      <div class="islamic-motif banner-overlay position-absolute top-0 start-0 w-100 h-100"></div>
-      <div class="container-xl py-5">
+    <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="page-hero__image-container">
+        <img src="assets/images/slider-2.png" alt="About Al-Ameen School" class="page-hero__image">
+        <div class="page-hero__overlay"></div>
+      </div>
+      <div class="container">
+        <div class="page-hero__content">
+          <h1 class="page-hero__title">About Us</h1>
+          <nav aria-label="breadcrumb" class="breadcrumb">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item"><a href="index.html" class="breadcrumb__link">Home</a></li>
+              <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">About Us</li>
+            </ol>
+          </nav>
+        </div>
+      </div>    </section>
+
+    <!-- History Section -->
+    <section class="section">
+      <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-6">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb mb-2">
-                <li class="breadcrumb-item"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-                <li class="breadcrumb-item active text-white" aria-current="page">About</li>
-              </ol>
-            </nav>
-            <h1 class="page-title text-white mb-3">About Al-Ameen School</h1>
-            <p class="lead text-white">Our history, mission, and commitment to excellence.</p>
+          <div class="col-md-6">
+            <h2 class="section__title">Our History</h2>
+            <p>Al-Ameen School was founded in 1980 with a mission to provide quality education that balances academic excellence with Islamic values. What began as a small institution with just 50 students has grown into a renowned educational establishment serving over 2,000 students across multiple campuses.</p>
+            <p>Our journey is a testament to our commitment to nurturing young minds in an environment that promotes both intellectual growth and spiritual development.</p>
           </div>
-          <div class="col-lg-6 text-center text-lg-end">
-            <div class="islamic-banner-decoration">
-              <img src="assets/images/rosette-pattern.svg" alt="" class="banner-accent" aria-hidden="true">
+          <div class="col-md-6">
+            <img src="assets/images/slider-1.png" alt="Historical photo of Al-Ameen School" class="img-fluid" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Mission & Vision Section -->
+    <section class="section section-bg-gray">
+      <div class="container">
+        <h2 class="section__title section-title--center">Mission & Vision</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="feature-card">
+              <div class="feature__icon">
+                <i class="bi bi-compass"></i>
+              </div>
+              <h3 class="feature__title">Our Mission</h3>
+              <p class="feature__text">To provide a comprehensive education that balances academic excellence with Islamic values, nurturing students to become knowledgeable, principled individuals who contribute positively to society.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="feature-card">
+              <div class="feature__icon">
+                <i class="bi bi-eye"></i>
+              </div>
+              <h3 class="feature__title">Our Vision</h3>
+              <p class="feature__text">To be recognized as a leading educational institution that empowers students with knowledge, character, and skills necessary to excel in a rapidly changing global environment while maintaining their Islamic identity.</p>
+            </div>
+          </div>
+        </div>
+      </div>    </section>
+    
+    <!-- Values Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title section-title--center">Our Core Values</h2>
+        <div class="features__grid">
+          <div class="feature-card">
+            <div class="feature__icon">
+              <i class="bi bi-book"></i>
+            </div>
+            <h3 class="feature__title">Academic Excellence</h3>
+            <p class="feature__text">We strive for the highest standards in education, encouraging critical thinking and intellectual curiosity.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature__icon">
+              <i class="bi bi-heart"></i>
+            </div>
+            <h3 class="feature__title">Islamic Principles</h3>
+            <p class="feature__text">We integrate Islamic teachings and values throughout our curriculum and school life.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature__icon">
+              <i class="bi bi-people"></i>
+            </div>
+            <h3 class="feature__title">Community Service</h3>
+            <p class="feature__text">We emphasize the importance of giving back to the community and helping others.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature__icon">
+              <i class="bi bi-globe"></i>
+            </div>
+            <h3 class="feature__title">Global Perspective</h3>
+            <p class="feature__text">We prepare our students to be responsible global citizens with respect for diverse cultures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="counter-section">
+      <div class="container">
+        <div class="counter-grid">
+          <div class="counter-item">
+            <div class="counter-item__number">45+</div>
+            <div class="counter-item__label">Years of Excellence</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-item__number">2000+</div>
+            <div class="counter-item__label">Students</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-item__number">150+</div>
+            <div class="counter-item__label">Faculty Members</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-item__number">10K+</div>
+            <div class="counter-item__label">Alumni</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Leadership Team -->
+    <section class="section section-bg-gray">
+      <div class="container">
+        <h2 class="section__title section-title--center">Our Leadership Team</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="assets/images/placeholders/principal.jpg" alt="Principal" class="card__image">
+              <div class="card__content">
+                <h3 class="card__title">Dr. Ahmed Khan</h3>
+                <p class="card__subtitle">Principal</p>
+                <p class="card__text">Dr. Khan brings over 20 years of experience in education leadership, with a doctorate in Educational Administration.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="assets/images/placeholders/vice-principal.jpg" alt="Vice Principal" class="card__image">
+              <div class="card__content">
+                <h3 class="card__title">Mrs. Fatima Ali</h3>
+                <p class="card__subtitle">Vice Principal</p>
+                <p class="card__text">Mrs. Ali oversees academic programming and curriculum development with expertise in instructional leadership.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="assets/images/placeholders/dean.jpg" alt="Dean of Students" class="card__image">
+              <div class="card__content">
+                <h3 class="card__title">Mr. Ibrahim Hassan</h3>
+                <p class="card__subtitle">Dean of Students</p>
+                <p class="card__text">Mr. Hassan focuses on student development, counseling services, and building a positive school culture.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="arch-section-divider"></div>
     </section>
-
-    <!-- History section with Islamic pattern background -->
-    <section class="section position-relative py-5">
-      <div class="pattern-star-bg"></div>
-      <div class="container-xl">
-        <div class="row g-4">
-          <div class="col-lg-8">
-            <div class="bg-white p-4 rounded shadow-sm featured-card">
-              <h2 id="history" class="section__title">Our History</h2>
-              <div class="islamic-accent-line mb-3"></div>
-              <p>Al-Ameen School was founded in 1980 with a mission to provide quality education that balances academic excellence with Islamic values. What began as a small institution with just 50 students has grown into a renowned educational establishment serving over 2,000 students across multiple campuses.</p>
-              <p>Our journey is a testament to our commitment to nurturing young minds in an environment that promotes both intellectual growth and spiritual development.</p>
-            </div>
-
-            <div class="bg-white p-4 rounded shadow-sm mt-4 featured-card">
-              <h2 id="mission" class="section__title">Mission & Vision</h2>
-              <div class="islamic-accent-line mb-3"></div>
-              <p>Content will be added based on the specific requirements.</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="bg-white p-4 rounded shadow-sm position-relative overflow-hidden">
-              <div class="pattern-rosette-bg" style="opacity: 0.03;"></div>
-              <h3>Quick Facts</h3>
-              <!-- Placeholders for future content -->
-              <p>Content will be added based on specific requirements.</p>
-            </div>
-          </div>
+      <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta__title">Join Our School Community</h2>
+        <p class="cta__text">Visit our campus and see firsthand how we're shaping the future through education and values.</p>
+        <div class="cta__btns">
+          <a href="admissions.html" class="btn btn--accent btn--lg">Apply Now</a>
+          <a href="contact.html" class="btn btn--outline btn--lg">Schedule a Visit</a>
         </div>
       </div>
     </section>

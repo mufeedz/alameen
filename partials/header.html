@@ -4,31 +4,66 @@
 <!-- Screen Reader Announcements -->
 <div id="screen-reader-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
 
-<!-- Sticky Bootstrap 5 Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm" aria-label="Main navigation">
-  <div class="container-xl">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="assets/images/logo-placeholder.png" alt="Al-Ameen School Logo" width="40" height="40" class="me-2">
-      <span class="fw-bold" style="color: #1c4c4c;">Al-Ameen School</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNavbar">      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="academics.html">Academics</a></li>
-        <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
-        <li class="nav-item"><a class="nav-link" href="campuses.html">Campuses</a></li>
-        <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
+<!-- Announcement Banner -->
+<div class="announcement-banner">
+  <div class="container">
+    <p>Admissions Open for 2025-2026 Academic Year! <a href="admissions.html">Apply Now</a></p>
   </div>
-</nav>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header__container">
+    <div class="header__logo">
+      <img src="assets/images/logo-placeholder.png" alt="Al-Ameen School Logo" class="header__logo-img">
+      <span class="header__logo-text">Al-Ameen School</span>
+    </div>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link" id="nav-home">Home</a></li>
+        <li class="nav__item"><a href="about.html" class="nav__link" id="nav-about">About</a></li>
+        <li class="nav__item"><a href="academics.html" class="nav__link" id="nav-academics">Academics</a></li>
+        <li class="nav__item"><a href="admissions.html" class="nav__link" id="nav-admissions">Admissions</a></li>
+        <li class="nav__item"><a href="campuses.html" class="nav__link" id="nav-campuses">Campuses</a></li>
+        <li class="nav__item"><a href="community.html" class="nav__link" id="nav-community">Community</a></li>
+        <li class="nav__item"><a href="gallery.html" class="nav__link" id="nav-gallery">Gallery</a></li>
+        <li class="nav__item"><a href="contact.html" class="nav__link" id="nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Navigation -->
+<div class="mobile-nav">
+  <div class="mobile-nav__header">
+    <div class="header__logo">
+      <img src="assets/images/logo-placeholder.png" alt="Al-Ameen School Logo" class="header__logo-img">
+      <span class="header__logo-text">Al-Ameen School</span>
+    </div>
+    <button class="mobile-nav__close" aria-label="Close navigation menu">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+  <nav>
+    <ul class="mobile-nav__list">
+      <li class="mobile-nav__item"><a href="index.html" class="mobile-nav__link" id="mobile-nav-home">Home</a></li>
+      <li class="mobile-nav__item"><a href="about.html" class="mobile-nav__link" id="mobile-nav-about">About</a></li>
+      <li class="mobile-nav__item"><a href="academics.html" class="mobile-nav__link" id="mobile-nav-academics">Academics</a></li>
+      <li class="mobile-nav__item"><a href="admissions.html" class="mobile-nav__link" id="mobile-nav-admissions">Admissions</a></li>
+      <li class="mobile-nav__item"><a href="campuses.html" class="mobile-nav__link" id="mobile-nav-campuses">Campuses</a></li>
+      <li class="mobile-nav__item"><a href="community.html" class="mobile-nav__link" id="mobile-nav-community">Community</a></li>
+      <li class="mobile-nav__item"><a href="gallery.html" class="mobile-nav__link" id="mobile-nav-gallery">Gallery</a></li>
+      <li class="mobile-nav__item"><a href="contact.html" class="mobile-nav__link" id="mobile-nav-contact">Contact</a></li>
+    </ul>
+  </nav>
+</div>
 
 <!-- Back to top button -->
-<a href="#" class="back-to-top bg-primary-theme text-white" role="button" aria-label="Back to top" tabindex="0">
+<a href="#" class="back-to-top" role="button" aria-label="Back to top" tabindex="0">
   <i class="bi bi-arrow-up" aria-hidden="true"></i>
 </a>

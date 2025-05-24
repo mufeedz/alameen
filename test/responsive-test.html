@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template 4 Responsive Testing - Al-Ameen School</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+    .test-frame {
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+      width: 100%;
+      height: 600px;
+    }
+    .control-panel {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+      margin-bottom: 20px;
+    }
+    .screen-size {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .screen-size.active {
+      background-color: #0d4f4a;
+      color: white;
+    }
+    .pages-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .page-link {
+      display: inline-block;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .page-link.active {
+      background-color: #0d4f4a;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="control-panel">
+    <h1>Responsive Testing Tool</h1>
+    <div class="screen-sizes">
+      <div class="screen-size active" data-width="1200px">Desktop (1200px)</div>
+      <div class="screen-size" data-width="992px">Small Desktop (992px)</div>
+      <div class="screen-size" data-width="768px">Tablet (768px)</div>
+      <div class="screen-size" data-width="576px">Mobile Landscape (576px)</div>
+      <div class="screen-size" data-width="375px">Mobile Portrait (375px)</div>
+    </div>
+    <h2 class="mt-3">Pages</h2>
+    <div class="pages-list">
+      <div class="page-link active" data-page="../index.html">Home</div>
+      <div class="page-link" data-page="../about.html">About</div>
+      <div class="page-link" data-page="../academics.html">Academics</div>
+      <div class="page-link" data-page="../admissions.html">Admissions</div>
+      <div class="page-link" data-page="../campuses.html">Campuses</div>
+      <div class="page-link" data-page="../community.html">Community</div>
+      <div class="page-link" data-page="../gallery.html">Gallery</div>
+      <div class="page-link" data-page="../events.html">Events</div>
+      <div class="page-link" data-page="../contact.html">Contact</div>
+    </div>
+    <div class="test-info mt-3">
+      <h3>Testing Notes</h3>
+      <div class="current-test">Currently testing: <span id="current-page">Home</span> at <span id="current-size">Desktop (1200px)</span></div>
+      <div class="test-checklist mt-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check1">
+          <label class="form-check-label" for="check1">Layout displays correctly</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check2">
+          <label class="form-check-label" for="check2">Navigation works properly</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check3">
+          <label class="form-check-label" for="check3">Images are responsive</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check4">
+          <label class="form-check-label" for="check4">Text is readable</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check5">
+          <label class="form-check-label" for="check5">Interactive elements work</label>
+        </div>
+      </div>
+      <button id="save-test" class="btn btn-primary mt-3">Save Test Results</button>
+    </div>
+  </div>
+
+  <iframe id="test-frame" class="test-frame" src="../index.html"></iframe>
+
+  <div class="test-results mt-4">
+    <h2>Test Results</h2>
+    <div id="results-container">
+      <p>No test results yet. Click "Save Test Results" to record your findings.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const frame = document.getElementById('test-frame');
+      const screenSizes = document.querySelectorAll('.screen-size');
+      const pageLinks = document.querySelectorAll('.page-link');
+      const currentPage = document.getElementById('current-page');
+      const currentSize = document.getElementById('current-size');
+      const saveButton = document.getElementById('save-test');
+      const resultsContainer = document.getElementById('results-container');
+      let testResults = [];
+
+      // Set active screen size
+      screenSizes.forEach(size => {
+        size.addEventListener('click', function() {
+          screenSizes.forEach(s => s.classList.remove('active'));
+          this.classList.add('active');
+          frame.style.width = this.dataset.width;
+          currentSize.textContent = this.textContent;
+        });
+      });
+
+      // Set active page
+      pageLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          pageLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+          frame.src = this.dataset.page;
+          currentPage.textContent = this.textContent;
+        });
+      });
+
+      // Save test results
+      saveButton.addEventListener('click', function() {
+        const checkboxes = document.querySelectorAll('.form-check-input');
+        const checklist = Array.from(checkboxes).map(cb => ({
+          label: cb.nextElementSibling.textContent,
+          checked: cb.checked
+        }));
+        
+        const result = {
+          page: currentPage.textContent,
+          size: currentSize.textContent,
+          timestamp: new Date().toLocaleString(),
+          checklist: checklist,
+          issues: []
+        };
+        
+        testResults.push(result);
+        updateResults();
+        
+        // Reset checkboxes
+        checkboxes.forEach(cb => cb.checked = false);
+      });
+
+      function updateResults() {
+        if (testResults.length === 0) {
+          resultsContainer.innerHTML = '<p>No test results yet. Click "Save Test Results" to record your findings.</p>';
+          return;
+        }
+
+        let html = '';
+        testResults.forEach((result, index) => {
+          const passCount = result.checklist.filter(item => item.checked).length;
+          const status = passCount === result.checklist.length ? 
+            '<span class="badge bg-success">Pass</span>' : 
+            '<span class="badge bg-warning">Issues Found</span>';
+          
+          html += `
+            <div class="card mb-3">
+              <div class="card-header d-flex justify-content-between">
+                <div>Testing ${result.page} at ${result.size}</div>
+                <div>${status}</div>
+              </div>
+              <div class="card-body">
+                <p class="card-text">Tested on: ${result.timestamp}</p>
+                <h5>Results:</h5>
+                <ul>
+                  ${result.checklist.map(item => 
+                    `<li>${item.checked ? '✅' : '❌'} ${item.label}</li>`
+                  ).join('')}
+                </ul>
+                <button class="btn btn-sm btn-danger delete-result" data-index="${index}">Delete</button>
+              </div>
+            </div>
+          `;
+        });
+
+        resultsContainer.innerHTML = html;
+
+        // Add delete functionality
+        document.querySelectorAll('.delete-result').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const index = parseInt(this.dataset.index);
+            testResults.splice(index, 1);
+            updateResults();
+          });
+        });
+      }
+
+      // Initialize
+      frame.style.width = '1200px';
+    });
+  </script>
+</body>
+</html>

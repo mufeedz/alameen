@@ -10,6 +10,8 @@ function loadPartial(id, url) {
       // Initialize components after header is loaded
       if (id === 'header-include') {
         initializeBackToTop();
+        initializeHeaderAndNav();
+        setActiveNavLink();
       }
     });
 }
@@ -77,6 +79,59 @@ function initializeBackToTop() {
         }
       }
     }, 500); // Allow time for the scroll to complete
+  }
+}
+
+// Initialize Template 4 header and navigation
+function initializeHeaderAndNav() {
+  // Sticky header
+  const header = document.querySelector('.header');
+  
+  if (header) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        header.classList.add('header--scrolled');
+      } else {
+        header.classList.remove('header--scrolled');
+      }
+    });
+  }
+  
+  // Mobile Navigation Toggle
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const mobileNavClose = document.querySelector('.mobile-nav__close');
+  
+  if (mobileNavToggle && mobileNav && mobileNavClose) {
+    mobileNavToggle.addEventListener('click', function() {
+      mobileNav.classList.add('mobile-nav--open');
+      document.body.style.overflow = 'hidden';
+    });
+    
+    mobileNavClose.addEventListener('click', function() {
+      mobileNav.classList.remove('mobile-nav--open');
+      document.body.style.overflow = '';
+    });
+  }
+  
+  // Animation on scroll
+  const animatedElements = document.querySelectorAll('.animate-fadeIn');
+  
+  if (animatedElements.length > 0) {
+    const animateOnScroll = function() {
+      animatedElements.forEach(function(element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementPosition < windowHeight - 50) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Initial check
   }
 }
 
@@ -239,11 +294,27 @@ function initializeHeroSwiper() {
   if (heroSwiper) {
     new Swiper('.hero-swiper', {
       loop: true,
-      autoplay: { delay: 4000 },
+      autoplay: { delay: 6000 },
       pagination: { el: '.swiper-pagination', clickable: true },
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
       effect: 'fade',
+      fadeEffect: { crossFade: true },
+      speed: 1000,
+      keyboard: { enabled: true },
+      a11y: {
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide',
+      }
     });
+    
+    // Add animation class to current slide content
+    heroSwiper.addEventListener('transitionend', function() {
+      const activeSlide = heroSwiper.querySelector('.swiper-slide-active .hero__content');
+      if (activeSlide) {
+        activeSlide.classList.add('animate-fadeIn');
+      }
+    });
+  }
   }
 }
 
@@ -386,5 +457,27 @@ function initializePatternBackgrounds() {
         element.style.backgroundSize = '';
       }
     });
+  });
+}
+
+// Set active navigation link based on current page
+function setActiveNavLink() {
+  const currentPath = window.location.pathname;
+  const pageName = currentPath.split('/').pop() || 'index.html';
+  
+  // Desktop navigation
+  const navLinks = document.querySelectorAll('.nav__link');
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === pageName) {
+      link.classList.add('active');
+    }
+  });
+  
+  // Mobile navigation
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav__link');
+  mobileNavLinks.forEach(link => {
+    if (link.getAttribute('href') === pageName) {
+      link.classList.add('active');
+    }
   });
 }

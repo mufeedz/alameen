@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template 4 Testing Suite - Al-Ameen School</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+    .card {
+      margin-bottom: 20px;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .card-header {
+      background-color: #0d4f4a;
+      color: white;
+    }
+    .test-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: #0d4f4a;
+    }
+    .progress-container {
+      margin-top: 30px;
+    }
+    .checklist-item {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .checklist-item:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h1>Template 4 Testing Suite</h1>
+        <p class="lead">Comprehensive testing tools for the Al-Ameen School website implementation.</p>
+      </div>
+    </div>
+    
+    <!-- Progress Overview -->
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="h5 mb-0">Implementation Progress</h2>
+          </div>
+          <div class="card-body">
+            <div class="progress-container">
+              <h3 class="h6">Phase 5: Testing and Quality Assurance</h3>
+              <div class="progress mb-3">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">35%</div>
+              </div>
+              
+              <div class="checklist-item d-flex justify-content-between">
+                <div>Responsive Testing</div>
+                <div class="badge bg-warning">In Progress</div>
+              </div>
+              <div class="checklist-item d-flex justify-content-between">
+                <div>Cross-browser Testing</div>
+                <div class="badge bg-warning">In Progress</div>
+              </div>
+              <div class="checklist-item d-flex justify-content-between">
+                <div>Accessibility Testing</div>
+                <div class="badge bg-warning">In Progress</div>
+              </div>
+              <div class="checklist-item d-flex justify-content-between">
+                <div>Performance Testing</div>
+                <div class="badge bg-warning">In Progress</div>
+              </div>
+            </div>
+            
+            <div class="progress-container">
+              <h3 class="h6">Phase 6: Final Review and Launch</h3>
+              <div class="progress mb-3">
+                <div class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+              </div>
+              
+              <div class="checklist-item d-flex justify-content-between">
+                <div>Final Review</div>
+                <div class="badge bg-danger">Not Started</div>
+              </div>
+              <div class="checklist-item d-flex justify-content-between">
+                <div>Launch Preparation</div>
+                <div class="badge bg-danger">Not Started</div>
+              </div>
+              <div class="checklist-item d-flex justify-content-between">
+                <div>Deployment</div>
+                <div class="badge bg-danger">Not Started</div>
+              </div>
+            </div>
+            
+            <div class="mt-4">
+              <a href="../docs/template4-implementation-checklist.md" class="btn btn-outline-primary">View Full Checklist</a>
+              <a href="../docs/template4-implementation-plan.md" class="btn btn-outline-primary ms-2">View Implementation Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Testing Tools Cards -->
+    <div class="row">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <div class="test-icon">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h3 class="h5">Responsive Testing</h3>
+            <p>Test the website across multiple screen sizes and devices.</p>
+            <a href="responsive-test.html" class="btn btn-primary">Open Tool</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <div class="test-icon">
+              <i class="bi bi-globe"></i>
+            </div>
+            <h3 class="h5">Cross-Browser Testing</h3>
+            <p>Test compatibility across Chrome, Firefox, Safari, and Edge.</p>
+            <a href="cross-browser-test.html" class="btn btn-primary">Open Tool</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <div class="test-icon">
+              <i class="bi bi-universal-access"></i>
+            </div>
+            <h3 class="h5">Accessibility Testing</h3>
+            <p>Evaluate WCAG compliance and accessibility features.</p>
+            <a href="accessibility-test.html" class="btn btn-primary">Open Tool</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card h-100 text-center">
+          <div class="card-body">
+            <div class="test-icon">
+              <i class="bi bi-speedometer2"></i>
+            </div>
+            <h3 class="h5">Performance Testing</h3>
+            <p>Measure and improve page load times and performance metrics.</p>
+            <a href="performance-test.html" class="btn btn-primary">Open Tool</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Other Testing Resources -->
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="h5 mb-0">Additional Testing Resources</h2>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="h6">External Tools</h3>
+                <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                      <strong>Google Lighthouse</strong>
+                      <p class="mb-0 small">Comprehensive auditing tool for web pages.</p>
+                    </div>
+                    <a href="https://developers.google.com/web/tools/lighthouse" target="_blank" class="btn btn-sm btn-outline-secondary">Visit</a>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                      <strong>WAVE Web Accessibility Evaluation Tool</strong>
+                      <p class="mb-0 small">Detailed accessibility audits.</p>
+                    </div>
+                    <a href="https://wave.webaim.org/" target="_blank" class="btn btn-sm btn-outline-secondary">Visit</a>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                      <strong>BrowserStack</strong>
+                      <p class="mb-0 small">Cross-browser and cross-device testing platform.</p>
+                    </div>
+                    <a href="https://www.browserstack.com/" target="_blank" class="btn btn-sm btn-outline-secondary">Visit</a>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="col-md-6">
+                <h3 class="h6">Documentation</h3>
+                <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                      <strong>Template 4 Component Guide</strong>
+                      <p class="mb-0 small">Reference for all Template 4 components.</p>
+                    </div>
+                    <a href="../docs/template4-component-guide.md" class="btn btn-sm btn-outline-secondary">Open</a>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                      <strong>WCAG 2.1 Guidelines</strong>
+                      <p class="mb-0 small">Web Content Accessibility Guidelines.</p>
+                    </div>
+                    <a href="https://www.w3.org/TR/WCAG21/" target="_blank" class="btn btn-sm btn-outline-secondary">Visit</a>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                      <strong>Web Vitals</strong>
+                      <p class="mb-0 small">Google's essential metrics for a healthy site.</p>
+                    </div>
+                    <a href="https://web.dev/vitals/" target="_blank" class="btn btn-sm btn-outline-secondary">Visit</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Test Results Summary -->
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="h5 mb-0">Test Results Summary</h2>
+          </div>
+          <div class="card-body">
+            <p>No test results available yet. Use the testing tools above to generate results.</p>
+            
+            <div class="mt-3">
+              <a href="../index.html" class="btn btn-secondary">Back to Website</a>
+              <button id="generate-report" class="btn btn-primary ms-2">Generate Full Report</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const generateReportBtn = document.getElementById('generate-report');
+      
+      generateReportBtn.addEventListener('click', function() {
+        alert('This functionality will be implemented once test results are available.');
+      });
+    });
+  </script>
+</body>
+</html>

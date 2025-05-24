@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al-Ameen School - Design Template 2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/design-templates/design-template-2.css" rel="stylesheet">
+  <style>
+    /* Additional styles for demo purposes */
+    .template-selector {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background: rgba(255,255,255,0.9);
+      z-index: 2000;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    body {
+      padding-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div class="template-selector">
+    <a href="template1.html" class="btn btn--outline">Template 1</a>
+    <a href="template2.html" class="btn btn--primary">Template 2</a>
+    <a href="template3.html" class="btn btn--outline">Template 3</a>
+  </div>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__logo">
+        <img src="../assets/images/logo-placeholder.svg" alt="Al-Ameen School" class="header__logo-img">
+        <span class="header__logo-text">Al-Ameen School</span>
+      </div>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Academics</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Admissions</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Campus</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <h1 class="hero__title">Welcome to <span>Al-Ameen</span> School</h1>
+        <p class="hero__subtitle">Empowering Knowledge, Inspiring Faith</p>
+        <div class="hero__btn-group">
+          <a href="#" class="btn btn--primary">Apply Now</a>
+          <a href="#" class="btn btn--outline">Learn More</a>
+        </div>
+      </div>
+      <div class="hero__image">
+        <img src="../assets/images/slider-2.png" alt="School Building">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title section-title--center">Why Choose Al-Ameen School</h2>
+      <div class="features__grid">
+        <div class="feature card--pattern">
+          <div class="feature__icon">
+            <i class="bi bi-mortarboard"></i>
+          </div>
+          <h3 class="feature__title">Academic Excellence</h3>
+          <p class="feature__text">Our curriculum is designed to challenge students academically while fostering critical thinking and problem-solving skills.</p>
+        </div>
+        
+        <div class="feature card--pattern">
+          <div class="feature__icon">
+            <i class="bi bi-book"></i>
+          </div>
+          <h3 class="feature__title">Islamic Values</h3>
+          <p class="feature__text">We integrate Islamic teachings and values throughout the curriculum, helping students develop strong moral character.</p>
+        </div>
+        
+        <div class="feature card--pattern">
+          <div class="feature__icon">
+            <i class="bi bi-people"></i>
+          </div>
+          <h3 class="feature__title">Supportive Community</h3>
+          <p class="feature__text">Our school fosters a close-knit community where students, parents, and teachers work together for success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section class="about">
+    <div class="container about__container">
+      <div class="about__image">
+        <img src="../assets/images/slider-1.png" alt="Students in classroom">
+      </div>
+      <div class="about__content">
+        <h2 class="about__title section-title">About Our School</h2>
+        <p class="about__text">Al-Ameen Matriculation Higher Secondary School has been providing quality education since 1995. Our mission is to nurture young minds in an environment that values academic excellence, Islamic principles, and character development.</p>
+        <p class="about__text">We believe in educating the whole child - intellectually, spiritually, physically, and emotionally - preparing them to be responsible citizens and future leaders.</p>
+        <a href="#" class="btn btn--accent">Read More</a>
+        
+        <div class="about__stats">
+          <div class="stat">
+            <div class="stat__number">25+</div>
+            <div class="stat__label">Years of Excellence</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number">1000+</div>
+            <div class="stat__label">Successful Students</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number">50+</div>
+            <div class="stat__label">Expert Faculty</div>
+          </div>
+          <div class="stat">
+            <div class="stat__number">100%</div>
+            <div class="stat__label">Pass Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Arabic Calligraphy Section -->
+  <section class="calligraphy">
+    <div class="container">
+      <p class="calligraphy__text">"Seek knowledge from the cradle to the grave"</p>
+    </div>
+  </section>
+  
+  <!-- Programs Section -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title section-title--center">Our Academic Programs</h2>
+      <div class="features__grid">
+        <div class="card">
+          <h3>Primary Education</h3>
+          <p>Grades 1-5 focus on building strong foundations in literacy, numeracy, Islamic studies, and character development.</p>
+          <a href="#" class="btn btn--outline btn-sm mt-3">Learn More</a>
+        </div>
+        <div class="card">
+          <h3>Middle School</h3>
+          <p>Grades 6-8 expand on core subjects while introducing specialized courses and extracurricular activities.</p>
+          <a href="#" class="btn btn--outline btn-sm mt-3">Learn More</a>
+        </div>
+        <div class="card">
+          <h3>High School</h3>
+          <p>Grades 9-12 prepare students for higher education with advanced coursework and university preparation.</p>
+          <a href="#" class="btn btn--outline btn-sm mt-3">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__logo">
+            <img src="../assets/images/logo-placeholder.svg" alt="Al-Ameen School" class="footer__logo-img">
+            <span class="footer__logo-text">Al-Ameen School</span>
+          </div>
+          <p class="footer__address">123 School Street, Chennai, Tamil Nadu, India</p>
+          
+          <div class="footer__social">
+            <a href="#" class="footer__social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="footer__social-link"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="footer__social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer__social-link"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <ul class="footer__links">
+            <li class="footer__link-item"><a href="#" class="footer__link">Home</a></li>
+            <li class="footer__link-item"><a href="#" class="footer__link">About Us</a></li>
+            <li class="footer__link-item"><a href="#" class="footer__link">Academics</a></li>
+            <li class="footer__link-item"><a href="#" class="footer__link">Admissions</a></li>
+            <li class="footer__link-item"><a href="#" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer__heading">Contact Us</h4>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon"><i class="bi bi-geo-alt"></i></span>
+            <span>123 School Street, Chennai, Tamil Nadu, India</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon"><i class="bi bi-telephone"></i></span>
+            <span>+91 1234567890</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon"><i class="bi bi-envelope"></i></span>
+            <span>info@alameenschool.edu</span>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer__heading">School Hours</h4>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon"><i class="bi bi-clock"></i></span>
+            <span>Monday - Friday: 8:00 AM - 3:30 PM</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon"><i class="bi bi-calendar-check"></i></span>
+            <span>Saturday: 8:00 AM - 12:30 PM</span>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-icon"><i class="bi bi-calendar-x"></i></span>
+            <span>Sunday: Closed</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Al-Ameen Matriculation Higher Secondary School. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#" class="footer__bottom-link">Privacy Policy</a>
+          <a href="#" class="footer__bottom-link">Terms of Service</a>
+          <a href="#" class="footer__bottom-link">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Simple script to handle header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 50) {
+        header.classList.add('header--scrolled');
+      } else {
+        header.classList.remove('header--scrolled');
+      }
+    });
+  </script>
+</body>
+</html>

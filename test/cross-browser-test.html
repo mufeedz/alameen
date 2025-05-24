@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template 4 Cross-Browser Testing - Al-Ameen School</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+    .browser-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    .browser-table th, .browser-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    .browser-table th {
+      background-color: #0d4f4a;
+      color: white;
+    }
+    .browser-table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .status-select {
+      width: 100%;
+      padding: 5px;
+    }
+    .notes-field {
+      width: 100%;
+      padding: 5px;
+    }
+    .browser-logo {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+    .control-panel {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="control-panel">
+    <h1>Cross-Browser Testing Tool</h1>
+    <p>Use this tool to document and track browser compatibility issues across the Al-Ameen website.</p>
+  </div>
+
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="page-select">Select Page to Test:</label>
+          <select class="form-control" id="page-select">
+            <option value="index.html">Home</option>
+            <option value="about.html">About</option>
+            <option value="academics.html">Academics</option>
+            <option value="admissions.html">Admissions</option>
+            <option value="campuses.html">Campuses</option>
+            <option value="community.html">Community</option>
+            <option value="gallery.html">Gallery</option>
+            <option value="events.html">Events</option>
+            <option value="contact.html">Contact</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <table class="browser-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th><img src="https://cdn.jsdelivr.net/npm/browser-logos@74.0.0/src/chrome/chrome.png" alt="Chrome" class="browser-logo"> Chrome</th>
+          <th><img src="https://cdn.jsdelivr.net/npm/browser-logos@74.0.0/src/firefox/firefox.png" alt="Firefox" class="browser-logo"> Firefox</th>
+          <th><img src="https://cdn.jsdelivr.net/npm/browser-logos@74.0.0/src/safari/safari.png" alt="Safari" class="browser-logo"> Safari</th>
+          <th><img src="https://cdn.jsdelivr.net/npm/browser-logos@74.0.0/src/edge/edge.png" alt="Edge" class="browser-logo"> Edge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Layout & Styling</td>
+          <td>
+            <select class="status-select" id="chrome-layout">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="chrome-layout-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="firefox-layout">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="firefox-layout-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="safari-layout">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="safari-layout-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="edge-layout">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="edge-layout-notes" placeholder="Notes"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Images & Media</td>
+          <td>
+            <select class="status-select" id="chrome-images">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="chrome-images-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="firefox-images">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="firefox-images-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="safari-images">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="safari-images-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="edge-images">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="edge-images-notes" placeholder="Notes"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Navigation & Interactions</td>
+          <td>
+            <select class="status-select" id="chrome-nav">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="chrome-nav-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="firefox-nav">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="firefox-nav-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="safari-nav">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="safari-nav-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="edge-nav">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="edge-nav-notes" placeholder="Notes"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Animations & Transitions</td>
+          <td>
+            <select class="status-select" id="chrome-anim">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="chrome-anim-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="firefox-anim">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="firefox-anim-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="safari-anim">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="safari-anim-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="edge-anim">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="edge-anim-notes" placeholder="Notes"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Forms & Inputs</td>
+          <td>
+            <select class="status-select" id="chrome-forms">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="chrome-forms-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="firefox-forms">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="firefox-forms-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="safari-forms">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="safari-forms-notes" placeholder="Notes"></textarea>
+          </td>
+          <td>
+            <select class="status-select" id="edge-forms">
+              <option value="pass">Pass</option>
+              <option value="minor">Minor Issues</option>
+              <option value="major">Major Issues</option>
+              <option value="fail">Fail</option>
+              <option value="not-tested">Not Tested</option>
+            </select>
+            <textarea class="notes-field" id="edge-forms-notes" placeholder="Notes"></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row mb-4">
+      <div class="col-md-12">
+        <button id="save-results" class="btn btn-primary">Save Results</button>
+        <button id="export-results" class="btn btn-secondary ms-2">Export Results</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Saved Test Results</h2>
+        <div id="results-container">
+          <p>No test results saved yet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const saveButton = document.getElementById('save-results');
+      const exportButton = document.getElementById('export-results');
+      const pageSelect = document.getElementById('page-select');
+      const resultsContainer = document.getElementById('results-container');
+      let testResults = [];
+
+      // Save test results
+      saveButton.addEventListener('click', function() {
+        const page = pageSelect.value;
+        const browsers = ['chrome', 'firefox', 'safari', 'edge'];
+        const features = ['layout', 'images', 'nav', 'anim', 'forms'];
+        
+        const result = {
+          page: page,
+          timestamp: new Date().toLocaleString(),
+          browserTests: {}
+        };
+
+        browsers.forEach(browser => {
+          result.browserTests[browser] = {};
+          features.forEach(feature => {
+            const statusSelect = document.getElementById(`${browser}-${feature}`);
+            const notesField = document.getElementById(`${browser}-${feature}-notes`);
+            
+            result.browserTests[browser][feature] = {
+              status: statusSelect.value,
+              notes: notesField.value
+            };
+          });
+        });
+
+        testResults.push(result);
+        updateResults();
+        
+        // Reset fields to default
+        document.querySelectorAll('.status-select').forEach(select => {
+          select.value = 'not-tested';
+        });
+        document.querySelectorAll('.notes-field').forEach(field => {
+          field.value = '';
+        });
+      });
+
+      // Export test results
+      exportButton.addEventListener('click', function() {
+        const dataStr = JSON.stringify(testResults, null, 2);
+        const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+        
+        const exportFileDefaultName = 'cross-browser-test-results.json';
+        
+        const linkElement = document.createElement('a');
+        linkElement.setAttribute('href', dataUri);
+        linkElement.setAttribute('download', exportFileDefaultName);
+        linkElement.click();
+      });
+
+      function updateResults() {
+        if (testResults.length === 0) {
+          resultsContainer.innerHTML = '<p>No test results saved yet.</p>';
+          return;
+        }
+
+        let html = '';
+        testResults.forEach((result, index) => {
+          const browsers = Object.keys(result.browserTests);
+          
+          html += `
+            <div class="card mb-3">
+              <div class="card-header">
+                Testing ${result.page} on ${result.timestamp}
+              </div>
+              <div class="card-body">
+                <h5>Browser Compatibility Summary:</h5>
+                <ul>
+          `;
+          
+          browsers.forEach(browser => {
+            const features = Object.keys(result.browserTests[browser]);
+            const passCount = features.filter(feature => 
+              result.browserTests[browser][feature].status === 'pass'
+            ).length;
+            
+            const browserStatus = passCount === features.length ? 
+              '<span class="badge bg-success">All Pass</span>' : 
+              '<span class="badge bg-warning">Issues Found</span>';
+            
+            html += `<li><img src="https://cdn.jsdelivr.net/npm/browser-logos@74.0.0/src/${browser}/${browser}.png" alt="${browser}" class="browser-logo"> ${browser.charAt(0).toUpperCase() + browser.slice(1)}: ${browserStatus}</li>`;
+          });
+          
+          html += `
+                </ul>
+                <button class="btn btn-sm btn-info view-details" data-index="${index}">View Details</button>
+                <button class="btn btn-sm btn-danger delete-result ms-2" data-index="${index}">Delete</button>
+                <div class="test-details mt-3" id="details-${index}" style="display: none;"></div>
+              </div>
+            </div>
+          `;
+        });
+
+        resultsContainer.innerHTML = html;
+
+        // Add view details functionality
+        document.querySelectorAll('.view-details').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const index = parseInt(this.dataset.index);
+            const detailsContainer = document.getElementById(`details-${index}`);
+            
+            if (detailsContainer.style.display === 'none') {
+              const result = testResults[index];
+              const browsers = Object.keys(result.browserTests);
+              let detailsHtml = '<table class="table table-bordered">';
+              
+              // Add table header
+              detailsHtml += '<thead><tr><th>Feature</th>';
+              browsers.forEach(browser => {
+                detailsHtml += `<th><img src="https://cdn.jsdelivr.net/npm/browser-logos@74.0.0/src/${browser}/${browser}.png" alt="${browser}" class="browser-logo"> ${browser.charAt(0).toUpperCase() + browser.slice(1)}</th>`;
+              });
+              detailsHtml += '</tr></thead><tbody>';
+              
+              // Add table rows
+              const features = {
+                'layout': 'Layout & Styling',
+                'images': 'Images & Media',
+                'nav': 'Navigation & Interactions',
+                'anim': 'Animations & Transitions',
+                'forms': 'Forms & Inputs'
+              };
+              
+              Object.entries(features).forEach(([featureKey, featureLabel]) => {
+                detailsHtml += `<tr><td>${featureLabel}</td>`;
+                
+                browsers.forEach(browser => {
+                  const status = result.browserTests[browser][featureKey].status;
+                  const notes = result.browserTests[browser][featureKey].notes;
+                  
+                  let statusBadge = '';
+                  switch(status) {
+                    case 'pass':
+                      statusBadge = '<span class="badge bg-success">Pass</span>';
+                      break;
+                    case 'minor':
+                      statusBadge = '<span class="badge bg-info">Minor Issues</span>';
+                      break;
+                    case 'major':
+                      statusBadge = '<span class="badge bg-warning">Major Issues</span>';
+                      break;
+                    case 'fail':
+                      statusBadge = '<span class="badge bg-danger">Fail</span>';
+                      break;
+                    default:
+                      statusBadge = '<span class="badge bg-secondary">Not Tested</span>';
+                  }
+                  
+                  detailsHtml += `<td>${statusBadge}${notes ? '<p class="mt-2"><small>' + notes + '</small></p>' : ''}</td>`;
+                });
+                
+                detailsHtml += '</tr>';
+              });
+              
+              detailsHtml += '</tbody></table>';
+              detailsContainer.innerHTML = detailsHtml;
+              detailsContainer.style.display = 'block';
+              this.textContent = 'Hide Details';
+            } else {
+              detailsContainer.style.display = 'none';
+              this.textContent = 'View Details';
+            }
+          });
+        });
+
+        // Add delete functionality
+        document.querySelectorAll('.delete-result').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const index = parseInt(this.dataset.index);
+            testResults.splice(index, 1);
+            updateResults();
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
