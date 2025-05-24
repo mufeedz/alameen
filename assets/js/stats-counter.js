@@ -1,12 +1,13 @@
-// Stats counter animation
+// Stats counter animation with enhanced effects
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to check if an element is in viewport
+    // Function to check if an element is in viewport with offset
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
         return (
-            rect.top >= 0 &&
+            rect.top >= -100 &&
             rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom <= windowHeight + 100 &&
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
     }
@@ -15,32 +16,51 @@ document.addEventListener('DOMContentLoaded', function() {
     const stats = document.querySelectorAll('.stat-number[data-countup]');
     
     function animateStats() {
-        stats.forEach(stat => {
+        stats.forEach((stat, index) => {
             if (isInViewport(stat) && !stat.classList.contains('counted')) {
-                const target = parseInt(stat.getAttribute('data-countup'));
-                const duration = 2000; // ms
-                const frameDuration = 1000/60; // 60fps
-                const totalFrames = Math.round(duration / frameDuration);
-                let frame = 0;
-                const countTo = parseInt(target, 10);
+                // Add pulsing effect class
+                stat.classList.add('pulse-effect');
                 
-                // Start the animation
-                stat.classList.add('counted');
-                
-                const counter = setInterval(() => {
-                    frame++;
-                    // Calculate progress (easeOutQuad)
-                    const progress = frame / totalFrames;
-                    const easing = progress * (2 - progress);
-                    const currentCount = Math.round(countTo * easing);
+                // Staggered animation start
+                setTimeout(() => {
+                    const target = parseInt(stat.getAttribute('data-countup'));
+                    const duration = 2500; // ms
+                    const frameDuration = 1000/60; // 60fps
+                    const totalFrames = Math.round(duration / frameDuration);
+                    let frame = 0;
+                    const countTo = parseInt(target, 10);
                     
-                    // Format the number with commas
-                    stat.textContent = currentCount.toLocaleString() + '+';
+                    // Start the animation
+                    stat.classList.add('counted');
                     
-                    if (frame === totalFrames) {
-                        clearInterval(counter);
-                    }
-                }, frameDuration);
+                    // Add glow effect temporarily
+                    stat.closest('.stat-item').classList.add('stats-glow');
+                    
+                    const counter = setInterval(() => {
+                        frame++;
+                        // Calculate progress (easeOutQuad)
+                        const progress = frame / totalFrames;
+                        const easing = progress * (2 - progress);
+                        const currentCount = Math.round(countTo * easing);
+                        
+                        // Format the number with commas
+                        stat.textContent = currentCount.toLocaleString() + '+';
+                        
+                        if (frame === totalFrames) {
+                            clearInterval(counter);
+                            // Add a subtle bounce at the end
+                            stat.style.transform = 'scale(1.1)';
+                            setTimeout(() => {
+                                stat.style.transform = 'scale(1)';
+                                // Remove effects after animation completes
+                                setTimeout(() => {
+                                    stat.classList.remove('pulse-effect');
+                                    stat.closest('.stat-item').classList.remove('stats-glow');
+                                }, 300);
+                            }, 200);
+                        }
+                    }, frameDuration);
+                }, index * 200); // Stagger each animation by 200ms
             }
         });
     }

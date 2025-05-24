@@ -238,12 +238,60 @@ function initializeHeroSwiper() {
   
   if (heroSwiper) {
     new Swiper('.hero-swiper', {
-      loop: true,
-      autoplay: { delay: 4000 },
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      // Enable keyboard control for accessibility
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      // Add proper ARIA labels
+      a11y: {
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide',
+        firstSlideMessage: 'This is the first slide',
+        lastSlideMessage: 'This is the last slide',
+        paginationBulletMessage: 'Go to slide {{index}}',
+        notificationClass: 'swiper-notification',
+      },
+      // Configure autoplay with accessibility considerations
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      // Add elegant fade effect
       effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      // Configure pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      // Configure navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      // Ensure proper loading before animation
+      preloadImages: true,
+      lazy: {
+        loadPrevNext: true,
+      },
     });
+    
+    // Update ARIA attributes for better accessibility
+    const sliderContainer = document.querySelector('.hero-swiper');
+    if (sliderContainer) {
+      sliderContainer.setAttribute('aria-label', 'School highlights slideshow');
+      
+      // Set focus trap for keyboard navigation
+      const slides = sliderContainer.querySelectorAll('.swiper-slide');
+      slides.forEach((slide, index) => {
+        slide.setAttribute('aria-label', `Slide ${index + 1} of ${slides.length}`);
+        slide.setAttribute('role', 'group');
+      });
+    }
   }
 }
 
@@ -294,6 +342,63 @@ function optimizePagePerformance() {
   });
 }
 
+// Enhanced UI Interactions
+function initializeEnhancedUI() {
+  // Add hover-lift class to buttons that don't have it yet
+  const buttons = document.querySelectorAll('.btn:not(.hover-lift)');
+  buttons.forEach(btn => {
+    btn.classList.add('hover-lift');
+  });
+  
+  // Add gradient text to section titles that don't have it
+  const sectionTitles = document.querySelectorAll('.section__title:not(:has(.gradient-text))');
+  sectionTitles.forEach(title => {
+    // Don't apply to titles that already have children
+    if (title.childElementCount === 0) {
+      const text = title.textContent;
+      const words = text.split(' ');
+      
+      // Only apply gradient to the last word if there are multiple words
+      if (words.length > 1) {
+        const lastWord = words.pop();
+        title.innerHTML = words.join(' ') + ' <span class="gradient-text">' + lastWord + '</span>';
+      }
+    }
+  });
+  
+  // Add smooth transition to all links
+  const links = document.querySelectorAll('a:not(.transition-all)');
+  links.forEach(link => {
+    link.classList.add('transition-all');
+  });
+  
+  // Add floating animation to selected elements
+  const floatElements = document.querySelectorAll('.card:nth-child(odd), .event-date');
+  floatElements.forEach(element => {
+    element.classList.add('float-animation');
+  });
+  
+  // Make navbar items highlight current page
+  highlightCurrentPageInNav();
+}
+
+// Function to highlight current page in navigation
+function highlightCurrentPageInNav() {
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    
+    // Check if this link corresponds to the current page
+    if ((currentPath.endsWith('/') || currentPath === '') && href === 'index.html') {
+      link.classList.add('active');
+    } else if (currentPath.includes(href) && href !== 'index.html') {
+      link.classList.add('active');
+    }
+  });
+}
+
 // Initialize when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
   // Load header and footer
@@ -329,9 +434,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }, 500);
   });
+  
+  // Initialize enhanced UI features
+  setTimeout(initializeEnhancedUI, 500); // Delay to ensure DOM is fully loaded
 });
 
-// Function to add lazy loading attribute to all images that don't have it
+// Function to add lazy loading attribute to all images that don't have
 function enableLazyLoading() {
   // Skip the first few images (above the fold) for better performance
   const allImages = document.querySelectorAll('img:not([loading])');
