@@ -5,7 +5,7 @@
   /* Enhanced Color Palette - Vibrant Educational Theme */
   --color-primary: #0e3147; /* Deeper navy blue - primary brand color */
   --color-primary-alt: #1a6085; /* Brighter blue - secondary brand color */
-  --color-emerald: #10847a; /* Rich teal - accent color */
+  --color-emerald: #2c6e82; /* Modern turquoise blue - Islamic-inspired accent */
   --color-accent: #f2b436; /* Vibrant gold - main accent color */
   --color-accent-light: #f7d68a; /* Light gold - subtle accent */
   --color-accent-dark: #d9941a; /* Dark gold - strong accent */
@@ -188,7 +188,7 @@ section + .section-divider {
   height: 6px;
   position: relative;
   margin: 0;
-  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary-alt) 50%, var(--color-accent) 100%);
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-emerald) 50%, var(--color-accent) 100%);
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
@@ -206,7 +206,7 @@ section + .section-divider {
   position: relative;
   margin: 0;
   text-align: center;
-  background: linear-gradient(to right, var(--color-emerald) 0%, var(--color-primary-alt) 100%);
+  background: linear-gradient(to right, var(--color-emerald) 0%, var(--color-primary) 100%);
   overflow: hidden;
 }
 
@@ -232,13 +232,13 @@ section + .section-divider {
   margin: 0;
   text-align: center;
   opacity: 1;
-  background: linear-gradient(to right, var(--color-neutral), var(--color-accent-light), var(--color-neutral));
+  background: linear-gradient(to right, var(--color-neutral), rgba(44, 110, 130, 0.15), var(--color-neutral));
 }
 
 .ornament-divider::before {
   content: "۞";  /* Islamic ornament symbol */
   font-size: 1.25rem;
-  color: var(--color-primary);
+  color: var(--color-emerald);
   line-height: 1.85;
   text-shadow: 0 1px 1px rgba(255,255,255,0.7);
 }
@@ -272,6 +272,38 @@ section + .section-divider {
 .feature-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+}
+
+/* Modern Islamic Feature Card */
+.islamic-feature-card {
+  padding: var(--space-md);
+  border-left: 3px solid var(--color-emerald);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease;
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.islamic-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: url('../images/star-pattern.svg') no-repeat;
+  background-size: 80px 80px;
+  opacity: 0.05;
+  z-index: 0;
+  filter: sepia(15%) hue-rotate(160deg);
+}
+
+.islamic-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--color-accent);
 }
 
 /* Islamic-inspired Decorative Elements */
@@ -314,6 +346,7 @@ section + .section-divider {
   height: 100%;
   z-index: 0;
   pointer-events: none;
+  filter: sepia(15%) hue-rotate(160deg);
 }
 
 .pattern-star-bg {
@@ -329,6 +362,7 @@ section + .section-divider {
   height: 100%;
   z-index: 0;
   pointer-events: none;
+  filter: sepia(10%) hue-rotate(160deg);
 }
 
 .pattern-girih-bg {
@@ -343,6 +377,7 @@ section + .section-divider {
   height: 100%;
   z-index: 0;
   pointer-events: none;
+  filter: sepia(20%) hue-rotate(160deg);
 }
 
 /* Arabesque Border */
@@ -431,9 +466,25 @@ section + .section-divider {
 
 .btn--outline:hover,
 .btn--outline:focus {
-  background: var(--color-primary);
+  background: var(--color-emerald);
   color: var(--color-white);
   transform: translateY(-2px);
+}
+
+/* New Islamic-inspired button style */
+.btn--islamic {
+  background: linear-gradient(135deg, var(--color-emerald) 0%, var(--color-emerald) 100%);
+  color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  border-bottom: 3px solid rgba(0,0,0,0.15);
+}
+
+.btn--islamic:hover,
+.btn--islamic:focus {
+  background: linear-gradient(135deg, var(--color-emerald) 20%, var(--color-primary) 100%);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* Hero Section */
@@ -567,7 +618,7 @@ section + .section-divider {
 /* Compact CTA Section */
 .cta-compact {
   padding: var(--space-sm) 0;
-  background: linear-gradient(45deg, var(--color-tertiary) 0%, var(--color-primary-alt) 100%);
+  background: linear-gradient(45deg, var(--color-emerald) 0%, var(--color-primary) 100%);
   color: var(--color-white);
   text-align: center;
   position: relative;
@@ -607,7 +658,7 @@ section + .section-divider {
 /* Stats Counter Section */
 .stats-section {
   padding: var(--space-md) 0;
-  background: linear-gradient(to right, var(--color-emerald), var(--color-emerald) 25%, var(--color-primary-alt) 100%);
+  background: linear-gradient(to right, var(--color-emerald), var(--color-emerald) 30%, var(--color-primary) 100%);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -728,9 +779,14 @@ section + .section-divider {
 
 /* Mission Grid Section */
 .mission-grid {
-  background: linear-gradient(135deg, var(--color-tertiary) 0%, var(--color-primary) 100%);
+  background: linear-gradient(135deg, var(--color-emerald) 0%, var(--color-primary) 100%);
   position: relative;
   color: var(--color-white);
+}
+
+/* Islamic accent for special elements */
+.islamic-accent {
+  color: var(--color-emerald);
 }
 
 .mission-grid .icon-box {
@@ -773,7 +829,7 @@ section + .section-divider {
 }
 
 .mission-grid .icon-box i {
-  color: var(--color-accent);
+  color: var(--color-accent-light);
   margin-bottom: var(--space-xs);
 }
 
@@ -868,7 +924,7 @@ button:focus,
 
 /* Modern SaaSBox-Inspired Header Styling */
 .main-header {
-  background: #ffffff;
+  background: var(--color-primary);
   box-shadow: 0 2px 15px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
@@ -889,12 +945,12 @@ button:focus,
   font-family: 'Poppins', Arial, sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--color-primary) !important;
+  color: var(--color-white) !important;
   letter-spacing: 0.02em;
 }
 
 .navbar-brand span {
-  color: var(--color-primary) !important;
+  color: var(--color-white) !important;
 }
 
 .navbar-brand img {
@@ -919,7 +975,7 @@ button:focus,
   font-family: 'Outfit', Arial, sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--color-text) !important;
+  color: var(--color-white) !important;
   padding: 0.6rem 1.2rem !important;
   border-radius: 0.5rem;
   transition: all 0.3s ease;
@@ -929,7 +985,7 @@ button:focus,
 .nav-link:hover, 
 .nav-link.active {
   color: var(--color-accent) !important;
-  background-color: rgba(242, 180, 54, 0.08);
+  background-color: rgba(242, 180, 54, 0.15);
 }
 
 .nav-link::after {
@@ -941,7 +997,7 @@ button:focus,
   background: var(--color-accent);
   color: var(--color-primary) !important;
   border-radius: 0.5rem;
-  box-shadow: 0 3px 12px rgba(242, 180, 54, 0.2);
+  box-shadow: 0 3px 12px rgba(242, 180, 54, 0.3);
   margin-left: 0.5rem;
   font-weight: 600;
 }
@@ -955,8 +1011,8 @@ button:focus,
 .navbar-toggler {
   border: none;
   padding: 0.5rem;
-  color: var(--color-primary);
-  background-color: rgba(242, 180, 54, 0.1);
+  color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0.5rem;
 }
 
@@ -967,7 +1023,7 @@ button:focus,
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2814, 49, 71, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Enhanced Footer Styling */
@@ -1151,9 +1207,14 @@ button:focus,
   box-shadow: var(--shadow-lg);
 }
 
+/* Islamic-inspired subtle background */
+.bg-islamic-subtle {
+  background: linear-gradient(135deg, rgba(44, 110, 130, 0.05) 0%, rgba(14, 49, 71, 0.1) 100%);
+}
+
 /* Gradient text effect for special headings */
 .gradient-text {
-  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-tertiary) 100%);
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-emerald) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
