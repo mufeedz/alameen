@@ -273,6 +273,8 @@ function initializeHeroSwiper() {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
+      // Enable infinite loop for the hero slider
+      loop: true,
       // Ensure proper loading before animation
       preloadImages: true,
       lazy: {

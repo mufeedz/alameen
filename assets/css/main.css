@@ -453,6 +453,7 @@ section + .section-divider {
   position: absolute;
   top: 0;
   left: 0;
+  animation: hero-infinite-scroll-x 30s linear infinite alternate, hero-infinite-scroll-y 40s linear infinite alternate;
 }
 
 .hero .swiper-slide {
@@ -478,17 +479,20 @@ section + .section-divider {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(20,55,74,0.7) 0%, rgba(20,55,74,0.5) 100%);
+  /* Lighten overlay: use a more neutral blue, increase transparency */
+  background: linear-gradient(to right, rgba(14,49,71,0.45) 0%, rgba(14,49,71,0.25) 100%);
   z-index: 2;
+  pointer-events: none;
 }
 
-/* Islamic motif overlay */
-.hero-overlay.islamic-motif {
-  background-image: url('../images/islamic-pattern.svg');
-  background-repeat: repeat;
-  background-size: 100px 100px;
-  opacity: 0.05;
-  z-index: 1;
+/* Infinite scroll effect for hero background */
+@keyframes hero-infinite-scroll-x {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 100%; }
+}
+@keyframes hero-infinite-scroll-y {
+  0% { background-position-y: 0; }
+  100% { background-position-y: 100%; }
 }
 
 .hero-content {
