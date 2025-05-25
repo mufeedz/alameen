@@ -393,9 +393,9 @@ function highlightCurrentPageInNav() {
     const href = link.getAttribute('href');
     
     // Check if this link corresponds to the current page
-    if ((currentPath.endsWith('/') || currentPath === '') && href === 'index.html') {
+    if (href === 'index.html' && (currentPath.endsWith('/') || currentPath.endsWith('index.html') || currentPath === '')) {
       link.classList.add('active');
-    } else if (currentPath.includes(href) && href !== 'index.html') {
+    } else if (href !== 'index.html' && currentPath.includes(href)) {
       link.classList.add('active');
     }
   });
