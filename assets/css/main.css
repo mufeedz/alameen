@@ -857,6 +857,11 @@ button:focus,
   transform: translateY(-5px);
 }
 
+/* Ensure the arrow icon remains visible and white on hover */
+.back-to-top:hover i {
+  color: var(--color-white) !important;
+}
+
 /* Enhanced Header Styling */
 .main-header {
   background: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary-alt) 100%);
