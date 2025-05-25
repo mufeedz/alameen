@@ -188,7 +188,7 @@ section + .section-divider {
   height: 6px;
   position: relative;
   margin: 0;
-  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-emerald) 50%, var(--color-accent) 100%);
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary-alt) 50%, var(--color-accent) 100%);
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
@@ -206,7 +206,7 @@ section + .section-divider {
   position: relative;
   margin: 0;
   text-align: center;
-  background: linear-gradient(to right, var(--color-emerald) 0%, var(--color-primary) 100%);
+  background: linear-gradient(to right, var(--color-emerald) 0%, var(--color-primary-alt) 100%);
   overflow: hidden;
 }
 
@@ -232,13 +232,13 @@ section + .section-divider {
   margin: 0;
   text-align: center;
   opacity: 1;
-  background: linear-gradient(to right, var(--color-neutral), rgba(44, 110, 130, 0.15), var(--color-neutral));
+  background: linear-gradient(to right, var(--color-neutral), var(--color-accent-light), var(--color-neutral));
 }
 
 .ornament-divider::before {
   content: "۞";  /* Islamic ornament symbol */
   font-size: 1.25rem;
-  color: var(--color-emerald);
+  color: var(--color-primary);
   line-height: 1.85;
   text-shadow: 0 1px 1px rgba(255,255,255,0.7);
 }
@@ -277,7 +277,7 @@ section + .section-divider {
 /* Modern Islamic Feature Card */
 .islamic-feature-card {
   padding: var(--space-md);
-  border-left: 3px solid var(--color-emerald);
+  border-left: 3px solid var(--color-accent);
   background: var(--color-white);
   box-shadow: var(--shadow-sm);
   transition: transform 0.3s ease;
@@ -295,15 +295,30 @@ section + .section-divider {
   height: 100px;
   background: url('../images/star-pattern.svg') no-repeat;
   background-size: 80px 80px;
-  opacity: 0.05;
+  opacity: 0.03;
   z-index: 0;
-  filter: sepia(15%) hue-rotate(160deg);
 }
 
 .islamic-feature-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-left-color: var(--color-accent);
+  border-left-color: var(--color-emerald);
+}
+
+/* Why Choose Section */
+.why-choose-section {
+  background: var(--color-bg);
+  position: relative;
+}
+
+.why-choose-section .feature-card {
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-separator);
+}
+
+.why-choose-section .feature-card:hover {
+  border-color: var(--color-accent-light);
+  transform: translateY(-5px);
 }
 
 /* Islamic-inspired Decorative Elements */
@@ -338,7 +353,7 @@ section + .section-divider {
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 300px 300px;
-  opacity: 0.07;
+  opacity: 0.04;
   position: absolute;
   top: 0;
   left: 0;
@@ -346,7 +361,6 @@ section + .section-divider {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  filter: sepia(15%) hue-rotate(160deg);
 }
 
 .pattern-star-bg {
@@ -354,7 +368,7 @@ section + .section-divider {
   background-repeat: no-repeat;
   background-position: left top;
   background-size: 200px 200px;
-  opacity: 0.07;
+  opacity: 0.04;
   position: absolute;
   top: 0;
   left: 0;
@@ -362,14 +376,13 @@ section + .section-divider {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  filter: sepia(10%) hue-rotate(160deg);
 }
 
 .pattern-girih-bg {
   background-image: url('../images/girih-tile.svg');
   background-repeat: repeat;
   background-size: 200px 200px;
-  opacity: 0.07;
+  opacity: 0.04;
   position: absolute;
   top: 0;
   left: 0;
@@ -377,7 +390,6 @@ section + .section-divider {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  filter: sepia(20%) hue-rotate(160deg);
 }
 
 /* Arabesque Border */
@@ -466,25 +478,9 @@ section + .section-divider {
 
 .btn--outline:hover,
 .btn--outline:focus {
-  background: var(--color-emerald);
+  background: var(--color-primary);
   color: var(--color-white);
   transform: translateY(-2px);
-}
-
-/* New Islamic-inspired button style */
-.btn--islamic {
-  background: linear-gradient(135deg, var(--color-emerald) 0%, var(--color-emerald) 100%);
-  color: var(--color-white);
-  box-shadow: var(--shadow-sm);
-  border-bottom: 3px solid rgba(0,0,0,0.15);
-}
-
-.btn--islamic:hover,
-.btn--islamic:focus {
-  background: linear-gradient(135deg, var(--color-emerald) 20%, var(--color-primary) 100%);
-  color: var(--color-white);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
 }
 
 /* Hero Section */
@@ -618,7 +614,7 @@ section + .section-divider {
 /* Compact CTA Section */
 .cta-compact {
   padding: var(--space-sm) 0;
-  background: linear-gradient(45deg, var(--color-emerald) 0%, var(--color-primary) 100%);
+  background: linear-gradient(45deg, var(--color-tertiary) 0%, var(--color-primary-alt) 100%);
   color: var(--color-white);
   text-align: center;
   position: relative;
@@ -658,7 +654,7 @@ section + .section-divider {
 /* Stats Counter Section */
 .stats-section {
   padding: var(--space-md) 0;
-  background: linear-gradient(to right, var(--color-emerald), var(--color-emerald) 30%, var(--color-primary) 100%);
+  background: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary-alt) 100%);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -779,14 +775,25 @@ section + .section-divider {
 
 /* Mission Grid Section */
 .mission-grid {
-  background: linear-gradient(135deg, var(--color-emerald) 0%, var(--color-primary) 100%);
+  background: linear-gradient(135deg, var(--color-tertiary) 0%, var(--color-primary) 100%);
   position: relative;
   color: var(--color-white);
 }
 
-/* Islamic accent for special elements */
+/* Islamic accent for special elements - used sparingly */
 .islamic-accent {
   color: var(--color-emerald);
+}
+
+/* Subtle emerald accent for links */
+.emerald-link {
+  color: var(--color-emerald);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.emerald-link:hover {
+  color: var(--color-primary);
 }
 
 .mission-grid .icon-box {
@@ -1209,12 +1216,12 @@ button:focus,
 
 /* Islamic-inspired subtle background */
 .bg-islamic-subtle {
-  background: linear-gradient(135deg, rgba(44, 110, 130, 0.05) 0%, rgba(14, 49, 71, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(14, 49, 71, 0.03) 0%, rgba(14, 49, 71, 0.05) 100%);
 }
 
 /* Gradient text effect for special headings */
 .gradient-text {
-  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-emerald) 100%);
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-tertiary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
