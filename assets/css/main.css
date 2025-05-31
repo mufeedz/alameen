@@ -141,6 +141,20 @@ section {
   position: relative;
 }
 
+.hero {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section-divider {
+  margin-top: 0;
+}
+
+/* Remove extra margin/padding below hero and above divider */
+.hero + .section-divider {
+  margin-top: -18px; /* Pull divider up to overlap hero, adjust as needed */
+}
+
 /* Geometric Section Divider */
 .section-divider {
   height: 60px;
@@ -235,13 +249,6 @@ section + .section-divider {
   background: linear-gradient(to right, var(--color-neutral), var(--color-accent-light), var(--color-neutral));
 }
 
-.ornament-divider::before {
-  content: "۞";  /* Islamic ornament symbol */
-  font-size: 1.25rem;
-  color: var(--color-primary);
-  line-height: 1.85;
-  text-shadow: 0 1px 1px rgba(255,255,255,0.7);
-}
 
 /* Modern Card Design */
 .card {
@@ -492,6 +499,7 @@ section + .section-divider {
   overflow: hidden;
   background: var(--color-primary);
   padding: 0;
+  margin-bottom: 0;
 }
 
 .hero .swiper {
