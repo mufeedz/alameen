@@ -163,6 +163,7 @@ section {
   margin: 0;
   overflow: hidden;
   z-index: 5;
+  width: 100%;
 }
 
 .section-divider::before {
@@ -195,6 +196,7 @@ section + .section-divider {
   background-repeat: repeat-x;
   background-size: 45px 30px;
   opacity: 0.8;
+  width: 100%;
 }
 
 /* Gradient Divider - replacing wave pattern */
@@ -204,6 +206,7 @@ section + .section-divider {
   margin: 0;
   background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary-alt) 50%, var(--color-accent) 100%);
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  width: 100%;
 }
 
 /* Section Connector Elements */
@@ -247,6 +250,7 @@ section + .section-divider {
   text-align: center;
   opacity: 1;
   background: linear-gradient(to right, var(--color-neutral), var(--color-accent-light), var(--color-neutral));
+  width: 100%;
 }
 
 
