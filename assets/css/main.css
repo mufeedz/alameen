@@ -188,17 +188,22 @@ section + .section-divider {
   margin-top: 0;
 }
 
-/* Alternative Section Divider - Arch Pattern */
+/* Alternative Section Divider - Plain Gradient Line */
 .section-divider-alt {
   height: var(--divider-height-alt);
   position: relative;
   margin: 0;
-  background-image: url('../images/arch-divider.svg');
-  background-repeat: repeat-x;
-  background-size: var(--divider-pattern-size) var(--divider-height-alt);
-  background-position: center;
-  opacity: 0.8;
+  background: linear-gradient(to right, 
+    transparent 0%, 
+    rgba(242, 180, 54, 0.3) 15%,
+    rgba(242, 180, 54, 0.8) 50%, 
+    rgba(242, 180, 54, 0.3) 85%,
+    transparent 100%);
+  opacity: 1;
+  overflow: hidden;
 }
+
+/* Plain gradient line - no additional overlay needed */
 
 /* Gradient Divider - replacing wave pattern */
 .gradient-divider {
@@ -249,7 +254,27 @@ section + .section-divider {
   margin: 0;
   text-align: center;
   opacity: 1;
-  background: linear-gradient(to right, var(--color-neutral), var(--color-accent-light), var(--color-neutral));
+  background-image: url('../images/ornament-divider.svg');
+  background-repeat: repeat-x;
+  background-size: 120px var(--divider-height-alt);
+  background-position: center center;
+}
+
+.ornament-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, 
+    transparent 0%, 
+    rgba(242, 180, 54, 0.1) 25%,
+    rgba(242, 180, 54, 0.15) 50%, 
+    rgba(242, 180, 54, 0.1) 75%,
+    transparent 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 
