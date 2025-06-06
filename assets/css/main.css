@@ -152,7 +152,7 @@ section {
 
 /* Remove extra margin/padding below hero and above divider */
 .hero + .section-divider {
-  margin-top: 0; /* Remove overlap with hero section */
+  margin-top: calc(-2px * var(--divider-scale-base)); /* Scale the margin with the divider */
 }
 
 /* Geometric Section Divider */
@@ -1183,6 +1183,10 @@ button:focus,
     --divider-height-alt: 36px;
     --divider-pattern-size: 54px;
   }
+  
+  .hero + .section-divider {
+    margin-top: calc(-2.5px * var(--divider-scale-base)); /* Slightly more negative margin for larger scales */
+  }
 }
 
 @media (min-width: 1920px) {
@@ -1191,6 +1195,10 @@ button:focus,
     --divider-height-base: 84px;
     --divider-height-alt: 42px;
     --divider-pattern-size: 63px;
+  }
+  
+  .hero + .section-divider {
+    margin-top: calc(-3px * var(--divider-scale-base)); /* More adjustment for ultra-large screens */
   }
 }
 
@@ -1201,6 +1209,10 @@ button:focus,
     --divider-height-base: 96px;
     --divider-height-alt: 48px;
     --divider-pattern-size: 72px;
+  }
+  
+  .hero + .section-divider {
+    margin-top: calc(-3.5px * var(--divider-scale-base)); /* Maximum adjustment for ultra-wide screens */
   }
 }
 
@@ -1372,6 +1384,11 @@ button:focus,
   
   section {
     padding: var(--space-sm) 0 var(--space-md);
+  }
+  
+  /* Mobile-specific hero-divider connection */
+  .hero + .section-divider {
+    margin-top: calc(-1.5px * var(--divider-scale-base)); /* Adjusted for mobile scaling */
   }
   
   .hero {
