@@ -370,7 +370,6 @@ section + .section-divider {
   pointer-events: none;
 }
 
-/* Minimalist Decoration */
 .accent-shape {
   position: absolute;
   width: 120px;
@@ -1558,4 +1557,67 @@ button:focus,
 .bg-primary-theme { 
   background: var(--color-primary) !important; 
   color: var(--color-white) !important; 
+}
+
+/* Campus Cards - Wider and Proportionate Design */
+.campus-card {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.campus-card .img-hover-zoom {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.campus-card .card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.campus-card .card-body {
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.campus-card .card-title {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+.campus-card .card-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.campus-card .btn {
+  font-size: 0.9rem;
+  padding: 0.5rem 1.5rem;
+}
+
+/* Responsive adjustments for campus cards */
+@media (max-width: 768px) {
+  .campus-card {
+    max-width: 100%;
+  }
+  
+  .campus-card .img-hover-zoom {
+    height: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+  .campus-card .img-hover-zoom {
+    height: 200px;
+  }
 }
