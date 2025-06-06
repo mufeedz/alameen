@@ -152,30 +152,31 @@ section {
 
 /* Remove extra margin/padding below hero and above divider */
 .hero + .section-divider {
-  margin-top: -18px; /* Pull divider up to overlap hero, adjust as needed */
+  margin-top: 0; /* Remove overlap with hero section */
 }
 
 /* Geometric Section Divider */
 .section-divider {
-  height: 60px;
+  height: var(--divider-height-base);
   background-color: transparent;
   position: relative;
   margin: 0;
   overflow: hidden;
   z-index: 5;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .section-divider::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0; /* Start from the left edge */
   width: 100%;
   height: 100%;
-  background: url('../images/geometric-divider.svg') no-repeat bottom center;
-  background-size: 100% 100%; /* Tile horizontally and maintain height */
-  filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.1)); /* Adjusted for a more subtle, modern shadow */
+  background: url('../images/geometric-divider.svg') no-repeat center;
+  background-size: 100% 100%; /* Ensure full coverage */
+  filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.1));
 }
 
 /* Section divider connections */
@@ -189,24 +190,23 @@ section + .section-divider {
 
 /* Alternative Section Divider - Arch Pattern */
 .section-divider-alt {
-  height: 30px;
+  height: var(--divider-height-alt);
   position: relative;
   margin: 0;
   background-image: url('../images/arch-divider.svg');
   background-repeat: repeat-x;
-  background-size: 45px 30px;
+  background-size: var(--divider-pattern-size) var(--divider-height-alt);
+  background-position: center;
   opacity: 0.8;
-  width: 100%;
 }
 
 /* Gradient Divider - replacing wave pattern */
 .gradient-divider {
-  height: 6px;
+  height: calc(6px * var(--divider-scale-base));
   position: relative;
   margin: 0;
   background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary-alt) 50%, var(--color-accent) 100%);
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  width: 100%;
 }
 
 /* Section Connector Elements */
@@ -244,13 +244,12 @@ section + .section-divider {
 
 /* Islamic ornament divider */
 .ornament-divider {
-  height: 30px;
+  height: var(--divider-height-alt);
   position: relative;
   margin: 0;
   text-align: center;
   opacity: 1;
   background: linear-gradient(to right, var(--color-neutral), var(--color-accent-light), var(--color-neutral));
-  width: 100%;
 }
 
 
@@ -1167,35 +1166,107 @@ button:focus,
   opacity: 0.8;
 }
 
-/* --- Divider Full-Width Scaling for Large Screens (FIX) --- */
+/* === RESPONSIVE SECTION DIVIDER SYSTEM === */
+/* Custom properties for scalable divider dimensions */
+:root {
+  --divider-scale-base: 1;
+  --divider-height-base: 60px;
+  --divider-height-alt: 30px;
+  --divider-pattern-size: 45px;
+}
+
+/* Large screens scaling */
+@media (min-width: 1400px) {
+  :root {
+    --divider-scale-base: 1.2;
+    --divider-height-base: 72px;
+    --divider-height-alt: 36px;
+    --divider-pattern-size: 54px;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --divider-scale-base: 1.4;
+    --divider-height-base: 84px;
+    --divider-height-alt: 42px;
+    --divider-pattern-size: 63px;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 2560px) {
+  :root {
+    --divider-scale-base: 1.6;
+    --divider-height-base: 96px;
+    --divider-height-alt: 48px;
+    --divider-pattern-size: 72px;
+  }
+}
+
+/* Container query support for modern browsers */
+@supports (container-type: inline-size) {
+  .section-divider,
+  .section-divider-alt,
+  .gradient-divider,
+  .ornament-divider {
+    container-type: inline-size;
+  }
+
+  /* Adaptive scaling based on container width */
+  @container (min-width: 1400px) {
+    .section-divider,
+    .section-divider-alt,
+    .gradient-divider,
+    .ornament-divider {
+      transform: scaleY(1.2);
+    }
+  }
+
+  @container (min-width: 1920px) {
+    .section-divider,
+    .section-divider-alt,
+    .gradient-divider,
+    .ornament-divider {
+      transform: scaleY(1.4);
+    }
+  }
+}
+
+/* Container-based full-width dividers */
 .section-divider,
 .section-divider-alt,
 .gradient-divider,
 .ornament-divider {
   width: 100vw;
-  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   position: relative;
-  left: 50%;
-  right: auto;
-  margin-left: -50vw;
-  margin-right: 0;
-  transform: none;
   box-sizing: border-box;
+  transform: scaleY(var(--divider-scale-base));
+  transform-origin: center top;
+  transition: transform 0.3s ease;
+  will-change: transform; /* Optimize for animations */
+  contain: layout style; /* Performance optimization */
 }
 
-@media (max-width: 1200px) {
+/* Smooth scaling on window resize */
+@media (prefers-reduced-motion: no-preference) {
   .section-divider,
   .section-divider-alt,
   .gradient-divider,
   .ornament-divider {
-    width: 100%;
-    max-width: 100%;
-    left: 0;
-    margin-left: 0;
-    margin-right: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s ease;
   }
-  .section-divider-alt {
-    background-size: 45px 30px;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .section-divider,
+  .section-divider-alt,
+  .gradient-divider,
+  .ornament-divider {
+    transition: none;
   }
 }
 
@@ -1293,6 +1364,10 @@ button:focus,
     --space-md: 1rem;
     --space-lg: 1.75rem;
     --space-xl: 2.25rem;
+    --divider-scale-base: 0.75;
+    --divider-height-base: 45px;
+    --divider-height-alt: 24px;
+    --divider-pattern-size: 36px;
   }
   
   section {
@@ -1303,13 +1378,21 @@ button:focus,
     min-height: 50vh;
   }
   
-  .section-divider {
-    height: 45px;
+  /* Mobile-specific divider adjustments */
+  .section-divider,
+  .section-divider-alt,
+  .gradient-divider,
+  .ornament-divider {
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    transform: scaleY(var(--divider-scale-base));
+    width: 100vw;
   }
   
-  .section-divider-alt {
-    height: 24px;
-    background-size: 36px 24px;
+  .section-divider::before {
+    left: 0;
+    width: 100%;
+    background-size: 100% 100%;
   }
   
   .stats-section, .cta-compact {
@@ -1361,5 +1444,25 @@ button:focus,
   .event-date {
     display: inline-block;
     margin-bottom: var(--space-xs);
+  }
+}
+
+/* Large screen optimization for divider scaling */
+@media (min-width: 1920px) {
+  .section-divider::before {
+    left: 0;
+    width: 100%;
+    background-size: 100% 100%;
+    min-width: 100vw;
+  }
+}
+
+/* Ultra-wide screen support */
+@media (min-width: 2560px) {
+  .section-divider::before {
+    left: 0;
+    width: 100%;
+    background-size: 100% 100%;
+    min-width: 100vw;
   }
 }

@@ -94,11 +94,56 @@
 }
 ```
 
-### Section Divider
+### Section Divider System (Updated 2025)
+
+Our responsive section divider system provides seamless scaling across all device sizes while maintaining visual consistency.
+
+#### Core Divider Types
+
 ```css
+/* Geometric Wave Divider - Primary */
 .section-divider {
-  height: 32px;
-  background: url('path/to/pattern.svg') repeat-x;
-  margin: 2rem 0;
+  height: var(--divider-height-base); /* 60px base, scales to 96px on ultra-wide */
+  background: url('../images/geometric-divider.svg') no-repeat center;
+  transform: scaleY(var(--divider-scale-base));
+}
+
+/* Arch Pattern Divider - Secondary */
+.section-divider-alt {
+  height: var(--divider-height-alt); /* 30px base, scales to 48px on ultra-wide */
+  background: url('../images/arch-divider.svg') repeat-x;
+  background-size: var(--divider-pattern-size) var(--divider-height-alt);
+}
+
+/* Gradient Line Divider - Minimal */
+.gradient-divider {
+  height: calc(6px * var(--divider-scale-base));
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary-alt) 50%, var(--color-accent) 100%);
 }
 ```
+
+#### Responsive Scaling Variables
+
+```css
+:root {
+  --divider-scale-base: 1;      /* Default scale */
+  --divider-height-base: 60px;  /* Main divider height */
+  --divider-height-alt: 30px;   /* Alt divider height */
+}
+
+/* Large screens (1400px+) */
+--divider-scale-base: 1.2;
+--divider-height-base: 72px;
+
+/* Ultra-wide screens (2560px+) */
+--divider-scale-base: 1.6;
+--divider-height-base: 96px;
+```
+
+#### Implementation Notes
+
+- Uses CSS custom properties for consistent scaling
+- Container-based width calculation prevents horizontal scroll
+- Hardware-accelerated transforms for smooth performance
+- Accessibility-aware with reduced motion support
+- Container query support for modern browsers
