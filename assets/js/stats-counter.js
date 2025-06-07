@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function animateStats() {
         stats.forEach((stat, index) => {
             if (isInViewport(stat) && !stat.classList.contains('counted')) {
-                // Add pulsing effect class
+                // Add subtle pulse effect
                 stat.classList.add('pulse-effect');
                 
                 // Staggered animation start
                 setTimeout(() => {
                     const target = parseInt(stat.getAttribute('data-countup'));
-                    const duration = 2500; // ms
+                    const duration = 2000; // Reduced duration for smoother feel
                     const frameDuration = 1000/60; // 60fps
                     const totalFrames = Math.round(duration / frameDuration);
                     let frame = 0;
@@ -33,14 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Start the animation
                     stat.classList.add('counted');
                     
-                    // Add glow effect temporarily
-                    stat.closest('.stat-item').classList.add('stats-glow');
+                    // Add subtle glow to the parent stat item
+                    stat.closest('.stat-item').classList.add('stats-animating');
                     
                     const counter = setInterval(() => {
                         frame++;
-                        // Calculate progress (easeOutQuad)
+                        // Calculate progress (easeOutCubic for smoother animation)
                         const progress = frame / totalFrames;
-                        const easing = progress * (2 - progress);
+                        const easing = 1 - Math.pow(1 - progress, 3);
                         const currentCount = Math.round(countTo * easing);
                         
                         // Format the number based on the original text content
@@ -56,19 +56,19 @@ document.addEventListener('DOMContentLoaded', function() {
                         
                         if (frame === totalFrames) {
                             clearInterval(counter);
-                            // Add a subtle bounce at the end
-                            stat.style.transform = 'scale(1.1)';
+                            // Add a subtle scale effect at the end
+                            stat.style.transform = 'scale(1.05)';
                             setTimeout(() => {
                                 stat.style.transform = 'scale(1)';
                                 // Remove effects after animation completes
                                 setTimeout(() => {
                                     stat.classList.remove('pulse-effect');
-                                    stat.closest('.stat-item').classList.remove('stats-glow');
-                                }, 300);
-                            }, 200);
+                                    stat.closest('.stat-item').classList.remove('stats-animating');
+                                }, 200);
+                            }, 150);
                         }
                     }, frameDuration);
-                }, index * 200); // Stagger each animation by 200ms
+                }, index * 150); // Reduced stagger time
             }
         });
     }
