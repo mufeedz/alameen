@@ -1,0 +1,98 @@
+/* Base Styles */
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Modern Typography */
+h1, .section__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semi);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semi);
+  color: var(--color-primary);
+  line-height: 1.3;
+}
+
+h4 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+  color: var(--color-primary);
+}
+
+small {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+/* Accessibility & UX Improvements */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.skip-to-content:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1.5rem;
+  background: var(--color-white);
+  color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  outline: none;
+}
+
+/* Focus styling */
+a:focus,
+button:focus,
+[tabindex="0"]:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Backward compatibility */
+.bg-primary-theme { 
+  background: var(--color-primary) !important; 
+  color: var(--color-white) !important; 
+}

@@ -1,0 +1,551 @@
+/* Why Choose Section */
+.why-choose-section {
+  background: var(--color-bg);
+  position: relative;
+}
+
+.why-choose-section .feature-card {
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-separator);
+}
+
+.why-choose-section .feature-card:hover {
+  border-color: var(--color-accent-light);
+  transform: translateY(-5px);
+}
+
+/* Islamic-inspired Decorative Elements */
+.subtle-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23e2e8f0' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.accent-shape {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Islamic Pattern Backgrounds */
+.pattern-rosette-bg {
+  background-image: url('../images/rosette-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 300px 300px;
+  opacity: 0.04;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pattern-star-bg {
+  background-image: url('../images/star-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 200px 200px;
+  opacity: 0.04;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pattern-girih-bg {
+  background-image: url('../images/girih-tile.svg');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.04;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Arabesque Border */
+.arabesque-border {
+  position: relative;
+  padding: 20px;
+  border: none;
+  background-image: url('../images/arabesque-border.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+/* Pointed Arch - Islamic Architecture Element */
+.pointed-arch {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+/* Compact CTA Section */
+.cta-compact {
+  padding: var(--space-sm) 0;
+  background: linear-gradient(45deg, var(--color-tertiary) 0%, var(--color-primary-alt) 100%);
+  color: var(--color-white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin: 0;
+}
+
+.cta-compact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/islamic-pattern.svg');
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.cta-compact .content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-compact h3 {
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+
+.cta-compact p {
+  margin-bottom: var(--space-md);
+}
+
+/* CTA Banner Section */
+.cta-banner {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%) !important;
+  color: var(--color-primary) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/star-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 150px 150px;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.cta-banner .container-xl {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-banner h2 {
+  color: var(--color-primary) !important;
+  font-weight: var(--font-weight-bold);
+}
+
+.cta-banner .text-accent {
+  color: var(--color-white) !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.cta-banner p.lead {
+  color: var(--color-primary) !important;
+  opacity: 0.8;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Stats Counter Section */
+.stats-section {
+  padding: var(--space-md) 0;
+  background: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary-alt) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin: 0;
+  color: var(--color-white);
+}
+
+.stats-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/hex-pattern.svg');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.2;
+  z-index: 1;
+  mix-blend-mode: soft-light;
+}
+
+.stats-section .container-xl {
+  position: relative;
+  z-index: 2;
+}
+
+.stat-item {
+  margin-bottom: 0;
+  transition: all 0.3s ease;
+  padding: var(--space-md) var(--space-xs);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+}
+
+.stat-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background-color: var(--color-accent-light);
+  opacity: 0.5;
+  border-radius: 3px 3px 0 0;
+  z-index: -1;
+}
+
+.stat-number {
+  font-size: 2rem; /* Reduced font size */
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  line-height: 1;
+  margin-bottom: calc(var(--space-xs) - 2px);
+  font-family: var(--font-heading);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--color-accent-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Stats Counter Section - About Page */
+.stats-counter-wrapper {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-top: 1px solid rgba(var(--color-accent-rgb), 0.1);
+  border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.1);
+}
+
+.stats-counter-section {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  border: none;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.stats-counter-section::before {
+  display: none;
+}
+
+.stats-counter-section .stat-item {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-right: 1px solid rgba(var(--color-accent-rgb), 0.1);
+  cursor: pointer;
+  overflow: hidden;
+  padding: 2rem 0.75rem;
+  background: transparent;
+}
+
+.stats-counter-section .stat-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(var(--color-accent-rgb), 0.05), transparent);
+  transition: left 0.6s ease;
+}
+
+.stats-counter-section .stat-item:last-child {
+  border-right: none;
+}
+
+.stats-counter-section .stat-item:hover {
+  transform: translateY(-3px);
+  background: rgba(var(--color-accent-rgb), 0.05);
+  box-shadow: none;
+}
+
+.stats-counter-section .stat-item:hover::before {
+  left: 100%;
+}
+
+.stats-counter-section .stat-item:hover .stat-icon i {
+  transform: scale(1.1) rotate(5deg);
+  color: var(--color-primary);
+}
+
+.stats-counter-section .stat-item:hover .stat-number {
+  transform: scale(1.05);
+  color: var(--color-accent);
+}
+
+.stats-counter-section .stat-item:hover .stat-label {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.stats-counter-section .stat-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stats-counter-section .stat-icon i {
+  font-size: 1.5rem;
+  opacity: 0.8;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stats-counter-section .stat-number {
+  font-size: 1.75rem;
+  font-family: var(--font-heading);
+  margin-bottom: 0.125rem;
+  line-height: 1.1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stats-counter-section .stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile responsive adjustments for stats counter */
+@media (max-width: 768px) {
+  .stats-counter-section .stat-number {
+    font-size: 1.375rem;
+  }
+  
+  .stats-counter-section .stat-label {
+    font-size: 0.6875rem;
+  }
+  
+  .stats-counter-section .stat-icon i {
+    font-size: 1.125rem;
+  }
+  
+  .stats-counter-section .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.1);
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .stats-counter-section .stat-item:last-child {
+    border-bottom: none;
+  }
+  
+  .stats-counter-section .stat-item:hover {
+    transform: translateY(-1px);
+  }
+
+  /* 5-stat responsive grid for mobile - 2 columns on mobile, center last item */
+  .stats-col {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  
+  .stats-col:nth-child(5) {
+    width: 100%;
+  }
+
+  .stats-counter-section {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  /* Tablet layout - 3 columns for first 3, then 2 columns for last 2 */
+  .stats-col {
+    flex: 0 0 auto;
+    width: 33.333%;
+  }
+  
+  .stats-col:nth-child(n+4) {
+    width: 50%;
+  }
+  
+  .stats-counter-section {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .stats-counter-section {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .stats-col {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+  
+  .stats-col:last-child {
+    width: 20%;
+  }
+}
+
+/* Testimonial Section - Compact */
+.testimonial-compact {
+  padding: var(--space-lg) 0;
+  background: var(--color-neutral);
+  position: relative;
+}
+
+/* Mission Grid Section */
+.mission-grid {
+  background: linear-gradient(135deg, var(--color-tertiary) 0%, var(--color-primary) 100%);
+  position: relative;
+  color: var(--color-white);
+}
+
+.mission-grid .icon-box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-grid .icon-box:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.05);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.5s ease-out;
+  z-index: 0;
+}
+
+.mission-grid .icon-box:hover:before {
+  transform: scaleX(1);
+}
+
+.mission-grid .icon-box:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mission-grid .icon-box i,
+.mission-grid .icon-box h4,
+.mission-grid .icon-box p {
+  position: relative;
+  z-index: 1;
+}
+
+.mission-grid .icon-box i {
+  color: var(--color-accent-light);
+  margin-bottom: var(--space-xs);
+}
+
+.mission-grid .icon-box h4 {
+  color: var(--color-white);
+}
+
+.mission-grid .section__title::after {
+  background: var(--color-accent);
+}
+
+.colored-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 49, 71, 0.4);
+  z-index: 0;
+}
+
+/* Islamic accent for special elements - used sparingly */
+.islamic-accent {
+  color: var(--color-emerald);
+}
+
+/* Subtle emerald accent for links */
+.emerald-link {
+  color: var(--color-emerald);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.emerald-link:hover {
+  color: var(--color-primary);
+}
+
+/* Islamic-inspired subtle background */
+.bg-islamic-subtle {
+  background: linear-gradient(135deg, rgba(14, 49, 71, 0.03) 0%, rgba(14, 49, 71, 0.05) 100%);
+}
+
+/* Mobile Optimization for stats section */
+@media (max-width: 768px) {
+  .stats-section, .cta-compact {
+    padding: var(--space-xs) 0;
+  }
+  .stats-section .stat-number {
+    font-size: 1.75rem;
+  }
+}
