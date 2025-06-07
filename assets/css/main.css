@@ -825,6 +825,36 @@ section + .section-divider {
   transition: all 1s ease;
 }
 
+/* Stats Counter Section - About Page */
+.stats-counter-section {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  border: 2px solid var(--color-accent-light);
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+.stat-item {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.1);
+}
+
+/* Mobile responsive adjustments for stats counter */
+@media (max-width: 768px) {
+  .stats-counter-section .stat-number {
+    font-size: 1.75rem;
+  }
+  
+  .stats-counter-section .stat-label {
+    font-size: 0.875rem;
+  }
+}
+
 /* Testimonial Section - Compact */
 .testimonial-compact {
   padding: var(--space-lg) 0;

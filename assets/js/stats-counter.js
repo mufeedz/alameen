@@ -43,8 +43,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         const easing = progress * (2 - progress);
                         const currentCount = Math.round(countTo * easing);
                         
-                        // Format the number with commas
-                        stat.textContent = currentCount.toLocaleString() + '+';
+                        // Format the number based on the original text content
+                        const originalText = stat.textContent;
+                        if (originalText.includes('%')) {
+                            stat.textContent = currentCount + '%';
+                        } else if (originalText.includes('+')) {
+                            stat.textContent = currentCount.toLocaleString() + '+';
+                        } else {
+                            // For years like 1980, no suffix
+                            stat.textContent = currentCount.toLocaleString();
+                        }
                         
                         if (frame === totalFrames) {
                             clearInterval(counter);
