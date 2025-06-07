@@ -80,3 +80,24 @@
   font-size: 1.5rem !important;
   line-height: 1.2;
 }
+
+/* Ensure proper spacing and alignment on all screen sizes */
+.event-card .ps-3 {
+  padding-left: 0.75rem !important;
+}
+
+/* Mobile-specific adjustments for event card contents */
+@media (max-width: 768px) {
+  .event-card .event-date {
+    max-width: 100%;
+    min-width: 70px;
+  }
+  
+  .event-card .row.align-items-center {
+    align-items: flex-start !important;
+  }
+  
+  .event-card .ps-3 {
+    padding-left: 0.5rem !important;
+  }
+}

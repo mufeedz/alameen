@@ -36,19 +36,26 @@
   }
   
   .event-card .row {
-    flex-direction: column;
+    flex-direction: row; /* Changed from column to row */
   }
   
   .event-card .col-3, 
   .event-card .col-9 {
-    width: 100%;
-    text-align: center;
+    text-align: left; /* Changed from center to left */
     padding: var(--space-xs);
   }
   
+  .event-card .col-3 {
+    width: 25%; /* Set back to bootstrap default */
+  }
+  
+  .event-card .col-9 {
+    width: 75%; /* Set back to bootstrap default */
+  }
+  
   .event-date {
-    display: inline-block;
-    margin-bottom: var(--space-xs);
+    display: block; /* Changed from inline-block to block */
+    margin-bottom: 0; /* Removed bottom margin */
   }
 }
 
