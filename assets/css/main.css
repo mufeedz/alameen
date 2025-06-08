@@ -16,6 +16,7 @@
 /* Page/Section Specific Styles */
 @import url('hero.css');
 @import url('theme.css'); /* Contains various themed sections like CTA, Stats, Mission, etc. */
+@import url('mission-vision.css'); /* Modern Mission & Vision section styles */
 @import url('event-styles.css'); /* Styles for event listings/details */
 
 /* Animations and Effects */
