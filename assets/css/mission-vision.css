@@ -151,18 +151,6 @@
   position: relative;
 }
 
-.card-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-emerald) 100%);
-  border-radius: 2px;
-}
-
 .card-text {
   font-size: 1.1rem;
   line-height: 1.7;
