@@ -121,53 +121,93 @@
         <h2 id="main-campus-heading" class="section__title">Karungalpalayam <span class="text-accent">Campus</span></h2>
         <div class="islamic-accent-line mb-4"></div>
         
-        <div class="row align-items-center mb-5">
-          <div class="col-lg-6 mb-4 mb-lg-0">
-            <div class="arabesque-border img-hover-zoom">
-              <div class="campus-gallery">
-                <!-- Karungalpalayam Campus Image Slider -->
-                <div class="swiper campus-swiper" role="img" aria-label="Karungalpalayam Campus photo gallery">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img src="assets/images/slider-1.png" class="img-fluid" alt="Karungalpalayam Campus Building - Exterior view showing traditional Islamic architecture">
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/images/slider-2.png" class="img-fluid" alt="Karungalpalayam Campus Library - Students studying in spacious reading areas">
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/images/slider-3.png" class="img-fluid" alt="Karungalpalayam Campus Sports Facilities - Athletic complex and outdoor fields">
+        <!-- Campus Overview Card -->
+        <div class="card-system card-feature-system mb-4">
+          <div class="card-body-system">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-5">
+                <div class="arabesque-border img-hover-zoom">
+                  <div class="campus-gallery">
+                    <!-- Karungalpalayam Campus Image Slider -->
+                    <div class="swiper campus-swiper" role="img" aria-label="Karungalpalayam Campus photo gallery">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="assets/images/slider-1.png" class="img-fluid" alt="Karungalpalayam Campus Building - Exterior view showing traditional Islamic architecture">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/slider-2.png" class="img-fluid" alt="Karungalpalayam Campus Library - Students studying in spacious reading areas">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/slider-3.png" class="img-fluid" alt="Karungalpalayam Campus Sports Facilities - Athletic complex and outdoor fields">
+                        </div>
+                      </div>
+                      <!-- Pagination and Navigation -->
+                      <div class="swiper-pagination" role="tablist" aria-label="Gallery pagination"></div>
+                      <div class="swiper-button-prev" role="button" aria-label="Previous image" tabindex="0"></div>
+                      <div class="swiper-button-next" role="button" aria-label="Next image" tabindex="0"></div>
                     </div>
                   </div>
-                  <!-- Pagination and Navigation -->
-                  <div class="swiper-pagination" role="tablist" aria-label="Gallery pagination"></div>
-                  <div class="swiper-button-prev" role="button" aria-label="Previous image" tabindex="0"></div>
-                  <div class="swiper-button-next" role="button" aria-label="Next image" tabindex="0"></div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="campus-details">
-              <h3>Our Flagship Location</h3>
-              <p class="lead">The Karungalpalayam Campus, established in 1980, serves as the heart of Al-Ameen School's educational mission. Located on Cauvery Road in Karungalpalayam, this campus represents 44 years of academic excellence and Islamic values.</p>
-              <p>Our unique educational model provides co-educational learning for younger students (up to 5th grade) and dedicated girls-only education for middle and high school (6th-12th grade), creating an optimal learning environment for each developmental stage.</p>
-              
-              <!-- Education Model Highlight -->
-              <div class="card-system card-info-system mb-4">
-                <div class="card-body-system">
-                  <div class="row g-3">
+              <div class="col-lg-7">
+                <div class="campus-details">
+                  <h3 class="h4 text-primary mb-3">Our Flagship Location</h3>
+                  <p class="lead mb-3">The Karungalpalayam Campus, established in 1980, serves as the heart of Al-Ameen School's educational mission. Located on Cauvery Road in Karungalpalayam, this campus represents 44 years of academic excellence and Islamic values.</p>
+                  
+                  <!-- Key Highlights -->
+                  <div class="row g-3 mb-4">
                     <div class="col-md-6">
-                      <div class="education-model-card text-center p-3">
-                        <i class="bi bi-people-fill display-5 text-accent mb-2"></i>
-                        <h5 class="text-primary">Co-education</h5>
-                        <p class="small mb-0">Grades 1-5<br>Mixed learning environment</p>
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-calendar-check text-accent me-2"></i>
+                        <div>
+                          <small class="text-muted d-block">Established</small>
+                          <strong>1980 (44 Years)</strong>
+                        </div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="education-model-card text-center p-3">
-                        <i class="bi bi-person-fill display-5 text-accent mb-2"></i>
-                        <h5 class="text-primary">Girls Only</h5>
-                        <p class="small mb-0">Grades 6-12<br>Focused learning environment</p>
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-geo-alt text-accent me-2"></i>
+                        <div>
+                          <small class="text-muted d-block">Location</small>
+                          <strong>Cauvery Road</strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-building text-accent me-2"></i>
+                        <div>
+                          <small class="text-muted d-block">Campus Size</small>
+                          <strong>5 Acres</strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-people text-accent me-2"></i>
+                        <div>
+                          <small class="text-muted d-block">Education Model</small>
+                          <strong>Co-ed & Girls Only</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Education Model Cards -->
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="education-model-card text-center p-3 border rounded">
+                        <i class="bi bi-people-fill text-accent mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="text-primary mb-1">Co-education</h6>
+                        <small class="text-muted">Grades 1-5<br>Mixed learning environment</small>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="education-model-card text-center p-3 border rounded">
+                        <i class="bi bi-person-fill text-accent mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="text-primary mb-1">Girls Only</h6>
+                        <small class="text-muted">Grades 6-12<br>Focused learning environment</small>
                       </div>
                     </div>
                   </div>
@@ -177,74 +217,149 @@
           </div>
         </div>
         
-        <!-- Karungalpalayam Campus Highlights - Mission Grid -->
-        <section class="mission-grid section position-relative mb-5">
-          <div class="pattern-girih-bg"></div>
-          <div class="colored-bg-overlay"></div>
-          <div class="container-xl py-4">
-            <h3 class="section__title text-center text-white mb-3">Campus <span class="text-accent">Excellence</span></h3>
-            <p class="mb-4 text-center text-white">44 years of educational excellence with state-of-the-art facilities and traditional Islamic values.</p>
-            
-            <div class="row text-center g-4">
-              <div class="col-md-3 col-6">
-                <div class="stat-card stats-counter-wrapper">
-                  <i class="bi bi-book display-4 text-accent mb-2"></i>
-                  <h4 class="text-white stats-counter" data-target="10000">0</h4>
-                  <p class="text-white small mb-0">Library Volumes</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-6">
-                <div class="stat-card stats-counter-wrapper">
-                  <i class="bi bi-flask display-4 text-accent mb-2"></i>
-                  <h4 class="text-white stats-counter" data-target="4">0</h4>
-                  <p class="text-white small mb-0">Science Labs</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-6">
-                <div class="stat-card stats-counter-wrapper">
-                  <i class="bi bi-pc-display display-4 text-accent mb-2"></i>
-                  <h4 class="text-white stats-counter" data-target="3">0</h4>
-                  <p class="text-white small mb-0">Computer Labs</p>
-                </div>
-              </div>
-              <div class="col-md-3 col-6">
-                <div class="stat-card stats-counter-wrapper">
-                  <i class="bi bi-building display-4 text-accent mb-2"></i>
-                  <h4 class="text-white stats-counter" data-target="5">0</h4>
-                  <p class="text-white small mb-0">Acre Campus</p>
+        <!-- Campus Facilities & Stats -->
+        <div class="row g-4 mb-5">
+          <!-- Stats Card -->
+          <div class="col-lg-8">
+            <div class="card-system card-feature-system h-100">
+              <div class="card-body-system">
+                <h3 class="h5 mb-4"><i class="bi bi-graph-up text-primary me-2"></i>Campus Excellence in Numbers</h3>
+                <div class="row text-center g-3">
+                  <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                      <i class="bi bi-book text-accent mb-2" style="font-size: 2rem;"></i>
+                      <h5 class="text-primary stats-counter mb-1" data-target="10000">0</h5>
+                      <small class="text-muted">Library Volumes</small>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                      <i class="bi bi-flask text-accent mb-2" style="font-size: 2rem;"></i>
+                      <h5 class="text-primary stats-counter mb-1" data-target="4">0</h5>
+                      <small class="text-muted">Science Labs</small>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                      <i class="bi bi-pc-display text-accent mb-2" style="font-size: 2rem;"></i>
+                      <h5 class="text-primary stats-counter mb-1" data-target="3">0</h5>
+                      <small class="text-muted">Computer Labs</small>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                      <i class="bi bi-people text-accent mb-2" style="font-size: 2rem;"></i>
+                      <h5 class="text-primary stats-counter mb-1" data-target="1200">0</h5>
+                      <small class="text-muted">Students</small>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="card-system card-feature-system">
+          
+          <!-- Quick Facts -->
+          <div class="col-lg-4">
+            <div class="card-system card-info-system h-100">
               <div class="card-body-system">
-                <h3 class="h5 mb-3"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Contact Information</h3>
-                <ul class="list-unstyled">
-                  <li class="mb-2"><i class="bi bi-geo-alt-fill text-accent me-2"></i> No 180/6, Cauvery Road, Karungalpalayam-638003 (Opposite Government School)</li>
-                  <li class="mb-2"><i class="bi bi-telephone-fill text-accent me-2"></i> Phone: +91 12345 67890</li>
-                  <li class="mb-2"><i class="bi bi-envelope-fill text-accent me-2"></i> Email: main@alameen.edu</li>
-                  <li><i class="bi bi-clock-fill text-accent me-2"></i> Office Hours: 8:00 AM - 4:00 PM (Mon-Fri)</li>
+                <h3 class="h5 mb-4"><i class="bi bi-star text-primary me-2"></i>Quick Facts</h3>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                    <span>Traditional Islamic Architecture</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                    <span>Air-conditioned Classrooms</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                    <span>Digital Learning Resources</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                    <span>Sports & Recreation Facilities</span>
+                  </li>
+                  <li class="mb-0 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-accent me-2"></i>
+                    <span>Medical Room & First Aid</span>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="card-system card-feature-system">
+        </div>
+        
+        <!-- Contact Information & Leadership -->
+        <div class="row g-4 mb-4">
+          <div class="col-lg-4">
+            <div class="card-system card-feature-system h-100">
               <div class="card-body-system">
-                <h3 class="h5 mb-3"><i class="bi bi-people-fill text-primary me-2"></i>Campus Leadership</h3>
-                <div class="leadership-info">
-                  <div class="mb-2">
-                    <strong class="text-primary">Principal:</strong> Dr. Ahmed Khan
+                <h3 class="h6 mb-3"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Contact Information</h3>
+                <div class="contact-info">
+                  <div class="mb-3">
+                    <i class="bi bi-geo-alt text-accent me-2"></i>
+                    <small>No 180/6, Cauvery Road, Karungalpalayam-638003<br>(Opposite Government School)</small>
                   </div>
-                  <div class="mb-2">
-                    <strong class="text-primary">Vice Principal:</strong> Mrs. Fatima Rahman
+                  <div class="mb-3">
+                    <i class="bi bi-telephone text-accent me-2"></i>
+                    <small>+91 12345 67890</small>
+                  </div>
+                  <div class="mb-3">
+                    <i class="bi bi-envelope text-accent me-2"></i>
+                    <small>main@alameen.edu</small>
                   </div>
                   <div class="mb-0">
-                    <strong class="text-primary">Administrative Officer:</strong> Mr. Joseph Thomas
+                    <i class="bi bi-clock text-accent me-2"></i>
+                    <small>8:00 AM - 4:00 PM (Mon-Fri)</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4">
+            <div class="card-system card-feature-system h-100">
+              <div class="card-body-system">
+                <h3 class="h6 mb-3"><i class="bi bi-people-fill text-primary me-2"></i>Campus Leadership</h3>
+                <div class="leadership-info">
+                  <div class="mb-2 d-flex justify-content-between">
+                    <span class="text-muted small">Principal:</span>
+                    <span class="text-primary small fw-medium">Dr. Ahmed Khan</span>
+                  </div>
+                  <div class="mb-2 d-flex justify-content-between">
+                    <span class="text-muted small">Vice Principal:</span>
+                    <span class="text-primary small fw-medium">Mrs. Fatima Rahman</span>
+                  </div>
+                  <div class="mb-0 d-flex justify-content-between">
+                    <span class="text-muted small">Admin Officer:</span>
+                    <span class="text-primary small fw-medium">Mr. Joseph Thomas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4">
+            <div class="card-system card-feature-system h-100">
+              <div class="card-body-system">
+                <h3 class="h6 mb-3"><i class="bi bi-clock text-primary me-2"></i>School Timings</h3>
+                <div class="timing-info">
+                  <div class="mb-2 d-flex justify-content-between">
+                    <span class="text-muted small">Morning Session:</span>
+                    <span class="text-primary small fw-medium">8:00 AM - 12:30 PM</span>
+                  </div>
+                  <div class="mb-2 d-flex justify-content-between">
+                    <span class="text-muted small">Afternoon Session:</span>
+                    <span class="text-primary small fw-medium">1:30 PM - 4:00 PM</span>
+                  </div>
+                  <div class="mb-2 d-flex justify-content-between">
+                    <span class="text-muted small">Office Hours:</span>
+                    <span class="text-primary small fw-medium">8:00 AM - 4:00 PM</span>
+                  </div>
+                  <div class="mb-0 d-flex justify-content-between">
+                    <span class="text-muted small">Working Days:</span>
+                    <span class="text-primary small fw-medium">Monday - Friday</span>
                   </div>
                 </div>
               </div>
@@ -253,13 +368,43 @@
         </div>
         
         <!-- Location & Maps -->
-        <div class="card-system card-info-system mt-5">
+        <div class="card-system card-info-system">
           <div class="card-body-system">
-            <h3 class="h5 mb-3"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Location & Directions</h3>
-            <div class="ratio ratio-21x9 mb-3">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8567428449223!2d80.2677324!3d13.0410506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266ea218fc7c3%3A0x82c9b6b61c96b8!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716653889349!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-8">
+                <h3 class="h6 mb-3"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Location & Directions</h3>
+                <div class="ratio ratio-16x9">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8567428449223!2d80.2677324!3d13.0410506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266ea218fc7c3%3A0x82c9b6b61c96b8!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716653889349!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="directions-info">
+                  <h4 class="h6 text-primary mb-3">Getting Here</h4>
+                  <ul class="list-unstyled small">
+                    <li class="mb-2">
+                      <i class="bi bi-bus-front text-accent me-2"></i>
+                      <strong>By Bus:</strong> Regular bus services available from main city centers
+                    </li>
+                    <li class="mb-2">
+                      <i class="bi bi-car-front text-accent me-2"></i>
+                      <strong>By Car:</strong> Ample parking space available on campus
+                    </li>
+                    <li class="mb-2">
+                      <i class="bi bi-bicycle text-accent me-2"></i>
+                      <strong>By Bicycle:</strong> Secure bicycle parking available
+                    </li>
+                    <li class="mb-3">
+                      <i class="bi bi-person-walking text-accent me-2"></i>
+                      <strong>Walking:</strong> Easily accessible on foot from nearby areas
+                    </li>
+                  </ul>
+                  <p class="small text-muted mb-0">
+                    <i class="bi bi-info-circle text-accent me-1"></i>
+                    Located opposite Government School on Cauvery Road. Easily accessible by public transport.
+                  </p>
+                </div>
+              </div>
             </div>
-            <p class="small mb-0"><i class="bi bi-info-circle-fill text-accent me-1"></i> Located on Cauvery Road, Karungalpalayam, opposite Government School. Easily accessible by public transport.</p>
           </div>
         </div>
       </div>
