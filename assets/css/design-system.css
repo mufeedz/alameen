@@ -340,6 +340,21 @@
   box-shadow: 0 4px 15px rgba(14, 49, 71, 0.2);
 }
 
+.process-number-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #e2b340 100%);
+  color: var(--color-dark);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-scale-md);
+  box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+}
+
 /* ===== FORM SYSTEM ===== */
 .form-group-system {
   margin-bottom: var(--spacing-scale-lg);
@@ -402,7 +417,8 @@
 @media (prefers-reduced-motion: reduce) {
   .card-system,
   .btn-system,
-  .process-number-system {
+  .process-number-system,
+  .process-number-accent {
     transition: none;
   }
   
