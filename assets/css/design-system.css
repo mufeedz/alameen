@@ -355,6 +355,139 @@
   box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
 }
 
+/* ===== PROCESS FLOW SYSTEM ===== */
+.process-flow-container {
+  position: relative;
+}
+
+.process-step {
+  position: relative;
+  z-index: 2;
+}
+
+.process-number-badge {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+  color: var(--color-primary);
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-bold);
+  box-shadow: 0 6px 20px rgba(242, 180, 54, 0.4), 
+              0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.process-number-badge::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.process-step:hover .process-number-badge {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(242, 180, 54, 0.5), 
+              0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.process-step:hover .process-number-badge::before {
+  opacity: 1;
+}
+
+.process-connector {
+  position: absolute;
+  top: 15px;
+  left: calc(100% + 20px);
+  width: calc(100% - 40px);
+  height: 3px;
+  background: linear-gradient(90deg, 
+    var(--color-accent) 0%, 
+    var(--color-accent-light) 50%, 
+    transparent 100%);
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.process-connector::before {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: -4px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid var(--color-accent-light);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  opacity: 0.8;
+}
+
+.process-connector::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--color-accent);
+  transition: width 2s ease;
+}
+
+.process-step:hover .process-connector::after {
+  width: 100%;
+}
+
+/* Hide connector on last step */
+.process-step[data-step="4"] .process-connector {
+  display: none;
+}
+
+.process-card {
+  margin-top: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.process-card:hover {
+  border-color: rgba(242, 180, 54, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .process-number-badge {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    top: -15px;
+  }
+  
+  .process-connector {
+    display: none;
+  }
+  
+  .process-card {
+    margin-top: 15px;
+  }
+}
+
 /* ===== FORM SYSTEM ===== */
 .form-group-system {
   margin-bottom: var(--spacing-scale-lg);
