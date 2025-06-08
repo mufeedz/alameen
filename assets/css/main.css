@@ -2,6 +2,7 @@
 @import url('variables.css');
 @import url('base.css');
 @import url('utilities.css');
+@import url('design-system.css'); /* Unified design system */
 
 /* Layout Components */
 @import url('header.css');

@@ -66,7 +66,6 @@
 - `.pulse-effect` - 3 instances
 - `.gradient-text` - 5 instances
 - `.pointed-arch` - 2 instances
-- `.islamic-accent-line-center` - 4 instances
 - `.cta-compact` - 2 instances
 
 ### ✅ File Changes Made:

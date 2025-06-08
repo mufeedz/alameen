@@ -1,0 +1,432 @@
+/* Al-Ameen School Unified Design System - 2025 */
+/* This file establishes consistent patterns across all components */
+
+/* ===== SPACING SYSTEM ===== */
+:root {
+  /* Consistent spacing scale */
+  --spacing-scale-xs: 0.25rem;    /* 4px */
+  --spacing-scale-sm: 0.5rem;     /* 8px */
+  --spacing-scale-md: 1rem;       /* 16px */
+  --spacing-scale-lg: 1.5rem;     /* 24px */
+  --spacing-scale-xl: 2rem;       /* 32px */
+  --spacing-scale-2xl: 3rem;      /* 48px */
+  --spacing-scale-3xl: 4rem;      /* 64px */
+  
+  /* Section spacing */
+  --section-padding-y: var(--spacing-scale-3xl);
+  --section-margin-bottom: var(--spacing-scale-2xl);
+  
+  /* Component spacing */
+  --card-padding: var(--spacing-scale-lg);
+  --card-gap: var(--spacing-scale-lg);
+  --button-padding-y: 0.75rem;
+  --button-padding-x: 1.5rem;
+}
+
+/* ===== UNIFIED BUTTON SYSTEM ===== */
+.btn-system {
+  /* Base button properties */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-scale-xs);
+  padding: var(--button-padding-y) var(--button-padding-x);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+  min-height: 44px; /* Accessibility minimum touch target */
+}
+
+/* Primary button style */
+.btn-primary-system {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-alt) 100%);
+  color: var(--color-white);
+  box-shadow: 0 2px 8px rgba(14, 49, 71, 0.2);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary-system:hover,
+.btn-primary-system:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14, 49, 71, 0.3);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+/* Accent button style */
+.btn-accent-system {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+  color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(242, 180, 54, 0.2);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  font-weight: var(--font-weight-semi);
+}
+
+.btn-accent-system:hover,
+.btn-accent-system:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(242, 180, 54, 0.4);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Outline button style */
+.btn-outline-system {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  box-shadow: none;
+}
+
+.btn-outline-system:hover,
+.btn-outline-system:focus {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(14, 49, 71, 0.2);
+  text-decoration: none;
+}
+
+/* Secondary outline button */
+.btn-secondary-system {
+  background: transparent;
+  color: var(--color-text-light);
+  border: 2px solid var(--color-separator);
+  box-shadow: none;
+}
+
+.btn-secondary-system:hover,
+.btn-secondary-system:focus {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Button sizes */
+.btn-sm-system {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  min-height: 36px;
+}
+
+.btn-lg-system {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  min-height: 52px;
+}
+
+/* ===== UNIFIED CARD SYSTEM ===== */
+.card-system {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.card-system:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.12), 0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+.card-body-system {
+  padding: var(--card-padding);
+}
+
+/* Card variants */
+.card-feature-system {
+  border-left: 4px solid var(--color-accent);
+  position: relative;
+}
+
+.card-feature-system::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+}
+
+.card-process-system {
+  text-align: center;
+  padding: var(--spacing-scale-xl) var(--spacing-scale-lg);
+}
+
+.card-info-system {
+  background: linear-gradient(135deg, var(--color-neutral) 0%, var(--color-white) 100%);
+}
+
+/* ===== UNIFIED TYPOGRAPHY SYSTEM ===== */
+.heading-system-xl {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-scale-lg);
+  letter-spacing: -0.02em;
+}
+
+.heading-system-lg {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semi);
+  color: var(--color-primary);
+  line-height: 1.25;
+  margin-bottom: var(--spacing-scale-md);
+  letter-spacing: -0.01em;
+}
+
+.heading-system-md {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semi);
+  color: var(--color-primary);
+  line-height: 1.3;
+  margin-bottom: var(--spacing-scale-sm);
+}
+
+.heading-system-sm {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-scale-sm);
+}
+
+.text-system-lead {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-scale-lg);
+}
+
+.text-system-body {
+  font-size: 1rem;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-scale-md);
+}
+
+.text-system-small {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-scale-sm);
+}
+
+/* ===== SECTION LAYOUT SYSTEM ===== */
+.section-system {
+  padding: var(--section-padding-y) 0;
+  position: relative;
+}
+
+.section-system-alt {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-neutral);
+  position: relative;
+}
+
+.section-header-system {
+  text-align: center;
+  margin-bottom: var(--spacing-scale-2xl);
+}
+
+.section-header-system .heading-system-lg {
+  margin-bottom: var(--spacing-scale-md);
+}
+
+.section-header-system .text-system-lead {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== GRID SYSTEM ENHANCEMENTS ===== */
+.grid-system-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--card-gap);
+  align-items: stretch;
+}
+
+.grid-system-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--card-gap);
+  align-items: stretch;
+}
+
+.grid-system-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--card-gap);
+  align-items: stretch;
+}
+
+/* ===== LIST SYSTEM ===== */
+.list-system {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-system-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-scale-sm);
+  padding: var(--spacing-scale-sm) 0;
+  border-bottom: 1px solid var(--color-separator);
+}
+
+.list-system-item:last-child {
+  border-bottom: none;
+}
+
+.list-system-icon {
+  flex-shrink: 0;
+  color: var(--color-accent);
+  font-size: 1.125rem;
+  margin-top: 0.125rem;
+}
+
+.list-system-content {
+  flex: 1;
+}
+
+/* ===== PROCESS STEPS SYSTEM ===== */
+.process-system {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-scale-lg);
+  position: relative;
+}
+
+.process-step-system {
+  text-align: center;
+  position: relative;
+}
+
+.process-number-system {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-alt) 100%);
+  color: var(--color-white);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-scale-md);
+  box-shadow: 0 4px 15px rgba(14, 49, 71, 0.2);
+}
+
+/* ===== FORM SYSTEM ===== */
+.form-group-system {
+  margin-bottom: var(--spacing-scale-lg);
+}
+
+.form-label-system {
+  display: block;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-scale-xs);
+  font-size: 0.9375rem;
+}
+
+.form-control-system {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
+  border: 2px solid var(--color-separator);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.form-control-system:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(242, 180, 54, 0.1);
+}
+
+/* ===== RESPONSIVE BEHAVIOR ===== */
+@media (max-width: 768px) {
+  :root {
+    --section-padding-y: var(--spacing-scale-2xl);
+    --card-gap: var(--spacing-scale-md);
+    --card-padding: var(--spacing-scale-md);
+  }
+  
+  .btn-system {
+    padding: var(--spacing-scale-sm) var(--spacing-scale-md);
+    font-size: 0.9375rem;
+  }
+  
+  .grid-system-2,
+  .grid-system-3,
+  .grid-system-4 {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-scale-md);
+  }
+  
+  .process-system {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-scale-md);
+  }
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+  .card-system,
+  .btn-system,
+  .process-number-system {
+    transition: none;
+  }
+  
+  .card-system:hover,
+  .btn-system:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .card-system {
+    border: 2px solid var(--color-primary);
+  }
+  
+  .btn-outline-system,
+  .btn-secondary-system {
+    border-width: 3px;
+  }
+}
+
+/* Focus visible improvements */
+.btn-system:focus-visible,
+.form-control-system:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
