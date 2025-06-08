@@ -1,0 +1,94 @@
+/* Campus Gallery Slider Styling */
+.campus-gallery {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.campus-swiper,
+.annex-swiper {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-md);
+}
+
+.campus-swiper .swiper-slide,
+.annex-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-neutral);
+}
+
+.campus-swiper .swiper-slide img,
+.annex-swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Swiper Navigation */
+.campus-swiper .swiper-button-next,
+.campus-swiper .swiper-button-prev,
+.annex-swiper .swiper-button-next,
+.annex-swiper .swiper-button-prev {
+  color: var(--color-white);
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: -20px;
+}
+
+.campus-swiper .swiper-button-next:after,
+.campus-swiper .swiper-button-prev:after,
+.annex-swiper .swiper-button-next:after,
+.annex-swiper .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Swiper Pagination */
+.campus-swiper .swiper-pagination,
+.annex-swiper .swiper-pagination {
+  bottom: 15px;
+}
+
+.campus-swiper .swiper-pagination-bullet,
+.annex-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0.8;
+}
+
+.campus-swiper .swiper-pagination-bullet-active,
+.annex-swiper .swiper-pagination-bullet-active {
+  background: var(--color-accent);
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .arabesque-border.img-hover-zoom {
+    height: 280px !important;
+  }
+  
+  .campus-swiper .swiper-button-next,
+  .campus-swiper .swiper-button-prev,
+  .annex-swiper .swiper-button-next,
+  .annex-swiper .swiper-button-prev {
+    width: 35px;
+    height: 35px;
+    margin-top: -17.5px;
+  }
+  
+  .campus-swiper .swiper-button-next:after,
+  .campus-swiper .swiper-button-prev:after,
+  .annex-swiper .swiper-button-next:after,
+  .annex-swiper .swiper-button-prev:after {
+    font-size: 16px;
+  }
+}

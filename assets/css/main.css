@@ -19,6 +19,7 @@
 @import url('theme.css'); /* Contains various themed sections like CTA, Stats, Mission, etc. */
 @import url('mission-vision.css'); /* Modern Mission & Vision section styles */
 @import url('event-styles.css'); /* Styles for event listings/details */
+@import url('campus-gallery.css'); /* Campus gallery slider styles */
 
 /* Animations and Effects */
 @import url('animations.css');
