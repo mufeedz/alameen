@@ -6,11 +6,7 @@
   <title>Events - Al-Ameen School</title>
   
   <!-- Performance optimizations: Preload critical assets -->
-  <link rel="preload" href="asset                      <!-- Ellapalayam Campus Events -->
-            <div class="col-lg-6 mb-4">
-              <h3 class="h4 mb-3 text-primary-theme"><i class="bi bi-building-add me-2"></i>Ellapalayam Campus Events</h3>!-- Karungalpalayam Campus Events -->
-            <div class="col-lg-6 mb-4">
-              <h3 class="h4 mb-3 text-primary-theme"><i class="bi bi-building me-2"></i>Karungalpalayam Campus Events</h3>mages/logo-placeholder.png" as="image">
+  <link rel="preload" href="assets/images/logo-placeholder.png" as="image">
   <link rel="preload" href="assets/css/main.css" as="style">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +18,9 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">  <!-- Custom CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
   <!-- Events-specific CSS (consolidated) -->
   <link rel="stylesheet" href="assets/css/event-styles.css">
@@ -280,17 +278,17 @@
           </div>
           
           <div class="row g-4" id="all-events">
-            <!-- Main Campus Events -->
+            <!-- Karungalpalayam Campus Events -->
             <div class="col-lg-6">
-              <h3 class="h4 mb-3 text-primary-theme"><i class="bi bi-building me-2"></i>Main Campus Events</h3>
+              <h3 class="h4 mb-3 text-primary-theme"><i class="bi bi-building me-2"></i>Karungalpalayam Campus Events</h3>
               <div id="main-campus-events-dynamic" class="events-list">
                 ${mainCampusEvents.length > 0 ? window.generateEventsHTML(mainCampusEvents) : '<div class="no-events-message">No upcoming events scheduled</div>'}
               </div>
             </div>
             
-            <!-- Annex Campus Events -->
+            <!-- Ellapalayam Campus Events -->
             <div class="col-lg-6">
-              <h3 class="h4 mb-3 text-primary-theme"><i class="bi bi-building-add me-2"></i>Annex Campus Events</h3>
+              <h3 class="h4 mb-3 text-primary-theme"><i class="bi bi-building-add me-2"></i>Ellapalayam Campus Events</h3>
               <div id="annex-campus-events-dynamic" class="events-list">
                 ${annexCampusEvents.length > 0 ? window.generateEventsHTML(annexCampusEvents) : '<div class="no-events-message">No upcoming events scheduled</div>'}
               </div>
