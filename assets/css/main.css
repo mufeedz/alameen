@@ -147,26 +147,46 @@
 
 /* Filter Buttons Enhancement */
 .filter-button-group {
-  gap: var(--spacing-scale-sm);
+  gap: 0.75rem;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
-.filter-button-group .btn-outline-system {
-  border-radius: 25px;
-  padding: 0.6rem 1.2rem;
-  font-weight: var(--font-weight-medium);
-  font-size: 0.9rem;
-  min-width: auto;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.filter-button-group .btn {
+  border-radius: 25px !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  min-width: auto !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin: 0.25rem !important;
+  border: 2px solid #0e3147 !important;
+  color: #0e3147 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  position: relative !important;
 }
 
-.filter-button-group .btn-outline-system.active {
-  background: var(--color-primary);
-  color: var(--color-white);
-  border-color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(14, 49, 71, 0.2);
+.filter-button-group .btn:hover {
+  background: #0e3147 !important;
+  color: #ffffff !important;
+  border-color: #0e3147 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(14, 49, 71, 0.2) !important;
+}
+
+.filter-button-group .btn.active {
+  background: #0e3147 !important;
+  color: #ffffff !important;
+  border-color: #0e3147 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(14, 49, 71, 0.3) !important;
+}
+
+.filter-button-group .btn:focus {
+  box-shadow: 0 0 0 3px rgba(14, 49, 71, 0.2) !important;
+  outline: none !important;
 }
 
 /* Gallery Grid Enhancements */
@@ -188,11 +208,13 @@
   .filter-button-group {
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
   }
   
-  .filter-button-group .btn-outline-system {
-    width: 200px;
-    margin-bottom: var(--spacing-scale-xs);
+  .filter-button-group .btn {
+    width: 200px !important;
+    margin: 0.25rem 0 !important;
+    padding: 0.75rem 1rem !important;
   }
 }
 
@@ -208,16 +230,26 @@
   .gallery-caption {
     font-size: 0.85rem;
   }
+  
+  .filter-button-group .btn {
+    width: 180px !important;
+    font-size: 0.85rem !important;
+    padding: 0.65rem 1rem !important;
+  }
 }
 
 /* Gallery Loading States */
 .gallery-item.hidden {
-  display: none;
+  display: none !important;
 }
 
 .gallery-item.filtering {
   opacity: 0.3;
   pointer-events: none;
+}
+
+.gallery-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Accessibility Improvements */
