@@ -486,13 +486,13 @@
       "location": "School Sports Ground",
       "campus": "main",
       "description": "Day of athletic competitions and sports activities for all students.",
-      "details": "Sports Day features various athletic competitions and team sports that showcase students' physical abilities, sportsmanship, and team spirit across different age groups.",
-      "activities": [
+      "details": "Sports Day features various athletic competitions and team sports that showcase students' physical abilities, sportsmanship, and team spirit across different age groups.",      "activities": [
         "Track and field events",
         "Team sports competitions",
         "Relay races",
         "Prize distribution ceremony"
-      ],      "organizer": "Physical Education Department"
+      ],
+      "organizer": "Physical Education Department"
     },
     {
       "id": "31",
@@ -1788,8 +1788,7 @@
         "End-of-year procedures"
       ],
       "organizer": "Examination Department"
-    },
-    {
+    },    {
       "id": "113",
       "title": "Summer Vacation Starts",
       "date": "2026-04-14",
@@ -1798,11 +1797,44 @@
       "campus": "main",
       "description": "Beginning of summer break for Grade 6-8 students.",
       "details": "The summer vacation begins for students in Grades 6-8 following the completion of their Annual Examinations. The school will reopen for the new academic year as per the next year's calendar.",
-      "activities": [        "Distribution of report cards",
+      "activities": [
+        "Distribution of report cards",
         "Summer reading recommendations",
         "Vacation activity suggestions"
       ],
       "organizer": "School Administration"
+    }
+  ],
+  "holidays": [
+    {
+      "id": "h1",
+      "title": "Bakrid",
+      "date": "2025-06-07",
+      "description": "Eid al-Adha - Festival of Sacrifice"
+    },
+    {
+      "id": "h2", 
+      "title": "Second Saturday",
+      "date": "2025-07-12",
+      "description": "Monthly second Saturday holiday"
+    },
+    {
+      "id": "h3",
+      "title": "Independence Day",
+      "date": "2025-08-15", 
+      "description": "National holiday celebrating India's independence"
+    },
+    {
+      "id": "h4",
+      "title": "Muharram",
+      "date": "2025-08-16",
+      "description": "Islamic New Year observance"
+    },
+    {
+      "id": "h5",
+      "title": "Milad-un-Nabi",
+      "date": "2025-09-05",
+      "description": "Birthday of Prophet Muhammad (PBUH)"
     }
   ]
 }

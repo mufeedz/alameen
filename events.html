@@ -193,6 +193,9 @@
   <!-- Main JS -->
   <script src="assets/js/main.js"></script>
   
+  <!-- Event utilities (shared functions) -->
+  <script src="assets/js/event-utils.js"></script>
+  
   <!-- Events filtering JS -->
   <script src="assets/js/event-filters.js"></script>
   
@@ -260,37 +263,23 @@
         });
       }
       
-      // Display upcoming events by campus category
+      // Display upcoming events without campus-specific sections
       function displayUpcomingEventsByCategory(events) {
-        const mainCampusEvents = events.filter(event => event.campus === 'main');
-        const annexCampusEvents = events.filter(event => event.campus === 'annex');
-        
-        // Add all upcoming events to the events container with campus-specific sections
         const eventsContainer = document.getElementById('events-container');
         
-        // Create HTML for both campus sections
+        // Create HTML for unified events display
         const eventsHTML = `
           <div class="row mb-4">
             <div class="col-md-8">
               <h2 class="section__title">Upcoming Events</h2>
-              <p>Find details about our upcoming events at both campuses.</p>
+              <p>Find details about our upcoming events across all campuses.</p>
             </div>
           </div>
           
           <div class="row g-4" id="all-events">
-            <!-- Karungalpalayam Campus Events -->
-            <div class="col-lg-6">
-              <h3 class="h4 mb-3 text-primary-theme"><i class="bi bi-building me-2"></i>Karungalpalayam Campus Events</h3>
-              <div id="main-campus-events-dynamic" class="events-list">
-                ${mainCampusEvents.length > 0 ? window.generateEventsHTML(mainCampusEvents) : '<div class="no-events-message">No upcoming events scheduled</div>'}
-              </div>
-            </div>
-            
-            <!-- Ellapalayam Campus Events -->
-            <div class="col-lg-6">
-              <h3 class="h4 mb-3 text-primary-theme"><i class="bi bi-building-add me-2"></i>Ellapalayam Campus Events</h3>
-              <div id="annex-campus-events-dynamic" class="events-list">
-                ${annexCampusEvents.length > 0 ? window.generateEventsHTML(annexCampusEvents) : '<div class="no-events-message">No upcoming events scheduled</div>'}
+            <div class="col-12">
+              <div id="all-events-dynamic" class="events-list">
+                ${events.length > 0 ? window.generateEventsHTML(events, true, 'btn--primary') : '<div class="no-events-message">No upcoming events scheduled</div>'}
               </div>
             </div>
           </div>

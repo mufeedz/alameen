@@ -223,19 +223,9 @@
         </div>
         
         <div class="row g-4">
-          <!-- Karungalpalayam Campus Events -->
-          <div class="col-lg-6">
-            <h3 class="h4 mb-2 text-primary-theme"><i class="bi bi-building me-2"></i>Karungalpalayam Campus Events</h3>
-            <div id="home-main-campus-events" class="events-list">
-              <!-- Will be populated by JavaScript -->
-              <div class="loading"></div>
-            </div>
-          </div>
-          
-          <!-- Ellapalayam Campus Events -->
-          <div class="col-lg-6">
-            <h3 class="h4 mb-2 text-primary-theme"><i class="bi bi-building-add me-2"></i>Ellapalayam Campus Events</h3>
-            <div id="home-annex-campus-events" class="events-list">
+          <!-- Unified Events Display -->
+          <div class="col-12">
+            <div id="home-events-display" class="events-list">
               <!-- Will be populated by JavaScript -->
               <div class="loading"></div>
             </div>
@@ -294,6 +284,10 @@
     </section>
     <div class="section-divider-alt" aria-hidden="true"></div>
   </main>
+  
+  <!-- Event modals will be dynamically inserted here -->
+  <div id="home-event-modals"></div>
+  
     <!-- Footer Include -->
   <div id="footer-include" class="mt-0"></div>
   
@@ -304,6 +298,8 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/stats-counter.js"></script>
   <script src="assets/js/scroll-reveal.js"></script>
+  <!-- Event utilities (shared functions) -->
+  <script src="assets/js/event-utils.js"></script>
   <!-- Events display JS -->
   <script src="assets/js/event-display.js"></script>
   <!-- Home page events loader -->

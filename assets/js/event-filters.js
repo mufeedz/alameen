@@ -1,6 +1,6 @@
 /**
  * Enhanced event filtering functionality for Al-Ameen School website
- * This improves the filter functionality by ensuring proper button states and layout changes
+ * Updated to work with unified event display without campus-specific columns
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -24,18 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.add('btn--primary');
         this.classList.remove('btn--outline-primary');
         
-        // Reset all column classes first to ensure proper layout switching
-        const mainCampusColumn = document.querySelector('#all-events > div:nth-child(1)');
-        const annexCampusColumn = document.querySelector('#all-events > div:nth-child(2)');
-        
-        if (mainCampusColumn && annexCampusColumn) {
-          // Reset both columns to default state
-          [mainCampusColumn, annexCampusColumn].forEach(col => {
-            col.classList.remove('d-none', 'col-12');
-            col.classList.add('col-lg-6');
-          });
-        }
-        
         // Apply filtering logic
         if (filter === 'holidays') {
           // Show only holidays section
@@ -46,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
           document.getElementById('all-events').classList.remove('d-none');
           document.getElementById('holidays-section').classList.remove('d-none');
           
-          // Show all campus events
+          // Show all event cards
           document.querySelectorAll('#all-events .event-card').forEach(card => {
             card.classList.remove('d-none');
           });
@@ -55,18 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
           document.getElementById('all-events').classList.remove('d-none');
           document.getElementById('holidays-section').classList.add('d-none');
           
-          // Show only the column for the selected campus, hide the other
-          if (filter === 'main') {
-            mainCampusColumn.classList.remove('col-lg-6');
-            mainCampusColumn.classList.add('col-12');
-            annexCampusColumn.classList.add('d-none');
-          } else if (filter === 'annex') {
-            annexCampusColumn.classList.remove('col-lg-6');
-            annexCampusColumn.classList.add('col-12');
-            mainCampusColumn.classList.add('d-none');
-          }
-          
-          // Also filter individual event cards for safety
+          // Filter individual event cards by campus
           document.querySelectorAll('#all-events .event-card').forEach(card => {
             if (card.getAttribute('data-campus') === filter) {
               card.classList.remove('d-none');
@@ -74,6 +51,22 @@ document.addEventListener('DOMContentLoaded', function() {
               card.classList.add('d-none');
             }
           });
+          
+          // Check if any events are visible, show message if none
+          const visibleEvents = document.querySelectorAll('#all-events .event-card:not(.d-none)');
+          const eventsContainer = document.querySelector('#all-events-dynamic');
+          const noEventsMessage = document.querySelector('#all-events .no-events-message');
+          
+          if (visibleEvents.length === 0 && eventsContainer) {
+            if (!noEventsMessage) {
+              const messageDiv = document.createElement('div');
+              messageDiv.className = 'no-events-message';
+              messageDiv.textContent = `No upcoming events scheduled for ${filter === 'main' ? 'Karungalpalayam Campus' : 'Ellapalayam Campus'}`;
+              eventsContainer.appendChild(messageDiv);
+            }
+          } else if (noEventsMessage) {
+            noEventsMessage.remove();
+          }
         }
       });
     });
