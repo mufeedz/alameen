@@ -85,7 +85,7 @@ function createEventModals(events, modalContainerId = 'event-modals') {
       <div class="modal fade event-modal" id="eventModal${event.id}" tabindex="-1" aria-labelledby="eventModal${event.id}Label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
+            <div class="modal-header">
               <h5 class="modal-title" id="eventModal${event.id}Label">${event.title}</h5>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>

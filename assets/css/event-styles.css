@@ -86,6 +86,11 @@
   padding-left: 0.75rem !important;
 }
 
+.event-modal .modal-header {
+  background-color: var(--color-primary, #0e3147);
+  color: white;
+}
+
 /* Mobile-specific adjustments for event card contents */
 @media (max-width: 768px) {
   .event-card .event-date {
