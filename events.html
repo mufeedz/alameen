@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events - Al-Ameen School</title>
+  
+  <!-- Performance optimizations: Preload critical assets -->
+  <link rel="preload" href="assets/images/logo-placeholder.png" as="image">
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Events-specific CSS (consolidated) -->
+  <link rel="stylesheet" href="assets/css/event-styles.css">
+  <meta name="description" content="Al-Ameen Matriculation Higher Secondary School - Events Calendar and Upcoming Events">
+  
+  <!-- For WCAG compliance -->
+  <meta name="theme-color" content="#1c4c4c">
+  
+  <style>
+    .event-modal .modal-header {
+      background-color: var(--color-primary);
+      color: white;
+    }
+    .event-modal .event-date {
+      background-color: var(--color-accent);
+      color: var(--color-text);
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      text-align: center;
+      font-weight: bold;
+    }
+    .event-filter {
+      margin-bottom: 20px;
+    }
+    .event-filter .btn {
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    .event-filter .btn.active {
+      background-color: var(--color-primary);
+      color: white;
+    }
+    /* Improved filter button styling */
+    .event-filter .btn {
+      transition: all 0.2s ease;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+    }
+    
+    /* Fix filter button hover states */
+    .event-filter .btn--primary:hover {
+      background-color: var(--color-primary-dark, #0a2833) !important;
+      border-color: var(--color-primary-dark, #0a2833) !important;
+      color: white !important;
+      transform: translateY(-1px);
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    }
+    
+    .event-filter .btn--outline-primary:hover {
+      background-color: var(--color-primary, #0e3147) !important;
+      border-color: var(--color-primary, #0e3147) !important;
+      color: white !important;
+      transform: translateY(-1px);
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    }
+    
+    .event-filter .btn.active:hover {
+      background-color: var(--color-primary-dark, #0a2833) !important;
+      color: white !important;
+    }
+    
+    /* Make empty columns less noticeable when filtered */
+    .no-events-message {
+      background-color: rgba(240, 240, 240, 0.5);
+      border-left: 4px solid #ddd;
+      padding: 2rem;
+      text-align: center;
+      background-color: #f0f0f0;
+      border-radius: 0.25rem;
+      font-style: italic;
+      color: #666;
+    }
+    /* Animation for loading state */
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+    .loading {
+      animation: pulse 1.5s infinite;
+      background-color: #f0f0f0;
+      border-radius: 0.25rem;
+      height: 120px;
+      margin-bottom: 20px;
+    }
+    
+    /* Past events card button fixes */
+    .past-event-btn {
+      min-width: 100px !important;
+      font-weight: 500;
+    }
+    
+    .card-body.d-flex.flex-column {
+      height: 100% !important;
+    }
+    
+    /* Ensure all buttons follow theme colors */
+    .btn--outline-primary {
+      color: var(--color-primary, #0e3147) !important;
+      border-color: var(--color-primary, #0e3147) !important;
+      background-color: transparent !important;
+    }
+    
+    .btn--primary {
+      background-color: var(--color-primary, #0e3147) !important;
+      border-color: var(--color-primary, #0e3147) !important;
+      color: white !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  <!-- Header Include -->
+  <div id="header-include"></div>
+  
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header py-4" aria-labelledby="page-title-events">
+      <div class="container-xl">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h1 id="page-title-events" class="h2 mb-2 text-primary">School Events</h1>
+            <p class="text-muted mb-0">Stay updated with our school activities, celebrations, and important dates</p>
+          </div>
+          <div class="col-md-4">
+            <nav aria-label="breadcrumb" class="d-flex justify-content-md-end">
+              <ol class="breadcrumb mb-0 bg-transparent p-0">
+                <li class="breadcrumb-item">
+                  <a href="index.html" class="text-decoration-none text-accent fw-medium position-relative">
+                    <i class="bi bi-house-door-fill me-1" style="font-size: 0.875rem;"></i>Home
+                  </a>
+                </li>
+                <li class="breadcrumb-item active text-primary fw-semibold" aria-current="page">
+                  <i class="bi bi-chevron-right text-muted mx-1" style="font-size: 0.75rem;"></i>Events
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Event Filters Section -->
+    <section class="event-filters-section section position-relative">
+      <div class="pattern-rosette-bg"></div>
+      <div class="container-xl py-5">
+        <div class="row mb-4">
+          <div class="col-md-8">
+            <p>Find and filter upcoming school events, holidays, and important dates.</p>
+          </div>
+          <div class="col-md-4">
+            <!-- Calendar legend removed -->
+          </div>
+        </div>
+        
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="event-filter d-flex flex-wrap">
+              <button class="btn btn-sm btn--primary me-2 mb-2 active" data-filter="this-month">This Month</button>
+              <button class="btn btn-sm btn--outline-primary me-2 mb-2" data-filter="next-month">Next Month</button>
+              <button class="btn btn-sm btn--outline-primary mb-2" data-filter="holidays">School Holidays</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Loading state -->
+        <div id="events-loading" class="loading-container">
+          <div class="row">
+            <div class="col-md-6"><div class="loading"></div></div>
+            <div class="col-md-6"><div class="loading"></div></div>
+          </div>
+        </div>
+        
+        <!-- Events container - will be populated by JavaScript -->
+        <div id="events-container" class="d-none">
+          <!-- Content will be loaded from JSON -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Placeholder for spacing -->
+    <div class="spacing-element mb-0"></div>
+    
+    <!-- Past Events Section -->
+    <section class="past-events section position-relative">
+      <div class="pattern-girih-bg"></div>
+      <div class="container-xl py-5">
+        <h2 class="section__title">Past Events</h2>
+        <p class="mb-4">Take a look back at our school's memorable events and achievements.</p>
+        
+        <div id="past-events" class="row g-4">
+          <!-- Will be populated from JSON -->
+          <div class="col-md-4"><div class="loading"></div></div>
+          <div class="col-md-4"><div class="loading"></div></div>
+          <div class="col-md-4"><div class="loading"></div></div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Event modals will be dynamically inserted here -->
+    <div id="event-modals"></div>
+    <div class="section-divider-alt" aria-hidden="true"></div>
+  </main>
+  
+  <!-- Footer Include -->
+  <div id="footer-include"></div>
+  
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
+  
+  <!-- Event utilities (shared functions) -->
+  <script src="assets/js/event-utils.js"></script>
+  
+  <!-- Events filtering JS -->
+  <script src="assets/js/event-filters.js"></script>
+  
+  <!-- Events display JS -->
+  <script src="assets/js/event-display.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM Content Loaded - Loading events data');
+      const currentDate = new Date();
+      
+      // Load events data from JSON file
+      fetch('assets/data/events.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok: ' + response.status);
+          }
+          console.log('Response received successfully');
+          return response.json();
+        })
+        .then(data => {
+          console.log('Events data loaded:', data);
+          displayEvents(data);
+          setupModalHandlers();
+          // Setup filters after all content is loaded
+          setTimeout(() => {
+            setupEventFiltersAfterLoad();
+          }, 300);
+        })
+        .catch(error => {
+          console.error('Error loading events data:', error);
+          document.querySelectorAll('.loading').forEach(loader => {
+            loader.innerHTML = `<div class="alert alert-danger">Error loading events: ${error.message}. Please try again later.</div>`;
+          });
+        });
+      
+      function displayEvents(data) {
+        console.log('Displaying events...');
+        // Parse and sort events
+        const events = data.events.map(event => {
+          return { 
+            ...event, 
+            dateObj: new Date(event.date)
+          };
+        });
+        
+        const sortedEvents = events.sort((a, b) => a.dateObj - b.dateObj);
+        
+        // Filter upcoming and past events
+        const upcomingEvents = sortedEvents.filter(event => event.dateObj >= currentDate);
+        const pastEvents = sortedEvents.filter(event => event.dateObj < currentDate)
+                                     .sort((a, b) => b.dateObj - a.dateObj); // Reverse sort for past events
+        
+        // Display events in their respective containers
+        displayUpcomingEventsByCategory(upcomingEvents);
+        displayPastEvents(pastEvents);
+        displayHolidays(data.holidays);
+        
+        // Show events container and hide loading
+        document.getElementById('events-loading').classList.add('d-none');
+        document.getElementById('events-container').classList.remove('d-none');
+        
+        // Create modals for all events
+        createEventModals([...upcomingEvents, ...pastEvents]);
+        
+        // Remove loading indicators
+        document.querySelectorAll('.loading').forEach(loader => {
+          loader.parentElement.removeChild(loader);
+        });
+      }
+      
+      // Display upcoming events in 2x2 grid layout
+      function displayUpcomingEventsByCategory(events) {
+        const eventsContainer = document.getElementById('events-container');
+        
+        // Create HTML for grid-based events display
+        const eventsHTML = `
+          <div class="row mb-4">
+            <div class="col-md-8">
+              <h2 class="section__title">Upcoming Events</h2>
+              <p>Find details about our upcoming events this month and next month.</p>
+            </div>
+          </div>
+          
+          <div class="row g-4" id="this-month-events">
+            <div class="col-12">
+              <h3 class="h4 mb-3 text-primary-theme"><i class="bi bi-calendar-event me-2"></i>This Month</h3>
+              <div id="this-month-events-dynamic" class="row g-3">
+                <!-- Will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+          
+          <div class="row g-4 mt-4" id="next-month-events">
+            <div class="col-12">
+              <h3 class="h4 mb-3 text-primary-theme"><i class="bi bi-calendar-event me-2"></i>Next Month</h3>
+              <div id="next-month-events-dynamic" class="row g-3">
+                <!-- Will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+          
+          <!-- Holidays Section -->
+          <div class="row mt-5" id="holidays-section">
+            <div class="col-12">
+              <h3 class="h4 mb-3 text-primary-theme"><i class="bi bi-calendar-event me-2"></i>School Holidays</h3>
+              <div id="school-holidays-dynamic" class="holidays-list">
+                <!-- Will be populated separately -->
+              </div>
+            </div>
+          </div>
+        `;
+        
+        eventsContainer.innerHTML = eventsHTML;
+        
+        // Filter and display events by month
+        const currentDate = new Date();
+        const currentMonth = currentDate.getMonth();
+        const currentYear = currentDate.getFullYear();
+        
+        console.log('Current date:', currentDate);
+        console.log('Filtering events - Total events:', events.length);
+        
+        const thisMonthEvents = events.filter(event => {
+          const eventDate = new Date(event.date);
+          return eventDate.getMonth() === currentMonth && eventDate.getFullYear() === currentYear;
+        });
+        
+        const nextMonthEvents = events.filter(event => {
+          const eventDate = new Date(event.date);
+          const nextMonth = currentMonth === 11 ? 0 : currentMonth + 1;
+          const nextYear = currentMonth === 11 ? currentYear + 1 : currentYear;
+          return eventDate.getMonth() === nextMonth && eventDate.getFullYear() === nextYear;
+        });
+        
+        console.log('This month events:', thisMonthEvents.length);
+        console.log('Next month events:', nextMonthEvents.length);
+        
+        // Display events in grid format
+        displayEventsInGrid('this-month-events-dynamic', thisMonthEvents);
+        displayEventsInGrid('next-month-events-dynamic', nextMonthEvents);
+        
+        // Set initial filter state after content is loaded
+        setTimeout(() => {
+          setInitialFilterState();
+        }, 100);
+      }
+      
+      // Set the initial filter state to show only this month's events
+      function setInitialFilterState() {
+        const thisMonthSection = document.getElementById('this-month-events');
+        const nextMonthSection = document.getElementById('next-month-events');
+        const holidaysSection = document.getElementById('holidays-section');
+        
+        console.log('Setting initial filter state');
+        
+        if (thisMonthSection) thisMonthSection.style.display = 'block';
+        if (nextMonthSection) nextMonthSection.style.display = 'none';
+        if (holidaysSection) holidaysSection.style.display = 'none';
+        
+        // Make sure the This Month button is active
+        const filterButtons = document.querySelectorAll('.event-filter button');
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.classList.add('btn--outline-primary');
+          btn.classList.remove('btn--primary');
+        });
+        
+        const thisMonthBtn = document.querySelector('[data-filter="this-month"]');
+        if (thisMonthBtn) {
+          thisMonthBtn.classList.add('active');
+          thisMonthBtn.classList.add('btn--primary');
+          thisMonthBtn.classList.remove('btn--outline-primary');
+        }
+      }
+      
+      // Display events in 2x2 grid format
+      function displayEventsInGrid(containerId, events) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        
+        if (events.length === 0) {
+          container.innerHTML = '<div class="col-12"><div class="no-events-message">No events scheduled for this period</div></div>';
+          return;
+        }
+        
+        const gridHTML = events.map(event => {
+          const displayDate = {
+            day: event.dateObj.getDate().toString().padStart(2, '0'),
+            month: event.dateObj.toLocaleString('en-US', {month: 'short'})
+          };
+          
+          return `
+            <div class="col-12 col-md-6">
+              <div class="event-card bg-white shadow-sm rounded p-3 hover-lift h-100" data-campus="${event.campus || 'main'}">
+                <div class="row g-0 align-items-start">
+                  <div class="col-3 text-center">
+                    <div class="event-date bg-accent text-primary rounded p-2">
+                      <span class="d-block fs-5 fw-bold">${displayDate.day}</span>
+                      <span class="small">${displayDate.month}</span>
+                    </div>
+                  </div>
+                  <div class="col-9">
+                    <div class="ps-3">
+                      <h4 class="h6 mb-1 text-primary">${event.title}</h4>
+                      <p class="small text-muted mb-1"><i class="bi bi-clock me-1"></i> ${event.time}</p>
+                      <p class="small text-muted mb-1"><i class="bi bi-geo-alt me-1"></i> ${event.location}</p>
+                      <p class="small mb-2 text-truncate">${event.description}</p>
+                      <div class="d-flex justify-content-end">
+                        <button class="btn btn-sm btn--primary" data-bs-toggle="modal" data-bs-target="#eventModal${event.id}">
+                          Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+        
+        container.innerHTML = gridHTML;
+      }
+      
+      // Display past events
+      function displayPastEvents(events) {
+        const pastEventsContainer = document.getElementById('past-events');
+        if (!pastEventsContainer) {
+          console.warn('Past events container not found');
+          return;
+        }
+        
+        if (events.length === 0) {
+          pastEventsContainer.innerHTML = `<div class="col-12"><div class="no-events-message">No past events to display</div></div>`;
+          return;
+        }
+        
+        // Display only the most recent 3 past events
+        const recentPastEvents = events.slice(0, 3);
+        
+        const pastEventsHTML = recentPastEvents.map((event, index) => {
+          const displayDate = window.formatDateLong(event.date);
+          // Use a default placeholder that works even without images
+          const imagePlaceholder = `
+            <div class="card-img-top d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
+              <div class="text-center text-muted">
+                <i class="bi bi-calendar-event display-4 mb-2"></i>
+                <p class="mb-0 small">${event.title}</p>
+              </div>
+            </div>
+          `;
+          
+          return `
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm hover-lift">
+                ${imagePlaceholder}
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title text-primary">${event.title}</h5>
+                  <p class="small text-muted mb-2"><i class="bi bi-calendar3 me-1"></i> ${displayDate}</p>
+                  <p class="card-text flex-grow-1">${event.description}</p>
+                  <div class="mt-auto d-flex justify-content-end">
+                    <button class="btn btn-sm btn--outline-primary past-event-btn" data-bs-toggle="modal" data-bs-target="#eventModal${event.id}">
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+        
+        pastEventsContainer.innerHTML = pastEventsHTML;
+      }
+      
+      // Display holidays
+      function displayHolidays(holidays) {
+        const holidaysContainer = document.getElementById('school-holidays-dynamic');
+        if (!holidaysContainer) {
+          console.warn('Holidays container not found');
+          return;
+        }
+        
+        if (!holidays || holidays.length === 0) {
+          holidaysContainer.innerHTML = `<div class="no-events-message">No upcoming holidays scheduled</div>`;
+          return;
+        }
+        
+        const currentDate = new Date();
+        // Filter for upcoming holidays
+        const upcomingHolidays = holidays.filter(holiday => {
+          const holidayDate = new Date(holiday.date);
+          return holidayDate >= currentDate;
+        }).sort((a, b) => new Date(a.date) - new Date(b.date));
+        
+        if (upcomingHolidays.length === 0) {
+          holidaysContainer.innerHTML = `<div class="no-events-message">No upcoming holidays scheduled</div>`;
+          return;
+        }
+        
+        holidaysContainer.innerHTML = `
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead class="table-light">
+                <tr>
+                  <th>Holiday</th>
+                  <th>Date</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${upcomingHolidays.map(holiday => `
+                  <tr>
+                    <td class="fw-medium">${holiday.title}</td>
+                    <td>${window.formatDateLong(holiday.date)}${holiday.endDate ? ` to ${window.formatDateLong(holiday.endDate)}` : ''}</td>
+                    <td>${holiday.description}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+        `;
+      }
+      
+      // Create modal dialogs for events
+      function createEventModals(events) {
+        // Remove existing modals
+        const existingModalContainer = document.getElementById('event-modals');
+        if (existingModalContainer) {
+          existingModalContainer.innerHTML = '';
+        }
+        
+        // Create modals for all events
+        const modalHTML = events.map(event => {
+          const displayDate = {
+            day: event.dateObj.getDate(),
+            month: event.dateObj.toLocaleString('en-US', {month: 'short'})
+          };
+          
+          return `
+            <div class="modal fade event-modal" id="eventModal${event.id}" tabindex="-1" aria-labelledby="eventModal${event.id}Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="eventModal${event.id}Label">${event.title}</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row mb-3">
+                      <div class="col-3">
+                        <div class="event-date rounded text-center">
+                          <span class="d-block fs-4 fw-bold">${displayDate.day}</span>
+                          <span>${displayDate.month}</span>
+                        </div>
+                      </div>
+                      <div class="col-9">
+                        <p class="mb-2"><i class="bi bi-clock me-2"></i> ${event.time}</p>
+                        <p class="mb-2"><i class="bi bi-geo-alt me-2"></i> ${event.location}</p>
+                        <p class="mb-0"><i class="bi bi-person me-2"></i> Organized by ${event.organizer}</p>
+                      </div>
+                    </div>
+                    <p>${event.details || event.description}</p>
+                    ${event.activities ? `
+                      <p>Activities include:</p>
+                      <ul>
+                        ${event.activities.map(activity => `<li>${activity}</li>`).join('')}
+                      </ul>
+                    ` : ''}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn--primary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+        
+        if (existingModalContainer) {
+          existingModalContainer.innerHTML = modalHTML;
+        }
+      }
+      
+      // Set up event modal accessibility
+      function setupModalHandlers() {
+        // Add keyboard support for event details
+        document.querySelectorAll('.event-card button').forEach(function(button) {
+          button.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              this.click();
+            }
+          });
+        });
+        
+        // Improve modal accessibility
+        document.querySelectorAll('.modal').forEach(function(modal) {
+          modal.addEventListener('shown.bs.modal', function() {
+            // Focus on the first focusable element in the modal
+            const focusableElement = modal.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            if (focusableElement) focusableElement.focus();
+          });
+          
+          // Return focus to the button that opened the modal when closing
+          modal.addEventListener('hidden.bs.modal', function(event) {
+            // Find which button opened this modal by checking data-bs-target
+            const modalId = modal.getAttribute('id');
+            const opener = document.querySelector(`[data-bs-target="#${modalId}"]`);
+            if (opener) opener.focus();
+          });
+        });
+      }
+      
+      // Setup event filters after page is fully loaded
+      function setupEventFiltersAfterLoad() {
+        const filterButtons = document.querySelectorAll('.event-filter button');
+        console.log('Setting up event filters after load, found buttons:', filterButtons.length);
+        
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            console.log('Filter clicked:', filter);
+            
+            // Toggle active class on buttons
+            filterButtons.forEach(btn => {
+              btn.classList.remove('active');
+              btn.classList.add('btn--outline-primary');
+              btn.classList.remove('btn--primary');
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            this.classList.add('btn--primary');
+            this.classList.remove('btn--outline-primary');
+            
+            // Apply filtering logic
+            const thisMonthSection = document.getElementById('this-month-events');
+            const nextMonthSection = document.getElementById('next-month-events');
+            const holidaysSection = document.getElementById('holidays-section');
+            
+            console.log('Found sections:', {
+              thisMonth: !!thisMonthSection,
+              nextMonth: !!nextMonthSection,
+              holidays: !!holidaysSection
+            });
+            
+            if (filter === 'holidays') {
+              if (thisMonthSection) thisMonthSection.style.display = 'none';
+              if (nextMonthSection) nextMonthSection.style.display = 'none';
+              if (holidaysSection) holidaysSection.style.display = 'block';
+            } else if (filter === 'this-month') {
+              if (thisMonthSection) thisMonthSection.style.display = 'block';
+              if (nextMonthSection) nextMonthSection.style.display = 'none';
+              if (holidaysSection) holidaysSection.style.display = 'none';
+            } else if (filter === 'next-month') {
+              if (thisMonthSection) thisMonthSection.style.display = 'none';
+              if (nextMonthSection) nextMonthSection.style.display = 'block';
+              if (holidaysSection) holidaysSection.style.display = 'none';
+            }
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

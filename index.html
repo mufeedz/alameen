@@ -1,191 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Al-Ameen Matriculation Higher Secondary School, Erode - Providing quality education from LKG to 12th Standard with strong moral and Islamic values. Admissions Open.">
-    <meta name="keywords" content="Al-Ameen School, Matriculation School Erode, Higher Secondary School Erode, Islamic School Tamil Nadu, Best School Erode, School Admissions Erode, CBSE Erode, Quality Education Erode">
-    <title>Al-Ameen Matriculation Higher Secondary School, Erode - Quality Education & Values</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Add your favicon link here -->
-    <!-- <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
-    <!-- Consider adding Font Awesome for icons -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al-Ameen School</title>
+  
+  <!-- Performance optimizations: Preload critical assets -->
+  <link rel="preload" href="assets/images/logo-placeholder.png" as="image">
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <meta name="description" content="Al-Ameen Matriculation Higher Secondary School - Empowering Knowledge, Inspiring Faith">
+  
+  <!-- For WCAG compliance -->
+  <meta name="theme-color" content="#1c4c4c">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <!-- Optional: Replace text with logo image -->
-                <!-- <a href="index.html" class="logo"><img src="images/alameen-logo.png" alt="Al-Ameen School Logo"></a> -->
-                <a href="index.html" class="logo">Al-Ameen School</a>
-                <ul class="nav-links">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#academics">Academics</a></li>
-                    <li><a href="#admissions">Admissions</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+  <!-- Header Include -->
+  <div id="header-include"></div>
+  
+  <main id="main-content">
+    <!-- Hero Slider -->
+    <section class="hero position-relative">
+      <div class="swiper hero-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="assets/images/slider-1.png" class="w-100" alt="School campus view with students">
+            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+            <div class="hero-overlay islamic-motif position-absolute top-0 start-0 w-100 h-100"></div>
+            <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
+              <img src="assets/images/logo-placeholder.png" alt="Al-Ameen School Logo" width="80" class="mb-3">
+              <h1 class="display-4 fw-bold">Welcome to Al-Ameen School</h1>
+              <p class="lead mb-4">Empowering Knowledge, Inspiring Faith</p>
+              <a href="admissions.html" class="btn btn-lg btn--primary">Admissions</a>
             </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero">
-            <div class="container">
-                <h1>Al-Ameen Matriculation Higher Secondary School</h1>
-                <p>Fostering academic excellence and Islamic values in the heart of Erode since [Year Established].</p>
-                <a href="#admissions" class="cta-button">Admissions 2024-2025</a>
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/slider-2.png" class="w-100" alt="Students engaged in classroom activities">
+            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+            <div class="hero-overlay islamic-motif position-absolute top-0 start-0 w-100 h-100"></div>
+            <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
+              <h2 class="fw-bold display-4">A Tradition of Excellence</h2>
+              <p class="lead">Discover our vibrant learning community</p>
+              <a href="academics.html" class="btn btn-lg btn--primary mt-3">Our Programs</a>
             </div>
-        </section>
-
-        <section id="about" class="content-section">
-            <div class="container">
-                <h2>About Al-Ameen School</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Established in [Year Established], Al-Ameen Matriculation Higher Secondary School is dedicated to providing a nurturing and stimulating environment where students achieve academic success while developing strong moral character rooted in Islamic principles.</p>
-                        <h3>Our Mission</h3>
-                        <p>To empower students with knowledge, skills, and values to become responsible citizens and compassionate leaders of tomorrow, contributing positively to society.</p>
-                        <h3>Our Vision</h3>
-                        <p>To be a leading educational institution recognized for its academic excellence, holistic development, and commitment to fostering a generation guided by faith and integrity.</p>
-                        <h3>Our Values</h3>
-                        <ul>
-                            <li>Faith (Iman)</li>
-                            <li>Knowledge (Ilm)</li>
-                            <li>Integrity (Akhlaq)</li>
-                            <li>Excellence (Ihsan)</li>
-                            <li>Community (Ummah)</li>
-                        </ul>
-                    </div>
-                    <div class="about-image">
-                        <!-- Replace with an image of the school building or administration -->
-                        <img src="images/placeholder-school-building.jpg" alt="Al-Ameen School Building Erode">
-                    </div>
-                </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/slider-3.png" class="w-100" alt="School facilities and campus view">
+            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+            <div class="hero-overlay islamic-motif position-absolute top-0 start-0 w-100 h-100"></div>
+            <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
+              <h2 class="fw-bold display-4">Rooted in Values</h2>
+              <p class="lead">Academic achievement with strong character</p>
+              <a href="about.html" class="btn btn-lg btn--primary mt-3">About Us</a>
             </div>
-        </section>
-
-        <section id="academics" class="content-section bg-light">
-            <div class="container">
-                <h2>Our Academic Programs</h2>
-                <p>We offer a comprehensive curriculum from Lower Kindergarten (LKG) to Standard XII, following the Matriculation and Tamil Nadu State Board syllabus.</p>
-                <div class="academic-features">
-                    <div class="feature-item">
-                        <h4>Kindergarten (LKG/UKG)</h4>
-                        <p>Play-based learning, foundational literacy and numeracy, introduction to Islamic studies.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Primary & Middle School (I-VIII)</h4>
-                        <p>Strong emphasis on core subjects, language development, science exploration, and moral education.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>High School (IX-X)</h4>
-                        <p>Matriculation syllabus, preparation for board exams, career guidance foundations.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>Higher Secondary (XI-XII)</h4>
-                        <p>State Board syllabus with various streams (Science, Commerce), intensive coaching for public exams.</p>
-                    </div>
-                     <div class="feature-item">
-                        <h4>Islamic Studies & Arabic</h4>
-                        <p>Integrated curriculum covering Quran, Hadith, Seerah, Fiqh, and Arabic language.</p>
-                    </div>
-                     <div class="feature-item">
-                        <h4>Extracurricular Activities</h4>
-                        <p>Sports, arts, literary clubs, competitions, and field trips for holistic development.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="admissions" class="content-section">
-            <div class="container">
-                <h2>Admissions Information</h2>
-                <p>Join the Al-Ameen family! We welcome applications from students seeking a value-based, high-quality education.</p>
-                <ul>
-                    <li><strong>Admission Process:</strong> Applications are available online and at the school office starting [Start Date]. Admission tests/interviews may apply for certain grades.</li>
-                    <li><strong>Eligibility:</strong> Please refer to the specific age criteria for LKG and relevant academic records for other classes.</li>
-                    <li><strong>Documents Required:</strong> Birth Certificate, Transfer Certificate (if applicable), Previous Mark Sheets, Passport Size Photographs, Community Certificate, Aadhaar Card.</li>
-                    <li><strong>Fees Structure:</strong> Detailed fee information is available at the school office. We strive to keep education accessible.</li>
-                    <li><strong>Contact Admissions:</strong> For queries, please call [Admissions Phone Number] or email [Admissions Email Address].</li>
-                </ul>
-                <a href="#" class="cta-button secondary">Download Application Form (Link TBD)</a>
-            </div>
-        </section>
-
-        <section id="gallery" class="content-section bg-light">
-            <div class="container">
-                <h2>Glimpses of Al-Ameen</h2>
-                <div class="gallery-grid">
-                    <!-- Replace with actual images and alt text -->
-                    <div class="gallery-item"><img src="images/placeholder-classroom.jpg" alt="Students in Classroom"></div>
-                    <div class="gallery-item"><img src="images/placeholder-sports-day.jpg" alt="School Sports Day Event"></div>
-                    <div class="gallery-item"><img src="images/placeholder-library.jpg" alt="School Library"></div>
-                    <div class="gallery-item"><img src="images/placeholder-assembly.jpg" alt="Morning Assembly"></div>
-                    <div class="gallery-item"><img src="images/placeholder-lab.jpg" alt="Science Lab"></div>
-                    <div class="gallery-item"><img src="images/placeholder-event.jpg" alt="School Cultural Event"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="content-section">
-            <div class="container">
-                <h2>Get In Touch</h2>
-                <div class="contact-container">
-                    <div class="contact-details">
-                        <h3>Our Address</h3>
-                        <address>
-                            Al-Ameen Matriculation Higher Secondary School<br>
-                            [Full School Address Line 1],<br>
-                            [Address Line 2, e.g., Near X],<br>
-                            Erode, Tamil Nadu - [Pincode]<br><br>
-                            <strong>Phone:</strong> <a href="tel:[Your Phone Number]">[Your Phone Number]</a><br>
-                            <strong>Email:</strong> <a href="mailto:[Your Email Address]">[Your Email Address]</a>
-                        </address>
-                        <!-- Add Google Maps Embed code here if desired -->
-                        <!-- <div class="map-placeholder">Map Area</div> -->
-                    </div>
-                    <div class="contact-form">
-                        <h3>Send us a Message</h3>
-                        <form action="#" method="post"> <!-- Needs backend script -->
-                            <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                             <div class="form-group">
-                                <label for="subject">Subject:</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message:</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="cta-button tertiary">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; <script>document.write(new Date().getFullYear());</script> Al-Ameen Matriculation Higher Secondary School, Erode. All Rights Reserved.</p>
-            <!-- Optional: Add social media links here -->
-            <!-- <div class="social-links"> -->
-            <!--   <a href="#"><i class="fab fa-facebook"></i></a> -->
-            <!--   <a href="#"><i class="fab fa-youtube"></i></a> -->
-            <!-- </div> -->
+          </div>
         </div>
-    </footer>
+        <!-- Swiper Pagination/Navigation -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+    
+    <!-- Enhanced Geometric Divider -->
+    <div class="section-divider"></div>
+    
+    <!-- About Preview -->
+    <section class="about-preview section position-relative" id="about-section">
+      <div class="pattern-rosette-bg"></div>
+      <div class="container-xl py-4">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="section__title">About <span class="gradient-text">Al-Ameen</span></h2>
+            <p>Al-Ameen Matriculation Higher Secondary School is dedicated to nurturing young minds with a blend of academic excellence, Islamic values, and holistic development. Our vibrant campus, experienced faculty, and inclusive environment empower every student to thrive.</p>
+            <p>Founded on principles of educational excellence and character development, we provide a supportive environment where students can grow intellectually, spiritually, and socially.</p>
+            <a href="about.html" class="btn btn--primary mt-3 hover-lift">Learn More</a>
+          </div>
+          <div class="col-lg-6">
+            <div class="arabesque-border img-hover-zoom">
+              <img src="assets/images/slider-1.png" alt="School campus" class="img-fluid rounded">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Connector element -->
+    <div class="section-divider-alt"></div>
+    
+    <!-- Stats Counter Section -->
+    <!-- <section class="stats-section">
+      <div class="container-xl">
+        <div class="row g-4">
+          <div class="col-6 col-md-3">
+            <div class="stat-item">
+              <div class="stat-number" data-countup="2500">2,500+</div>
+              <div class="stat-label">Students</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-item">
+              <div class="stat-number" data-countup="150">150+</div>
+              <div class="stat-label">Faculty</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-item">
+              <div class="stat-number" data-countup="30">30+</div>
+              <div class="stat-label">Years</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-item">
+              <div class="stat-number" data-countup="95">95%</div>
+              <div class="stat-label">Success Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Ornament divider 
+    <div class="ornament-divider"></div>-->
+    
+    <!-- Why Choose Al-Ameen Section -->
+    <section class="why-choose-section py-5 bg-light">
+      <div class="container-xl">
+        <div class="row justify-content-center mb-4">
+          <div class="col-lg-8 text-center">
+            <h2 class="section__title">Why Choose <span class="text-accent">Al-Ameen</span>?</h2>
+            <p class="lead text-muted">Discover what makes our institution a premier choice for your child's education and future success.</p>
+          </div>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card text-center h-100">
+              <div class="mb-3">
+                <i class="bi bi-trophy-fill text-accent" style="font-size: 2.5rem;"></i>
+              </div>
+              <h4 class="h5 text-primary">Excellence in Education</h4>
+              <p class="text-muted mb-0">Consistently achieving top academic results with innovative teaching methodologies.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card text-center h-100">
+              <div class="mb-3">
+                <i class="bi bi-people-fill text-accent" style="font-size: 2.5rem;"></i>
+              </div>
+              <h4 class="h5 text-primary">Experienced Faculty</h4>
+              <p class="text-muted mb-0">Dedicated teachers with years of experience in nurturing young minds.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card text-center h-100">
+              <div class="mb-3">
+                <i class="bi bi-building-fill text-accent" style="font-size: 2.5rem;"></i>
+              </div>
+              <h4 class="h5 text-primary">Modern Facilities</h4>
+              <p class="text-muted mb-0">State-of-the-art infrastructure and learning resources for comprehensive education.</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card text-center h-100">
+              <div class="mb-3">
+                <i class="bi bi-heart-fill text-accent" style="font-size: 2.5rem;"></i>
+              </div>
+              <h4 class="h5 text-primary">Holistic Development</h4>
+              <p class="text-muted mb-0">Focus on character building, moral values, and overall personality development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gradient divider between sections -->
+    <div class="gradient-divider"></div>
+    
+    <!-- Compact CTA -->
+    <section class="cta-compact">
+      <div class="islamic-motif"></div>
+      <div class="container-xl">
+        <div class="content">
+          <h3 class="mb-2">Admission Open for 2025-2026</h3>
+          <p class="mb-3">Limited seats available for all grades. Apply today to secure your child's future.</p>
+          <a href="admissions.html" class="btn btn--accent">Apply Now</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gradient divider - replaced wave pattern -->
+    <div class="gradient-divider"></div>
+    
+    <!-- Upcoming Events Section -->
+    <section class="events-section section position-relative bg-neutral">
+      <div class="pattern-star-bg"></div>
+      <div class="container-xl py-3">
+        <div class="row align-items-center mb-3">
+          <div class="col-md-6">
+            <h2 class="section__title events-title">Upcoming <span class="text-highlight">Events</span></h2>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="events.html" class="btn btn-sm btn--primary hover-lift">View All Events</a>
+          </div>
+        </div>
+        
+        <div class="row g-4">
+          <!-- Unified Events Display -->
+          <div class="col-12">
+            <div id="home-events-display" class="events-list">
+              <!-- Will be populated by JavaScript -->
+              <div class="loading"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Arch Pattern Divider -->
+    <div class="section-divider-alt"></div>
+    
+    <!-- Campus Highlights -->
+    <section class="campus-highlights section position-relative">
+      <div class="pattern-star-bg"></div>
+      <div class="container-xl py-3">
+        <h2 class="section__title text-center mb-3">Our <span class="gradient-text">Campuses</span></h2>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 pointed-arch hover-lift campus-card">
+              <div class="img-hover-zoom">
+                <img src="assets/images/slider-2.png" class="card__image" alt="Karungalpalayam Campus">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title text-primary-theme">Karungalpalayam Campus</h3>
+                <p class="card-text">State-of-the-art facilities, modern classrooms, and a vibrant student community in the heart of the city.</p>
+                <a href="campuses.html" class="btn btn-sm btn--primary">Explore</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 pointed-arch hover-lift campus-card">
+              <div class="img-hover-zoom">
+                <img src="assets/images/slider-3.png" class="card__image" alt="Ellapalayam Campus">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title text-primary-theme">Ellapalayam Campus</h3>
+                <p class="card-text">A nurturing environment for foundational years, with dedicated play areas and creative learning spaces.</p>
+                <a href="campuses.html" class="btn btn-sm btn--primary">Explore</a>
+              </div>
+            </div>
+          </div>
+        </div>      
+      </div>
+    </section>
 
-    <script src="main.js"></script>
+    <!-- CTA Banner -->
+    <section class="cta-banner section position-relative py-5 mt-0 mb-0 text-center">
+      <div class="islamic-motif" style="opacity: 0.2; mix-blend-mode: soft-light;"></div>
+      <div class="container-xl">
+        <h2 class="mb-3">Ready to Join <span class="text-accent">Al-Ameen</span>?</h2>
+        <p class="lead mb-4">Download our admission form and start your journey today.</p>
+        <a href="assets/forms/admission-form.pdf" class="btn btn-lg btn--primary hover-lift float-animation" download>
+          <i class="bi bi-file-earmark-arrow-down me-2"></i> Download Admission Form
+        </a>
+      </div>
+    </section>
+    <div class="section-divider-alt" aria-hidden="true"></div>
+  </main>
+  
+  <!-- Event modals will be dynamically inserted here -->
+  <div id="home-event-modals"></div>
+  
+    <!-- Footer Include -->
+  <div id="footer-include" class="mt-0"></div>
+  
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/stats-counter.js"></script>
+  <script src="assets/js/scroll-reveal.js"></script>
+  <!-- Event utilities (shared functions) -->
+  <script src="assets/js/event-utils.js"></script>
+  <!-- Events display JS -->
+  <script src="assets/js/event-display.js"></script>
+  <!-- Home page events loader -->
+  <script src="assets/js/home-events.js"></script>
 </body>
 </html>

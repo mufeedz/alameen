@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community | Al-Ameen School</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <meta name="description" content="Learn about Al-Ameen School's community engagement, PTA activities, alumni network, and outreach programs.">
+</head>
+<body>
+  <!-- Header Include -->
+  <div id="header-include"></div>
+  
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header py-4" aria-labelledby="page-title-community">
+      <div class="container-xl">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h1 id="page-title-community" class="h2 mb-2 text-primary">Our School Community</h1>
+            <p class="text-muted mb-0">Building connections between parents, alumni, and the wider community</p>
+          </div>
+          <div class="col-md-4">
+            <nav aria-label="breadcrumb" class="d-flex justify-content-md-end">
+              <ol class="breadcrumb mb-0 bg-transparent p-0">
+                <li class="breadcrumb-item">
+                  <a href="index.html" class="text-decoration-none text-accent fw-medium position-relative">
+                    <i class="bi bi-house-door-fill me-1" style="font-size: 0.875rem;"></i>Home
+                  </a>
+                </li>
+                <li class="breadcrumb-item active text-primary fw-semibold" aria-current="page">
+                  <i class="bi bi-chevron-right text-muted mx-1" style="font-size: 0.75rem;"></i>Community
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parent-Teacher Association Section -->
+    <section class="pta-section py-5">
+      <div class="container-xl">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="section-header">
+              <h2 class="mb-3">Parent-Teacher Association</h2>
+              <p class="lead">Building a strong partnership between parents and teachers for the benefit of our students.</p>
+            </div>
+            <div class="card shadow-sm border-0">
+              <div class="card-body p-4">
+                <h3 class="h4 mb-3">PTA Leadership</h3>
+                <div class="d-flex align-items-center mb-3">
+                  <div class="pta-icon">
+                    <i class="bi bi-people-fill fs-2 text-primary"></i>
+                  </div>
+                  <div class="ms-3">
+                    <h4 class="h5 mb-1">PTA President</h4>
+                    <p class="mb-0">Mr. Ahsan Khan (Parent Representative)</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                  <div class="pta-icon">
+                    <i class="bi bi-person-workspace fs-2 text-primary"></i>
+                  </div>
+                  <div class="ms-3">
+                    <h4 class="h5 mb-1">PTA Secretary</h4>
+                    <p class="mb-0">Mrs. Fatima Rahman (Teacher Representative)</p>
+                  </div>
+                </div>
+                <h3 class="h4 mt-4 mb-3">Get Involved</h3>
+                <p>The PTA meets on the first Saturday of each month at 11:00 AM in the school auditorium. All parents are welcome to attend.</p>
+                <div class="mt-3">
+                  <a href="mailto:pta@alameenschool.org" class="btn btn-outline-primary">
+                    <i class="bi bi-envelope me-2"></i>Contact PTA
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="position-relative">
+              <div class="pattern-star-bg position-absolute start-0 top-0 w-100 h-100" style="opacity: 0.05; z-index: -1;"></div>
+              <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                  <h3 class="h4 mb-3">PTA Activities & Initiatives</h3>
+                  <div class="pta-activity mb-3 pb-3 border-bottom">
+                    <h4 class="h5 mb-2"><i class="bi bi-calendar-event me-2 text-primary"></i>Parent Orientation Sessions</h4>
+                    <p>Regular orientation sessions to keep parents informed about school policies, curriculum updates, and educational approaches.</p>
+                  </div>
+                  <div class="pta-activity mb-3 pb-3 border-bottom">
+                    <h4 class="h5 mb-2"><i class="bi bi-cash-coin me-2 text-primary"></i>Fundraising Events</h4>
+                    <p>Organizing various fundraising events to support school enhancement projects and extracurricular activities.</p>
+                  </div>
+                  <div class="pta-activity mb-3 pb-3 border-bottom">
+                    <h4 class="h5 mb-2"><i class="bi bi-megaphone me-2 text-primary"></i>Parent Workshops</h4>
+                    <p>Workshops on parenting skills, supporting children's education at home, and understanding child development.</p>
+                  </div>
+                  <div class="pta-activity">
+                    <h4 class="h5 mb-2"><i class="bi bi-stars me-2 text-primary"></i>Annual Family Fun Day</h4>
+                    <p>A day of games, activities, and food that brings together the entire school community in celebration.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Alumni Network Section -->
+    <section class="alumni-section py-5 position-relative bg-light">
+      <div class="islamic-motif position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.03;"></div>
+      <div class="container-xl position-relative">
+        <div class="section-header text-center mb-5">
+          <h2 class="mb-3">Alumni Network</h2>
+          <p class="lead">Connecting past students to build a supportive community and preserve our legacy.</p>
+        </div>
+        
+        <div class="row mb-5">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="card bg-white shadow border-0 h-100">
+              <div class="card-body p-4">
+                <h3 class="card-title">Alumni Association</h3>
+                <p>The Al-Ameen Alumni Association strives to maintain connections among graduates and support the school's mission. Our alumni contribute to mentorship programs, career guidance events, and scholarships for current students.</p>
+                <h4 class="h5 mt-4">Membership Benefits</h4>
+                <ul class="list-unstyled mt-3">
+                  <li class="d-flex align-items-center mb-3">
+                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                    <span>Access to school facilities and library resources</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3">
+                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                    <span>Invitations to special school events</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3">
+                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                    <span>Networking opportunities with fellow alumni</span>
+                  </li>
+                  <li class="d-flex align-items-center mb-3">
+                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                    <span>Regular newsletters and updates</span>
+                  </li>
+                </ul>
+                <div class="mt-4">
+                  <a href="mailto:alumni@alameenschool.org" class="btn btn-primary">
+                    <i class="bi bi-people me-2"></i>Join the Alumni Network
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card bg-white shadow border-0 h-100">
+              <div class="card-body p-4">
+                <h3 class="card-title">Upcoming Alumni Events</h3>
+                <div class="alumni-event mb-4 pb-3 border-bottom">
+                  <div class="d-flex align-items-center mb-2">
+                    <div class="event-date bg-primary text-white p-2 text-center rounded me-3">
+                      <span class="d-block fw-bold">15</span>
+                      <span>Dec</span>
+                    </div>
+                    <h4 class="h5 mb-0">Annual Alumni Reunion</h4>
+                  </div>
+                  <p class="mb-0">An evening of reconnecting and sharing memories with fellow graduates, featuring dinner and special performances.</p>
+                </div>
+                <div class="alumni-event mb-4 pb-3 border-bottom">
+                  <div class="d-flex align-items-center mb-2">
+                    <div class="event-date bg-primary text-white p-2 text-center rounded me-3">
+                      <span class="d-block fw-bold">22</span>
+                      <span>Jan</span>
+                    </div>
+                    <h4 class="h5 mb-0">Career Fair for Students</h4>
+                  </div>
+                  <p class="mb-0">Alumni from various professions return to share their career journeys and provide guidance to current students.</p>
+                </div>
+                <div class="alumni-event">
+                  <div class="d-flex align-items-center mb-2">
+                    <div class="event-date bg-primary text-white p-2 text-center rounded me-3">
+                      <span class="d-block fw-bold">10</span>
+                      <span>Mar</span>
+                    </div>
+                    <h4 class="h5 mb-0">Alumni Fundraising Dinner</h4>
+                  </div>
+                  <p class="mb-0">A charity dinner to raise funds for the Alumni Scholarship Fund, supporting deserving students.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Alumni Success Stories -->
+        <div class="alumni-success-stories mt-5">
+          <h3 class="text-center mb-4">Alumni Success Stories</h3>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                  <div class="alumni-avatar mb-3">
+                    <img src="assets/images/alumni/alumni-1.jpg" alt="Dr. Ahmed Hassan" class="rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
+                  </div>
+                  <h4 class="card-title h5">Dr. Ahmed Hassan</h4>
+                  <p class="text-muted">Class of 2005</p>
+                  <p>Leading cardiologist at City Hospital with numerous research publications in medical journals.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                  <div class="alumni-avatar mb-3">
+                    <img src="assets/images/alumni/alumni-2.jpg" alt="Aisha Rahman" class="rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
+                  </div>
+                  <h4 class="card-title h5">Aisha Rahman</h4>
+                  <p class="text-muted">Class of 2010</p>
+                  <p>Award-winning architect whose designs have been featured in several international exhibitions.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                  <div class="alumni-avatar mb-3">
+                    <img src="assets/images/alumni/alumni-3.jpg" alt="Mohammed Siddiqui" class="rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
+                  </div>
+                  <h4 class="card-title h5">Mohammed Siddiqui</h4>
+                  <p class="text-muted">Class of 2008</p>
+                  <p>Tech entrepreneur who founded an educational platform serving over 100,000 students nationwide.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Community Outreach Programs -->
+    <section class="outreach-section py-5">
+      <div class="container-xl">
+        <div class="section-header text-center mb-5">
+          <h2 class="mb-3">Community Outreach Programs</h2>
+          <p class="lead">Extending our values beyond the classroom to serve the wider community.</p>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="card outreach-card shadow-sm border-0 h-100">
+              <div class="outreach-icon text-center pt-4">
+                <div class="bg-light rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                  <i class="bi bi-book fs-1 text-primary"></i>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="card-title h5">Literacy Campaign</h3>
+                <p class="card-text">Our students and teachers volunteer weekly to provide reading and writing lessons to underserved communities.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card outreach-card shadow-sm border-0 h-100">
+              <div class="outreach-icon text-center pt-4">
+                <div class="bg-light rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                  <i class="bi bi-tree fs-1 text-primary"></i>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="card-title h5">Environmental Initiatives</h3>
+                <p class="card-text">Regular tree planting and neighborhood clean-up drives to promote environmental stewardship.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card outreach-card shadow-sm border-0 h-100">
+              <div class="outreach-icon text-center pt-4">
+                <div class="bg-light rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                  <i class="bi bi-basket fs-1 text-primary"></i>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="card-title h5">Food Drive</h3>
+                <p class="card-text">Annual Ramadan food basket distribution to local families in need, prepared by our school community.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card outreach-card shadow-sm border-0 h-100">
+              <div class="outreach-icon text-center pt-4">
+                <div class="bg-light rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                  <i class="bi bi-mortarboard fs-1 text-primary"></i>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="card-title h5">Scholarship Fund</h3>
+                <p class="card-text">Community-supported scholarship program for gifted students from economically disadvantaged backgrounds.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- News & Announcements -->
+    <section class="news-section py-5 bg-light position-relative">
+      <div class="islamic-motif position-absolute top-0 start-0 w-100 h-100" style="opacity: 0.03;"></div>
+      <div class="container-xl position-relative">
+        <div class="section-header text-center mb-5">
+          <h2 class="mb-3">News & Announcements</h2>
+          <p class="lead">Stay updated with the latest information for our school community.</p>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card news-card shadow-sm border-0 h-100">
+              <div class="card-body">
+                <div class="news-date mb-2 text-muted">
+                  <i class="bi bi-calendar3 me-1"></i> November 10, 2023
+                </div>
+                <h3 class="card-title h5">Parent-Teacher Conference Schedule</h3>
+                <p class="card-text">The upcoming parent-teacher conferences will be held on December 5th and 6th. Online booking for time slots is now open.</p>
+                <a href="#" class="stretched-link text-decoration-none">Read more <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card news-card shadow-sm border-0 h-100">
+              <div class="card-body">
+                <div class="news-date mb-2 text-muted">
+                  <i class="bi bi-calendar3 me-1"></i> November 5, 2023
+                </div>
+                <h3 class="card-title h5">Winter Newsletter Released</h3>
+                <p class="card-text">Our Winter 2023 newsletter is now available, featuring student achievements, upcoming events, and important announcements.</p>
+                <a href="#" class="stretched-link text-decoration-none">Read more <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card news-card shadow-sm border-0 h-100">
+              <div class="card-body">
+                <div class="news-date mb-2 text-muted">
+                  <i class="bi bi-calendar3 me-1"></i> October 28, 2023
+                </div>
+                <h3 class="card-title h5">Annual Charity Auction Results</h3>
+                <p class="card-text">Thanks to generous contributions, our annual charity auction raised over $15,000 for the school's scholarship fund.</p>
+                <a href="#" class="stretched-link text-decoration-none">Read more <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-4">
+          <a href="#" class="btn btn-outline-primary">
+            <i class="bi bi-newspaper me-2"></i>View All News
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Banner -->
+    <section class="cta-banner section position-relative py-5 mt-0 bg-primary-theme text-white text-center">
+      <div class="islamic-motif" style="opacity: 0.2; mix-blend-mode: soft-light;"></div>
+      <div class="container-xl">
+        <h2 class="mb-3">Join Our School Community</h2>
+        <p class="lead mb-4">Get involved with our PTA, alumni network, or volunteer opportunities.</p>
+        <a href="contact.html" class="btn btn-lg bg-accent text-dark fw-bold">
+          <i class="bi bi-envelope-paper me-2"></i> Contact Us Today
+        </a>
+      </div>
+    </section>
+    <div class="section-divider-alt" aria-hidden="true"></div>
+  </main>
+  
+  <!-- Footer Include -->
+  <div id="footer-include" class="mt-0"></div>
+  
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

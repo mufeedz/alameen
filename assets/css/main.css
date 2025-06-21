@@ -1,0 +1,279 @@
+/* Core Styles - Variables, Base, and Utilities */
+@import url('variables.css');
+@import url('base.css');
+@import url('utilities.css');
+@import url('design-system.css'); /* Unified design system */
+
+/* Layout Components */
+@import url('header.css');
+@import url('footer.css');
+@import url('page-header.css');
+
+/* Reusable UI Components */
+@import url('cards.css');
+@import url('dividers.css'); /* Includes responsive divider system */
+@import url('timeline.css');
+
+/* Page/Section Specific Styles */
+@import url('hero.css');
+@import url('theme.css'); /* Contains various themed sections like CTA, Stats, Mission, etc. */
+@import url('mission-vision.css'); /* Modern Mission & Vision section styles */
+@import url('event-styles.css'); /* Styles for event listings/details */
+@import url('campus-gallery.css'); /* Campus gallery slider styles */
+
+/* Animations and Effects */
+@import url('animations.css');
+
+/* === REMAINING/UNCATEGORIZED STYLES === */
+
+/* Mobile Optimization - Additional */
+@media (max-width: 768px) {
+  /* Styles specific to mobile that were not moved to other files */
+  .container-xl {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  .event-date span.d-block {
+    font-size: 1.25rem;
+  }
+  
+  .event-card .row {
+    flex-direction: row; /* Changed from column to row */
+  }
+  
+  .event-card .col-3, 
+  .event-card .col-9 {
+    text-align: left; /* Changed from center to left */
+    padding: var(--space-xs);
+  }
+  
+  .event-card .col-3 {
+    width: 25%; /* Set back to bootstrap default */
+  }
+  
+  .event-card .col-9 {
+    width: 75%; /* Set back to bootstrap default */
+  }
+  
+  .event-date {
+    display: block; /* Changed from inline-block to block */
+    margin-bottom: 0; /* Removed bottom margin */
+  }
+}
+
+/* Image hover effects */
+.img-hover-zoom {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Islamic-inspired subtle background */
+.bg-islamic-subtle {
+  background: linear-gradient(135deg, rgba(14, 49, 71, 0.03) 0%, rgba(14, 49, 71, 0.05) 100%);
+}
+
+/* Gradient text effect for special headings */
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-tertiary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* === GALLERY SPECIFIC STYLES === */
+
+/* Gallery Card System */
+.gallery-card {
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius-lg);
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15), 0 6px 15px rgba(15, 23, 42, 0.1);
+}
+
+.gallery-image-container {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+}
+
+.gallery-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-card:hover .gallery-image-container img {
+  transform: scale(1.08);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+  color: white;
+  padding: var(--spacing-scale-lg);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-card:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+.gallery-caption {
+  font-weight: var(--font-weight-semi);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+/* Filter Buttons Enhancement */
+.filter-button-group {
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-button-group .btn {
+  border-radius: 25px !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  min-width: auto !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin: 0.25rem !important;
+  border: 2px solid #0e3147 !important;
+  color: #0e3147 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  position: relative !important;
+}
+
+.filter-button-group .btn:hover {
+  background: #0e3147 !important;
+  color: #ffffff !important;
+  border-color: #0e3147 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(14, 49, 71, 0.2) !important;
+}
+
+.filter-button-group .btn.active {
+  background: #0e3147 !important;
+  color: #ffffff !important;
+  border-color: #0e3147 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(14, 49, 71, 0.3) !important;
+}
+
+.filter-button-group .btn:focus {
+  box-shadow: 0 0 0 3px rgba(14, 49, 71, 0.2) !important;
+  outline: none !important;
+}
+
+/* Gallery Grid Enhancements */
+.gallery-grid {
+  margin-top: var(--spacing-scale-xl);
+}
+
+.gallery-item {
+  margin-bottom: var(--spacing-scale-lg);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .gallery-overlay {
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 70%, transparent 100%);
+  }
+  
+  .filter-button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .filter-button-group .btn {
+    width: 200px !important;
+    margin: 0.25rem 0 !important;
+    padding: 0.75rem 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-image-container {
+    aspect-ratio: 1/1;
+  }
+  
+  .gallery-overlay {
+    padding: var(--spacing-scale-md);
+  }
+  
+  .gallery-caption {
+    font-size: 0.85rem;
+  }
+  
+  .filter-button-group .btn {
+    width: 180px !important;
+    font-size: 0.85rem !important;
+    padding: 0.65rem 1rem !important;
+  }
+}
+
+/* Gallery Loading States */
+.gallery-item.hidden {
+  display: none !important;
+}
+
+.gallery-item.filtering {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.gallery-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Accessibility Improvements */
+.gallery-card a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-lg);
+  outline-offset: 2px;
+}
+
+.gallery-card a:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+/* Screen Reader Announcements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,95 @@
+/* === PAGE HEADER STYLES === */
+
+/* Page Header Section with Islamic-inspired Background */
+.page-header {
+  position: relative;
+  background: linear-gradient(135deg, 
+    #f8f9fa 0%, 
+    #f1f3f4 30%, 
+    rgba(242, 180, 54, 0.08) 100%);
+  border-bottom: 3px solid var(--color-accent);
+  overflow: hidden;
+}
+
+/* Islamic Pattern Overlay using ::before (similar to footer approach) */
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../images/rosette-pattern.svg');
+  background-size: 80px 80px;
+  background-repeat: repeat;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ensure content is above the pattern */
+.page-header .container-xl {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced Page Title */
+.page-header h1 {
+  position: relative;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Enhanced Breadcrumb Styling */
+.page-header .breadcrumb-item a {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.page-header .breadcrumb-item a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.page-header .breadcrumb-item a:hover::after {
+  width: 100%;
+}
+
+.page-header .breadcrumb-item a:hover {
+  color: var(--color-primary) !important;
+  transform: translateY(-1px);
+}
+
+/* Enhanced Typography */
+.page-header p {
+  font-weight: 500;
+  color: #6c757d !important;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .page-header {
+    text-align: center;
+  }
+  
+  .page-header .d-flex {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .page-header::before {
+    background-size: 60px 60px;
+  }
+}

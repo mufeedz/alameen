@@ -1,0 +1,62 @@
+/* Google Fonts Import - Modern pairings with Arabic support */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Enhanced Color Palette - Vibrant Educational Theme */
+  --color-primary: #0e3147; /* Deeper navy blue - primary brand color */
+  --color-primary-alt: #1a6085; /* Brighter blue - secondary brand color */
+  --color-emerald: #2c6e82; /* Modern turquoise blue - Islamic-inspired accent */
+  --color-accent: #f2b436; /* Vibrant gold - main accent color */
+  --color-accent-light: #f7d68a; /* Light gold - subtle accent */
+  --color-accent-dark: #d9941a; /* Dark gold - strong accent */
+  --color-highlight: #e05048; /* Vibrant coral - secondary accent */
+  --color-tertiary: #7a3e7b; /* Purple - for variety */
+  --color-bg: #f8f9fa; /* Light gray - background color */
+  --color-white: #ffffff; /* White - primary background */
+  --color-separator: #e9ecef; /* Light gray - for separations */
+  --color-text: #2d3748; /* Dark gray - primary text color */
+  --color-text-light: #6c757d; /* Light gray text */
+  --color-primary-theme: var(--color-primary); /* For backward compatibility */
+  --color-neutral: #f6f9fc; /* Slight blue tint - neutral background */
+  
+  /* Shadow System */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -1px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.04);
+  
+  /* Modern Typography */
+  --font-body: 'Outfit', Arial, sans-serif; /* Contemporary sans-serif */
+  --font-heading: 'Cormorant', 'Noto Kufi Arabic', serif; /* Elegant serif for headings */
+  
+  --font-size-h1: clamp(1.75rem, 4vw, 2.5rem); /* Reduced font sizes */
+  --font-size-h2: clamp(1.5rem, 3.5vw, 2rem);
+  --font-size-h3: clamp(1.2rem, 2.5vw, 1.5rem);
+  --font-size-h4: clamp(1rem, 1.5vw, 1.25rem);
+  --font-size-body: clamp(0.9375rem, 1.25vw, 1.0625rem);
+  --font-size-small: 0.8125rem;
+
+  --font-weight-bold: 700;
+  --font-weight-semi: 600;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-light: 300;
+
+  /* Refined Spacing */
+  --space-xs: 0.375rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  /* Custom properties for scalable divider dimensions */
+  --divider-scale-base: 1;
+  --divider-height-base: 60px;
+  --divider-height-alt: 30px;
+  --divider-pattern-size: 45px;
+}

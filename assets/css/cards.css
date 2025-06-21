@@ -1,0 +1,198 @@
+/* Modern Card Design */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Elegant Feature Card */
+.feature-card {
+  padding: var(--space-md);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease;
+  border-radius: var(--radius-md);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Modern Islamic Feature Card */
+.islamic-feature-card {
+  padding: var(--space-md);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease;
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.islamic-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: url('../images/star-pattern.svg') no-repeat;
+  background-size: 80px 80px;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.islamic-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--color-emerald);
+}
+
+/* Campus Cards - Wider and Proportionate Design */
+.campus-card {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.campus-card .img-hover-zoom {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.campus-card .card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.campus-card .card-body {
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.campus-card .card-title {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+.campus-card .card-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.campus-card .btn {
+  font-size: 0.9rem;
+  padding: 0.5rem 1.5rem;
+}
+
+/* Responsive adjustments for campus cards */
+@media (max-width: 768px) {
+  .campus-card {
+    max-width: 100%;
+  }
+  
+  .campus-card .img-hover-zoom {
+    height: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+  .campus-card .img-hover-zoom {
+    height: 200px;
+  }
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-size: 4rem;
+  font-family: serif;
+  color: var(--color-accent);
+  opacity: 0.2;
+  line-height: 1;
+}
+
+/* Process Feature Card - for admission process steps */
+.process-feature-card {
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.process-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(242, 180, 54, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.process-number-overlay {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  color: rgba(242, 180, 54, 0.2);
+  z-index: 1;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.process-feature-card:hover .process-number-overlay {
+  color: rgba(242, 180, 54, 0.3);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .process-number-overlay {
+    width: 25px;
+    height: 25px;
+    font-size: 0.875rem;
+    top: 6px;
+    right: 6px;
+  }
+}

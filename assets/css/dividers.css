@@ -1,0 +1,339 @@
+/* === REFINED DESIGN ELEMENTS === */
+
+/* Minimal Section Title */
+.section__title {
+  position: relative;
+  padding-bottom: var(--space-xs);
+  display: inline-block;
+  margin-bottom: var(--space-md); /* Reduced margin */
+  background: none;
+}
+
+.section__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3.5rem;
+  height: 3px;
+  background: var(--color-accent);
+}
+
+/* Refined Section Spacing */
+section {
+  padding: var(--space-md) 0 var(--space-lg); /* Significantly reduced spacing */
+  position: relative;
+}
+
+.hero {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section-divider {
+  margin-top: 0;
+}
+
+/* Remove extra margin/padding below hero and above divider */
+.hero + .section-divider {
+  margin-top: calc(-2px * var(--divider-scale-base)); /* Scale the margin with the divider */
+}
+
+/* Geometric Section Divider */
+.section-divider {
+  height: var(--divider-height-base);
+  background-color: transparent;
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  z-index: 5;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0; /* Start from the left edge */
+  width: 100%;
+  height: 100%;
+  background: url('../images/geometric-divider.svg') no-repeat center;
+  background-size: 100% 100%; /* Ensure full coverage */
+  filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.1));
+}
+
+/* Section divider connections */
+.section-divider + section {
+  padding-top: var(--space-md); /* Further reduced top padding after divider */
+}
+
+section + .section-divider {
+  margin-top: 0;
+}
+
+/* Alternative Section Divider - Plain Gradient Line */
+.section-divider-alt {
+  height: var(--divider-height-alt);
+  position: relative;
+  margin: 0;
+  background: linear-gradient(to right, 
+    transparent 0%, 
+    rgba(242, 180, 54, 0.3) 15%,
+    rgba(242, 180, 54, 0.8) 50%, 
+    rgba(242, 180, 54, 0.3) 85%,
+    transparent 100%);
+  opacity: 1;
+  overflow: hidden;
+}
+
+/* Plain gradient line - no additional overlay needed */
+
+/* Gradient Divider - replacing wave pattern */
+.gradient-divider {
+  height: calc(6px * var(--divider-scale-base));
+  position: relative;
+  margin: 0;
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary-alt) 50%, var(--color-accent) 100%);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Section Connector Elements */
+.section-connector {
+  height: 20px;
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.connector-dots {
+  height: 5px;
+  position: relative;
+  margin: 0;
+  text-align: center;
+  background: linear-gradient(to right, var(--color-emerald) 0%, var(--color-primary-alt) 100%);
+  overflow: hidden;
+}
+
+.connector-dots::before {
+  display: none; /* Hide the dots */
+}
+
+/* Blend zone between sections */
+.blend-zone {
+  height: 30px;
+  margin-top: -15px;
+  margin-bottom: -15px;
+  position: relative;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(to bottom, var(--color-bg) 0%, transparent 100%);
+}
+
+/* Islamic ornament divider */
+.ornament-divider {
+  height: var(--divider-height-alt);
+  position: relative;
+  margin: 0;
+  text-align: center;
+  opacity: 1;
+  background-image: url('../images/ornament-divider.svg');
+  background-repeat: repeat-x;
+  background-size: 120px var(--divider-height-alt);
+  background-position: center center;
+}
+
+.ornament-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, 
+    transparent 0%, 
+    rgba(242, 180, 54, 0.1) 25%,
+    rgba(242, 180, 54, 0.15) 50%, 
+    rgba(242, 180, 54, 0.1) 75%,
+    transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* === RESPONSIVE SECTION DIVIDER SYSTEM === */
+
+/* Large screens scaling */
+@media (min-width: 1400px) {
+  :root {
+    --divider-scale-base: 1.2;
+    --divider-height-base: 72px;
+    --divider-height-alt: 36px;
+    --divider-pattern-size: 54px;
+  }
+  
+  .hero + .section-divider {
+    margin-top: calc(-2.5px * var(--divider-scale-base)); /* Slightly more negative margin for larger scales */
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --divider-scale-base: 1.4;
+    --divider-height-base: 84px;
+    --divider-height-alt: 42px;
+    --divider-pattern-size: 63px;
+  }
+  
+  .hero + .section-divider {
+    margin-top: calc(-3px * var(--divider-scale-base)); /* More adjustment for ultra-large screens */
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 2560px) {
+  :root {
+    --divider-scale-base: 1.6;
+    --divider-height-base: 96px;
+    --divider-height-alt: 48px;
+    --divider-pattern-size: 72px;
+  }
+  
+  .hero + .section-divider {
+    margin-top: calc(-3.5px * var(--divider-scale-base)); /* Maximum adjustment for ultra-wide screens */
+  }
+}
+
+/* Container query support for modern browsers */
+@supports (container-type: inline-size) {
+  .section-divider,
+  .section-divider-alt,
+  .gradient-divider,
+  .ornament-divider {
+    container-type: inline-size;
+  }
+
+  /* Adaptive scaling based on container width */
+  @container (min-width: 1400px) {
+    .section-divider,
+    .section-divider-alt,
+    .gradient-divider,
+    .ornament-divider {
+      transform: scaleY(1.2);
+    }
+  }
+
+  @container (min-width: 1920px) {
+    .section-divider,
+    .section-divider-alt,
+    .gradient-divider,
+    .ornament-divider {
+      transform: scaleY(1.4);
+    }
+  }
+}
+
+/* Container-based full-width dividers */
+.section-divider,
+.section-divider-alt,
+.gradient-divider,
+.ornament-divider {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  position: relative;
+  box-sizing: border-box;
+  transform: scaleY(var(--divider-scale-base));
+  transform-origin: center top;
+  transition: transform 0.3s ease;
+  will-change: transform; /* Optimize for animations */
+  contain: layout style; /* Performance optimization */
+}
+
+/* Smooth scaling on window resize */
+@media (prefers-reduced-motion: no-preference) {
+  .section-divider,
+  .section-divider-alt,
+  .gradient-divider,
+  .ornament-divider {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s ease;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .section-divider,
+  .section-divider-alt,
+  .gradient-divider,
+  .ornament-divider {
+    transition: none;
+  }
+}
+
+/* Mobile Optimization - Additional */
+@media (max-width: 768px) {
+  :root {
+    --space-md: 1rem;
+    --space-lg: 1.75rem;
+    --space-xl: 2.25rem;
+    --divider-scale-base: 0.75;
+    --divider-height-base: 45px;
+    --divider-height-alt: 24px;
+    --divider-pattern-size: 36px;
+  }
+  
+  section {
+    padding: var(--space-sm) 0 var(--space-md);
+  }
+  
+  /* Mobile-specific hero-divider connection */
+  .hero + .section-divider {
+    margin-top: calc(-1.5px * var(--divider-scale-base)); /* Adjusted for mobile scaling */
+  }
+    
+  /* Mobile-specific divider adjustments */
+  .section-divider,
+  .section-divider-alt,
+  .gradient-divider,
+  .ornament-divider {
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    transform: scaleY(var(--divider-scale-base));
+    width: 100vw;
+  }
+  
+  .section-divider::before {
+    left: 0;
+    width: 100%;
+    background-size: 100% 100%;
+  }
+  
+  .section__title {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .container-xl {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* Large screen optimization for divider scaling */
+@media (min-width: 1920px) {
+  .section-divider::before {
+    left: 0;
+    width: 100%;
+    background-size: 100% 100%;
+    min-width: 100vw;
+  }
+}
+
+/* Ultra-wide screen support */
+@media (min-width: 2560px) {
+  .section-divider::before {
+    left: 0;
+    width: 100%;
+    background-size: 100% 100%;
+    min-width: 100vw;
+  }
+}

@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campuses | Al-Ameen School</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <meta name="description" content="Explore Al-Ameen School's campuses, facilities, and locations in the city.">
+</head>
+<body>
+  <!-- Header Include -->
+  <div id="header-include"></div>
+  
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header py-4" aria-labelledby="page-title-campuses">
+      <div class="pattern-rosette-bg"></div>
+      <div class="container-xl">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h1 id="page-title-campuses" class="h2 mb-2 text-primary">Our <span class="gradient-text">Campuses</span></h1>
+            <p class="text-muted mb-0">Experience excellence across two state-of-the-art facilities</p>
+          </div>
+          <div class="col-md-4">
+            <nav aria-label="breadcrumb" class="d-flex justify-content-md-end">
+              <ol class="breadcrumb mb-0 bg-transparent p-0">
+                <li class="breadcrumb-item">
+                  <a href="index.html" class="text-decoration-none text-accent fw-medium position-relative">
+                    <i class="bi bi-house-door-fill me-1" style="font-size: 0.875rem;"></i>Home
+                  </a>
+                </li>
+                <li class="breadcrumb-item active text-primary fw-semibold" aria-current="page">
+                  <i class="bi bi-chevron-right text-muted mx-1" style="font-size: 0.75rem;"></i>Campuses
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Islamic Calligraphy Section -->
+    <!-- <section class="islamic-calligraphy cta-compact">
+      <div class="islamic-motif"></div>
+      <div class="container-xl">
+        <div class="content">
+          <h3 class="mb-2 fst-italic" style="font-family: 'Amiri', serif;">رَبِّ زِدْنِي عِلْمًا</h3>
+          <p class="mb-0 opacity-90">"My Lord, increase me in knowledge" - Quran 20:114</p>
+        </div>
+      </div>
+    </section> -->
+    
+    <!-- Campus Navigation -->
+    <section class="campus-nav section position-relative py-5" aria-label="Campus selection navigation">
+      <div class="pattern-rosette-bg"></div>
+      <div class="container-xl">
+        <div class="section-header-system">
+          <h2 class="heading-system-lg">Choose Your <span class="gradient-text">Campus</span></h2>
+          <p class="text-system-lead">Explore our two dynamic campuses, each designed to foster academic excellence.</p>
+        </div>
+        
+        <div class="row g-4" role="list">
+          <div class="col-md-6">
+            <div class="feature-card hover-lift float-animation h-100" role="listitem">
+              <div class="p-4">
+                <a href="#main-campus" class="campus-nav-item d-block text-decoration-none" aria-label="Navigate to Karungalpalayam Campus section">
+                  <div class="text-center mb-3">
+                    <i class="bi bi-building display-4 text-primary mb-3 pulse-effect" aria-hidden="true"></i>
+                    <h3 class="h4 text-primary mb-2">Karungalpalayam Campus</h3>
+                    <p class="text-muted mb-3">Cauvery Road | Co-ed (up to 5th grade) & Girls Only (6th-12th)</p>
+                  </div>
+                  <div class="campus-highlights">
+                    <ul class="list-unstyled small text-muted">
+                      <li><i class="bi bi-check-circle-fill text-accent me-2" aria-hidden="true"></i>Established 1980 - 44 years of excellence</li>
+                      <li><i class="bi bi-check-circle-fill text-accent me-2" aria-hidden="true"></i>5-acre campus with modern facilities</li>
+                      <li><i class="bi bi-check-circle-fill text-accent me-2" aria-hidden="true"></i>Traditional Islamic architecture</li>
+                    </ul>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="feature-card hover-lift float-animation h-100" role="listitem">
+              <div class="p-4">
+                <a href="#annex-campus" class="campus-nav-item d-block text-decoration-none" aria-label="Navigate to Ellapalayam Campus section">
+                  <div class="text-center mb-3">
+                    <i class="bi bi-houses display-4 text-primary mb-3 pulse-effect" aria-hidden="true"></i>
+                    <h3 class="h4 text-primary mb-2">Ellapalayam Campus</h3>
+                    <p class="text-muted mb-3">Gangapuram | Co-ed (All Grades 1-12)</p>
+                  </div>
+                  <div class="campus-highlights">
+                    <ul class="list-unstyled small text-muted">
+                      <li><i class="bi bi-check-circle-fill text-accent me-2" aria-hidden="true"></i>Modern progressive environment</li>
+                      <li><i class="bi bi-check-circle-fill text-accent me-2" aria-hidden="true"></i>3-acre campus with latest technology</li>
+                      <li><i class="bi bi-check-circle-fill text-accent me-2" aria-hidden="true"></i>Co-educational all grades</li>
+                    </ul>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <div class="section-divider-alt"></div>
+    
+    <!-- Karungalpalayam Campus -->
+    <section id="main-campus" class="main-campus section position-relative py-5" aria-labelledby="main-campus-heading">
+      <div class="pattern-rosette-bg"></div>
+      <div class="container-xl">
+        <h2 id="main-campus-heading" class="section__title">Karungalpalayam <span class="text-accent">Campus</span></h2>
+        <div class="islamic-accent-line mb-4"></div>
+        
+        <!-- Campus Overview Card -->
+        <div class="feature-card mb-4">
+          <div class="p-4">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-5">
+                <div class="arabesque-border img-hover-zoom" style="height: 350px;">
+                  <div class="campus-gallery h-100">
+                    <!-- Karungalpalayam Campus Image Slider -->
+                    <div class="swiper campus-swiper h-100" role="img" aria-label="Karungalpalayam Campus photo gallery">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="assets/images/slider-1.png" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="Karungalpalayam Campus Building - Exterior view showing traditional Islamic architecture">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/slider-2.png" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="Karungalpalayam Campus Library - Students studying in spacious reading areas">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/slider-3.png" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="Karungalpalayam Campus Sports Facilities - Athletic complex and outdoor fields">
+                        </div>
+                      </div>
+                      <!-- Pagination and Navigation -->
+                      <div class="swiper-pagination" role="tablist" aria-label="Gallery pagination"></div>
+                      <div class="swiper-button-prev" role="button" aria-label="Previous image" tabindex="0"></div>
+                      <div class="swiper-button-next" role="button" aria-label="Next image" tabindex="0"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="campus-details">
+                  <h3 class="h4 text-primary mb-3">Campus Overview</h3>
+                  <p class="lead mb-3">The Karungalpalayam Campus, established in 1980, serves as the heart of Al-Ameen School's educational mission. Located on Cauvery Road in Karungalpalayam, this campus represents 44 years of academic excellence and Islamic values.</p>
+                  
+                  <!-- Key Highlights -->
+                  <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-calendar-check text-accent me-2"></i>
+                        <div>
+                          <small class="text-muted d-block">Established</small>
+                          <strong>1980 (44 Years)</strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-geo-alt text-accent me-2"></i>
+                        <div>
+                          <small class="text-muted d-block">Location</small>
+                          <strong>Cauvery Road</strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-building text-accent me-2"></i>
+                        <div>
+                          <small class="text-muted d-block">Campus Size</small>
+                          <strong>5 Acres</strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-people text-accent me-2"></i>
+                        <div>
+                          <small class="text-muted d-block">Education Model</small>
+                          <strong>Co-ed & Girls Only</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Education Model Cards -->
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="education-model-card text-center p-3 border rounded">
+                        <i class="bi bi-people-fill text-accent mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="text-primary mb-1">Co-education</h6>
+                        <small class="text-muted">Grades 1-5<br>Mixed learning environment</small>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="education-model-card text-center p-3 border rounded">
+                        <i class="bi bi-person-fill text-accent mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="text-primary mb-1">Girls Only</h6>
+                        <small class="text-muted">Grades 6-12<br>Focused learning environment</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        <!-- Campus Information & Leadership - Mission Grid Style -->
+        <section class="mission-grid section position-relative py-5 mb-4">
+          <div class="pattern-girih-bg"></div>
+          <div class="colored-bg-overlay"></div>
+          <div class="container-xl py-4">
+            <div class="row text-center g-4">
+              <div class="col-md-4">
+                <div class="icon-box p-3 hover-lift">
+                  <i class="bi bi-geo-alt-fill display-5 text-accent"></i>
+                  <h4 class="mt-3 text-white">Contact Information</h4>
+                  <div class="text-start mt-3">
+                    <div class="mb-2 d-flex align-items-start">
+                      <i class="bi bi-geo-alt text-accent me-2 mt-1"></i>
+                      <small class="text-white">No 180/6, Cauvery Road, Karungalpalayam-638003<br>(Opposite Government School)</small>
+                    </div>
+                    <div class="mb-2 d-flex align-items-center">
+                      <i class="bi bi-telephone text-accent me-2"></i>
+                      <small class="text-white">+91 12345 67890</small>
+                    </div>
+                    <div class="mb-2 d-flex align-items-center">
+                      <i class="bi bi-envelope text-accent me-2"></i>
+                      <small class="text-white">main@alameen.edu</small>
+                    </div>
+                    <div class="mb-0 d-flex align-items-center">
+                      <i class="bi bi-clock text-accent me-2"></i>
+                      <small class="text-white">8:00 AM - 4:00 PM (Mon-Fri)</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="icon-box p-3 hover-lift">
+                  <i class="bi bi-people-fill display-5 text-accent"></i>
+                  <h4 class="mt-3 text-white">Campus Leadership</h4>
+                  <div class="text-start mt-3">
+                    <div class="mb-2 d-flex justify-content-between">
+                      <span class="text-white small">Principal:</span>
+                      <span class="text-accent small fw-medium">Dr. Ahmed Khan</span>
+                    </div>
+                    <div class="mb-2 d-flex justify-content-between">
+                      <span class="text-white small">Vice Principal:</span>
+                      <span class="text-accent small fw-medium">Mrs. Fatima Rahman</span>
+                    </div>
+                    <div class="mb-0 d-flex justify-content-between">
+                      <span class="text-white small">Admin Officer:</span>
+                      <span class="text-accent small fw-medium">Mr. Joseph Thomas</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="icon-box p-3 hover-lift">
+                  <i class="bi bi-clock-fill display-5 text-accent"></i>
+                  <h4 class="mt-3 text-white">School Timings</h4>
+                  <div class="text-start mt-3">
+                    <div class="mb-2 d-flex justify-content-between">
+                      <span class="text-white small">Morning Session:</span>
+                      <span class="text-accent small fw-medium">8:00 AM - 12:30 PM</span>
+                    </div>
+                    <div class="mb-2 d-flex justify-content-between">
+                      <span class="text-white small">Afternoon Session:</span>
+                      <span class="text-accent small fw-medium">1:30 PM - 4:00 PM</span>
+                    </div>
+                    <div class="mb-2 d-flex justify-content-between">
+                      <span class="text-white small">Office Hours:</span>
+                      <span class="text-accent small fw-medium">8:00 AM - 4:00 PM</span>
+                    </div>
+                    <div class="mb-0 d-flex justify-content-between">
+                      <span class="text-white small">Working Days:</span>
+                      <span class="text-accent small fw-medium">Monday - Friday</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <div class="container-xl">
+        <!-- Location & Maps -->
+        <div class="feature-card" style="height: 300px;">
+          <div class="p-0 h-100">
+            <div class="ratio ratio-21x9 h-100">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8567428449223!2d80.2677324!3d13.0410506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266ea218fc7c3%3A0x82c9b6b61c96b8!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716653889349!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <div class="section-divider-alt"></div>
+    
+    <!-- Ellapalayam Campus -->
+    <section id="annex-campus" class="annex-campus section position-relative py-5 bg-neutral" aria-labelledby="annex-campus-heading">
+      <div class="pattern-star-bg"></div>
+      <div class="container-xl">
+        <h2 id="annex-campus-heading" class="section__title">Ellapalayam <span class="text-accent">Campus</span></h2>
+        <div class="islamic-accent-line mb-4"></div>
+        
+        <!-- Campus Overview Card -->
+        <div class="feature-card mb-4">
+          <div class="p-4">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-5">
+                <div class="arabesque-border img-hover-zoom" style="height: 350px;">
+                  <div class="campus-gallery h-100">
+                    <!-- Ellapalayam Campus Image Slider -->
+                    <div class="swiper annex-swiper h-100" role="img" aria-label="Ellapalayam Campus photo gallery">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="assets/images/slider-3.png" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="Ellapalayam Campus Building - Modern architecture with contemporary design">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/slider-1.png" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="Ellapalayam Campus Playground - Children's play areas and recreational facilities">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/slider-2.png" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="Ellapalayam Campus Classrooms - Smart technology-enabled learning spaces">
+                        </div>
+                      </div>
+                      <!-- Pagination and Navigation -->
+                      <div class="swiper-pagination" role="tablist" aria-label="Gallery pagination"></div>
+                      <div class="swiper-button-prev" role="button" aria-label="Previous image" tabindex="0"></div>
+                      <div class="swiper-button-next" role="button" aria-label="Next image" tabindex="0"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="campus-details">
+                  <h3 class="h4 text-primary mb-3">Campus Overview</h3>
+                  <p class="lead mb-3">The Ellapalayam Campus represents our progressive approach to education, serving students from Grades 1-12 in a fully co-educational environment. Located in Gangapuram, Tamil Nadu, this modern 3-acre campus was designed to foster collaborative learning and holistic development.</p>
+                  
+                  <!-- Key Highlights -->
+                  <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-calendar-check text-accent me-2"></i>
+                        <div>
+                          <small class="text-muted d-block">Established</small>
+                          <strong>Modern Campus</strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-geo-alt text-accent me-2"></i>
+                        <div>
+                          <small class="text-muted d-block">Location</small>
+                          <strong>Gangapuram</strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-building text-accent me-2"></i>
+                        <div>
+                          <small class="text-muted d-block">Campus Size</small>
+                          <strong>3 Acres</strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-people text-accent me-2"></i>
+                        <div>
+                          <small class="text-muted d-block">Education Model</small>
+                          <strong>Co-educational</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Education Model Card -->
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <div class="education-model-card text-center p-3 border rounded">
+                        <i class="bi bi-people-fill text-accent mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="text-primary mb-1">Co-educational Excellence</h6>
+                        <small class="text-muted">Grades 1-12<br>Collaborative learning environment for all ages</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        <!-- Campus Information & Leadership - Mission Grid Style -->
+        <section class="mission-grid section position-relative py-5 mb-4">
+          <div class="pattern-girih-bg"></div>
+          <div class="colored-bg-overlay"></div>
+          <div class="container-xl py-4">
+            <div class="row text-center g-4">
+              <div class="col-md-4">
+                <div class="icon-box p-3 hover-lift">
+                  <i class="bi bi-geo-alt-fill display-5 text-accent"></i>
+                  <h4 class="mt-3 text-white">Contact Information</h4>
+                  <div class="text-start mt-3">
+                    <div class="mb-2 d-flex align-items-start">
+                      <i class="bi bi-geo-alt text-accent me-2 mt-1"></i>
+                      <small class="text-white">9M58+WVG, Gangapuram, Tamil Nadu 638004<br>(Progressive Co-ed Campus)</small>
+                    </div>
+                    <div class="mb-2 d-flex align-items-center">
+                      <i class="bi bi-telephone text-accent me-2"></i>
+                      <small class="text-white">+91 12345 67891</small>
+                    </div>
+                    <div class="mb-2 d-flex align-items-center">
+                      <i class="bi bi-envelope text-accent me-2"></i>
+                      <small class="text-white">annex@alameen.edu</small>
+                    </div>
+                    <div class="mb-0 d-flex align-items-center">
+                      <i class="bi bi-clock text-accent me-2"></i>
+                      <small class="text-white">8:00 AM - 3:30 PM (Mon-Fri)</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="icon-box p-3 hover-lift">
+                  <i class="bi bi-people-fill display-5 text-accent"></i>
+                  <h4 class="mt-3 text-white">Campus Leadership</h4>
+                  <div class="text-start mt-3">
+                    <div class="mb-2 d-flex justify-content-between">
+                      <span class="text-white small">Principal:</span>
+                      <span class="text-accent small fw-medium">Mrs. Aisha Mohammed</span>
+                    </div>
+                    <div class="mb-2 d-flex justify-content-between">
+                      <span class="text-white small">Vice Principal:</span>
+                      <span class="text-accent small fw-medium">Ms. Priya Sharma</span>
+                    </div>
+                    <div class="mb-0 d-flex justify-content-between">
+                      <span class="text-white small">Admin Officer:</span>
+                      <span class="text-accent small fw-medium">Mr. Rahul Mehta</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="icon-box p-3 hover-lift">
+                  <i class="bi bi-clock-fill display-5 text-accent"></i>
+                  <h4 class="mt-3 text-white">School Timings</h4>
+                  <div class="text-start mt-3">
+                    <div class="mb-2 d-flex justify-content-between">
+                      <span class="text-white small">Morning Session:</span>
+                      <span class="text-accent small fw-medium">8:00 AM - 12:00 PM</span>
+                    </div>
+                    <div class="mb-2 d-flex justify-content-between">
+                      <span class="text-white small">Afternoon Session:</span>
+                      <span class="text-accent small fw-medium">1:00 PM - 3:30 PM</span>
+                    </div>
+                    <div class="mb-2 d-flex justify-content-between">
+                      <span class="text-white small">Office Hours:</span>
+                      <span class="text-accent small fw-medium">8:00 AM - 3:30 PM</span>
+                    </div>
+                    <div class="mb-0 d-flex justify-content-between">
+                      <span class="text-white small">Working Days:</span>
+                      <span class="text-accent small fw-medium">Monday - Friday</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <div class="container-xl">
+        <!-- Location & Maps -->
+        <div class="feature-card" style="height: 300px;">
+          <div class="p-0 h-100">
+            <div class="ratio ratio-21x9 h-100">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8567428449223!2d80.2677324!3d13.0410506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266ea218fc7c3%3A0x82c9b6b61c96b8!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716653889349!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <div class="section-divider-alt"></div>
+    
+    <!-- Campus Comparison -->
+    <!-- <section class="campus-comparison section position-relative py-5">
+      <div class="pattern-girih-bg"></div>
+      <div class="container-xl">
+        <div class="section-header-system">
+          <h2 class="heading-system-lg">Campus <span class="gradient-text">Comparison</span></h2>
+          <p class="text-system-lead">Both our campuses offer excellence in education while catering to different educational models and student needs.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="p-4">
+            <div class="table-responsive">
+              <table class="table table-borderless" role="table" aria-label="Campus comparison table showing differences between Karungalpalayam and Ellapalayam campuses">
+                <caption class="visually-hidden">Detailed comparison of features, facilities, and characteristics between Al-Ameen School's Karungalpalayam Campus and Ellapalayam Campus</caption>
+                <thead>
+                  <tr class="border-bottom border-2 border-primary">
+                    <th scope="col" class="text-primary fw-bold">Feature</th>
+                    <th scope="col" class="text-primary fw-bold">Karungalpalayam Campus</th>
+                    <th scope="col" class="text-primary fw-bold">Ellapalayam Campus</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><strong class="text-dark">Educational Model</strong></th>
+                    <td>
+                      <div class="mb-1"><span class="badge bg-info">Co-ed</span> Grades 1-5</div>
+                      <div><span class="badge bg-primary">Girls Only</span> Grades 6-12</div>
+                    </td>
+                    <td>
+                      <div><span class="badge bg-success">Co-ed</span> Grades 1-12</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><strong class="text-dark">Location</strong></th>
+                    <td><i class="bi bi-geo-alt-fill text-accent me-1" aria-hidden="true"></i> No 180/6, Cauvery Road, Karungalpalayam-638003</td>
+                    <td><i class="bi bi-geo-alt-fill text-accent me-1" aria-hidden="true"></i> 9M58+WVG, Gangapuram, Tamil Nadu 638004</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><strong class="text-dark">Campus Size</strong></th>
+                    <td><i class="bi bi-rulers text-accent me-1" aria-hidden="true"></i> 5 acres with historic architecture</td>
+                    <td><i class="bi bi-rulers text-accent me-1" aria-hidden="true"></i> 3 acres with modern facilities</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><strong class="text-dark">Key Facilities</strong></th>
+                    <td>
+                      <div class="small">
+                        <div>• Advanced Science Labs (4)</div>
+                        <div>• Library (10,000+ volumes)</div>
+                        <div>• Sports Complex</div>
+                        <div>• Auditorium (500 capacity)</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="small">
+                        <div>• Computer Labs (2)</div>
+                        <div>• Library & Reading Rooms</div>
+                        <div>• Playground & Sports Area</div>
+                        <div>• Art & Craft Studios</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><strong class="text-dark">Class Size</strong></th>
+                    <td><i class="bi bi-people-fill text-accent me-1" aria-hidden="true"></i> 25-30 students per class</td>
+                    <td><i class="bi bi-people-fill text-accent me-1" aria-hidden="true"></i> 20-25 students per class</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><strong class="text-dark">School Hours</strong></th>
+                    <td><i class="bi bi-clock-fill text-accent me-1" aria-hidden="true"></i> 8:30 AM - 3:30 PM</td>
+                    <td><i class="bi bi-clock-fill text-accent me-1" aria-hidden="true"></i> 8:30 AM - 2:30 PM</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><strong class="text-dark">Special Features</strong></th>
+                    <td>
+                      <div class="small">
+                        <span class="text-primary">• Heritage Building</span><br>
+                        <span class="text-primary">• Gender-specific Education (6-12)</span><br>
+                        <span class="text-primary">• Advanced Laboratory Equipment</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="small">
+                        <span class="text-success">• Modern Architecture</span><br>
+                        <span class="text-success">• Inclusive Co-ed Environment</span><br>
+                        <span class="text-success">• Child-friendly Design</span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+          </table>
+        </div>
+      </div>
+    </section> -->
+    
+    <!-- <div class="section-divider"></div> -->
+
+    <!-- Campus Facilities Overview -->
+    <!-- <section class="campus-facilities section position-relative py-5">
+      <div class="pattern-rosette-bg"></div>
+      <div class="container-xl">
+        <div class="section-header-system">
+          <h2 class="heading-system-lg">Campus <span class="gradient-text">Facilities</span></h2>
+          <div class="islamic-accent-line"></div>
+          <p class="text-system-lead">Our campuses are equipped with modern facilities designed to enhance learning, creativity, and overall student development.</p>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="facility-card text-center p-4 h-100 hover-lift bg-white rounded shadow-sm">
+              <div class="mb-3">
+                <i class="bi bi-building text-accent" style="font-size: 3rem;"></i>
+              </div>
+              <h4 class="h5 text-primary">Modern Classrooms</h4>
+              <p class="text-muted mb-0">Smart boards, projectors, and air-conditioned learning environments designed for optimal comfort and learning.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="facility-card text-center p-4 h-100 hover-lift bg-white rounded shadow-sm">
+              <div class="mb-3">
+                <i class="bi bi-laptop text-accent" style="font-size: 3rem;"></i>
+              </div>
+              <h4 class="h5 text-primary">Computer Labs</h4>
+              <p class="text-muted mb-0">State-of-the-art computer facilities with high-speed internet and latest software for digital literacy.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="facility-card text-center p-4 h-100 hover-lift bg-white rounded shadow-sm">
+              <div class="mb-3">
+                <i class="bi bi-flask text-accent" style="font-size: 3rem;"></i>
+              </div>
+              <h4 class="h5 text-primary">Science Labs</h4>
+              <p class="text-muted mb-0">Well-equipped physics, chemistry, and biology laboratories for hands-on scientific exploration.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="facility-card text-center p-4 h-100 hover-lift bg-white rounded shadow-sm">
+              <div class="mb-3">
+                <i class="bi bi-book text-accent" style="font-size: 3rem;"></i>
+              </div>
+              <h4 class="h5 text-primary">Library</h4>
+              <p class="text-muted mb-0">Extensive collection of books, journals, and digital resources to support academic research and reading.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="facility-card text-center p-4 h-100 hover-lift bg-white rounded shadow-sm">
+              <div class="mb-3">
+                <i class="bi bi-music-note text-accent" style="font-size: 3rem;"></i>
+              </div>
+              <h4 class="h5 text-primary">Auditorium</h4>
+              <p class="text-muted mb-0">Multi-purpose hall for events, performances, assemblies, and cultural programs.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="facility-card text-center p-4 h-100 hover-lift bg-white rounded shadow-sm">
+              <div class="mb-3">
+                <i class="bi bi-heart-pulse text-accent" style="font-size: 3rem;"></i>
+              </div>
+              <h4 class="h5 text-primary">Medical Center</h4>
+              <p class="text-muted mb-0">On-campus medical facility with qualified nursing staff for student health and safety.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <div class="section-divider-alt"></div> -->
+    
+    <!-- Virtual Tour CTA -->
+    <!-- <section class="virtual-tour-cta section position-relative py-5 bg-primary-theme text-white">
+      <div class="islamic-motif" style="opacity: 0.1; mix-blend-mode: soft-light;"></div>
+      <div class="container-xl text-center">
+        <div class="section-header-system">
+          <h2 class="heading-system-lg text-white">Experience Our <span class="gradient-text-light">Campuses</span></h2>
+          <div class="islamic-accent-line-light"></div>
+          <p class="text-system-lead text-white opacity-90">Would you like to see our facilities in person? Schedule a campus tour today and discover the unique educational experience we offer at both our campuses!</p>
+        </div>
+        
+        <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+          <a href="contact.html" class="btn-system btn-system-accent">
+            <i class="bi bi-calendar-check me-2"></i> Schedule a Tour
+          </a>
+          <a href="#" class="btn-system btn-system-outline-light">
+            <i class="bi bi-camera-video me-2"></i> Virtual Tour
+          </a>
+        </div>
+        
+        <div class="row g-4 mt-5 text-start">
+          <div class="col-md-6">
+            <div class="feature-card bg-white bg-opacity-10 text-white border-0">
+              <div class="p-4">
+                <h3 class="h6 text-accent mb-3"><i class="bi bi-building-fill me-2"></i>Karungalpalayam Campus Tours</h3>
+                <ul class="list-unstyled small mb-0">
+                  <li class="mb-1">• Monday - Friday: 9:00 AM & 2:00 PM</li>
+                  <li class="mb-1">• Saturday: 10:00 AM</li>
+                  <li class="mb-1">• Duration: 45 minutes</li>
+                  <li>• Includes all academic & recreational facilities</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="feature-card bg-white bg-opacity-10 text-white border-0">
+              <div class="p-4">
+                <h3 class="h6 text-accent mb-3"><i class="bi bi-house-fill me-2"></i>Ellapalayam Campus Tours</h3>
+                <ul class="list-unstyled small mb-0">
+                  <li class="mb-1">• Monday - Friday: 10:00 AM & 1:00 PM</li>
+                  <li class="mb-1">• Saturday: 11:00 AM</li>
+                  <li class="mb-1">• Duration: 30 minutes</li>
+                  <li>• Child-friendly environment showcase</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+  </main>
+  
+  <!-- Footer Include -->
+  <div id="footer-include" class="mt-0"></div>
+  
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Initialize campus swiper galleries
+    document.addEventListener('DOMContentLoaded', function() {
+      // Karungalpalayam Campus Swiper
+      const mainCampusSwiper = new Swiper('.campus-swiper', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 5000,
+        },
+      });
+      
+      // Ellapalayam Campus Swiper
+      const annexCampusSwiper = new Swiper('.annex-swiper', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 5000,
+        },
+      });
+      
+      // Smooth scroll for navigation
+      document.querySelectorAll('.campus-nav-item').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            window.scrollTo({
+              top: targetSection.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Stats Counter Animation with Intersection Observer
+      const statsCounters = document.querySelectorAll('.stats-counter[data-target]');
+      
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            const counter = entry.target;
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            counter.classList.add('animated');
+            counter.closest('.stats-counter-wrapper').classList.add('stats-animating');
+            
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                counter.textContent = target;
+                clearInterval(timer);
+                // Add completion effect
+                counter.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                  counter.style.transform = 'scale(1)';
+                  counter.closest('.stats-counter-wrapper').classList.remove('stats-animating');
+                }, 200);
+              } else {
+                counter.textContent = Math.floor(current);
+              }
+            }, 16);
+          }
+        });
+      }, observerOptions);
+      
+      statsCounters.forEach(counter => {
+        observer.observe(counter);
+      });
+    });
+  </script>
+</body>
+</html>
