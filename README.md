@@ -1,9 +1,11 @@
-# Al-Ameen School Website Redesign
+# Al-Ameen School Website
 
-## Project Purpose
-This project is a complete redesign of the Al-Ameen Matriculation Higher Secondary School website. The goal is to deliver a modern, accessible, and visually appealing static website that effectively communicates the school's values, programs, and community to prospective students, parents, and stakeholders.
+## Overview
+
+This website is for Al-Ameen Matriculation Higher Secondary School. It aims to provide a modern, accessible, and visually appealing static site that communicates the school’s values, programs, and community to prospective students, parents, and stakeholders.
 
 ## Tech Stack
+
 - **HTML5** (semantic markup)
 - **Bootstrap 5** (responsive layout, no jQuery)
 - **Modular CSS** using BEM methodology
@@ -11,25 +13,42 @@ This project is a complete redesign of the Al-Ameen Matriculation Higher Seconda
 - **WCAG 2.1 AA** accessibility compliance
 
 ## Key Features
+
 - Responsive design for all devices
 - SEO and performance optimized
 - Downloadable admissions forms (PDF/Word)
 - Embedded maps (no contact forms)
-- Islamic design elements including:
+- Islamic design elements:
   - SVG patterns (star, rosette, girih tile, arabesque border)
   - Pointed arch UI components
   - Subtle background motifs respecting accessibility
 - All content in English
 
+## Production Structure
+
+- **Root**: Only production HTML files, `.nojekyll`, and `README.md`.
+- **assets/**: Only used CSS, JS, images, and forms.
+- **partials/**: Only header and footer includes.
+- **docs/**: All Markdown documentation, not published.
+- **.vscode/** and `.idx/`: Editor configs, not published.
+
 ## Deployment
-The website is deployed as a static site using **GitHub Pages**. To view the live site or set up your own deployment:
-1. Fork or clone this repository.
-2. Push changes to the `main` branch.
-3. Enable GitHub Pages in the repository settings (set source to `/ (root)` or `/docs` as needed).
+
+- Deploy from the root folder (not `docs/`).
+- `.nojekyll` prevents Jekyll processing on GitHub Pages.
+- Only production files are published.
 
 ## Documentation
-- [Style Guide](docs/style-guide.md): Colors, typography, and design tokens
-- [Changelog](docs/changelog.md): Date-stamped update log
+
+- All documentation and plans are in `docs/`.
+- Key docs: `docs/style-guide.md`, `docs/changelog.md`, `docs/copilot-instructions.md`, `docs/website_redesign_specifications.md`.
+
+## Maintenance
+
+- Remove unused files regularly.
+- Only keep production assets in `assets/`.
+- Update documentation in `docs/` as needed.
 
 ---
-For detailed requirements and design principles, see `docs/copilot-instructions.md` and `docs/website_redesign_specifications.md`.
+
+For detailed requirements and design principles, see the documentation in `docs/`.
