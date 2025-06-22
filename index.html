@@ -8,6 +8,7 @@
   <!-- Performance optimizations: Preload critical assets -->
   <link rel="preload" href="assets/images/logo-placeholder.png" as="image">
   <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="preload" as="image" href="assets/images/slider-1.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -35,35 +36,35 @@
   <main id="main-content">
     <!-- Hero Slider -->
     <section class="hero position-relative">
-      <div class="swiper hero-swiper">
+      <div class="swiper hero-swiper" aria-label="Featured highlights">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="assets/images/slider-1.png" class="w-100" alt="School campus view with students">
-            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
-            <div class="hero-overlay islamic-motif position-absolute top-0 start-0 w-100 h-100"></div>
+            <img src="assets/images/slider-1.png" class="w-100" alt="Al-Ameen School campus view with students in front of the main building">
+            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
+            <div class="hero-overlay islamic-motif position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
             <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
-              <img src="assets/images/logo-placeholder.png" alt="Al-Ameen School Logo" width="80" class="mb-3">
-              <h1 class="display-4 fw-bold">Welcome to Al-Ameen School</h1>
+              <!-- Removed logo image for better button accessibility -->
+              <h1 class="display-4 fw-bold">Al Ameen School, Erode</h1>
               <p class="lead mb-4">Empowering Knowledge, Inspiring Faith</p>
-              <a href="admissions.html" class="btn btn-lg btn--primary">Admissions</a>
+              <a href="admissions.html" class="btn btn-lg btn--primary hover-lift" tabindex="0" role="button">Admissions</a>
             </div>
           </div>
           <div class="swiper-slide">
-            <img src="assets/images/slider-2.png" class="w-100" alt="Students engaged in classroom activities">
-            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
-            <div class="hero-overlay islamic-motif position-absolute top-0 start-0 w-100 h-100"></div>
+            <img src="assets/images/slider-2.png" class="w-100" alt="Students engaged in classroom activities at Al-Ameen School" loading="lazy">
+            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
+            <div class="hero-overlay islamic-motif position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
             <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
-              <h2 class="fw-bold display-4">A Tradition of Excellence</h2>
+              <h1 class="fw-bold display-4">A Tradition of Excellence</h1>
               <p class="lead">Discover our vibrant learning community</p>
               <a href="academics.html" class="btn btn-lg btn--primary mt-3">Our Programs</a>
             </div>
           </div>
           <div class="swiper-slide">
-            <img src="assets/images/slider-3.png" class="w-100" alt="School facilities and campus view">
-            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
-            <div class="hero-overlay islamic-motif position-absolute top-0 start-0 w-100 h-100"></div>
+            <img src="assets/images/slider-3.png" class="w-100" alt="School facilities and campus view at Al-Ameen" loading="lazy">
+            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
+            <div class="hero-overlay islamic-motif position-absolute top-0 start-0 w-100 h-100" aria-hidden="true"></div>
             <div class="hero-content position-absolute top-50 start-50 translate-middle text-center text-white">
-              <h2 class="fw-bold display-4">Rooted in Values</h2>
+              <h1 class="fw-bold display-4">Rooted in Values</h1>
               <p class="lead">Academic achievement with strong character</p>
               <a href="about.html" class="btn btn-lg btn--primary mt-3">About Us</a>
             </div>
