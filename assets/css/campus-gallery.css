@@ -60,10 +60,44 @@
   transform: scale(1.1);
 }
 
+/* Campus Badges Styling */
+.campus-location-info .location-badge,
+.campus-location-info .education-badge {
+  font-size: 0.85rem;
+  color: #333;
+  background-color: rgba(255, 193, 7, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.campus-location-info .location-badge i,
+.campus-location-info .education-badge i {
+  color: #f0ad4e;
+}
+
+.campus-location-info .location-badge:hover,
+.campus-location-info .education-badge:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 193, 7, 0.25);
+}
+
 .campus-highlights {
-  margin-top: 1.25rem;
-  border-top: 1px solid rgba(var(--color-neutral-rgb), 0.2);
-  padding-top: 1.25rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(var(--color-neutral-rgb), 0.1);
+  padding-top: 1.5rem;
+}
+
+.campus-highlights ul li {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.campus-highlights ul li i {
+  margin-top: 0.125rem;
 }
 
 /* Improved Mobile Responsiveness */
