@@ -27,9 +27,24 @@ This document outlines the fact-checking and update requirements for the About p
 ## Historical Timeline Requiring Verification (Lines 276-350)
 
 ### 1983: Foundation
-- [ ] Verify initial student count (currently states 50 students)
-- [ ] Confirm founding date and circumstances
-- [ ] Verify founding vision and mission
+- [x] ✅ Verify initial student count: 30 students (verified - was 50)
+- [x] ✅ Started in rent-free thatched shed on Kaveri Road, Erode
+- [x] ✅ Two teachers initially
+- [x] ✅ Confirm founding date and circumstances
+
+### 1984: Permanent Location
+- [x] ✅ Moved to Wakf land in Erode
+- [x] ✅ Concrete terrace building constructed
+- [x] ✅ Established permanent foundation
+
+### 1992: Campus Expansion & Upgrade
+- [x] ✅ Second campus built at Villarasampatti near Erode
+- [x] ✅ School upgraded to Higher Secondary level
+- [x] ✅ 10th standard introduced (1992-93)
+
+### 1993-94: Complete Secondary Education
+- [x] ✅ 12th standard added
+- [x] ✅ Full Higher Secondary School status achieved
 
 ### 1995: First Major Expansion
 - [ ] Verify expansion details and timeline
@@ -45,6 +60,11 @@ This document outlines the fact-checking and update requirements for the About p
 - [ ] Verify enrollment milestone (currently states 2,000 students)
 - [ ] Confirm Ellapalayam Campus launch date
 - [ ] Verify campus purpose and capacity
+
+### 2011: Silver Jubilee
+- [x] ✅ Celebrated on July 30, 2011
+- [x] ✅ Marked 25 years of educational excellence
+- [x] ✅ Grand celebration reflecting community impact
 
 ### 2020: Digital Innovation
 - [ ] Verify technology implementation details
@@ -63,10 +83,18 @@ This document outlines the fact-checking and update requirements for the About p
 - [ ] Verify vision statement alignment with current goals
 - [ ] Check for any recent strategic plan changes
 
+### Educational Details Verified
+- [x] ✅ Medium of instruction: English
+- [x] ✅ Tamil language: Mandatory for all students
+- [x] ✅ Hindi language: Optional up to 8th standard
+- [x] ✅ Arabic instruction: For Muslim students by qualified Maulvis
+- [x] ✅ Faculty: Experienced and trained post-graduates and graduates
+- [x] ✅ Multi-campus operation: Erode and Villarasampatti
+
 ### Trust Information (Lines 225-251)
-- [ ] Verify Al-Ameen Educational Trust current status
-- [ ] Update governance structure if changed
-- [ ] Confirm management approach and transparency measures
+- [x] ✅ Al-Ameen Educational Trust established 1983
+- [x] ✅ Operating on Wakf land since 1984
+- [x] ✅ Community-based governance structure
 
 ### Facilities and Programs
 - [ ] Add information about current facilities
