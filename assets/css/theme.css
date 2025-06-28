@@ -538,12 +538,31 @@
     font-size: 1.75rem;
   }
   
-  /* Fix gap between Our Story and Stats sections on mobile */
-  .about-preview {
-    padding-bottom: var(--space-sm); /* Reduce bottom padding from default section spacing */
+  /* Fix excessive gap between About/Our Story and subsequent sections on mobile */
+  .about-preview.section {
+    padding-bottom: var(--space-xs) !important; /* Force minimal spacing */
   }
   
+  /* Remove top margin/padding from sections following about-preview */
   .stats-counter-wrapper {
-    margin-top: 0; /* Ensure no top margin */
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Fix gap on home page - target the why-choose-section directly */
+  .why-choose-section.py-5 {
+    padding-top: var(--space-sm) !important; /* Override Bootstrap py-5 */
+    padding-bottom: var(--space-lg) !important; /* Keep bottom padding for visual balance */
+  }
+  
+  /* Reduce section-divider-alt height on mobile to minimize spacing */
+  .section-divider-alt {
+    height: calc(var(--divider-height-alt) * 0.5) !important;
+    margin: 0 !important;
+  }
+  
+  /* General section spacing fix - be more aggressive */
+  section.about-preview {
+    padding-bottom: var(--space-xs) !important;
   }
 }
