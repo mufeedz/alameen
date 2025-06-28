@@ -302,7 +302,13 @@
 
 /* Divider adjustments */
 .section-divider-alt {
-  margin: 1rem 0;
+  margin: 0; /* Removing margin to fix spacing with footer */
+}
+
+/* Fix for footer spacing */
+.section-divider-alt + #footer-include,
+main + #footer-include {
+  margin-top: 0;
 }
 
 /* Match slider height to content for different screen sizes */
