@@ -537,4 +537,13 @@
   .stats-section .stat-number {
     font-size: 1.75rem;
   }
+  
+  /* Fix gap between Our Story and Stats sections on mobile */
+  .about-preview {
+    padding-bottom: var(--space-sm); /* Reduce bottom padding from default section spacing */
+  }
+  
+  .stats-counter-wrapper {
+    margin-top: 0; /* Ensure no top margin */
+  }
 }
