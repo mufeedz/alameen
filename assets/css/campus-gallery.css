@@ -174,3 +174,117 @@
     font-size: 16px;
   }
 }
+
+/* Modern Campus Detail Card Styling */
+.campus-heading {
+  font-weight: 700;
+  position: relative;
+}
+
+.campus-detail-card {
+  background-color: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.campus-detail-card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.campus-left-border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background-color: var(--color-warning);
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}
+
+/* New Campus Stats Grid Layout */
+.campus-stat {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.campus-stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.campus-stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-warning);
+}
+
+.campus-stat-icon i {
+  background-color: rgba(255, 193, 7, 0.15);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.campus-stat-label {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+}
+
+.campus-stat-value {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+/* Education Model Cards */
+.education-model-card {
+  background-color: #fff;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-model-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.education-icon-container {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: rgba(255, 193, 7, 0.15);
+  transition: all 0.3s ease;
+}
+
+.education-icon-container i {
+  font-size: 1.75rem;
+}
+
+.grade-range {
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.environment-type {
+  font-size: 0.85rem;
+}

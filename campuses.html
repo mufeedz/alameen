@@ -145,12 +145,14 @@
     <section id="main-campus" class="main-campus section position-relative py-5" aria-labelledby="main-campus-heading">
       <div class="pattern-rosette-bg"></div>
       <div class="container-xl">
-        <h2 id="main-campus-heading" class="section__title">Karungalpalayam <span class="text-accent">Campus</span></h2>
-        <div class="islamic-accent-line mb-4"></div>
+        <h2 id="main-campus-heading" class="campus-heading mb-4">
+          <span class="text-primary">Karungalpalayam</span> <span class="text-warning">Campus</span>
+        </h2>
         
         <!-- Campus Overview Card -->
-        <div class="feature-card mb-4">
-          <div class="p-4">
+        <div class="campus-detail-card mb-5 position-relative">
+          <div class="campus-left-border"></div>
+          <div class="p-4 p-lg-5">
             <div class="row align-items-center g-4">
               <div class="col-lg-5">
                 <div class="arabesque-border img-hover-zoom" style="height: 350px;">
@@ -179,62 +181,68 @@
               <div class="col-lg-7">
                 <div class="campus-details">
                   <h3 class="h4 text-primary mb-3">Campus Overview</h3>
-                  <p class="lead mb-3">The Karungalpalayam Campus, established in 1983, serves as the heart of Al-Ameen School's educational mission. Located on Cauvery Road in Karungalpalayam, this campus represents 42 years of academic excellence and Islamic values.</p>
+                  <p class="lead mb-4">The Karungalpalayam Campus, established in 1983, serves as the heart of Al-Ameen School's educational mission. Located on Cauvery Road in Karungalpalayam, this campus represents 42 years of academic excellence and Islamic values.</p>
                   
                   <!-- Key Highlights -->
-                  <div class="row g-3 mb-4">
+                  <div class="row g-4 mb-5">
                     <div class="col-md-6">
-                      <div class="d-flex align-items-center">
-                        <i class="bi bi-calendar-check text-accent me-2"></i>
-                        <div>
-                          <small class="text-muted d-block">Established</small>
-                          <strong>1983 (42 Years)</strong>
+                      <div class="campus-stat">
+                        <div class="campus-stat-icon">
+                          <i class="bi bi-calendar-check text-warning"></i>
                         </div>
+                        <div class="campus-stat-label">Established</div>
+                        <div class="campus-stat-value">1983 (42 Years)</div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="d-flex align-items-center">
-                        <i class="bi bi-geo-alt text-accent me-2"></i>
-                        <div>
-                          <small class="text-muted d-block">Location</small>
-                          <strong>Cauvery Road</strong>
+                      <div class="campus-stat">
+                        <div class="campus-stat-icon">
+                          <i class="bi bi-geo-alt text-warning"></i>
                         </div>
+                        <div class="campus-stat-label">Location</div>
+                        <div class="campus-stat-value">Cauvery Road</div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="d-flex align-items-center">
-                        <i class="bi bi-building text-accent me-2"></i>
-                        <div>
-                          <small class="text-muted d-block">Campus Size</small>
-                          <strong>0.54 Acres (23,588 sq. ft.)</strong>
+                      <div class="campus-stat">
+                        <div class="campus-stat-icon">
+                          <i class="bi bi-building text-warning"></i>
                         </div>
+                        <div class="campus-stat-label">Campus Size</div>
+                        <div class="campus-stat-value">0.54 Acres (23,588 sq. ft.)</div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="d-flex align-items-center">
-                        <i class="bi bi-people text-accent me-2"></i>
-                        <div>
-                          <small class="text-muted d-block">Education Model</small>
-                          <strong>Co-ed & Girls Only</strong>
+                      <div class="campus-stat">
+                        <div class="campus-stat-icon">
+                          <i class="bi bi-people text-warning"></i>
                         </div>
+                        <div class="campus-stat-label">Education Model</div>
+                        <div class="campus-stat-value">Co-ed & Girls Only</div>
                       </div>
                     </div>
                   </div>
                   
                   <!-- Education Model Cards -->
-                  <div class="row g-3">
+                  <div class="row g-4">
                     <div class="col-md-6">
-                      <div class="education-model-card text-center p-3 border rounded">
-                        <i class="bi bi-people-fill text-accent mb-2" style="font-size: 1.5rem;"></i>
-                        <h6 class="text-primary mb-1">Co-education</h6>
-                        <small class="text-muted">Grades 1-5<br>Mixed learning environment</small>
+                      <div class="education-model-card text-center p-4 border rounded shadow-sm h-100">
+                        <div class="education-icon-container">
+                          <i class="bi bi-people-fill text-warning"></i>
+                        </div>
+                        <h6 class="fw-bold mb-2 mt-3">Co-education</h6>
+                        <div class="grade-range mb-2">Grades 1-5</div>
+                        <div class="environment-type text-muted small">Mixed learning environment</div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="education-model-card text-center p-3 border rounded">
-                        <i class="bi bi-person-fill text-accent mb-2" style="font-size: 1.5rem;"></i>
-                        <h6 class="text-primary mb-1">Girls Only</h6>
-                        <small class="text-muted">Grades 6-12<br>Focused learning environment</small>
+                      <div class="education-model-card text-center p-4 border rounded shadow-sm h-100">
+                        <div class="education-icon-container">
+                          <i class="bi bi-person-fill text-warning"></i>
+                        </div>
+                        <h6 class="fw-bold mb-2 mt-3">Girls Only</h6>
+                        <div class="grade-range mb-2">Grades 6-12</div>
+                        <div class="environment-type text-muted small">Focused learning environment</div>
                       </div>
                     </div>
                   </div>
@@ -332,12 +340,14 @@
     <section id="annex-campus" class="annex-campus section position-relative py-5 bg-neutral" aria-labelledby="annex-campus-heading">
       <div class="pattern-star-bg"></div>
       <div class="container-xl">
-        <h2 id="annex-campus-heading" class="section__title">Ellapalayam <span class="text-accent">Campus</span></h2>
-        <div class="islamic-accent-line mb-4"></div>
+        <h2 id="annex-campus-heading" class="campus-heading mb-4">
+          <span class="text-primary">Ellapalayam</span> <span class="text-warning">Campus</span>
+        </h2>
         
         <!-- Campus Overview Card -->
-        <div class="feature-card mb-4">
-          <div class="p-4">
+        <div class="campus-detail-card mb-5 position-relative">
+          <div class="campus-left-border"></div>
+          <div class="p-4 p-lg-5">
             <div class="row align-items-center g-4">
               <div class="col-lg-5">
                 <div class="arabesque-border img-hover-zoom" style="height: 350px;">
@@ -366,57 +376,56 @@
               <div class="col-lg-7">
                 <div class="campus-details">
                   <h3 class="h4 text-primary mb-3">Campus Overview</h3>
-                  <p class="lead mb-3">The Ellapalayam Campus represents our progressive approach to education, serving students from Grades 1-12 in a fully co-educational environment. Located in Villarasampatti, Erode, this modern 1.5-acre campus was designed to foster collaborative learning and holistic development.</p>
+                  <p class="lead mb-4">The Ellapalayam Campus represents our progressive approach to education, serving students from Grades 1-12 in a fully co-educational environment. Located in Villarasampatti, Erode, this modern 1.5-acre campus was designed to foster collaborative learning and holistic development.</p>
                   
                   <!-- Key Highlights -->
-                  <div class="row g-3 mb-4">
+                  <div class="row g-4 mb-5">
                     <div class="col-md-6">
-                      <div class="d-flex align-items-center">
-                        <i class="bi bi-calendar-check text-accent me-2"></i>
-                        <div>
-                          <small class="text-muted d-block">Established</small>
-                          <strong>1992 (33 Years)</strong>
+                      <div class="campus-stat">
+                        <div class="campus-stat-icon">
+                          <i class="bi bi-calendar-check text-warning"></i>
                         </div>
+                        <div class="campus-stat-label">Established</div>
+                        <div class="campus-stat-value">1992 (33 Years)</div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="d-flex align-items-center">
-                        <i class="bi bi-geo-alt text-accent me-2"></i>
-                        <div>
-                          <small class="text-muted d-block">Location</small>
-                          <strong>Villarasampatti, Erode</strong>
+                      <div class="campus-stat">
+                        <div class="campus-stat-icon">
+                          <i class="bi bi-geo-alt text-warning"></i>
                         </div>
+                        <div class="campus-stat-label">Location</div>
+                        <div class="campus-stat-value">Villarasampatti, Erode</div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="d-flex align-items-center">
-                        <i class="bi bi-building text-accent me-2"></i>
-                        <div>
-                          <small class="text-muted d-block">Campus Size</small>
-                          <strong>1.5 Acres</strong>
+                      <div class="campus-stat">
+                        <div class="campus-stat-icon">
+                          <i class="bi bi-building text-warning"></i>
                         </div>
+                        <div class="campus-stat-label">Campus Size</div>
+                        <div class="campus-stat-value">1.5 Acres (65,340 sq. ft.)</div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="d-flex align-items-center">
-                        <i class="bi bi-people text-accent me-2"></i>
-                        <div>
-                          <small class="text-muted d-block">Education Model</small>
-                          <strong>Co-educational</strong>
+                      <div class="campus-stat">
+                        <div class="campus-stat-icon">
+                          <i class="bi bi-people text-warning"></i>
                         </div>
+                        <div class="campus-stat-label">Education Model</div>
+                        <div class="campus-stat-value">Co-educational</div>
                       </div>
                     </div>
                   </div>
                   
                   <!-- Education Model Card -->
-                  <div class="row g-3">
-                    <div class="col-12">
-                      <div class="education-model-card text-center p-3 border rounded">
-                        <i class="bi bi-people-fill text-accent mb-2" style="font-size: 1.5rem;"></i>
-                        <h6 class="text-primary mb-1">Co-educational Excellence</h6>
-                        <small class="text-muted">Grades 1-12<br>Collaborative learning environment for all ages</small>
-                      </div>
+                  <div class="education-model-card text-center p-4 border rounded shadow-sm">
+                    <div class="education-icon-container">
+                      <i class="bi bi-people-fill text-warning"></i>
                     </div>
+                    <h6 class="fw-bold mb-2 mt-3">Co-educational</h6>
+                    <div class="grade-range mb-2">Grades 1-12</div>
+                    <div class="environment-type text-muted small">Collaborative learning environment for all ages</div>
                   </div>
                 </div>
               </div>
