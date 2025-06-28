@@ -538,31 +538,59 @@
     font-size: 1.75rem;
   }
   
-  /* Fix excessive gap between About/Our Story and subsequent sections on mobile */
-  .about-preview.section {
-    padding-bottom: var(--space-xs) !important; /* Force minimal spacing */
+  /* COMPREHENSIVE FIX for excessive gaps between sections on mobile */
+  
+  /* 1. Target all sections with aggressive padding reduction */
+  section {
+    padding-top: var(--space-sm) !important; /* Reduce all section top padding */
+    padding-bottom: var(--space-sm) !important; /* Reduce all section bottom padding */
   }
   
-  /* Remove top margin/padding from sections following about-preview */
-  .stats-counter-wrapper {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+  /* 2. Specifically target problematic sections */
+  .about-preview.section,
+  section.about-preview,
+  .about-preview {
+    padding-bottom: 0.5rem !important; /* Minimal bottom padding */
+    margin-bottom: 0 !important; /* Remove any margin */
   }
   
-  /* Fix gap on home page - target the why-choose-section directly */
-  .why-choose-section.py-5 {
-    padding-top: var(--space-sm) !important; /* Override Bootstrap py-5 */
-    padding-bottom: var(--space-lg) !important; /* Keep bottom padding for visual balance */
+  /* 3. Target sections that follow about-preview */
+  .why-choose-section {
+    padding-top: 0.5rem !important; /* Minimal top padding */
+    margin-top: 0 !important; /* Remove any margin */
   }
   
-  /* Reduce section-divider-alt height on mobile to minimize spacing */
-  .section-divider-alt {
-    height: calc(var(--divider-height-alt) * 0.5) !important;
+  /* 4. Override Bootstrap py-5 class specifically */
+  .py-5 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  /* 5. Aggressively reduce divider heights */
+  .section-divider-alt,
+  .section-divider {
+    height: 8px !important; /* Much smaller dividers */
     margin: 0 !important;
   }
   
-  /* General section spacing fix - be more aggressive */
-  section.about-preview {
-    padding-bottom: var(--space-xs) !important;
+  /* 6. Stats counter wrapper specific fix */
+  .stats-counter-wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  /* 7. Container spacing fixes */
+  .container-xl {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* 8. Pattern background elements should not affect spacing */
+  .pattern-rosette-bg,
+  .pattern-star-bg,
+  .pattern-girih-bg {
+    margin: 0;
+    padding: 0;
   }
 }
