@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/campus-gallery.css">
   <meta name="description" content="Al-Ameen Matriculation Higher Secondary School - Empowering Knowledge, Inspiring Faith">
   
   <!-- For WCAG compliance -->
@@ -239,36 +240,77 @@
     <div class="section-divider-alt"></div>
     
     <!-- Campus Highlights -->
-    <section class="campus-highlights section position-relative">
+    <section class="campus-nav section position-relative py-5" aria-label="Campus highlights">
       <div class="pattern-star-bg"></div>
-      <div class="container-xl py-3">
-        <h2 class="section__title text-center mb-3">Our <span class="gradient-text">Campuses</span></h2>
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 pointed-arch hover-lift campus-card">
-              <div class="img-hover-zoom">
-                <img src="assets/images/slider-2.png" class="card__image" alt="Karungalpalayam Campus">
-              </div>
-              <div class="card-body">
-                <h3 class="card-title text-primary-theme">Karungalpalayam Campus</h3>
-                <p class="card-text">State-of-the-art facilities, modern classrooms, and a vibrant student community in the heart of the city.</p>
-                <a href="campuses.html" class="btn btn-sm btn--primary">Explore</a>
+      <div class="container-xl">
+        <h2 class="section__title text-center mb-2">Our <span class="gradient-text">Campuses</span></h2>
+        <p class="text-muted text-center mb-4">Explore our two dynamic campuses, each designed to foster academic excellence.</p>
+        
+        <div class="row g-4 justify-content-center" role="list">
+          <div class="col-md-6 col-lg-5">
+            <div class="feature-card hover-lift float-animation h-100" role="listitem">
+              <div class="p-4">
+                <a href="campuses.html#main-campus" class="campus-nav-item d-block text-decoration-none" aria-label="Learn more about Karungalpalayam Campus">
+                  <div class="d-flex flex-column align-items-center mb-3">
+                    <div class="icon-container text-center mb-3">
+                      <i class="bi bi-building text-primary" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="h4 text-primary mb-2">Karungalpalayam Campus</h3>
+                    <div class="campus-location-info text-center mb-3">
+                      <div class="d-flex justify-content-center flex-wrap gap-2">
+                        <div class="location-badge py-1 px-3 d-inline-block rounded-pill">
+                          <i class="bi bi-geo-alt me-1"></i> Cauvery Road
+                        </div>
+                        <div class="education-badge py-1 px-3 d-inline-block rounded-pill">
+                          <i class="bi bi-people me-1"></i> Co-ed (up to 5th) & Girls Only (6th-12th)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="campus-highlights text-center">
+                    <ul class="list-unstyled small text-muted mx-auto" style="max-width: 400px;">
+                      <li class="mb-1"><i class="bi bi-check-circle-fill text-warning me-2" aria-hidden="true"></i>Established 1983 - 42 years of excellence</li>
+                      <li class="mb-1"><i class="bi bi-check-circle-fill text-warning me-2" aria-hidden="true"></i>0.54-acre campus with modern facilities</li>
+                      <li class="mb-0"><i class="bi bi-check-circle-fill text-warning me-2" aria-hidden="true"></i>Co-ed (up to 5th grade) & Girls Only (6th-12th)</li>
+                    </ul>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 pointed-arch hover-lift campus-card">
-              <div class="img-hover-zoom">
-                <img src="assets/images/slider-3.png" class="card__image" alt="Ellapalayam Campus">
-              </div>
-              <div class="card-body">
-                <h3 class="card-title text-primary-theme">Ellapalayam Campus</h3>
-                <p class="card-text">A nurturing environment for foundational years, with dedicated play areas and creative learning spaces.</p>
-                <a href="campuses.html" class="btn btn-sm btn--primary">Explore</a>
+          
+          <div class="col-md-6 col-lg-5">
+            <div class="feature-card hover-lift float-animation h-100" role="listitem">
+              <div class="p-4">
+                <a href="campuses.html#annex-campus" class="campus-nav-item d-block text-decoration-none" aria-label="Learn more about Ellapalayam Campus">
+                  <div class="d-flex flex-column align-items-center mb-3">
+                    <div class="icon-container text-center mb-3">
+                      <i class="bi bi-building-fill text-primary" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="h4 text-primary mb-2">Ellapalayam Campus</h3>
+                    <div class="campus-location-info text-center mb-3">
+                      <div class="d-flex justify-content-center flex-wrap gap-2">
+                        <div class="location-badge py-1 px-3 d-inline-block rounded-pill">
+                          <i class="bi bi-geo-alt me-1"></i> Villarasampatti
+                        </div>
+                        <div class="education-badge py-1 px-3 d-inline-block rounded-pill">
+                          <i class="bi bi-people me-1"></i> Co-ed (All Grades 1-12)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="campus-highlights text-center">
+                    <ul class="list-unstyled small text-muted mx-auto" style="max-width: 400px;">
+                      <li class="mb-1"><i class="bi bi-check-circle-fill text-warning me-2" aria-hidden="true"></i>Established 1992 - 33 years of excellence</li>
+                      <li class="mb-1"><i class="bi bi-check-circle-fill text-warning me-2" aria-hidden="true"></i>1.5-acre campus with latest technology</li>
+                      <li class="mb-0"><i class="bi bi-check-circle-fill text-warning me-2" aria-hidden="true"></i>Co-educational all grades</li>
+                    </ul>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
-        </div>      
+        </div>
       </div>
     </section>
 

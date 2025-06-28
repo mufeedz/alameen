@@ -3,6 +3,8 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   position: relative;
+  margin-bottom: 0;
+  height: 100%; /* Ensure gallery fills the container */
 }
 
 .campus-swiper,
@@ -27,6 +29,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  max-height: none; /* Ensure no height limitation */
 }
 
 /* Campus Navigation Card Styling */
@@ -60,10 +63,44 @@
   transform: scale(1.1);
 }
 
+/* Campus Badges Styling */
+.campus-location-info .location-badge,
+.campus-location-info .education-badge {
+  font-size: 0.85rem;
+  color: #333;
+  background-color: rgba(255, 193, 7, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.campus-location-info .location-badge i,
+.campus-location-info .education-badge i {
+  color: #f0ad4e;
+}
+
+.campus-location-info .location-badge:hover,
+.campus-location-info .education-badge:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 193, 7, 0.25);
+}
+
 .campus-highlights {
-  margin-top: 1.25rem;
-  border-top: 1px solid rgba(var(--color-neutral-rgb), 0.2);
-  padding-top: 1.25rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(var(--color-neutral-rgb), 0.1);
+  padding-top: 1.5rem;
+}
+
+.campus-highlights ul li {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.campus-highlights ul li i {
+  margin-top: 0.125rem;
 }
 
 /* Improved Mobile Responsiveness */
@@ -121,7 +158,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .arabesque-border.img-hover-zoom {
-    height: 280px !important;
+    height: 250px !important;
   }
   
   .campus-swiper .swiper-button-next,
@@ -138,5 +175,151 @@
   .annex-swiper .swiper-button-next:after,
   .annex-swiper .swiper-button-prev:after {
     font-size: 16px;
+  }
+}
+
+/* Modern Campus Detail Card Styling */
+.campus-heading {
+  font-weight: 700;
+  position: relative;
+}
+
+.campus-detail-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.campus-left-border {
+  display: none;
+}
+
+/* New Campus Stats Grid Layout */
+.campus-stat {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  height: 100%;
+  padding: 0.75rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.campus-stat:hover {
+  transform: translateY(-3px);
+}
+
+.campus-stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-warning);
+}
+
+.campus-stat-icon i {
+  background-color: rgba(255, 193, 7, 0.15);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.campus-stat-label {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+}
+
+.campus-stat-value {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+/* Education Model Cards */
+.education-model-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.education-model-card:hover {
+  transform: translateY(-3px);
+}
+
+.education-icon-container {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: rgba(255, 193, 7, 0.15);
+  transition: all 0.3s ease;
+}
+
+.education-icon-container i {
+  font-size: 1.75rem;
+}
+
+.grade-range {
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.environment-type {
+  font-size: 0.85rem;
+}
+
+.arabesque-border.img-hover-zoom {
+  height: 400px; /* Increased from 320px to match content height */
+  margin-bottom: 1rem;
+}
+
+/* Additional spacing adjustments */
+.campus-details .row.g-4.mb-5 {
+  margin-bottom: 0 !important;  /* Removing margin since Education Model Cards are gone */
+}
+
+@media (max-width: 767.98px) {
+  .arabesque-border.img-hover-zoom {
+    height: 300px !important; /* Increased from 250px for better mobile display */
+    margin-bottom: 0.5rem;
+  }
+  
+  .campus-details .row.g-4.mb-5 {
+    margin-bottom: 0 !important;
+  }
+  
+  .campus-detail-card {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Divider adjustments */
+.section-divider-alt {
+  margin: 0; /* Removing margin to fix spacing with footer */
+}
+
+/* Fix for footer spacing */
+.section-divider-alt + #footer-include,
+main + #footer-include {
+  margin-top: 0;
+}
+
+/* Match slider height to content for different screen sizes */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .arabesque-border.img-hover-zoom {
+    height: 430px; /* Slightly taller for medium-large screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  .arabesque-border.img-hover-zoom {
+    height: 420px; /* Adjusted for large screens */
   }
 }
