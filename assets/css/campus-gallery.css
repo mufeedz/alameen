@@ -3,6 +3,7 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   position: relative;
+  margin-bottom: 0;
 }
 
 .campus-swiper,
@@ -155,7 +156,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .arabesque-border.img-hover-zoom {
-    height: 280px !important;
+    height: 250px !important;
   }
   
   .campus-swiper .swiper-button-next,
@@ -182,43 +183,28 @@
 }
 
 .campus-detail-card {
-  background-color: #fff;
-  border-radius: var(--radius-md);
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
-}
-
-.campus-detail-card:hover {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .campus-left-border {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 6px;
-  height: 100%;
-  background-color: var(--color-warning);
-  border-top-left-radius: var(--radius-md);
-  border-bottom-left-radius: var(--radius-md);
+  display: none;
 }
 
 /* New Campus Stats Grid Layout */
 .campus-stat {
   display: flex;
   flex-direction: column;
-  background-color: #f8f9fa;
-  padding: 1.25rem;
-  border-radius: var(--radius-md);
   transition: all 0.3s ease;
   height: 100%;
+  padding: 0.75rem 0;
+  margin-bottom: 0.5rem;
 }
 
 .campus-stat:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+  transform: translateY(-3px);
 }
 
 .campus-stat-icon {
@@ -229,8 +215,8 @@
 
 .campus-stat-icon i {
   background-color: rgba(255, 193, 7, 0.15);
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -251,16 +237,14 @@
 
 /* Education Model Cards */
 .education-model-card {
-  background-color: #fff;
-  border-radius: var(--radius-md);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  padding: 1rem 0;
 }
 
 .education-model-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
 }
 
 .education-icon-container {
@@ -287,4 +271,34 @@
 
 .environment-type {
   font-size: 0.85rem;
+}
+
+.arabesque-border.img-hover-zoom {
+  height: 320px;
+  margin-bottom: 1rem;
+}
+
+/* Additional spacing adjustments */
+.campus-details .row.g-4.mb-5 {
+  margin-bottom: 0 !important;  /* Removing margin since Education Model Cards are gone */
+}
+
+@media (max-width: 767.98px) {
+  .arabesque-border.img-hover-zoom {
+    height: 250px !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  .campus-details .row.g-4.mb-5 {
+    margin-bottom: 0 !important;
+  }
+  
+  .campus-detail-card {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Divider adjustments */
+.section-divider-alt {
+  margin: 1rem 0;
 }
