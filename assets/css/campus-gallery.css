@@ -4,6 +4,7 @@
   overflow: hidden;
   position: relative;
   margin-bottom: 0;
+  height: 100%; /* Ensure gallery fills the container */
 }
 
 .campus-swiper,
@@ -28,6 +29,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  max-height: none; /* Ensure no height limitation */
 }
 
 /* Campus Navigation Card Styling */
@@ -274,7 +276,7 @@
 }
 
 .arabesque-border.img-hover-zoom {
-  height: 320px;
+  height: 400px; /* Increased from 320px to match content height */
   margin-bottom: 1rem;
 }
 
@@ -285,7 +287,7 @@
 
 @media (max-width: 767.98px) {
   .arabesque-border.img-hover-zoom {
-    height: 250px !important;
+    height: 300px !important; /* Increased from 250px for better mobile display */
     margin-bottom: 0.5rem;
   }
   
@@ -301,4 +303,17 @@
 /* Divider adjustments */
 .section-divider-alt {
   margin: 1rem 0;
+}
+
+/* Match slider height to content for different screen sizes */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .arabesque-border.img-hover-zoom {
+    height: 430px; /* Slightly taller for medium-large screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  .arabesque-border.img-hover-zoom {
+    height: 420px; /* Adjusted for large screens */
+  }
 }
