@@ -1,0 +1,43 @@
+name: Enforce Branch Protections
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+      - dev
+  delete:
+    branches:
+      - main
+      - dev
+
+jobs:
+  pr_source_to_main:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Block PRs to main unless from dev
+        if: github.head_ref != 'dev'
+        run: |
+          echo "❌ Only PRs from 'dev' are allowed to be merged into 'main'."
+          exit 1
+
+  block_direct_push:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Block direct push to protected branches
+        run: |
+          echo "❌ Direct pushes to 'main' or 'dev' are not allowed. Please use Pull Requests."
+          exit 1
+
+  block_deletion:
+    if: github.event_name == 'delete'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prevent deletion of main or dev
+        run: |
+          echo "❌ Deletion of 'main' or 'dev' branches is not allowed."
+          exit 1
