@@ -537,4 +537,60 @@
   .stats-section .stat-number {
     font-size: 1.75rem;
   }
+  
+  /* COMPREHENSIVE FIX for excessive gaps between sections on mobile */
+  
+  /* 1. Target all sections with aggressive padding reduction */
+  section {
+    padding-top: var(--space-sm) !important; /* Reduce all section top padding */
+    padding-bottom: var(--space-sm) !important; /* Reduce all section bottom padding */
+  }
+  
+  /* 2. Specifically target problematic sections */
+  .about-preview.section,
+  section.about-preview,
+  .about-preview {
+    padding-bottom: 0.5rem !important; /* Minimal bottom padding */
+    margin-bottom: 0 !important; /* Remove any margin */
+  }
+  
+  /* 3. Target sections that follow about-preview */
+  .why-choose-section {
+    padding-top: 0.5rem !important; /* Minimal top padding */
+    margin-top: 0 !important; /* Remove any margin */
+  }
+  
+  /* 4. Override Bootstrap py-5 class specifically */
+  .py-5 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  /* 5. Aggressively reduce divider heights */
+  .section-divider-alt,
+  .section-divider {
+    height: 8px !important; /* Much smaller dividers */
+    margin: 0 !important;
+  }
+  
+  /* 6. Stats counter wrapper specific fix */
+  .stats-counter-wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0.5rem !important;
+  }
+  
+  /* 7. Container spacing fixes */
+  .container-xl {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* 8. Pattern background elements should not affect spacing */
+  .pattern-rosette-bg,
+  .pattern-star-bg,
+  .pattern-girih-bg {
+    margin: 0;
+    padding: 0;
+  }
 }
