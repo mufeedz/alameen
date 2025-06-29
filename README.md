@@ -38,6 +38,14 @@ This website is for Al-Ameen Matriculation Higher Secondary School. It aims to p
 - `.nojekyll` prevents Jekyll processing on GitHub Pages.
 - Only production files are published.
 
+## Branch Protection
+
+- **Main branch**: Protected - only accepts PRs from `dev` branch
+- **Dev branch**: Protected - requires PRs for all changes
+- **Direct pushes**: Blocked to both `main` and `dev` branches
+- **Branch deletion**: Prevented for `main` and `dev` branches
+- Enforced via GitHub Actions workflow (`.github/workflows/branch-protection-enforcer.yml`)
+
 ## Documentation
 
 - All documentation and plans are in `docs/`.
